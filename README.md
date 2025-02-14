@@ -1,3 +1,3 @@
-**Project Cyber Stor (bold)**
+**Project Cyber Stor**
 
 ---
