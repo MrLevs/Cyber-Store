@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
       rel="stylesheet" />
@@ -12,9 +11,178 @@
   </head>
   <body>
     <header class="header">
-      <div class="container"></div>
+      <div class="container">
+        <div class="header__inner">
+          <a href="/" class="logo__link" aria-label="logo Cyber">
+            <img src="/images/logo.svg" alt="Cyber logo" class="logo__img" />
+          </a>
+          <div class="header__block">
+            <form class="form-search form-search_width">
+              <label for="input-search" class="form-search__label" id="lable-search">
+                <svg
+                  class="form-search__icon"
+                  aria-hidden="false"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    id="id"
+                    d="M16.9331 17L13.1554 13.2156M15.2489 8.15789C15.2489 10.0563 14.4948 11.8769 13.1524 13.2193C11.81 14.5617 9.98939 15.3158 8.091 15.3158C6.19261 15.3158 4.37197 14.5617 3.0296 13.2193C1.68724 11.8769 0.933105 10.0563 0.933105 8.15789C0.933105 6.2595 1.68724 4.43886 3.0296 3.0965C4.37197 1.75413 6.19261 1 8.091 1C9.98939 1 11.81 1.75413 13.1524 3.0965C14.4948 4.43886 15.2489 6.2595 15.2489 8.15789V8.15789Z"
+                    stroke="#989898"
+                    stroke-width="1.5"
+                    stroke-linecap="round" />
+                </svg>
+              </label>
+              <input
+                id="input-search"
+                type="search"
+                class="form-search__input"
+                placeholder="Search"
+                aria-autocomplete="both"
+                aria-labelledby="lable-search"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+                enterkeyhint="go" />
+              <button
+                id="button-reset"
+                class="form-search__button"
+                title="Clear the query"
+                aria-label="Clear the query">
+                <svg width="20" height="20" viewBox="0 0 20 20">
+                  <path
+                    d="M10 10l5.09-5.09L10 10l5.09 5.09L10 10zm0 0L4.91 4.91 10 10l-5.09 5.09L10 10z"
+                    stroke="currentColor"
+                    fill="none"
+                    fill-rule="evenodd"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </button>
+            </form>
+            <nav class="header__nav">
+              <ul class="header__menu-list">
+                <li class="header__menu-item">
+                  <a href="#" class="header__link">Home</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__link">About</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__link">Contact Us</a>
+                </li>
+                <li class="header__menu-item">
+                  <a href="#" class="header__link">Blog</a>
+                </li>
+              </ul>
+              <ul class="menu-icon">
+                <li class="menu-icon__item">
+                  <a href="#" class="menu-icon__link" aria-label="like"><span class="menu-icon__like"></span></a>
+                </li>
+                <li class="menu-icon__item">
+                  <a href="#" class="menu-icon__link" aria-label="shop"><span class="menu-icon__shop"></span></a>
+                </li>
+                <li class="menu-icon__item">
+                  <a href="#" class="menu-icon__link" aria-label="login"><span class="menu-icon__login"></span></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="header__mobile">
+            <button class="btn-menu">
+              <span class="btn-menu__span"></span>
+            </button>
+            <nav>
+              <ul class="menu-mobile">
+                <li class="menu-mobile__item">
+                  <a href="#" class="menu-mobile__link">Home</a>
+                </li>
+                <li class="menu-mobile__item">
+                  <a href="#" class="menu-mobile__link">About</a>
+                </li>
+                <li class="menu-mobile__item">
+                  <a href="#" class="menu-mobile__link">Contact Us</a>
+                </li>
+                <li class="menu-mobile__item">
+                  <a href="#" class="menu-mobile__link">Blog</a>
+                </li>
+                <li class="menu-mobile__item">
+                  <a href="#" class="menu-mobile__link" aria-label="like"><span class="header__menu-like"></span></a>
+                </li>
+                <li class="menu-mobile__item">
+                  <a href="#" class="menu-mobile__link" aria-label="shop"><span class="header__menu-shop"></span></a>
+                </li>
+                <li class="menu-mobile__item">
+                  <a href="#" class="menu-mobile__link" aria-label="login"><span class="header__menu-login"></span></a>
+                </li>
+              </ul>
+            </nav>
+            <form class="form-search">
+              <label for="input-search" class="form-search__label" id="lable-search">
+                <svg
+                  class="form-search__icon"
+                  aria-hidden="false"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 18 18"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    id="id"
+                    d="M16.9331 17L13.1554 13.2156M15.2489 8.15789C15.2489 10.0563 14.4948 11.8769 13.1524 13.2193C11.81 14.5617 9.98939 15.3158 8.091 15.3158C6.19261 15.3158 4.37197 14.5617 3.0296 13.2193C1.68724 11.8769 0.933105 10.0563 0.933105 8.15789C0.933105 6.2595 1.68724 4.43886 3.0296 3.0965C4.37197 1.75413 6.19261 1 8.091 1C9.98939 1 11.81 1.75413 13.1524 3.0965C14.4948 4.43886 15.2489 6.2595 15.2489 8.15789V8.15789Z"
+                    stroke="#989898"
+                    stroke-width="1.5"
+                    stroke-linecap="round" />
+                </svg>
+              </label>
+              <input
+                id="input-search"
+                type="search"
+                class="form-search__input"
+                placeholder="Search"
+                aria-autocomplete="both"
+                aria-labelledby="lable-search"
+                autocomplete="off"
+                autocorrect="off"
+                autocapitalize="off"
+                enterkeyhint="go" />
+              <button
+                id="button-reset"
+                class="form-search__button"
+                title="Clear the query"
+                aria-label="Clear the query">
+                <svg width="20" height="20" viewBox="0 0 20 20">
+                  <path
+                    d="M10 10l5.09-5.09L10 10l5.09 5.09L10 10zm0 0L4.91 4.91 10 10l-5.09 5.09L10 10z"
+                    stroke="currentColor"
+                    fill="none"
+                    fill-rule="evenodd"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
     </header>
-    <main class="main"></main>
+    <main class="main">
+      <section class="banner">
+        <div class="container">
+          <div class="banner__inner">
+            <div class="banner__content">
+              <h2 class="banner__suptitle">Pro.Beyond.</h2>
+              <h1 class="banner__title">IPhone 14 <span class="text-bold">Pro</span></h1>
+              <h3 class="banner__subtitle">Created to change everything for the better. For everyone</h3>
+              <a href="#" class="banner__link">Shop Now</a>
+            </div>
+            <img src="/images/phone.png" alt="Iphone 14 Pro" class="banner__img" />
+          </div>
+        </div>
+      </section>
+    </main>
     <footer class="footer"></footer>
     <script type="module" src="/src/main.js"></script>
   </body>
