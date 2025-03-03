@@ -12,7 +12,7 @@
   <body>
     <header class="header">
       <div class="container">
-        <div class="header__inner">
+        <div class="header__inner container-m">
           <a href="/" class="logo" aria-label="logo Cyber">
             <img src="/images/logo.svg" alt="Cyber logo" class="logo__img" />
           </a>
@@ -54,7 +54,7 @@
                 <svg width="20" height="20" viewBox="0 0 20 20">
                   <path
                     d="M10 10l5.09-5.09L10 10l5.09 5.09L10 10zm0 0L4.91 4.91 10 10l-5.09 5.09L10 10z"
-                    stroke="currentColor"
+                    stroke="#989898"
                     fill="none"
                     fill-rule="evenodd"
                     stroke-linecap="round"
@@ -77,21 +77,27 @@
                   <a href="#" class="header__link">Blog</a>
                 </li>
               </ul>
-              <ul class="menu-icon">
-                <li class="menu-icon__item">
-                  <a href="#" class="menu-icon__link" aria-label="like"><span class="menu-icon__like"></span></a>
+            </nav>
+            <nav class="header__nav">
+              <ul class="header__menu-list">
+                <li class="header__menu-item">
+                  <a href="#" class="header__link" aria-label="like"><span class="menu-icon__like"></span></a>
                 </li>
-                <li class="menu-icon__item">
-                  <a href="#" class="menu-icon__link" aria-label="shop"><span class="menu-icon__shop"></span></a>
+                <li class="header__menu-item">
+                  <a href="#" class="header__link" aria-label="shop"><span class="menu-icon__shop"></span></a>
                 </li>
-                <li class="menu-icon__item">
-                  <a href="#" class="menu-icon__link" aria-label="login"><span class="menu-icon__login"></span></a>
+                <li class="header__menu-item">
+                  <a href="#" class="header__link" aria-label="login"><span class="menu-icon__login"></span></a>
                 </li>
               </ul>
             </nav>
+            <label id="switch-theme" class="switch-theme" for="slider-theme">
+              <input type="checkbox" id="slider-theme" class="switch-theme__input" />
+              <span class="switch-theme__span"></span>
+            </label>
           </div>
-          <div class="header__mobile">
-            <button class="btn-menu">
+          <div class="header__mobile" hidden>
+            <button class="btn-menu" aria-label="mobile menu">
               <span class="btn-menu__span"></span>
             </button>
             <nav>
@@ -109,7 +115,9 @@
                   <a href="#" class="menu-mobile__link">Blog</a>
                 </li>
                 <li class="menu-mobile__item">
-                  <a href="#" class="menu-mobile__link" aria-label="like"><span class="header__menu-like"></span></a>
+                  <a href="#" class="menu-mobile__link" aria-label="all like"
+                    ><span class="header__menu-like"></span
+                  ></a>
                 </li>
                 <li class="menu-mobile__item">
                   <a href="#" class="menu-mobile__link" aria-label="shop"><span class="header__menu-shop"></span></a>
@@ -176,7 +184,7 @@
               <h2 class="banner__suptitle">Pro.Beyond.</h2>
               <h1 class="banner__title">IPhone 14 <span class="text-bold">Pro</span></h1>
               <h3 class="banner__subtitle">Created to change everything for the better. For everyone</h3>
-              <a href="#" class="shop-link">Shop Now</a>
+              <a href="#" class="shop-link" aria-label="shop Iphone 14pro">Shop Now</a>
             </div>
             <img src="/images/phone.png" alt="Iphone 14 Pro" class="banner__img" />
           </article>
@@ -203,7 +211,7 @@
                   The new 15-inch MacBook Air makes room for more of what you love with a spacious Liquid Retina
                   display.
                 </p>
-                <a href="#" class="shop-link">Shop Now</a>
+                <a href="#" class="shop-link" aria-label="Shop MacBook Air">Shop Now</a>
               </div>
             </article>
             <article class="banner-m__box">
@@ -229,14 +237,14 @@
             <div class="category__box">
               <h2 class="category__title">Browse By Category</h2>
               <div class="swipe__button">
-                <button class="swipe__btn-prev">
+                <button class="swipe__btn-prev" aria-label="prev">
                   <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M12.3333 23.6667C12.0678 23.6679 11.8131 23.5622 11.6266 23.3733L0.959934 12.7067C0.569996 12.3162 0.569996 11.6838 0.959934 11.2933L11.6266 0.626666C12.0206 0.259521 12.6346 0.270354 13.0154 0.65117C13.3962 1.03199 13.4071 1.64599 13.0399 2.04L3.07993 12L13.0399 21.96C13.4299 22.3504 13.4299 22.9829 13.0399 23.3733C12.8534 23.5622 12.5987 23.6679 12.3333 23.6667Z"
                       fill="black" />
                   </svg>
                 </button>
-                <button class="swipe__btn-next">
+                <button class="swipe__btn-next" aria-label="next">
                   <svg width="14" height="24" viewBox="0 0 14 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M1.66673 0.333332C1.93215 0.332079 2.18689 0.43782 2.3734 0.626667L13.0401 11.2933C13.43 11.6838 13.43 12.3162 13.0401 12.7067L2.3734 23.3733C1.97939 23.7405 1.36539 23.7296 0.984571 23.3488C0.603755 22.968 0.592921 22.354 0.960067 21.96L10.9201 12L0.960067 2.04C0.570128 1.64958 0.570128 1.01709 0.960067 0.626667C1.14658 0.43782 1.40131 0.332079 1.66673 0.333332Z"
@@ -246,37 +254,37 @@
               </div>
             </div>
             <div class="swipe-container">
-              <a href="#" class="category__link">
+              <a href="#" class="category__link" aria-label="category phones">
                 <div class="swipe-slide">
                   <img src="/images/icons/phones.svg" alt="Phones" class="category__img" />
                   <h3 class="category__name">Phones</h3>
                 </div>
               </a>
-              <a href="#" class="category__link">
+              <a href="#" class="category__link" aria-label="category smart watches">
                 <div class="swipe-slide">
                   <img src="/images/icons/watches.svg" alt="Smart Watches" class="category__img" />
                   <h3 class="category__name">Smart Watches</h3>
                 </div>
               </a>
-              <a href="#" class="category__link">
+              <a href="#" class="category__link" aria-label="category camers">
                 <div class="swipe-slide">
                   <img src="/images/icons/cameras.svg" alt="Cameras" class="category__img" />
                   <h3 class="category__name">Cameras</h3>
                 </div>
               </a>
-              <a href="#" class="category__link">
+              <a href="#" class="category__link" aria-label="category headphones">
                 <div class="swipe-slide">
                   <img src="/images/icons/headphones.svg" alt="Headphones" class="category__img" />
                   <h3 class="category__name">Headphones</h3>
                 </div>
               </a>
-              <a href="#" class="category__link">
+              <a href="#" class="category__link" aria-label="category computers">
                 <div class="swipe-slide">
                   <img src="/images/icons/computers.svg" alt="Computers" class="category__img" />
                   <h3 class="category__name">Computers</h3>
                 </div>
               </a>
-              <a href="#" class="category__link">
+              <a href="#" class="category__link" aria-label="category gaming">
                 <div class="swipe-slide">
                   <img src="/images/icons/gaming.svg" alt="Gaming" class="category__img" />
                   <h3 class="category__name">Gaming</h3>
@@ -297,7 +305,7 @@
             <div class="mix-container">
               <div class="mix-item">
                 <article class="product-card">
-                  <button class="product-card__btn">
+                  <button class="product-card__btn" aria-label="like">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -311,13 +319,13 @@
                       src="/images/products/iphone14prom.png"
                       alt="Apple iPhone 14 Pro Max 128GB Deep Purple"
                       class="product-card" />
-                    <h3 class="product-card__title">Apple iPhone 14 Pro Max 128GB Deep Purple</h3>
+                    <h3 class="product-card__title" id="pct-1">Apple iPhone 14 Pro Max 128GB Deep Purple</h3>
                     <p class="product-card__price">$900</p>
-                    <a href="#" class="product-card__link">Buy Now</a>
+                    <a href="#" class="product-card__link" aria-describedby="pct-1">Buy Now</a>
                   </div>
                 </article>
                 <article class="product-card">
-                  <button class="product-card__btn">
+                  <button class="product-card__btn" aria-label="like">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -331,13 +339,13 @@
                       src="/images/products/camera6k.png"
                       alt="Blackmagic Pocket Cinema Camera 6k"
                       class="product-card" />
-                    <h3 class="product-card__title">Blackmagic Pocket Cinema Camera 6k</h3>
+                    <h3 class="product-card__title" id="pct-2">Blackmagic Pocket Cinema Camera 6k</h3>
                     <p class="product-card__price">$2535</p>
-                    <a href="#" class="product-card__link">Buy Now</a>
+                    <a href="#" class="product-card__link" aria-describedby="pct-2">Buy Now</a>
                   </div>
                 </article>
                 <article class="product-card">
-                  <button class="product-card__btn">
+                  <button class="product-card__btn" aria-label="like">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -351,13 +359,13 @@
                       src="/images/products/watch9.png"
                       alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium"
                       class="product-card" />
-                    <h3 class="product-card__title">Apple Watch Series 9 GPS 41mm Starlight Aluminium</h3>
+                    <h3 class="product-card__title" id="pct-3">Apple Watch Series 9 GPS 41mm Starlight Aluminium</h3>
                     <p class="product-card__price">$399</p>
-                    <a href="#" class="product-card__link">Buy Now</a>
+                    <a href="#" class="product-card__link" aria-describedby="pct-3">Buy Now</a>
                   </div>
                 </article>
                 <article class="product-card">
-                  <button class="product-card__btn">
+                  <button class="product-card__btn" aria-label="like">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -371,13 +379,13 @@
                       src="/images/products/airpods-max-s.png"
                       alt="AirPods Max Silver Starlight Aluminium"
                       class="product-card" />
-                    <h3 class="product-card__title">AirPods Max Silver Starlight Aluminium</h3>
+                    <h3 class="product-card__title" id="pct-4">AirPods Max Silver Starlight Aluminium</h3>
                     <p class="product-card__price">$549</p>
-                    <a href="#" class="product-card__link">Buy Now</a>
+                    <a href="#" class="product-card__link" aria-describedby="pct-4">Buy Now</a>
                   </div>
                 </article>
                 <article class="product-card">
-                  <button class="product-card__btn">
+                  <button class="product-card__btn" aria-label="like">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -391,13 +399,13 @@
                       src="/images/products/galaxy-watch6.png"
                       alt="Samsung Galaxy Watch6 Classic 47mm Black"
                       class="product-card" />
-                    <h3 class="product-card__title">Samsung Galaxy Watch6 Classic 47mm Black</h3>
+                    <h3 class="product-card__title" id="pct-5">Samsung Galaxy Watch6 Classic 47mm Black</h3>
                     <p class="product-card__price">$369</p>
-                    <a href="#" class="product-card__link">Buy Now</a>
+                    <a href="#" class="product-card__link" aria-describedby="pct-5">Buy Now</a>
                   </div>
                 </article>
                 <article class="product-card">
-                  <button class="product-card__btn">
+                  <button class="product-card__btn" aria-label="like">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -411,13 +419,13 @@
                       src="/images/products/galaxy-z-fold5.png"
                       alt="Galaxy Z Fold5 Unlocked | 256GB | Phantom Black"
                       class="product-card" />
-                    <h3 class="product-card__title">Galaxy Z Fold5 Unlocked | 256GB | Phantom Black</h3>
+                    <h3 class="product-card__title" id="pct-6">Galaxy Z Fold5 Unlocked | 256GB | Phantom Black</h3>
                     <p class="product-card__price">$1799</p>
-                    <a href="#" class="product-card__link">Buy Now</a>
+                    <a href="#" class="product-card__link" aria-describedby="pct-6">Buy Now</a>
                   </div>
                 </article>
                 <article class="product-card">
-                  <button class="product-card__btn">
+                  <button class="product-card__btn" aria-label="like">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -428,13 +436,13 @@
                   </button>
                   <div class="product-card__inner">
                     <img src="/images/products/galaxy-buds.png" alt="Galaxy Buds FE Graphite" class="product-card" />
-                    <h3 class="product-card__title">Galaxy Buds FE Graphite</h3>
+                    <h3 class="product-card__title" id="pct-7">Galaxy Buds FE Graphite</h3>
                     <p class="product-card__price">$99.99</p>
-                    <a href="#" class="product-card__link">Buy Now</a>
+                    <a href="#" class="product-card__link" aria-describedby="pct-7">Buy Now</a>
                   </div>
                 </article>
                 <article class="product-card">
-                  <button class="product-card__btn">
+                  <button class="product-card__btn" aria-label="like">
                     <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path
                         d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -448,9 +456,9 @@
                       src="/images/products/ipad9.png"
                       alt="Apple iPad 9 10.2 64GB Wi-Fi Silver (MK2L3) 2021"
                       class="product-card" />
-                    <h3 class="product-card__title">Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021</h3>
+                    <h3 class="product-card__title" id="pct-8">Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021</h3>
                     <p class="product-card__price">$398</p>
-                    <a href="#" class="product-card__link">Buy Now</a>
+                    <a href="#" class="product-card__link" aria-describedby="pct-8">Buy Now</a>
                   </div>
                 </article>
               </div>
@@ -463,39 +471,39 @@
           <div class="banners__inner">
             <article class="banners__card">
               <img src="/images/popular.png" alt="Popular Products" class="banners__img" />
-              <h2 class="banners__title">Popular Products</h2>
+              <h2 class="banners__title" id="bt-1">Popular Products</h2>
               <p class="banners__text">
                 iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of
                 use.
               </p>
-              <a href="#" class="banners__link">Shop Now</a>
+              <a href="#" class="banners__link" aria-describedby="bt-1">Shop Now</a>
             </article>
             <article class="banners__card">
               <img src="/images/ipad-pro.png" alt="Ipad Pro" class="banners__img" />
-              <h2 class="banners__title">Ipad Pro</h2>
+              <h2 class="banners__title" id="bt-2">Ipad Pro</h2>
               <p class="banners__text">
                 iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of
                 use.
               </p>
-              <a href="#" class="banners__link">Shop Now</a>
+              <a href="#" class="banners__link" aria-describedby="bt-2">Shop Now</a>
             </article>
             <article class="banners__card">
               <img src="/images/samsung-galaxy.png " alt="Samsung Galaxy " class="banners__img" />
-              <h2 class="banners__title">Samsung Galaxy</h2>
+              <h2 class="banners__title" id="bt-3">Samsung Galaxy</h2>
               <p class="banners__text">
                 iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of
                 use.
               </p>
-              <a href="#" class="banners__link">Shop Now</a>
+              <a href="#" class="banners__link" aria-describedby="bt-3">Shop Now</a>
             </article>
             <article class="banners__card">
               <img src="/images/macbook-pro.png" alt="Macbook Pro" class="banners__img" />
-              <h2 class="banners__title">Macbook Pro</h2>
+              <h2 class="banners__title" id="bt-4">Macbook Pro</h2>
               <p class="banners__text">
                 iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of
                 use.
               </p>
-              <a href="#" class="banners__link">Shop Now</a>
+              <a href="#" class="banners__link" aria-describedby="bt-4">Shop Now</a>
             </article>
           </div>
         </div>
@@ -506,7 +514,7 @@
             <h2 class="discount__title">Discounts up to -50%</h2>
             <div class="discount__box">
               <article class="product-card">
-                <button class="product-card__btn">
+                <button class="product-card__btn" aria-label="like">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -520,13 +528,13 @@
                     src="/images/products/iphone14-pro-gold-512.png"
                     alt="Apple iPhone 14 Pro 512GB Gold (MQ233)"
                     class="product-card" />
-                  <h3 class="product-card__title">Apple iPhone 14 Pro 512GB Gold (MQ233)</h3>
+                  <h3 class="product-card__title" id="pct-iphone-14pro-512">Apple iPhone 14 Pro 512GB Gold (MQ233)</h3>
                   <p class="product-card__price">$1437</p>
-                  <a href="#" class="product-card__link">Buy Now</a>
+                  <a href="#" class="product-card__link" aria-describedby="pct-iphone-14pro-512">Buy Now</a>
                 </div>
               </article>
               <article class="product-card">
-                <button class="product-card__btn">
+                <button class="product-card__btn" aria-label="like">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -540,13 +548,13 @@
                     src="/images/products/airpods-max-s.png"
                     alt="AirPods Max Silver Starlight Aluminium"
                     class="product-card" />
-                  <h3 class="product-card__title">AirPods Max Silver Starlight Aluminium</h3>
+                  <h3 class="product-card__title" id="pct-airpods-max">AirPods Max Silver Starlight Aluminium</h3>
                   <p class="product-card__price">$549</p>
-                  <a href="#" class="product-card__link">Buy Now</a>
+                  <a href="#" class="product-card__link" aria-describedby="pct-airpods-max">Buy Now</a>
                 </div>
               </article>
               <article class="product-card">
-                <button class="product-card__btn">
+                <button class="product-card__btn" aria-label="like">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -560,13 +568,15 @@
                     src="/images/products/watch9.png"
                     alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium"
                     class="product-card" />
-                  <h3 class="product-card__title">Apple Watch Series 9 GPS 41mm Starlight Aluminium</h3>
+                  <h3 class="product-card__title" id="pct-apple-watch">
+                    Apple Watch Series 9 GPS 41mm Starlight Aluminium
+                  </h3>
                   <p class="product-card__price">$399</p>
-                  <a href="#" class="product-card__link">Buy Now</a>
+                  <a href="#" class="product-card__link" aria-describedby="pct-apple-watch">Buy Now</a>
                 </div>
               </article>
               <article class="product-card">
-                <button class="product-card__btn">
+                <button class="product-card__btn" aria-label="like">
                   <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M5.93415 18.5443L15.3152 27.3569C15.6397 27.6616 15.8019 27.814 15.9999 27.814C16.1979 27.814 16.3602 27.6616 16.6846 27.3569L26.0657 18.5443C28.6739 16.0942 28.9907 12.0622 26.797 9.2348L26.3845 8.70316C23.7603 5.32081 18.4928 5.88806 16.6488 9.75157C16.3883 10.2973 15.6115 10.2973 15.351 9.75157C13.5071 5.88806 8.23955 5.32081 5.61531 8.70316L5.20284 9.2348C3.00918 12.0622 3.32592 16.0942 5.93415 18.5443Z"
@@ -580,9 +590,9 @@
                     src="/images/products/iphone14-pro-gold.png"
                     alt="Apple iPhone 14 Pro 1TB Gold (MQ2V3)"
                     class="product-card" />
-                  <h3 class="product-card__title">Apple iPhone 14 Pro 1TB Gold (MQ2V3)</h3>
+                  <h3 class="product-card__title" id="pct-iphone-14pro">Apple iPhone 14 Pro 1TB Gold (MQ2V3)</h3>
                   <p class="product-card__price">$1499</p>
-                  <a href="#" class="product-card__link">Buy Now</a>
+                  <a href="#" class="product-card__link" aria-describedby="pct-iphone-14pro">Buy Now</a>
                 </div>
               </article>
             </div>
@@ -592,9 +602,9 @@
       <section class="banner-2">
         <div class="container">
           <div class="banner-2__inner">
-            <h2 class="banner-2__title">Big Summer <span>Sale</span></h2>
-            <h3 class="banner-2__subtitle">Big Summer Sale</h3>
-            <a href="#" class="banner-2__link">Shop Now</a>
+            <h2 class="banner-2__title" id="banner-2-title">Big Summer <span>Sale</span></h2>
+            <h3 class="banner-2__subtitle">Commodo fames vitae vitae leo mauris in. Eu consequat.</h3>
+            <a href="#" class="banner-2__link" aria-describedby="banner-2-title">Shop Now</a>
           </div>
         </div>
       </section>
@@ -663,7 +673,7 @@
             </div>
           </div>
           <div class="footer__social-media">
-            <a href="#" class="footer__link">
+            <a href="#" class="footer__link" aria-label="twitter">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   fill-rule="evenodd"
@@ -672,21 +682,21 @@
                   fill="white" />
               </svg>
             </a>
-            <a href="#" class="footer__link">
+            <a href="#" class="footer__link" aria-label="facebook">
               <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M9.18082 3.81794C9.18082 3.98169 9.18082 4.51541 9.18082 5.27366H11.7878L11.5052 7.59763H9.18082C9.18082 11.1816 9.18082 15.9843 9.18082 15.9843H6.09563C6.09563 15.9843 6.09563 11.2452 6.09563 7.59763H4.48804V5.27366H6.09563C6.09563 4.35204 6.09563 3.69669 6.09563 3.51422C6.09563 2.64485 6.03013 2.23235 6.39954 1.55866C6.76913 0.885005 7.81163 -0.00543266 9.61472 0.0160048C11.4183 0.0382236 12.1785 0.211724 12.1785 0.211724L11.7878 2.6885C11.7878 2.6885 10.6362 2.38441 10.0709 2.49279C9.50635 2.60119 9.18082 2.94894 9.18082 3.81794Z"
                   fill="white" />
               </svg>
             </a>
-            <a href="#" class="footer__link">
+            <a href="#" class="footer__link" aria-label="tiktok">
               <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M12.5504 3.358C11.891 2.59144 11.5456 1.60104 11.5731 0.592723L9.10925 0.533203C9.10925 0.533203 9.10925 0.638323 9.10925 0.780083V10.6602C9.14365 13.786 4.20509 13.7102 4.59581 10.2551C4.83469 8.88136 6.31085 8.03592 7.62253 8.51384V5.99992C4.76685 5.50264 2.06061 7.7756 2.08909 10.6713C2.33869 16.9513 11.3461 16.9521 11.596 10.6713C11.5331 10.4465 11.5683 6.26152 11.5593 5.90856C12.6797 6.60568 13.9832 6.95416 15.3033 6.90952V4.3132C14.0829 4.3132 13.1515 3.98872 12.5504 3.358Z"
                   fill="white" />
               </svg>
             </a>
-            <a href="#" class="footer__link">
+            <a href="#" class="footer__link" aria-label="instagram">
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <g clip-path="url(#clip0_2615_1692)">
                   <path

@@ -1,1 +1,58 @@
 @use 'modules/forward-style' as forward;
+
+//Header
+.header {
+  &__inner {
+    padding: 1rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__menu-list {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+}
+
+//Form-search
+.form-search {
+  width: 375px;
+  position: relative;
+
+  &__label {
+    position: absolute;
+    top: 20%;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+  }
+
+  &__input {
+    width: 100%;
+  }
+
+  &__button {
+    padding: 2px;
+    position: absolute;
+    top: 10%;
+    right: 0;
+    border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+  }
+}
