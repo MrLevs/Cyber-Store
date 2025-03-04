@@ -3,6 +3,14 @@
 body {
   display: grid;
   grid-template-rows: auto 1fr auto;
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  text-decoration: none;
+  & svg {
+    display: block;
+  }
 }
 
 .container {

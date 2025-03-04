@@ -54,7 +54,7 @@
                 <svg width="20" height="20" viewBox="0 0 20 20">
                   <path
                     d="M10 10l5.09-5.09L10 10l5.09 5.09L10 10zm0 0L4.91 4.91 10 10l-5.09 5.09L10 10z"
-                    stroke="#989898"
+                    stroke="#000000"
                     fill="none"
                     fill-rule="evenodd"
                     stroke-linecap="round"
@@ -65,7 +65,7 @@
             <nav class="header__nav">
               <ul class="header__menu-list">
                 <li class="header__menu-item">
-                  <a href="#" class="header__link">Home</a>
+                  <a href="#" class="header__link header__link_active">Home</a>
                 </li>
                 <li class="header__menu-item">
                   <a href="#" class="header__link">About</a>
@@ -79,15 +79,48 @@
               </ul>
             </nav>
             <nav class="header__nav">
-              <ul class="header__menu-list">
+              <ul class="header__menu-list header__menu-list_icon">
                 <li class="header__menu-item">
-                  <a href="#" class="header__link" aria-label="like"><span class="menu-icon__like"></span></a>
+                  <a href="#" class="header__link" aria-label="like">
+                    <svg
+                      class="header__like"
+                      width="22"
+                      height="20"
+                      viewBox="0 0 22 20"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M6 1C3.239 1 1 3.216 1 5.95C1 8.157 1.875 13.395 10.488 18.69C10.6423 18.7839 10.8194 18.8335 11 18.8335C11.1806 18.8335 11.3577 18.7839 11.512 18.69C20.125 13.395 21 8.157 21 5.95C21 3.216 18.761 1 16 1C13.239 1 11 4 11 4C11 4 8.761 1 6 1Z"
+                        stroke="black"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </a>
                 </li>
                 <li class="header__menu-item">
-                  <a href="#" class="header__link" aria-label="shop"><span class="menu-icon__shop"></span></a>
+                  <a href="#" class="header__link" aria-label="shop">
+                    <svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M1 1H5L8 18H24M8 12.6667H23.59C23.7056 12.6667 23.8177 12.6267 23.9072 12.5535C23.9966 12.4802 24.0579 12.3782 24.0806 12.2648L25.8806 3.26479C25.8951 3.19222 25.8934 3.11733 25.8755 3.04552C25.8575 2.97372 25.8239 2.90679 25.7769 2.84956C25.73 2.79234 25.6709 2.74625 25.604 2.71462C25.5371 2.68299 25.464 2.66662 25.39 2.66667H6M10 22C10 22.5523 9.55228 23 9 23C8.44772 23 8 22.5523 8 22C8 21.4477 8.44772 21 9 21C9.55228 21 10 21.4477 10 22ZM24 22C24 22.5523 23.5523 23 23 23C22.4477 23 22 22.5523 22 22C22 21.4477 22.4477 21 23 21C23.5523 21 24 21.4477 24 22Z"
+                        stroke="black"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </a>
                 </li>
                 <li class="header__menu-item">
-                  <a href="#" class="header__link" aria-label="login"><span class="menu-icon__login"></span></a>
+                  <a href="#" class="header__link" aria-label="login">
+                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M18 23V20.3333C18 18.9188 17.5224 17.5623 16.6722 16.5621C15.8221 15.5619 14.669 15 13.4667 15H5.53333C4.33102 15 3.17795 15.5619 2.32778 16.5621C1.47762 17.5623 1 18.9188 1 20.3333V23M15 5.5C15 7.98528 12.9853 10 10.5 10C8.01472 10 6 7.98528 6 5.5C6 3.01472 8.01472 1 10.5 1C12.9853 1 15 3.01472 15 5.5Z"
+                        stroke="black"
+                        stroke-width="1.5"
+                        stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </a>
                 </li>
               </ul>
             </nav>
