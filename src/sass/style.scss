@@ -1,8 +1,8 @@
-@use './modules/forward-style.scss' as *;
+@use './modules/forward-style.scss' as var;
 
 //-------Header-------
 .header {
-  background-color: $header-bg;
+  background-color: var.$header-bg;
   transition: background-color ease 0.5s;
 
   &__inner {
@@ -12,13 +12,6 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-  }
-
-  .logo {
-    & svg > path {
-      fill: $logo-bg;
-      transition: fill ease 0.5s;
-    }
   }
 
   &__block {
@@ -45,7 +38,7 @@
   &__link {
     display: block;
     font-size: 1rem;
-    color: $header-link-color;
+    color: var.$header-link-color;
     opacity: 0.6;
     transition:
       opacity ease 0.2s,
@@ -58,11 +51,19 @@
     }
     & svg > path {
       transition: stroke ease 0.5s;
-      stroke: $header-link-stroke;
+      stroke: var.$header-link-stroke;
     }
     &_active {
       opacity: 1;
     }
+  }
+}
+
+//------Logo--------
+.logo {
+  & svg > path {
+    fill: var.$logo-bg;
+    transition: fill ease 0.5s;
   }
 }
 
@@ -83,7 +84,7 @@
     opacity: 0.6;
     cursor: pointer;
     & svg > path {
-      stroke: $form-search-stroke;
+      stroke: var.$form-search-stroke;
       transition: stroke ease 0.5s;
     }
   }
@@ -92,15 +93,15 @@
     padding: 0.875em 1.25em 0.875em 2.5em;
     width: 100%;
     font-size: 1rem;
-    background-color: $form-search-input-bg;
+    background-color: var.$form-search-input-bg;
     border: none;
     border-radius: 8px;
-    color: $form-search-input-color;
+    color: var.$form-search-input-color;
     transition:
       background-color ease 0.5s,
       color ease 0.5s;
     &::placeholder {
-      color: $form-search-input-color;
+      color: var.$form-search-input-color;
       transition: color ease 0.5s;
       opacity: 0.6;
     }
@@ -115,14 +116,14 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: $form-search-input-bg;
+    background-color: var.$form-search-input-bg;
     cursor: pointer;
     opacity: 0.6;
     transition:
       background-color ease 0.5s,
       opacity ease 0.2s;
     & svg > path {
-      stroke: $form-search-stroke;
+      stroke: var.$form-search-stroke;
     }
     &:hover {
       opacity: 1;
@@ -136,7 +137,7 @@
   display: inline-block;
   width: 74px;
   height: 38px;
-  background-color: $switch-theme-bg;
+  background-color: var.$switch-theme-bg;
   border: #000000 1px solid;
   border-radius: 34px;
   transition: background-color ease 0.5s;
@@ -198,7 +199,28 @@
 
 //-------Main-------
 //-------Banner-------
+.banner {
+  width: 100vw;
+  height: calc(100vh - 84px);
+  background-color: var.$banner-bg;
 
+  &__inner {
+    width: 100%;
+    height: calc(100vh - 84px);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+  }
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+}
 //-------footer-------
 .footer {
   &__link {

@@ -17,9 +17,9 @@ export function toggleTheme() {
 export function runTheme() {
   if (localStorage.getItem('theme') === 'theme-dark') {
     setTheme('theme-dark');
-    document.getElementById('slider-theme').checked = false;
+    document.querySelector('#slider-theme').checked = false;
   } else {
     setTheme('theme-light');
-    document.getElementById('slider-theme').checked = true;
+    document.querySelector('#slider-theme').checked = true;
   }
 }
