@@ -1,4 +1,4 @@
-@use 'variables';
+@use 'variables' as *;
 
 body {
   display: grid;
@@ -11,6 +11,32 @@ a {
   & svg {
     display: block;
   }
+}
+
+//-------Switch Theme------
+.theme-light {
+  //---Header---
+  --header-bg: #fff;
+  --logo-bg: black;
+  --header-link-color: #000;
+  --header-link-stroke: #000;
+  --form-search-stroke: #989898;
+  --form-search-input-bg: #f5f5f5;
+  --form-search-input-color: #000;
+
+  --switch-theme-bg: #304272;
+}
+
+.theme-dark {
+  --header-bg: #141a2e;
+  --logo-bg: rgb(255, 255, 255);
+  --header-link-color: #fff;
+  --header-link-stroke: #fff;
+  --form-search-stroke: #fff;
+  --form-search-input-bg: #1d2a56;
+  --form-search-input-color: #fff;
+
+  --switch-theme-bg: rgb(156, 82, 82);
 }
 
 .container {
