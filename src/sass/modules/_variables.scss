@@ -1,4 +1,6 @@
 //---var switch-theme----
+//---Body----
+$body-bg: var(--body-bg);
 //---Header----
 $header-bg: var(--header-bg);
 $logo-bg: var(--logo-bg);
@@ -10,3 +12,8 @@ $form-search-input-color: var(--form-search-input-color);
 $switch-theme-bg: var(--switch-theme-bg);
 //---Banner-----
 $banner-bg: var(--banner-bg);
+$banner-suptitle-color: var(--banner-suptitle-color);
+$banner-title-color: var(--banner-title-color);
+$banner-subtitle-color: var(--banner-subtitle-color);
+//---shop-link----
+$shop-link-color: var(--shop-link-color);
