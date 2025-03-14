@@ -1,202 +1,6 @@
 @use './modules/forward-style.scss' as var;
 
-//-------Header-------
-.header {
-  background-color: var.$header-bg;
-  transition: background-color ease 0.5s;
-
-  &__inner {
-    font-size: 1.5rem;
-    padding: 0.66666em 0;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-
-  &__block {
-    width: 90%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0 2.1em;
-  }
-
-  &__menu-list {
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0 2.1em;
-    list-style: none;
-    &_icon {
-      gap: 0 1em;
-    }
-  }
-
-  &__link {
-    display: block;
-    font-size: 1rem;
-    color: var.$header-link-color;
-    opacity: 0.6;
-    transition:
-      opacity ease 0.2s,
-      color ease 0.5s;
-    &:hover {
-      opacity: 1;
-      & .header__like {
-        fill: red;
-      }
-    }
-    & svg > path {
-      transition: stroke ease 0.5s;
-      stroke: var.$header-link-stroke;
-    }
-    &_active {
-      opacity: 1;
-    }
-  }
-}
-
-//------Logo--------
-.logo {
-  & svg > path {
-    fill: var.$logo-bg;
-    transition: fill ease 0.5s;
-  }
-}
-
-//-------Form-search-------
-.form-search {
-  max-width: 375px;
-  width: 35%;
-  position: relative;
-
-  &__label {
-    position: absolute;
-    top: 30.8%;
-    left: 4.26%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: none;
-    opacity: 0.6;
-    cursor: pointer;
-    & svg > path {
-      stroke: var.$form-search-stroke;
-      transition: stroke ease 0.5s;
-    }
-  }
-
-  &__input {
-    padding: 0.875em 1.25em 0.875em 2.5em;
-    width: 100%;
-    font-size: 1rem;
-    background-color: var.$form-search-input-bg;
-    border: none;
-    border-radius: 8px;
-    color: var.$form-search-input-color;
-    transition:
-      background-color ease 0.5s,
-      color ease 0.5s;
-    &::placeholder {
-      color: var.$form-search-input-color;
-      transition: color ease 0.5s;
-      opacity: 0.6;
-    }
-  }
-
-  &__button {
-    padding: 0.08333em;
-    position: absolute;
-    top: 26.923%;
-    right: 4.26%;
-    border: 0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var.$form-search-input-bg;
-    cursor: pointer;
-    opacity: 0.6;
-    transition:
-      background-color ease 0.5s,
-      opacity ease 0.2s;
-    & svg > path {
-      stroke: var.$form-search-stroke;
-    }
-    &:hover {
-      opacity: 1;
-    }
-  }
-}
-
-//-------Switch Theme-------
-.switch-theme {
-  position: relative;
-  display: inline-block;
-  width: 74px;
-  height: 38px;
-  background-color: var.$switch-theme-bg;
-  border: #000000 1px solid;
-  border-radius: 34px;
-  transition: background-color ease 0.5s;
-  cursor: pointer;
-
-  &::before {
-    position: absolute;
-    content: '';
-    width: 34px;
-    height: 34px;
-    top: 1px;
-    left: 4px;
-    background-image: url('/images/moon.png');
-    background-position: center;
-    background-repeat: no-repeat;
-    z-index: 100;
-  }
-
-  &::after {
-    position: absolute;
-    content: '';
-    width: 34px;
-    height: 34px;
-    top: 1px;
-    right: 2px;
-    background-image: url('/images/sun.png');
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-
-  &__input {
-    opacity: 0;
-    width: 0;
-    height: 0;
-
-    &:checked + .switch-theme__span {
-      transform: translateX(calc(100%));
-    }
-  }
-
-  &__span {
-    position: absolute;
-    top: -2px;
-    right: 0;
-    left: -3px;
-    bottom: 0;
-    height: 40px;
-    width: 40px;
-    background-color: white;
-    border: 1px solid black;
-    border-radius: 50%;
-    transition: transform ease 0.5s;
-    will-change: transform;
-    cursor: pointer;
-    z-index: 100;
-  }
-}
-//-----.theme-light and .theme-dark in global.scss----
-
+//----Header and Footer in global.scss---
 //-------Main-------
 //-------Banner-------
 .banner {
@@ -251,7 +55,7 @@
 
 //-------shop-link-----
 .shop-link {
-  padding: 1rem 3.5rem;
+  padding: 1em 3.5em;
   border: 1px solid #fff;
   border-radius: 0.375rem;
   font-size: 1rem;
@@ -280,14 +84,15 @@
   }
 
   &__box {
-    padding: 0 3.125rem 0 0;
+    padding: 0 3.125em 0 0;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 0 1rem;
+    transition: background-color ease 0.5s;
     &_1 {
-      background-color: #fff;
+      background-color: var.$banner-m-bg-box-1;
       grid-column-start: 1;
       grid-column-end: 3;
     }
@@ -295,7 +100,7 @@
     &_2 {
       padding: 0 0 0 3.125rem;
       flex-direction: row-reverse;
-      background-color: #ededed;
+      background-color: var.$banner-m-bg-box-2;
       grid-row-start: 1;
       grid-row-end: 3;
       grid-column-start: 3;
@@ -303,11 +108,11 @@
     }
 
     &_3 {
-      background-color: #ededed;
+      background-color: var.$banner-m-bg-box-3;
     }
 
     &_4 {
-      background-color: #353535;
+      background-color: var.$banner-m-bg-box-4;
     }
   }
 
@@ -317,10 +122,45 @@
     align-items: flex-start;
     gap: 1rem 0;
   }
-}
-//-------footer-------
-.footer {
-  &__link {
-    display: block;
+
+  &__title {
+    font-size: 3.125rem;
+    font-weight: 500;
+    color: var.$banner-m-color-title-box-1;
+    transition: color ease 0.5s;
+
+    &_font2 {
+      font-size: 4rem;
+      font-weight: 100;
+      color: var.$banner-m-color-title-box-2;
+      & span {
+        font-weight: 500;
+      }
+    }
+
+    &_font3 {
+      font-size: 1.875rem;
+      font-weight: 300;
+      color: var.$banner-m-color-title-box-3;
+      & span {
+        font-weight: 500;
+      }
+    }
+
+    &_font4 {
+      font-size: 1.875rem;
+      font-weight: 300;
+      color: var.$banner-m-color-title-box-4;
+      & span {
+        font-weight: 500;
+      }
+    }
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var.$banner-m-color-text;
+    transition: color ease 0.5s;
   }
 }
