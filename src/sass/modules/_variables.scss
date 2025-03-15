@@ -1,6 +1,7 @@
 //---var switch-theme----
 //---Body----
 $body-bg: var(--body-bg);
+
 //---Header----
 $header-bg: var(--header-bg);
 $logo-bg: var(--logo-bg);
@@ -10,13 +11,20 @@ $form-search-stroke: var(--form-search-stroke);
 $form-search-input-bg: var(--form-search-input-bg);
 $form-search-input-color: var(--form-search-input-color);
 $switch-theme-bg: var(--switch-theme-bg);
+
+//---index.html----
+//---Main-------
 //---Banner-----
 $banner-bg: var(--banner-bg);
 $banner-suptitle-color: var(--banner-suptitle-color);
 $banner-title-color: var(--banner-title-color);
 $banner-subtitle-color: var(--banner-subtitle-color);
+
 //---shop-link----
 $shop-link-color: var(--shop-link-color);
+$shop-link-color-dark: var(--shop-link-color-dark);
+$shop-link_color-border-color: var(--shop-link_color-border-color);
+
 //---Banner-m-------
 $banner-m-bg-box-1: var(--banner-m-bg-box-1);
 $banner-m-bg-box-2: var(--banner-m-bg-box-2);
@@ -27,3 +35,16 @@ $banner-m-color-title-box-2: var(--banner-m-color-title-box-2);
 $banner-m-color-title-box-3: var(--banner-m-color-title-box-3);
 $banner-m-color-title-box-4: var(--banner-m-color-title-box-4);
 $banner-m-color-text: var(--banner-m-color-text);
+
+//---Category-------
+$category-bg: var(--category-bg);
+$category-title-color: var(--category-title-color);
+$category-svg-stroke: var(--category-svg-stroke);
+$category-name-color: var(--category-name-color);
+
+//---Swipe-------
+$swipe-btn-fill: var(--swipe-btn-fill);
+$swipe-slide-bg: var(--swipe-slide-bg);
+
+//---Products----
+$products-svg-stroke: var(--products-svg-stroke);

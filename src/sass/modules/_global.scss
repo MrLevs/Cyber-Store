@@ -59,7 +59,7 @@ a {
     gap: 0 2.1em;
     list-style: none;
     &_icon {
-      gap: 0 1em;
+      gap: 0 0.8em;
     }
   }
 
@@ -77,9 +77,9 @@ a {
         fill: red;
       }
     }
-    & svg > path {
-      transition: stroke ease 0.5s;
+    svg {
       stroke: var.$header-link-stroke;
+      transition: stroke ease 0.5s;
     }
     &_active {
       opacity: 1;
@@ -89,7 +89,7 @@ a {
 
 //------Logo--------
 .logo {
-  & svg > path {
+  &__svg {
     fill: var.$logo-bg;
     transition: fill ease 0.5s;
   }
@@ -111,7 +111,7 @@ a {
     background: none;
     opacity: 0.6;
     cursor: pointer;
-    & svg > path {
+    svg {
       stroke: var.$form-search-stroke;
       transition: stroke ease 0.5s;
     }
@@ -150,8 +150,9 @@ a {
     transition:
       background-color ease 0.5s,
       opacity ease 0.2s;
-    & svg > path {
+    svg {
       stroke: var.$form-search-stroke;
+      transition: stroke ease 0.5s;
     }
     &:hover {
       opacity: 1;
@@ -224,10 +225,11 @@ a {
   }
 }
 
-//-------Switch Theme------
+//------Themes----------
 .theme-light {
   //---Body----
   --body-bg: #dfdfdf;
+
   //---Header---
   --header-bg: #fff;
   --logo-bg: black;
@@ -237,13 +239,18 @@ a {
   --form-search-input-bg: #f5f5f5;
   --form-search-input-color: #000;
   --switch-theme-bg: #304272;
+
   //---Banner-----
   --banner-bg: #211c24;
   --banner-suptitle-color: #909090;
   --banner-title-color: #fff;
   --banner-subtitle-color: #909090;
+
   //---shop-link----
   --shop-link-color: #fff;
+  --shop-link-color-dark: #000;
+  --shop-link_color-border-color: #000;
+
   //---Banner-m-------
   --banner-m-bg-box-1: #fff;
   --banner-m-bg-box-2: #ededed;
@@ -254,11 +261,25 @@ a {
   --banner-m-color-title-box-3: #000;
   --banner-m-color-title-box-4: #fff;
   --banner-m-color-text: #909090;
+
+  //---Category-------
+  --category-bg: #fafafa;
+  --category-title-color: #000;
+  --category-svg-stroke: #000;
+  --category-name-color: #000;
+
+  //---Swipe-------
+  --swipe-btn-fill: #000;
+  --swipe-slide-bg: #ededed;
+
+  //---Products----
+  --products-svg-stroke: #909090;
 }
 
 .theme-dark {
   //---Body----
   --body-bg: #120724;
+
   //---Header---
   --header-bg: #141a2e;
   --logo-bg: rgb(255, 255, 255);
@@ -268,13 +289,18 @@ a {
   --form-search-input-bg: #1d2a56;
   --form-search-input-color: #fff;
   --switch-theme-bg: rgb(156, 82, 82);
+
   //---Banner-----
   --banner-bg: #170b1e;
   --banner-suptitle-color: #fff;
   --banner-title-color: #fff;
   --banner-subtitle-color: #fff;
+
   //---shop-link----
   --shop-link-color: #fff;
+  --shop-link-color-dark: #fff;
+  --shop-link_color-border-color: #fff;
+
   //---Banner-m-------
   --banner-m-bg-box-1: #262222;
   --banner-m-bg-box-2: #2e1818;
@@ -285,11 +311,29 @@ a {
   --banner-m-color-title-box-3: #fff;
   --banner-m-color-title-box-4: #fff;
   --banner-m-color-text: #fff;
+
+  //---Category-------
+  --category-bg: #141842;
+  --category-title-color: #fff;
+  --category-svg-stroke: #fff;
+  --category-name-color: #fff;
+
+  //---Swipe-------
+  --swipe-btn-fill: #fff;
+  --swipe-slide-bg: #012e32;
+
+  //---Products----
+  --products-svg-stroke: #fff;
 }
 
 //-------footer-------
 .footer {
   &__link {
     display: block;
+  }
+
+  &__svg {
+    fill: #fff;
+    stroke: #000;
   }
 }
