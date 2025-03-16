@@ -6,7 +6,7 @@ body {
   font-family: 'Inter', sans-serif;
   overflow-x: hidden;
   background-color: var.$body-bg;
-  transition: background-color ease 0.5s;
+  transition: var.$transition-bg;
 }
 
 a {
@@ -26,12 +26,13 @@ a {
 .container-m {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0;
 }
 
 //-------Header-------
 .header {
   background-color: var.$header-bg;
-  transition: background-color ease 0.5s;
+  transition: var.$transition-bg;
 
   &__inner {
     font-size: 1.5rem;
@@ -68,9 +69,7 @@ a {
     font-size: 1rem;
     color: var.$header-link-color;
     opacity: 0.6;
-    transition:
-      opacity ease 0.2s,
-      color ease 0.5s;
+    transition: var.$transition-opacity, var.$transition-color;
     &:hover {
       opacity: 1;
       & .header__like {
@@ -79,7 +78,7 @@ a {
     }
     svg {
       stroke: var.$header-link-stroke;
-      transition: stroke ease 0.5s;
+      transition: var.$transition-stroke;
     }
     &_active {
       opacity: 1;
@@ -91,7 +90,7 @@ a {
 .logo {
   &__svg {
     fill: var.$logo-bg;
-    transition: fill ease 0.5s;
+    transition: var.$transition-fill;
   }
 }
 
@@ -113,7 +112,7 @@ a {
     cursor: pointer;
     svg {
       stroke: var.$form-search-stroke;
-      transition: stroke ease 0.5s;
+      transition: var.$transition-stroke;
     }
   }
 
@@ -125,12 +124,10 @@ a {
     border: none;
     border-radius: 8px;
     color: var.$form-search-input-color;
-    transition:
-      background-color ease 0.5s,
-      color ease 0.5s;
+    transition: var.$transition-bg, var.$transition-color;
     &::placeholder {
       color: var.$form-search-input-color;
-      transition: color ease 0.5s;
+      transition: var.$transition-color;
       opacity: 0.6;
     }
   }
@@ -147,12 +144,10 @@ a {
     background-color: var.$form-search-input-bg;
     cursor: pointer;
     opacity: 0.6;
-    transition:
-      background-color ease 0.5s,
-      opacity ease 0.2s;
+    transition: var.$transition-bg, var.$transition-opacity;
     svg {
       stroke: var.$form-search-stroke;
-      transition: stroke ease 0.5s;
+      transition: var.$transition-stroke;
     }
     &:hover {
       opacity: 1;
@@ -169,7 +164,7 @@ a {
   background-color: var.$switch-theme-bg;
   border: #000000 1px solid;
   border-radius: 34px;
-  transition: background-color ease 0.5s;
+  transition: var.$transition-bg;
   cursor: pointer;
 
   &::before {
@@ -225,107 +220,6 @@ a {
   }
 }
 
-//------Themes----------
-.theme-light {
-  //---Body----
-  --body-bg: #dfdfdf;
-
-  //---Header---
-  --header-bg: #fff;
-  --logo-bg: black;
-  --header-link-color: #000;
-  --header-link-stroke: #000;
-  --form-search-stroke: #989898;
-  --form-search-input-bg: #f5f5f5;
-  --form-search-input-color: #000;
-  --switch-theme-bg: #304272;
-
-  //---Banner-----
-  --banner-bg: #211c24;
-  --banner-suptitle-color: #909090;
-  --banner-title-color: #fff;
-  --banner-subtitle-color: #909090;
-
-  //---shop-link----
-  --shop-link-color: #fff;
-  --shop-link-color-dark: #000;
-  --shop-link_color-border-color: #000;
-
-  //---Banner-m-------
-  --banner-m-bg-box-1: #fff;
-  --banner-m-bg-box-2: #ededed;
-  --banner-m-bg-box-3: #ededed;
-  --banner-m-bg-box-4: #353535;
-  --banner-m-color-title-box-1: #000;
-  --banner-m-color-title-box-2: #000;
-  --banner-m-color-title-box-3: #000;
-  --banner-m-color-title-box-4: #fff;
-  --banner-m-color-text: #909090;
-
-  //---Category-------
-  --category-bg: #fafafa;
-  --category-title-color: #000;
-  --category-svg-stroke: #000;
-  --category-name-color: #000;
-
-  //---Swipe-------
-  --swipe-btn-fill: #000;
-  --swipe-slide-bg: #ededed;
-
-  //---Products----
-  --products-svg-stroke: #909090;
-}
-
-.theme-dark {
-  //---Body----
-  --body-bg: #120724;
-
-  //---Header---
-  --header-bg: #141a2e;
-  --logo-bg: rgb(255, 255, 255);
-  --header-link-color: #fff;
-  --header-link-stroke: #fff;
-  --form-search-stroke: #fff;
-  --form-search-input-bg: #1d2a56;
-  --form-search-input-color: #fff;
-  --switch-theme-bg: rgb(156, 82, 82);
-
-  //---Banner-----
-  --banner-bg: #170b1e;
-  --banner-suptitle-color: #fff;
-  --banner-title-color: #fff;
-  --banner-subtitle-color: #fff;
-
-  //---shop-link----
-  --shop-link-color: #fff;
-  --shop-link-color-dark: #fff;
-  --shop-link_color-border-color: #fff;
-
-  //---Banner-m-------
-  --banner-m-bg-box-1: #262222;
-  --banner-m-bg-box-2: #2e1818;
-  --banner-m-bg-box-3: #161515;
-  --banner-m-bg-box-4: #241d1d;
-  --banner-m-color-title-box-1: #fff;
-  --banner-m-color-title-box-2: #fff;
-  --banner-m-color-title-box-3: #fff;
-  --banner-m-color-title-box-4: #fff;
-  --banner-m-color-text: #fff;
-
-  //---Category-------
-  --category-bg: #141842;
-  --category-title-color: #fff;
-  --category-svg-stroke: #fff;
-  --category-name-color: #fff;
-
-  //---Swipe-------
-  --swipe-btn-fill: #fff;
-  --swipe-slide-bg: #012e32;
-
-  //---Products----
-  --products-svg-stroke: #fff;
-}
-
 //-------footer-------
 .footer {
   &__link {
@@ -333,7 +227,8 @@ a {
   }
 
   &__svg {
-    fill: #fff;
-    stroke: #000;
+    fill: var.$footer-svg-fill;
+    stroke: var.$footer-svg-stroke;
+    transition: var.$transition-stroke, var.$transition-fill;
   }
 }

@@ -1,4 +1,171 @@
+//---transition------
+$transition-bg: background-color ease 0.5s;
+$transition-color: color ease 0.5s;
+$transition-stroke: stroke ease 0.5s;
+$transition-fill: fill ease 0.5s;
+$transition-border-color: border-color ease 0.5s;
+$transition-opacity: opacity ease 0.2s;
+
 //---var switch-theme----
+//------Themes----------
+.theme-light {
+  //---Body----
+  --body-bg: #dfdfdf;
+
+  //---Header---
+  --header-bg: #fff;
+  --logo-bg: black;
+  --header-link-color: #000;
+  --header-link-stroke: #000;
+  --form-search-stroke: #989898;
+  --form-search-input-bg: #f5f5f5;
+  --form-search-input-color: #000;
+  --switch-theme-bg: #304272;
+
+  //---Footer-----
+  --footer-svg-stroke: #000;
+  --footer-svg-fill: #fff;
+
+  //---Banner-----
+  --banner-bg: #211c24;
+  --banner-suptitle-color: #909090;
+  --banner-title-color: #fff;
+  --banner-subtitle-color: #909090;
+
+  //---shop-link----
+  --shop-link-color: #fff;
+  --shop-link-color-dark: #000;
+  --shop-link_color-border-color: #000;
+
+  //---Banner-m-------
+  --banner-m-bg-box-1: #fff;
+  --banner-m-bg-box-2: #ededed;
+  --banner-m-bg-box-3: #ededed;
+  --banner-m-bg-box-4: #353535;
+  --banner-m-color-title-box-1: #000;
+  --banner-m-color-title-box-2: #000;
+  --banner-m-color-title-box-3: #000;
+  --banner-m-color-title-box-4: #fff;
+  --banner-m-color-text: #909090;
+
+  //---Category-------
+  --category-bg: #fafafa;
+  --category-svg-stroke: #000;
+  --category-name-color: #000;
+
+  //---Title--------
+  --title-color: #000;
+
+  //---Swipe-------
+  --swipe-btn-fill: #000;
+  --swipe-slide-bg: #ededed;
+
+  //---Products----
+  --products-bg: #fff;
+  --products-svg-stroke: #909090;
+
+  //---Mix mix-button mix-container-----
+  --mix-btn-color: #000;
+  --mix-btn-bottom-color: #000;
+
+  //---Product-card-----
+  --product-card-bg: #f6f6f6;
+  --product-card-title-color: #000;
+  --product-card-price-color: #000;
+  --product-card-link-bg: #000;
+  --product-card-link-color: #fff;
+
+  //---Banners-------
+  --banners-bg: #f5f5f5;
+  --banners-bg-2: #f1f1f1;
+  --banners-bg-3: #eaeaea;
+  --banners-bg-4: #cdcdcd;
+  --banners-title-color: #000;
+  --banners-text-color: #090909;
+
+  //---Discount-------
+  --discount-bg: #fff;
+}
+
+.theme-dark {
+  //---Body----
+  --body-bg: #010a32;
+
+  //---Header---
+  --header-bg: #141a2e;
+  --logo-bg: rgb(255, 255, 255);
+  --header-link-color: #fff;
+  --header-link-stroke: #fff;
+  --form-search-stroke: #fff;
+  --form-search-input-bg: #1d2a56;
+  --form-search-input-color: #fff;
+  --switch-theme-bg: rgb(156, 82, 82);
+
+  //---Footer-----
+  --footer-svg-stroke: #000;
+  --footer-svg-fill: #fff;
+
+  //---Banner-----
+  --banner-bg: #170b1e;
+  --banner-suptitle-color: #fff;
+  --banner-title-color: #fff;
+  --banner-subtitle-color: #fff;
+
+  //---shop-link----
+  --shop-link-color: #fff;
+  --shop-link-color-dark: #fff;
+  --shop-link_color-border-color: #fff;
+
+  //---Banner-m-------
+  --banner-m-bg-box-1: #262222;
+  --banner-m-bg-box-2: #2e1818;
+  --banner-m-bg-box-3: #161515;
+  --banner-m-bg-box-4: #241d1d;
+  --banner-m-color-title-box-1: #fff;
+  --banner-m-color-title-box-2: #fff;
+  --banner-m-color-title-box-3: #fff;
+  --banner-m-color-title-box-4: #fff;
+  --banner-m-color-text: #fff;
+
+  //---Category-------
+  --category-bg: #141842;
+  --category-svg-stroke: #fff;
+  --category-name-color: #fff;
+
+  //---Title--------
+  --title-color: #fff;
+
+  //---Swipe-------
+  --swipe-btn-fill: #fff;
+  --swipe-slide-bg: #012e32;
+
+  //---Products----
+  --products-bg: #1f1d22;
+  --products-svg-stroke: #fff;
+
+  //---Mix mix-button mix-container-----
+  --mix-btn-color: #fff;
+  --mix-btn-bottom-color: #fff;
+
+  //---Product-card-----
+  --product-card-bg: #1c1526;
+  --product-card-title-color: #fff;
+  --product-card-price-color: #fff;
+  --product-card-link-bg: #040d22;
+  --product-card-link-color: #fff;
+
+  //---Banners-------
+  --banners-bg: #4c4c4c;
+  --banners-bg-2: #3c3c3c;
+  --banners-bg-3: #2c2c2c;
+  --banners-bg-4: #1c1c1c;
+  --banners-title-color: #fff;
+  --banners-text-color: #fff;
+
+  //---Discount-------
+  --discount-bg: #1f1d22;
+}
+
 //---Body----
 $body-bg: var(--body-bg);
 
@@ -11,6 +178,10 @@ $form-search-stroke: var(--form-search-stroke);
 $form-search-input-bg: var(--form-search-input-bg);
 $form-search-input-color: var(--form-search-input-color);
 $switch-theme-bg: var(--switch-theme-bg);
+
+//---Footer-----
+$footer-svg-stroke: var(--footer-svg-stroke);
+$footer-svg-fill: var(--footer-svg-fill);
 
 //---index.html----
 //---Main-------
@@ -38,13 +209,38 @@ $banner-m-color-text: var(--banner-m-color-text);
 
 //---Category-------
 $category-bg: var(--category-bg);
-$category-title-color: var(--category-title-color);
 $category-svg-stroke: var(--category-svg-stroke);
 $category-name-color: var(--category-name-color);
+
+//---Title------
+$title-color: var(--title-color);
 
 //---Swipe-------
 $swipe-btn-fill: var(--swipe-btn-fill);
 $swipe-slide-bg: var(--swipe-slide-bg);
 
 //---Products----
+$products-bg: var(--products-bg);
 $products-svg-stroke: var(--products-svg-stroke);
+
+//---Mix mix-button mix-container-----
+$mix-btn-color: var(--mix-btn-color);
+$mix-btn-bottom-color: var(--mix-btn-bottom-color);
+
+//---Product-card-----
+$product-card-bg: var(--product-card-bg);
+$product-card-title-color: var(--product-card-title-color);
+$product-card-price-color: var(--product-card-price-color);
+$product-card-link-bg: var(--product-card-link-bg);
+$product-card-link-color: var(--product-card-link-color);
+
+//---Banners-------
+$banners-bg: var(--banners-bg);
+$banners-bg-2: var(--banners-bg-2);
+$banners-bg-3: var(--banners-bg-3);
+$banners-bg-4: var(--banners-bg-4);
+$banners-title-color: var(--banners-title-color);
+$banners-text-color: var(--banners-text-color);
+
+//---Discount-------
+$discount-bg: var(--discount-bg);
