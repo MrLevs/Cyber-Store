@@ -4,7 +4,7 @@ $transition-color: color ease 0.5s;
 $transition-stroke: stroke ease 0.5s;
 $transition-fill: fill ease 0.5s;
 $transition-border-color: border-color ease 0.5s;
-$transition-opacity: opacity ease 0.2s;
+$transition-opacity: opacity ease 0.5s;
 
 //---var switch-theme----
 //------Themes----------
@@ -23,6 +23,11 @@ $transition-opacity: opacity ease 0.2s;
   --switch-theme-bg: #304272;
 
   //---Footer-----
+  --footer-bg: #000;
+  --footer-logo-fill: #fff;
+  --footer-text-color: #cfcfcf;
+  --footer-title-color: #fff;
+  --footer-link-color: #cfcfcf;
   --footer-svg-stroke: #000;
   --footer-svg-fill: #fff;
 
@@ -85,6 +90,10 @@ $transition-opacity: opacity ease 0.2s;
 
   //---Discount-------
   --discount-bg: #fff;
+
+  //---Banner-2--------
+  --banner2-title-color: #fff;
+  --banner2-subtitle-color: #787878;
 }
 
 .theme-dark {
@@ -102,6 +111,11 @@ $transition-opacity: opacity ease 0.2s;
   --switch-theme-bg: rgb(156, 82, 82);
 
   //---Footer-----
+  --footer-bg: #141a2e;
+  --footer-logo-fill: #fff;
+  --footer-text-color: #cfcfcf;
+  --footer-title-color: #fff;
+  --footer-link-color: #cfcfcf;
   --footer-svg-stroke: #000;
   --footer-svg-fill: #fff;
 
@@ -164,6 +178,10 @@ $transition-opacity: opacity ease 0.2s;
 
   //---Discount-------
   --discount-bg: #1f1d22;
+
+  //---Banner-2--------
+  --banner2-title-color: #fff;
+  --banner2-subtitle-color: #787878;
 }
 
 //---Body----
@@ -180,6 +198,11 @@ $form-search-input-color: var(--form-search-input-color);
 $switch-theme-bg: var(--switch-theme-bg);
 
 //---Footer-----
+$footer-bg: var(--footer-bg);
+$footer-logo-fill: var(--footer-logo-fill);
+$footer-text-color: var(--footer-text-color);
+$footer-title-color: var(--footer-title-color);
+$footer-link-color: var(--footer-link-color);
 $footer-svg-stroke: var(--footer-svg-stroke);
 $footer-svg-fill: var(--footer-svg-fill);
 
@@ -244,3 +267,7 @@ $banners-text-color: var(--banners-text-color);
 
 //---Discount-------
 $discount-bg: var(--discount-bg);
+
+//---Banner-2-------
+$banner2-title-color: var(--banner2-title-color);
+$banner2-subtitle-color: var(--banner2-subtitle-color);

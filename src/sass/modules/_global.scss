@@ -222,13 +222,90 @@ a {
 
 //-------footer-------
 .footer {
+  padding: 6.25rem 0;
+  background-color: var.$footer-bg;
+  transition: var.$transition-bg;
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem 0;
+  }
+
+  &__box {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__box-logo {
+    max-width: 24rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem 0;
+  }
+
+  &__logo {
+    fill: var.$footer-logo-fill;
+    transition: var.$transition-fill;
+  }
+
+  &__text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var.$footer-text-color;
+    transition: var.$transition-color;
+  }
+
+  &__box-nav {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem 0;
+  }
+
+  &__title {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var.$footer-title-color;
+    transition: var.$transition-color;
+  }
+
+  &__menu {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem 0;
+    list-style-type: none;
+  }
+
   &__link {
     display: block;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var.$footer-link-color;
+    transition: var.$transition-color;
+    &:hover {
+      color: #fff;
+    }
+  }
+
+  &__social-media {
+    display: flex;
+    align-items: center;
+    gap: 0 2rem;
   }
 
   &__svg {
     fill: var.$footer-svg-fill;
     stroke: var.$footer-svg-stroke;
-    transition: var.$transition-stroke, var.$transition-fill;
+    transition:
+      var.$transition-stroke,
+      var.$transition-fill,
+      transform ease 0.5s;
+    &:hover {
+      transform: rotateZ(45deg);
+    }
   }
 }
