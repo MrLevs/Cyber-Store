@@ -4,7 +4,6 @@ body {
   display: grid;
   grid-template-rows: auto 1fr auto;
   font-family: 'Inter', sans-serif;
-  overflow-x: hidden;
   background-color: var.$body-bg;
   transition: var.$transition-bg;
 }
@@ -24,9 +23,7 @@ a {
 }
 
 .container-m {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0;
+  max-width: 1230px;
 }
 
 //-------Header-------
@@ -35,8 +32,7 @@ a {
   transition: var.$transition-bg;
 
   &__inner {
-    font-size: 1.5rem;
-    padding: 0.66666em 0;
+    padding: 1rem 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -48,7 +44,11 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 0 2.1em;
+    gap: 0 2rem;
+  }
+
+  &__mobile {
+    display: none;
   }
 
   &__menu-list {
@@ -57,10 +57,10 @@ a {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 0 2.1em;
+    gap: 0 2rem;
     list-style: none;
     &_icon {
-      gap: 0 0.8em;
+      gap: 0 0.8rem;
     }
   }
 
@@ -82,6 +82,44 @@ a {
     }
     &_active {
       opacity: 1;
+    }
+  }
+}
+
+//------Mobile btn-menu------
+.btn-menu {
+  padding: 0;
+  display: none;
+  width: 2rem;
+  height: 1.5rem;
+  border: none;
+  background-color: transparent;
+
+  &__span {
+    position: relative;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background-color: var.$btn-menu-bg;
+    transition: var.$transition-bg;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 100%;
+      height: 2px;
+      position: absolute;
+      background-color: var.$btn-menu-bg;
+    }
+
+    &::before {
+      top: -10px;
+      left: 0;
+    }
+
+    &::after {
+      top: 10px;
+      left: 0;
     }
   }
 }
@@ -305,7 +343,7 @@ a {
       var.$transition-fill,
       transform ease 0.5s;
     &:hover {
-      transform: rotateZ(45deg);
+      transform: rotateZ(30deg) scale(1.5);
     }
   }
 }

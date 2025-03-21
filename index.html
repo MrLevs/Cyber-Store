@@ -11,8 +11,8 @@
   </head>
   <body>
     <header class="header">
-      <div class="container">
-        <div class="header__inner container-m">
+      <div class="container container-m">
+        <div class="header__inner">
           <a href="/" class="logo" aria-label="logo Cyber">
             <svg class="logo__svg" width="66" height="24" viewBox="0 0 66 24" xmlns="http://www.w3.org/2000/svg">
               <use href="/images/sprite-icon.svg#logo" />
@@ -105,10 +105,10 @@
               <span class="switch-theme__span"></span>
             </label>
           </div>
-          <div class="header__mobile" hidden>
-            <button class="btn-menu" aria-label="mobile menu">
-              <span class="btn-menu__span"></span>
-            </button>
+          <button class="btn-menu" aria-label="mobile menu">
+            <span class="btn-menu__span"></span>
+          </button>
+          <div class="header__mobile">
             <nav class="header__nav-mobile">
               <ul class="menu-mobile">
                 <li class="menu-mobile__item">
@@ -176,8 +176,8 @@
     </header>
     <main class="main">
       <section class="banner">
-        <div class="container">
-          <article class="banner__inner container-m">
+        <div class="container container-m">
+          <article class="banner__inner">
             <div class="banner__content">
               <h2 class="banner__suptitle">Pro.Beyond.</h2>
               <h1 class="banner__title">IPhone 14 <span class="text-bold">Pro</span></h1>
@@ -192,7 +192,8 @@
         <div class="container">
           <div class="banner-m__inner">
             <article class="banner-m__box banner-m__box_1">
-              <img src="/images/ps.png" alt="Playstation 5" class="banner-m__img" />
+              <img src="/images/ps.png" alt="Playstation 5" class="banner-m__img banner-m__img_v" />
+              <img src="/images/ps2.png" alt="Playstation 5" class="banner-m__img banner-m__img_v2" />
               <div class="banner-m__content">
                 <h2 class="banner-m__title">Playstation 5</h2>
                 <p class="banner-m__text">
@@ -202,7 +203,8 @@
               </div>
             </article>
             <article class="banner-m__box banner-m__box_2">
-              <img src="/images/air.png" alt="Macbook Air" class="banner-m__img" />
+              <img src="/images/air.png" alt="Macbook Air" class="banner-m__img banner-m__img_air" />
+              <img src="/images/mac-air.png" alt="Macbook Air" class="banner-m__img banner-m__img_air2" />
               <div class="banner-m__content">
                 <h2 class="banner-m__title banner-m__title_font2">Macbook <span>Air</span></h2>
                 <p class="banner-m__text">
@@ -213,7 +215,11 @@
               </div>
             </article>
             <article class="banner-m__box banner-m__box_3">
-              <img src="/images/airpods-max.png" alt="Apple AirPods Max" class="banner-m__img" />
+              <img src="/images/airpods-max.png" alt="Apple AirPods Max" class="banner-m__img banner-m__img_v" />
+              <img
+                src="/images/products/airpods-max-s.png"
+                alt="Apple AirPods Max"
+                class="banner-m__img banner-m__img_v2" />
               <div class="banner-m__content">
                 <h2 class="banner-m__title banner-m__title_font3">
                   Apple<br />
@@ -223,7 +229,8 @@
               </div>
             </article>
             <article class="banner-m__box banner-m__box_4">
-              <img src="/images/vision.png" alt="Apple Vision Pro" class="banner-m__img" />
+              <img src="/images/vision.png" alt="Apple Vision Pro" class="banner-m__img banner-m__img_v" />
+              <img src="/images/vision-pro.png" alt="Apple Vision Pro" class="banner-m__img banner-m__img_v2" />
               <div class="banner-m__content">
                 <h2 class="banner-m__title banner-m__title_font4">
                   Apple<br />
@@ -235,7 +242,7 @@
           </div>
         </div>
       </section>
-      <section class="category">
+      <section class="category" hidden>
         <div class="container container-m">
           <div class="category__inner">
             <div class="category__box">
@@ -336,7 +343,7 @@
           </div>
         </div>
       </section>
-      <section class="products">
+      <section class="products" hidden>
         <div class="container container-m">
           <div class="products__inner">
             <div class="mix-button">
@@ -530,7 +537,7 @@
           </div>
         </div>
       </section>
-      <section class="banners">
+      <section class="banners" hidden>
         <div class="container">
           <div class="banners__inner">
             <article class="banners__card banners__card_bg">
@@ -572,7 +579,7 @@
           </div>
         </div>
       </section>
-      <section class="discount">
+      <section class="discount" hidden>
         <div class="container container-m">
           <div class="discount__inner">
             <h2 class="title">Discounts up to -50%</h2>
@@ -671,7 +678,7 @@
           </div>
         </div>
       </section>
-      <section class="banner-2">
+      <section class="banner-2" hidden>
         <div class="container">
           <div class="banner-2__inner">
             <h2 class="banner-2__title" id="banner-2-title">Big Summer <span>Sale</span></h2>
