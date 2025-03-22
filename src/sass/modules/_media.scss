@@ -66,6 +66,18 @@
       font-size: 2rem;
     }
   }
+
+  //---Swipe--------
+  .swipe-container {
+    gap: 0 2rem;
+  }
+
+  //---Product-card------
+  .product-card {
+    &__link {
+      padding: 0.75rem 3.5rem;
+    }
+  }
 }
 
 //max-width: 992px
@@ -85,6 +97,37 @@
   .banner {
     &__title {
       font-size: 3.5rem;
+    }
+  }
+
+  //---Swipe--------
+  .swipe-container {
+    gap: 1rem;
+    display: grid;
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  //---Mix mix-button mix-container---
+  .mix-item {
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  //-------Products-------
+  .products {
+    &__inner {
+      align-items: center;
+    }
+  }
+
+  //-------Discount---------
+  .discount {
+    &__box {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
   }
 }
@@ -140,6 +183,22 @@
       text-align: center;
     }
   }
+
+  //---Banner-m------
+  .banner-m {
+    &__inner {
+      grid-template-rows: repeat(3, 1fr);
+    }
+
+    &__content {
+      padding: 1.5rem 0;
+    }
+  }
+
+  //-------Discount---------
+  .discount {
+    padding: 2rem 0;
+  }
 }
 
 //max-width: 576px
@@ -189,19 +248,59 @@
       }
     }
 
-    &__img {
-      &_v {
-        display: none;
-      }
-
-      &_v2 {
-        display: block;
-      }
-    }
-
     &__content {
       align-items: center;
       text-align: center;
+    }
+  }
+
+  //---Swipe--------
+  .swipe-container {
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  //-------Mix mix-button mix-container----------
+  .mix-button {
+    flex-direction: column;
+    gap: 1rem 0;
+  }
+
+  .mix-item {
+    grid-template-rows: repeat(8, 1fr);
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem 0;
+  }
+
+  //---Product-card------
+  .product-card {
+    &__link {
+      padding: 0.75rem 1rem;
+    }
+  }
+
+  //-------Discount---------
+  .discount {
+    &__inner {
+      align-items: center;
+    }
+
+    &__box {
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: 1fr;
+      gap: 1rem 0;
+    }
+  }
+
+  //-------Banner-2----------
+  .banner-2 {
+    &__inner {
+      height: 32rem;
+      background-image: url(/images/banner2v2.jpg);
+    }
+
+    &__title {
+      font-size: 3rem;
     }
   }
 }

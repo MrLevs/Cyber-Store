@@ -192,8 +192,10 @@
         <div class="container">
           <div class="banner-m__inner">
             <article class="banner-m__box banner-m__box_1">
-              <img src="/images/ps.png" alt="Playstation 5" class="banner-m__img banner-m__img_v" />
-              <img src="/images/ps2.png" alt="Playstation 5" class="banner-m__img banner-m__img_v2" />
+              <picture class="picture">
+                <source srcset="/images/ps2.png" media="(max-width: 576px)" />
+                <img src="/images/ps.png" alt="Playstation 5" class="banner-m__img" />
+              </picture>
               <div class="banner-m__content">
                 <h2 class="banner-m__title">Playstation 5</h2>
                 <p class="banner-m__text">
@@ -203,8 +205,10 @@
               </div>
             </article>
             <article class="banner-m__box banner-m__box_2">
-              <img src="/images/air.png" alt="Macbook Air" class="banner-m__img banner-m__img_air" />
-              <img src="/images/mac-air.png" alt="Macbook Air" class="banner-m__img banner-m__img_air2" />
+              <picture class="picture">
+                <source srcset="/images/mac-air.png" media="(max-width: 1200px)" />
+                <img src="/images/air.png" alt="Macbook Air" class="banner-m__img" />
+              </picture>
               <div class="banner-m__content">
                 <h2 class="banner-m__title banner-m__title_font2">Macbook <span>Air</span></h2>
                 <p class="banner-m__text">
@@ -215,11 +219,10 @@
               </div>
             </article>
             <article class="banner-m__box banner-m__box_3">
-              <img src="/images/airpods-max.png" alt="Apple AirPods Max" class="banner-m__img banner-m__img_v" />
-              <img
-                src="/images/products/airpods-max-s.png"
-                alt="Apple AirPods Max"
-                class="banner-m__img banner-m__img_v2" />
+              <picture class="picture">
+                <source srcset="/images/products/airpods-max-s.png" media="(max-width: 576px)" />
+                <img src="/images/airpods-max.png" alt="Apple AirPods Max" class="banner-m__img" />
+              </picture>
               <div class="banner-m__content">
                 <h2 class="banner-m__title banner-m__title_font3">
                   Apple<br />
@@ -229,8 +232,10 @@
               </div>
             </article>
             <article class="banner-m__box banner-m__box_4">
-              <img src="/images/vision.png" alt="Apple Vision Pro" class="banner-m__img banner-m__img_v" />
-              <img src="/images/vision-pro.png" alt="Apple Vision Pro" class="banner-m__img banner-m__img_v2" />
+              <picture class="picture">
+                <source srcset="/images/vision-pro.png" media="(max-width: 576px)" />
+                <img src="/images/vision.png" alt="Apple Vision Pro" class="banner-m__img" />
+              </picture>
               <div class="banner-m__content">
                 <h2 class="banner-m__title banner-m__title_font4">
                   Apple<br />
@@ -242,7 +247,7 @@
           </div>
         </div>
       </section>
-      <section class="category" hidden>
+      <section class="category">
         <div class="container container-m">
           <div class="category__inner">
             <div class="category__box">
@@ -343,7 +348,7 @@
           </div>
         </div>
       </section>
-      <section class="products" hidden>
+      <section class="products">
         <div class="container container-m">
           <div class="products__inner">
             <div class="mix-button">
@@ -537,7 +542,7 @@
           </div>
         </div>
       </section>
-      <section class="banners" hidden>
+      <section class="banners">
         <div class="container">
           <div class="banners__inner">
             <article class="banners__card banners__card_bg">
@@ -579,7 +584,7 @@
           </div>
         </div>
       </section>
-      <section class="discount" hidden>
+      <section class="discount">
         <div class="container container-m">
           <div class="discount__inner">
             <h2 class="title">Discounts up to -50%</h2>
@@ -678,7 +683,7 @@
           </div>
         </div>
       </section>
-      <section class="banner-2" hidden>
+      <section class="banner-2">
         <div class="container">
           <div class="banner-2__inner">
             <h2 class="banner-2__title" id="banner-2-title">Big Summer <span>Sale</span></h2>
