@@ -4,6 +4,9 @@ import Inspect from 'vite-plugin-inspect';
 
 export default defineConfig({
   plugins: [Inspect()],
+  css: {
+    devSourcemap: true,
+  },
   build: {
     rollupOptions: {
       input: {

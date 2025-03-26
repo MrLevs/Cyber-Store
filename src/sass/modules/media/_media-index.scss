@@ -1,5 +1,5 @@
-@use 'variables' as var;
-@use 'mixin' as mix;
+@use '../variables' as var;
+@use '../mixin' as mix;
 
 //max-width: 1200px
 @include mix.desktop {
@@ -67,9 +67,11 @@
     }
   }
 
-  //---Swipe--------
-  .swipe-container {
-    gap: 0 2rem;
+  //---Category-------
+  .category {
+    &__container {
+      gap: 0 2rem;
+    }
   }
 
   //---Product-card------
@@ -100,25 +102,26 @@
     }
   }
 
-  //---Swipe--------
-  .swipe-container {
-    gap: 1rem;
-    display: grid;
-    grid-template-rows: repeat(2, 1fr);
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  //---Mix mix-button mix-container---
-  .mix-item {
-    grid-template-rows: repeat(4, 1fr);
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
+  //---Category-------
+  .category {
+    &__container {
+      gap: 1rem;
+      display: grid;
+      grid-template-rows: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
+    }
   }
 
   //-------Products-------
   .products {
     &__inner {
       align-items: center;
+    }
+
+    &__item {
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
     }
   }
 
@@ -254,22 +257,26 @@
     }
   }
 
-  //---Swipe--------
-  .swipe-container {
-    grid-template-rows: repeat(3, 1fr);
-    grid-template-columns: repeat(2, 1fr);
+  //---Category-------
+  .category {
+    &__container {
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
-  //-------Mix mix-button mix-container----------
-  .mix-button {
-    flex-direction: column;
-    gap: 1rem 0;
-  }
+  //---Products-------
+  .products {
+    &__buttons {
+      flex-direction: column;
+      gap: 1rem 0;
+    }
 
-  .mix-item {
-    grid-template-rows: repeat(8, 1fr);
-    grid-template-columns: repeat(1, 1fr);
-    gap: 1rem 0;
+    &__item {
+      grid-template-rows: repeat(8, 1fr);
+      grid-template-columns: repeat(1, 1fr);
+      gap: 1rem 0;
+    }
   }
 
   //---Product-card------

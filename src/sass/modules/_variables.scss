@@ -1,3 +1,5 @@
+//---max-width------
+$max-width: 1470px;
 //---transition------
 $transition-bg: background-color ease 0.5s;
 $transition-color: color ease 0.5s;
@@ -52,6 +54,7 @@ $transition-opacity: opacity ease 0.5s;
   --shop-link_color-border-color: #000;
 
   //---Banner-m-------
+  --banner-m-bg: #fafafa;
   --banner-m-bg-box-1: #fff;
   --banner-m-bg-box-2: #ededed;
   --banner-m-bg-box-3: #ededed;
@@ -64,23 +67,19 @@ $transition-opacity: opacity ease 0.5s;
 
   //---Category-------
   --category-bg: #fafafa;
+  --category-btn-fill: #000;
+  --category-slide-bg: #ededed;
   --category-svg-stroke: #000;
   --category-name-color: #000;
 
   //---Title--------
   --title-color: #000;
 
-  //---Swipe-------
-  --swipe-btn-fill: #000;
-  --swipe-slide-bg: #ededed;
-
   //---Products----
   --products-bg: #fff;
   --products-svg-stroke: #909090;
-
-  //---Mix mix-button mix-container-----
-  --mix-btn-color: #000;
-  --mix-btn-bottom-color: #000;
+  --products-btn-color: #000;
+  --products-btn-bottom-color: #000;
 
   //---Product-card-----
   --product-card-bg: #f6f6f6;
@@ -90,7 +89,8 @@ $transition-opacity: opacity ease 0.5s;
   --product-card-link-color: #fff;
 
   //---Banners-------
-  --banners-bg: #f5f5f5;
+  --banners-bg: #fff;
+  --banners-bg-1: #f5f5f5;
   --banners-bg-2: #f1f1f1;
   --banners-bg-3: #eaeaea;
   --banners-bg-4: #cdcdcd;
@@ -101,6 +101,7 @@ $transition-opacity: opacity ease 0.5s;
   --discount-bg: #fff;
 
   //---Banner-2--------
+  --banner2-bg: #2e2e2e;
   --banner2-title-color: #fff;
   --banner2-subtitle-color: #787878;
 }
@@ -149,6 +150,7 @@ $transition-opacity: opacity ease 0.5s;
   --shop-link_color-border-color: #fff;
 
   //---Banner-m-------
+  --banner-m-bg: #060820;
   --banner-m-bg-box-1: #262222;
   --banner-m-bg-box-2: #2e1818;
   --banner-m-bg-box-3: #161515;
@@ -161,23 +163,19 @@ $transition-opacity: opacity ease 0.5s;
 
   //---Category-------
   --category-bg: #141842;
+  --category-btn-fill: #fff;
+  --category-slide-bg: #012e32;
   --category-svg-stroke: #fff;
   --category-name-color: #fff;
 
   //---Title--------
   --title-color: #fff;
 
-  //---Swipe-------
-  --swipe-btn-fill: #fff;
-  --swipe-slide-bg: #012e32;
-
   //---Products----
   --products-bg: #1f1d22;
   --products-svg-stroke: #fff;
-
-  //---Mix mix-button mix-container-----
-  --mix-btn-color: #fff;
-  --mix-btn-bottom-color: #fff;
+  --products-btn-color: #fff;
+  --products-btn-bottom-color: #fff;
 
   //---Product-card-----
   --product-card-bg: #1c1526;
@@ -187,7 +185,8 @@ $transition-opacity: opacity ease 0.5s;
   --product-card-link-color: #fff;
 
   //---Banners-------
-  --banners-bg: #4c4c4c;
+  --banners-bg: #1f1d22;
+  --banners-bg-1: #4c4c4c;
   --banners-bg-2: #3c3c3c;
   --banners-bg-3: #2c2c2c;
   --banners-bg-4: #1c1c1c;
@@ -198,6 +197,7 @@ $transition-opacity: opacity ease 0.5s;
   --discount-bg: #1f1d22;
 
   //---Banner-2--------
+  --banner2-bg: #2e2e2e;
   --banner2-title-color: #fff;
   --banner2-subtitle-color: #787878;
 }
@@ -247,6 +247,7 @@ $shop-link-color-dark: var(--shop-link-color-dark);
 $shop-link_color-border-color: var(--shop-link_color-border-color);
 
 //---Banner-m-------
+$banner-m-bg: var(--banner-m-bg);
 $banner-m-bg-box-1: var(--banner-m-bg-box-1);
 $banner-m-bg-box-2: var(--banner-m-bg-box-2);
 $banner-m-bg-box-3: var(--banner-m-bg-box-3);
@@ -259,23 +260,19 @@ $banner-m-color-text: var(--banner-m-color-text);
 
 //---Category-------
 $category-bg: var(--category-bg);
+$category-btn-fill: var(--category-btn-fill);
+$category-slide-bg: var(--category-slide-bg);
 $category-svg-stroke: var(--category-svg-stroke);
 $category-name-color: var(--category-name-color);
 
 //---Title------
 $title-color: var(--title-color);
 
-//---Swipe-------
-$swipe-btn-fill: var(--swipe-btn-fill);
-$swipe-slide-bg: var(--swipe-slide-bg);
-
 //---Products----
 $products-bg: var(--products-bg);
 $products-svg-stroke: var(--products-svg-stroke);
-
-//---Mix mix-button mix-container-----
-$mix-btn-color: var(--mix-btn-color);
-$mix-btn-bottom-color: var(--mix-btn-bottom-color);
+$products-btn-color: var(--products-btn-color);
+$products-btn-bottom-color: var(--products-btn-bottom-color);
 
 //---Product-card-----
 $product-card-bg: var(--product-card-bg);
@@ -286,6 +283,7 @@ $product-card-link-color: var(--product-card-link-color);
 
 //---Banners-------
 $banners-bg: var(--banners-bg);
+$banners-bg-1: var(--banners-bg-1);
 $banners-bg-2: var(--banners-bg-2);
 $banners-bg-3: var(--banners-bg-3);
 $banners-bg-4: var(--banners-bg-4);
@@ -296,6 +294,7 @@ $banners-text-color: var(--banners-text-color);
 $discount-bg: var(--discount-bg);
 
 //---Banner-2-------
+$banner2-bg: var(--banner2-bg);
 $banner2-title-color: var(--banner2-title-color);
 $banner2-subtitle-color: var(--banner2-subtitle-color);
 

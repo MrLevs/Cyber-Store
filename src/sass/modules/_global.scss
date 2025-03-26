@@ -2,6 +2,8 @@
 
 body {
   display: grid;
+  justify-content: center;
+  align-items: center;
   grid-template-rows: auto 1fr auto;
   font-family: 'Inter', sans-serif;
   background-color: var.$body-bg;
@@ -17,7 +19,7 @@ a {
 
 //---Container------
 .container {
-  max-width: 1470px;
+  max-width: var.$max-width;
   margin: 0 auto;
   padding: 0 15px;
 }
@@ -28,6 +30,7 @@ a {
 
 //-------Header-------
 .header {
+  max-width: var.$max-width;
   background-color: var.$header-bg;
   transition: var.$transition-bg;
 
@@ -256,6 +259,11 @@ a {
     cursor: pointer;
     z-index: 100;
   }
+}
+
+//-----Main-----
+main {
+  max-width: var.$max-width;
 }
 
 //-------footer-------
