@@ -1,5 +1,5 @@
-//---max-width------
-$max-width: 1470px;
+//---max-width 1470px------
+$max-width: 91.875rem;
 //---transition------
 $transition-bg: background-color ease 0.5s;
 $transition-color: color ease 0.5s;
@@ -7,10 +7,11 @@ $transition-stroke: stroke ease 0.5s;
 $transition-fill: fill ease 0.5s;
 $transition-border-color: border-color ease 0.5s;
 $transition-opacity: opacity ease 0.5s;
+$transition-transform: transform ease 0.5s;
 
 //---var switch-theme----
 //------Themes----------
-.theme-light {
+:root {
   //---Body----
   --body-bg: #dfdfdf;
 
@@ -18,6 +19,8 @@ $transition-opacity: opacity ease 0.5s;
   --header-bg: #fff;
   --header-link-color: #000;
   --header-link-stroke: #000;
+  --header-mobile-bg: #fff;
+  --header-mobile-color: #000;
 
   //---Logo-----
   --logo-bg: black;
@@ -114,6 +117,8 @@ $transition-opacity: opacity ease 0.5s;
   --header-bg: #141a2e;
   --header-link-color: #fff;
   --header-link-stroke: #fff;
+  --header-mobile-bg: #141a2e;
+  --header-mobile-color: #fff;
 
   //---Logo-----
   --logo-bg: rgb(255, 255, 255);
@@ -209,6 +214,8 @@ $body-bg: var(--body-bg);
 $header-bg: var(--header-bg);
 $header-link-color: var(--header-link-color);
 $header-link-stroke: var(--header-link-stroke);
+$header-mobile-bg: var(--header-mobile-bg);
+$header-mobile-color: var(--header-mobile-color);
 
 //---Logo-----
 $logo-bg: var(--logo-bg);
@@ -299,7 +306,14 @@ $banner2-title-color: var(--banner2-title-color);
 $banner2-subtitle-color: var(--banner2-subtitle-color);
 
 //---breakepoints--------
-$sm: 576px;
-$md: 768px;
-$lg: 992px;
-$xl: 1200px;
+//---576px----
+$sm: 36rem;
+
+//---768px-----
+$md: 48rem;
+
+//---992px-----
+$lg: 62rem;
+
+//---1200px----
+$xl: 75rem;

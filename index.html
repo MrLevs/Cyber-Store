@@ -19,7 +19,7 @@
             </svg>
           </a>
           <div class="header__block">
-            <form class="form-search">
+            <form id="form" class="form-search">
               <label for="input-search" class="form-search__label" id="lable-search">
                 <svg
                   class="form-search__icon"
@@ -72,7 +72,7 @@
             <nav class="header__nav">
               <ul class="header__menu-list header__menu-list_icon">
                 <li class="header__menu-item">
-                  <a href="#" class="header__link" aria-label="all like">
+                  <a href="#" class="header__link" aria-label="all like" title="All Like">
                     <svg
                       class="header__like"
                       width="28"
@@ -85,14 +85,14 @@
                   </a>
                 </li>
                 <li class="header__menu-item">
-                  <a href="#" class="header__link" aria-label="shop">
+                  <a href="#" class="header__link" aria-label="shop" title="Shop">
                     <svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <use href="/images/sprite-icon.svg#shop" />
                     </svg>
                   </a>
                 </li>
                 <li class="header__menu-item">
-                  <a href="#" class="header__link" aria-label="login">
+                  <a href="#" class="header__link" aria-label="login" title="Login">
                     <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <use href="/images/sprite-icon.svg#login" />
                     </svg>
@@ -100,44 +100,60 @@
                 </li>
               </ul>
             </nav>
-            <label id="switch-theme" class="switch-theme" for="slider-theme">
+            <label class="switch-theme" for="slider-theme">
               <input type="checkbox" id="slider-theme" class="switch-theme__input" />
               <span class="switch-theme__span"></span>
             </label>
           </div>
-          <button class="btn-menu" aria-label="mobile menu">
+          <button class="btn-menu" id="btn-menu" aria-label="mobile menu">
             <span class="btn-menu__span"></span>
           </button>
-          <div class="header__mobile">
+          <div id="mobile-menu" class="header__mobile">
             <nav class="header__nav-mobile">
-              <ul class="menu-mobile">
-                <li class="menu-mobile__item">
-                  <a href="#" class="menu-mobile__link">Home</a>
+              <ul class="header__menu-mobile">
+                <li class="header__item-mobile">
+                  <a href="#" class="header__link-mobile">Home</a>
                 </li>
-                <li class="menu-mobile__item">
-                  <a href="#" class="menu-mobile__link">About</a>
+                <li class="header__item-mobile">
+                  <a href="#" class="header__link-mobile">About</a>
                 </li>
-                <li class="menu-mobile__item">
-                  <a href="#" class="menu-mobile__link">Contact Us</a>
+                <li class="header__item-mobile">
+                  <a href="#" class="header__link-mobile">Contact Us</a>
                 </li>
-                <li class="menu-mobile__item">
-                  <a href="#" class="menu-mobile__link">Blog</a>
+                <li class="header__item-mobile">
+                  <a href="#" class="header__link-mobile">Blog</a>
                 </li>
-                <li class="menu-mobile__item">
-                  <a href="#" class="menu-mobile__link" aria-label="all like"
-                    ><span class="header__menu-like"></span
-                  ></a>
+                <li class="header__item-mobile">
+                  <a href="#" class="header__link header__link_mobile" aria-label="all like">
+                    <svg
+                      class="header__like"
+                      width="48"
+                      height="44"
+                      viewBox="2 0 30 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#like" />
+                    </svg>
+                  </a>
                 </li>
-                <li class="menu-mobile__item">
-                  <a href="#" class="menu-mobile__link" aria-label="shop"><span class="header__menu-shop"></span></a>
+                <li class="header__item-mobile">
+                  <a href="#" class="header__link header__link_mobile" aria-label="shop">
+                    <svg width="47" height="44" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#shop" />
+                    </svg>
+                  </a>
                 </li>
-                <li class="menu-mobile__item">
-                  <a href="#" class="menu-mobile__link" aria-label="login"><span class="header__menu-login"></span></a>
+                <li class="header__item-mobile">
+                  <a href="#" class="header__link header__link_mobile" aria-label="login">
+                    <svg width="39" height="44" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#login" />
+                    </svg>
+                  </a>
                 </li>
               </ul>
             </nav>
-            <form class="form-search form-search_width">
-              <label for="input-search" class="form-search__label" id="lable-search">
+            <form id="form-mobile" class="form-search form-search_width">
+              <label for="input-search-mobile" class="form-search__label" id="lable-search-mobile">
                 <svg
                   class="form-search__icon"
                   aria-hidden="false"
@@ -150,18 +166,18 @@
                 </svg>
               </label>
               <input
-                id="input-search"
+                id="input-search-mobile"
                 type="search"
                 class="form-search__input"
                 placeholder="Search"
                 aria-autocomplete="both"
-                aria-labelledby="lable-search"
+                aria-labelledby="lable-search-mobile"
                 autocomplete="off"
                 autocorrect="off"
                 autocapitalize="off"
                 enterkeyhint="go" />
               <button
-                id="button-reset"
+                id="button-reset-mobile"
                 class="form-search__button"
                 title="Clear the query"
                 aria-label="Clear the query">
@@ -170,6 +186,10 @@
                 </svg>
               </button>
             </form>
+            <label class="switch-theme" for="slider-theme-mobile">
+              <input type="checkbox" id="slider-theme-mobile" class="switch-theme__input" />
+              <span class="switch-theme__span"></span>
+            </label>
           </div>
         </div>
       </div>
@@ -542,7 +562,7 @@
           </div>
         </div>
       </section>
-      <section class="banners">
+      <section class="banners" hidden>
         <div class="container">
           <div class="banners__inner">
             <article class="banners__card banners__card_bg">

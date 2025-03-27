@@ -1,0 +1,91 @@
+@use '../variables' as var;
+@use '../mixin' as mix;
+
+//max-width: 1200px
+@include mix.desktop {
+  //---Header-----
+  .header {
+    &__block {
+      gap: 0 1rem;
+    }
+
+    &__menu-list {
+      gap: 0 1rem;
+    }
+  }
+}
+
+//max-width: 992px
+@include mix.laptop {
+  //---Header-----
+  .header {
+    &__block {
+      gap: 0 0.5rem;
+    }
+
+    &__menu-list {
+      gap: 0 0.5rem;
+    }
+  }
+}
+
+//max-width: 768px
+@include mix.tablet {
+  //---Header-----
+  .header {
+    &__block {
+      display: none;
+    }
+
+    //---Burger menu------
+    &__mobile {
+      padding: 4rem 2rem 2rem 2rem;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: -100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 1.5rem 0;
+      z-index: 50;
+      background-color: var.$header-mobile-bg;
+      transition:
+        var.$transition-bg,
+        left ease 0.5s;
+      overflow: auto;
+      &_active {
+        left: 0;
+      }
+    }
+  }
+
+  //---header-mobile Burger menu---
+  .btn-menu {
+    display: block;
+  }
+
+  //---Footer------
+  .footer {
+    padding: 2.25rem 0;
+
+    &__inner,
+    &__box,
+    &__box-logo,
+    &__box-nav,
+    &__menu {
+      align-items: center;
+    }
+
+    &__box {
+      flex-direction: column;
+      gap: 1.5rem 0;
+    }
+
+    &__text {
+      text-align: center;
+    }
+  }
+}

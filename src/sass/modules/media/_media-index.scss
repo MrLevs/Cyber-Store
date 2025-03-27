@@ -3,17 +3,6 @@
 
 //max-width: 1200px
 @include mix.desktop {
-  //---Header-----
-  .header {
-    &__block {
-      gap: 0 1rem;
-    }
-
-    &__menu-list {
-      gap: 0 1rem;
-    }
-  }
-
   //---Banner-m------
   .banner-m {
     &__inner {
@@ -84,17 +73,6 @@
 
 //max-width: 992px
 @include mix.laptop {
-  //---Header-----
-  .header {
-    &__block {
-      gap: 0 0.5rem;
-    }
-
-    &__menu-list {
-      gap: 0 0.5rem;
-    }
-  }
-
   //---Banner-------
   .banner {
     &__title {
@@ -137,40 +115,6 @@
 
 //max-width: 768px
 @include mix.tablet {
-  //---Header-----
-  .header {
-    &__block {
-      display: none;
-    }
-  }
-
-  //---mobile btn-menu---
-  .btn-menu {
-    display: block;
-  }
-
-  //---Footer------
-  .footer {
-    padding: 2.25rem 0;
-
-    &__inner,
-    &__box,
-    &__box-logo,
-    &__box-nav,
-    &__menu {
-      align-items: center;
-    }
-
-    &__box {
-      flex-direction: column;
-      gap: 1.5rem 0;
-    }
-
-    &__text {
-      text-align: center;
-    }
-  }
-
   //---Banner-------
   .banner {
     padding: 2rem 0 0 0;

@@ -1,11 +1,12 @@
 'use strict';
+
 import './sass/style.scss';
 //Slider Theme
-import { runTheme, toggleTheme } from './js/theme.js';
+import theme from './js/theme.js';
+import burgerMenu from './js/burger-menu.js';
 
 //Slider Theme
-const sliderTheme = document.querySelector('#slider-theme');
-sliderTheme.addEventListener('change', toggleTheme);
+theme();
 
-runTheme();
-//-------------------------
+//Burger Menu
+burgerMenu();
