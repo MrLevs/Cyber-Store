@@ -208,15 +208,20 @@
     }
   }
 
-  &__container {
+  &__slider {
+    position: relative;
     width: 100%;
+    overflow: hidden;
+  }
+
+  &__container {
+    position: relative;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 0 2.6rem;
+    transition: all ease 1s;
   }
 
   &__link {
+    display: inline-block;
     width: 100%;
     border-radius: 1rem;
   }

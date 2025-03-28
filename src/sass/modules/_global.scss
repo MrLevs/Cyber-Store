@@ -2,9 +2,9 @@
 
 body {
   display: grid;
+  grid-template-rows: auto 1fr auto;
   justify-content: center;
   align-items: center;
-  grid-template-rows: auto 1fr auto;
   font-family: 'Inter', sans-serif;
   background-color: var.$body-bg;
   transition: var.$transition-bg;
