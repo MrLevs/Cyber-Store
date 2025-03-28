@@ -209,15 +209,21 @@
   }
 
   &__slider {
-    position: relative;
     width: 100%;
+    position: relative;
     overflow: hidden;
   }
 
   &__container {
+    width: inherit;
     position: relative;
     display: flex;
     transition: all ease 1s;
+  }
+
+  &__slide {
+    width: 100%;
+    min-width: 132px;
   }
 
   &__link {
@@ -226,7 +232,7 @@
     border-radius: 1rem;
   }
 
-  &__slide {
+  &__block {
     padding: 1.5rem 0.5rem;
     width: 100%;
     display: flex;

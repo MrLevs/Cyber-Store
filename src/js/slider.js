@@ -13,13 +13,18 @@ export default function () {
 
   function init() {
     console.log('resize');
-    width = slider.offsetWidth;
+    let a = document.documentElement.clientWidth;
+    width = slider.getBoundingClientRect();
+    if (a <= 1230) {
+      slider.style.width = a - 30 + 'px';
+    }
     // sliderContainer.style.width = width * slides.length + 'px';
     // slides.forEach(item => {
     //   item.style.width = width + 'px';
     //   item.style.height = 'auto';
     // });
     // rollSlider();
+    console.log(`экран ${a}`);
     console.log(width);
   }
   window.addEventListener('resize', init);
