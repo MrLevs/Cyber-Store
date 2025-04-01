@@ -208,22 +208,12 @@
     }
   }
 
-  &__slider {
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-  }
-
-  &__container {
-    width: inherit;
-    position: relative;
-    display: flex;
-    transition: all ease 1s;
+  &__line {
+    gap: 0 1rem;
   }
 
   &__slide {
     width: 100%;
-    min-width: 132px;
   }
 
   &__link {

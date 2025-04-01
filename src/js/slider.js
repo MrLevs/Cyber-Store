@@ -1,56 +1,103 @@
 'use strict';
 
 export default function () {
-  const slider = document.querySelector('.slider');
-  const sliderContainer = document.querySelector('.slider__container');
-  const slides = document.querySelectorAll('.slider__slide');
+  const sliderBox = document.querySelector('._slider-box');
 
-  const btnPrev = document.querySelector('.slider__btn-prev');
-  const btnNext = document.querySelector('.slider__btn-next');
+  function sliderWork(item) {
+    const sliderLine = item.querySelector('.slider__line');
+    const slide = item.querySelectorAll('.slider__slide');
 
-  let count = 0;
-  let width;
+    let count = 0;
+    let width;
+    const widthDevice = document.body.clientWidth;
+    function init() {
+      width = item.querySelector('.slider').offsetWidth;
+      if (widthDevice <= 866 && widthDevice > 586) {
+        sliderLine.style.width = (width / 4) * slide.length + 'px';
+      } else if (widthDevice <= 586 && widthDevice > 576) {
+        sliderLine.style.width = (width / 3) * slide.length + 'px';
+      } else if (widthDevice <= 576) {
+        sliderLine.style.width = (width / 2) * (slide.length / 3) + 'px';
+      } else {
+        sliderLine.style.width = (width / 6) * slide.length + 'px';
+      }
+      slide.forEach(item => {
+        if (widthDevice <= 866 && widthDevice > 586) {
+          item.style.width = width / 4 + 'px';
+        } else if (widthDevice <= 586 && widthDevice > 576) {
+          item.style.width = width / 3 + 'px';
+        } else if (widthDevice <= 576) {
+          item.style.width = width / 2.1 + 'px';
+        } else {
+          item.style.width = width / 6 + 'px';
+        }
 
-  function init() {
-    console.log('resize');
-    let a = document.documentElement.clientWidth;
-    width = slider.getBoundingClientRect();
-    if (a <= 1230) {
-      slider.style.width = a - 30 + 'px';
+        item.style.height = 'auto';
+      });
+      rollSlider();
     }
-    // sliderContainer.style.width = width * slides.length + 'px';
-    // slides.forEach(item => {
-    //   item.style.width = width + 'px';
-    //   item.style.height = 'auto';
-    // });
-    // rollSlider();
-    console.log(`экран ${a}`);
-    console.log(width);
-  }
-  window.addEventListener('resize', init);
-  init();
 
-  btnPrev.addEventListener('click', movePrev);
-  btnNext.addEventListener('click', moveNext);
+    window.addEventListener('resize', init);
+    init();
 
-  function movePrev() {
-    count--;
-    if (count < 0) {
-      count = slides.length - 1;
+    item.querySelector('.slider__btn-next').addEventListener('click', function () {
+      count++;
+      if (widthDevice <= 866 && widthDevice > 586) {
+        if (count > slide.length - 4) {
+          count = 0;
+        }
+      } else if (widthDevice <= 586 && widthDevice > 576) {
+        if (count > slide.length - 3) {
+          count = 0;
+        }
+      } else if (widthDevice <= 576) {
+        if (count > slide.length / 6) {
+          count = 0;
+        }
+      } else {
+        if (count > slide.length / 2) {
+          count = 0;
+        }
+      }
+
+      rollSlider();
+    });
+
+    item.querySelector('.slider__btn-prev').addEventListener('click', function () {
+      count--;
+      if (widthDevice <= 866 && widthDevice > 586) {
+        if (count < 0) {
+          count = slide.length - 4;
+        }
+      } else if (widthDevice <= 586 && widthDevice > 576) {
+        if (count < 0) {
+          count = slide.length - 3;
+        }
+      } else if (widthDevice <= 576) {
+        if (count < 0) {
+          count = slide.length / 6;
+        }
+      } else {
+        if (count < 0) {
+          count = slide.length / 2;
+        }
+      }
+
+      rollSlider();
+    });
+
+    function rollSlider() {
+      if (widthDevice <= 866 && widthDevice > 586) {
+        sliderLine.style.transform = 'translate(-' + count * (width / 4) + 'px)';
+      } else if (widthDevice <= 586 && widthDevice > 576) {
+        sliderLine.style.transform = 'translate(-' + count * (width / 3) + 'px)';
+      } else if (widthDevice <= 576) {
+        sliderLine.style.transform = 'translate(-' + count * (width / 2) + 'px)';
+      } else {
+        sliderLine.style.transform = 'translate(-' + count * (width / 6) + 'px)';
+      }
     }
-    rollSlider();
   }
 
-  function moveNext() {
-    count++;
-    if (count >= slides.length) {
-      count = 0;
-    }
-    console.log(count);
-    rollSlider();
-  }
-
-  function rollSlider() {
-    sliderContainer.style.transform = 'translate(-' + count * width + 'px)';
-  }
+  sliderWork(sliderBox);
 }

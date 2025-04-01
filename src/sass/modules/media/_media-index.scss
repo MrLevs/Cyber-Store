@@ -56,13 +56,6 @@
     }
   }
 
-  //---Category-------
-  .category {
-    &__container {
-      gap: 0 2rem;
-    }
-  }
-
   //---Product-card------
   .product-card {
     &__link {
@@ -82,11 +75,8 @@
 
   //---Category-------
   .category {
-    &__container {
-      gap: 1rem;
-      display: grid;
-      grid-template-rows: repeat(2, 1fr);
-      grid-template-columns: repeat(6, 1fr);
+    &__line {
+      gap: 0.5rem;
     }
   }
 
@@ -203,9 +193,10 @@
 
   //---Category-------
   .category {
-    &__container {
+    &__line {
+      display: grid;
       grid-template-rows: repeat(3, 1fr);
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 

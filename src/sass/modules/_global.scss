@@ -1,10 +1,11 @@
 @use 'variables' as var;
 
 body {
+  width: 100%;
   display: grid;
   grid-template-rows: auto 1fr auto;
-  justify-content: center;
-  align-items: center;
+  grid-template-columns: 100%;
+  justify-items: center;
   font-family: 'Inter', sans-serif;
   background-color: var.$body-bg;
   transition: var.$transition-bg;
@@ -12,9 +13,6 @@ body {
 
 a {
   text-decoration: none;
-  & svg {
-    display: block;
-  }
 }
 
 //---Container------
@@ -32,6 +30,7 @@ a {
 //-------Header-------
 .header {
   max-width: var.$max-width;
+  width: 100%;
   background-color: var.$header-bg;
   transition: var.$transition-bg;
 
@@ -323,10 +322,13 @@ a {
 //-----Main-----
 main {
   max-width: var.$max-width;
+  width: 100%;
 }
 
 //-------footer-------
 .footer {
+  max-width: var.$max-width;
+  width: 100%;
   padding: 6.25rem 0;
   background-color: var.$footer-bg;
   transition: var.$transition-bg;
@@ -412,5 +414,15 @@ main {
     &:hover {
       transform: rotateZ(30deg) scale(1.5);
     }
+  }
+}
+
+//-----Slider-------
+.slider {
+  max-width: 100%;
+  overflow: hidden;
+  &__line {
+    display: flex;
+    transition: all ease 1s;
   }
 }
