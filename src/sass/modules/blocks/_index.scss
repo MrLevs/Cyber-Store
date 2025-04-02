@@ -206,6 +206,13 @@
       transition: var.$transition-fill;
       fill: var.$category-btn-fill;
     }
+
+    &:hover {
+      svg {
+        fill: var.$slider-btn-fill-hover;
+        transition: var.$transition-fill;
+      }
+    }
   }
 
   &__line {
@@ -296,10 +303,12 @@
     }
   }
 
-  &__item {
+  &__items {
     display: grid;
     grid-template-rows: repeat(2, 1fr);
     grid-template-columns: repeat(4, 1fr);
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
     gap: 2rem;
   }
 }
@@ -376,10 +385,11 @@
 .banners {
   background-color: var.$banners-bg;
   transition: var.$transition-bg;
-  &__inner {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
+
+  &__slide {
+    .banners__card {
+      height: 100%;
+    }
   }
 
   &__card {
@@ -422,6 +432,68 @@
     color: var.$banners-text-color;
     transition: var.$transition-color;
   }
+
+  &__btn {
+    position: absolute;
+    top: 40%;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      svg {
+        fill: var.$slider-btn-fill-hover;
+        transition: var.$transition-fill;
+      }
+    }
+
+    &_prev {
+      left: 0;
+    }
+
+    &_next {
+      right: 0;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 45%;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    &:hover {
+      svg {
+        fill: var.$slider-btn-fill-hover;
+        transition: var.$transition-fill;
+      }
+    }
+
+    &_prev {
+      left: 0;
+    }
+
+    &_next {
+      right: 0;
+    }
+  }
+
+  &__indicators {
+    margin: 2rem 0;
+    padding: 0;
+    display: none;
+  }
+
+  &__indicator {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: #000;
+    opacity: 0.1;
+    cursor: pointer;
+    transition: var.$transition-opacity;
+  }
 }
 
 //-------Discount---------
@@ -441,7 +513,9 @@
     display: grid;
     grid-template-rows: 1fr;
     grid-template-columns: repeat(4, 1fr);
-    gap: 0 2rem;
+    grid-auto-columns: 1fr;
+    grid-auto-rows: 1fr;
+    gap: 2rem;
   }
 }
 

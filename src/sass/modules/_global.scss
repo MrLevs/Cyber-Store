@@ -420,6 +420,7 @@ main {
 //-----Slider-------
 .slider {
   max-width: 100%;
+  position: relative;
   overflow: hidden;
   &__line {
     display: flex;

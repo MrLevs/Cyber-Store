@@ -75,6 +75,9 @@ $transition-transform: transform ease 0.5s;
   --category-svg-stroke: #000;
   --category-name-color: #000;
 
+  //---Slider-----
+  --slider-btn-fill-hover: red;
+
   //---Title--------
   --title-color: #000;
 
@@ -172,6 +175,9 @@ $transition-transform: transform ease 0.5s;
   --category-slide-bg: #012e32;
   --category-svg-stroke: #fff;
   --category-name-color: #fff;
+
+  //---Slider-----
+  --slider-btn-fill-hover: red;
 
   //---Title--------
   --title-color: #fff;
@@ -271,6 +277,9 @@ $category-btn-fill: var(--category-btn-fill);
 $category-slide-bg: var(--category-slide-bg);
 $category-svg-stroke: var(--category-svg-stroke);
 $category-name-color: var(--category-name-color);
+
+//---Slider-----
+$slider-btn-fill-hover: var(--slider-btn-fill-hover);
 
 //---Title------
 $title-color: var(--title-color);

@@ -269,7 +269,7 @@
           </div>
         </div>
       </section>
-      <section class="category _slider-box">
+      <section class="category slider_box">
         <div class="container container-m">
           <div class="category__inner">
             <div class="category__box">
@@ -483,7 +483,7 @@
               <button class="products__btn">Featured Products</button>
             </div>
             <div class="products__container">
-              <div class="products__item">
+              <div class="products__items">
                 <article class="product-card">
                   <button class="product-card__btn" aria-label="like">
                     <svg
@@ -668,45 +668,65 @@
           </div>
         </div>
       </section>
-      <section class="banners" hidden>
+      <section class="banners slider_block">
         <div class="container">
-          <div class="banners__inner">
-            <article class="banners__card banners__card_bg">
-              <img src="/images/popular.png" alt="Popular Products" class="banners__img" />
-              <h2 class="banners__title" id="bt-1">Popular Products</h2>
-              <p class="banners__text">
-                iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of
-                use.
-              </p>
-              <a href="#" class="shop-link shop-link_color" aria-describedby="bt-1">Shop Now</a>
-            </article>
-            <article class="banners__card banners__card_bg2">
-              <img src="/images/ipad-pro.png" alt="Ipad Pro" class="banners__img" />
-              <h2 class="banners__title" id="bt-2">Ipad Pro</h2>
-              <p class="banners__text">
-                iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of
-                use.
-              </p>
-              <a href="#" class="shop-link shop-link_color" aria-describedby="bt-2">Shop Now</a>
-            </article>
-            <article class="banners__card banners__card_bg3">
-              <img src="/images/samsung-galaxy.png " alt="Samsung Galaxy " class="banners__img" />
-              <h2 class="banners__title" id="bt-3">Samsung Galaxy</h2>
-              <p class="banners__text">
-                iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of
-                use.
-              </p>
-              <a href="#" class="shop-link shop-link_color" aria-describedby="bt-3">Shop Now</a>
-            </article>
-            <article class="banners__card banners__card_bg4">
-              <img src="/images/macbook-pro.png" alt="Macbook Pro" class="banners__img" />
-              <h2 class="banners__title" id="bt-4">Macbook Pro</h2>
-              <p class="banners__text">
-                iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease of
-                use.
-              </p>
-              <a href="#" class="shop-link shop-link_color" aria-describedby="bt-4">Shop Now</a>
-            </article>
+          <div class="slider">
+            <div class="slider__line">
+              <div class="slider__slide banners__slide">
+                <article class="banners__card banners__card_bg">
+                  <img src="/images/popular.png" alt="Popular Products" class="banners__img" />
+                  <h2 class="banners__title" id="bt-1">Popular Products</h2>
+                  <p class="banners__text">
+                    iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease
+                    of use.
+                  </p>
+                  <a href="#" class="shop-link shop-link_color" aria-describedby="bt-1">Shop Now</a>
+                </article>
+              </div>
+              <div class="slider__slide banners__slide">
+                <article class="banners__card banners__card_bg2">
+                  <img src="/images/ipad-pro.png" alt="Ipad Pro" class="banners__img" />
+                  <h2 class="banners__title" id="bt-2">Ipad Pro</h2>
+                  <p class="banners__text">
+                    iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease
+                    of use.
+                  </p>
+                  <a href="#" class="shop-link shop-link_color" aria-describedby="bt-2">Shop Now</a>
+                </article>
+              </div>
+              <div class="slider__slide banners__slide">
+                <article class="banners__card banners__card_bg3">
+                  <img src="/images/samsung-galaxy.png " alt="Samsung Galaxy " class="banners__img" />
+                  <h2 class="banners__title" id="bt-3">Samsung Galaxy</h2>
+                  <p class="banners__text">
+                    iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease
+                    of use.
+                  </p>
+                  <a href="#" class="shop-link shop-link_color" aria-describedby="bt-3">Shop Now</a>
+                </article>
+              </div>
+              <div class="slider__slide banners__slide">
+                <article class="banners__card banners__card_bg4">
+                  <img src="/images/macbook-pro.png" alt="Macbook Pro" class="banners__img" />
+                  <h2 class="banners__title" id="bt-4">Macbook Pro</h2>
+                  <p class="banners__text">
+                    iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease
+                    of use.
+                  </p>
+                  <a href="#" class="shop-link shop-link_color" aria-describedby="bt-4">Shop Now</a>
+                </article>
+              </div>
+            </div>
+            <button class="slider__btn-prev banners__btn banners__btn_prev" aria-label="prev">
+              <svg width="24" height="34" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
+                <use href="/images/sprite-icon.svg#btn-prev" />
+              </svg>
+            </button>
+            <button class="slider__btn-next banners__btn banners__btn_next" aria-label="next">
+              <svg width="24" height="34" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
+                <use href="/images/sprite-icon.svg#btn-next" />
+              </svg>
+            </button>
           </div>
         </div>
       </section>
