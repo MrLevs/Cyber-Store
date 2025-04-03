@@ -106,14 +106,15 @@ export default function () {
 
   //---slider banners------
   function sliderCreate(item) {
-    const slider = item.querySelector('.slider');
     const sliderLine = item.querySelector('.slider__line');
     const slide = item.querySelectorAll('.slider__slide');
+    const indicatorsBox = item.querySelector('.slider__box');
 
     //---create Indicators-----------
     const ol = document.createElement('ol');
     ol.className = 'banners__indicators';
-    slider.append(ol);
+    ol.style.width = 2 * slide.length + 'rem';
+    indicatorsBox.append(ol);
 
     for (let i = 0; i < slide.length; i++) {
       const li = document.createElement('li');
@@ -137,6 +138,58 @@ export default function () {
         rollSlider();
       });
     });
+
+    function indicatorActive() {
+      indicator.forEach((item, index) => {
+        if (index == count && index == 0) {
+          indicator[index + 1].style.transform = 'scale(0.75)';
+          indicator[index + 1].style.opacity = '0.4';
+        }
+        if (item.dataset.slide == count) {
+          item.style.opacity = '1';
+        }
+      });
+    }
+
+    function indicatorDynamic() {
+      if (slide.length > 4) {
+        let indicatorContainer = document.querySelector('.banners__box');
+        indicatorContainer.classList.add('banners__box_dynamic');
+
+        indicator.forEach((item, index) => {
+          item.style.left = '4rem';
+          item.style.transform = 'scale(0.5)';
+          if (item.dataset.slide == count) {
+            item.style.transform = 'scale(1)';
+          }
+
+          item.addEventListener('click', function () {
+            indicator.forEach(item => {
+              item.style.backgroundColor = 'black';
+              item.style.left = '1.5rem';
+              item.style.opacity = '0.1';
+              item.style.transform = 'scale(0.5)';
+            });
+
+            if (index == count && index !== 0 && index !== indicator.length - 1) {
+              indicator[index - 1].style.transform = 'scale(0.75)';
+              indicator[index - 1].style.opacity = '0.4';
+              indicator[index + 1].style.transform = 'scale(0.75)';
+              indicator[index + 1].style.opacity = '0.4';
+            } else {
+              indicator[index + 1].style.transform = 'scale(0.75)';
+              indicator[index + 1].style.opacity = '0.4';
+            }
+
+            count = item.dataset.slide;
+            item.style.opacity = '1';
+            item.style.transform = 'scale(1)';
+            rollSlider();
+          });
+        });
+      }
+    }
+    indicatorDynamic();
 
     function init() {
       width = item.querySelector('.slider').offsetWidth;
@@ -164,6 +217,7 @@ export default function () {
         item.style.height = 'auto';
       });
       rollSlider();
+      indicatorActive();
     }
 
     window.addEventListener('resize', init);
@@ -190,6 +244,8 @@ export default function () {
       }
 
       rollSlider();
+      indicatorActive();
+      indicatorDynamic();
     });
 
     item.querySelector('.slider__btn-prev').addEventListener('click', function () {
@@ -213,6 +269,8 @@ export default function () {
       }
 
       rollSlider();
+      indicatorActive();
+      indicatorDynamic();
     });
 
     function rollSlider() {
