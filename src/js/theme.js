@@ -27,7 +27,7 @@ export default function () {
       setTheme('theme-dark');
       document.querySelector('#slider-theme').checked = false;
     } else {
-      setTheme('theme-light');
+      setTheme('root');
       document.querySelector('#slider-theme').checked = true;
     }
   }
