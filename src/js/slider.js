@@ -166,7 +166,6 @@ export default function () {
           item.addEventListener('click', function () {
             indicator.forEach(item => {
               item.style.backgroundColor = 'black';
-              item.style.left = '1.5rem';
               item.style.opacity = '0.1';
               item.style.transform = 'scale(0.5)';
             });
@@ -176,9 +175,14 @@ export default function () {
               indicator[index - 1].style.opacity = '0.4';
               indicator[index + 1].style.transform = 'scale(0.75)';
               indicator[index + 1].style.opacity = '0.4';
+              ol.style.right = 1.5 * (index + 1) + 'rem';
+            } else if (index == indicator.length - 1) {
+              indicator[index - 1].style.transform = 'scale(0.75)';
+              indicator[index - 1].style.opacity = '0.4';
             } else {
               indicator[index + 1].style.transform = 'scale(0.75)';
               indicator[index + 1].style.opacity = '0.4';
+              ol.style.right = 0 + 'rem';
             }
 
             count = item.dataset.slide;
@@ -216,6 +220,13 @@ export default function () {
 
         item.style.height = 'auto';
       });
+
+      // ---btn vision---
+      if (slide.length <= 4 && widthDevice > 1270) {
+        item.querySelector('.slider__btn-next').style.display = 'none';
+        item.querySelector('.slider__btn-prev').style.display = 'none';
+      }
+
       rollSlider();
       indicatorActive();
     }
@@ -246,6 +257,7 @@ export default function () {
       rollSlider();
       indicatorActive();
       indicatorDynamic();
+      console.log(count);
     });
 
     item.querySelector('.slider__btn-prev').addEventListener('click', function () {

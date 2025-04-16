@@ -483,7 +483,7 @@
     margin: 0 auto;
 
     &_dynamic {
-      max-width: 11rem;
+      max-width: 10rem;
       position: relative;
       overflow: hidden;
     }
@@ -492,7 +492,10 @@
   &__indicators {
     margin: 2rem auto;
     padding: 0;
+    position: relative;
+    right: 0;
     display: none;
+    transition: all ease 0.5s;
   }
 
   &__indicator {
