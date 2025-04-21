@@ -142,58 +142,88 @@ export default function () {
     function indicatorActive() {
       indicator.forEach((item, index) => {
         if (index == count && index == 0) {
+          indicator.forEach(item => {
+            item.style.opacity = '0.1';
+            item.style.transform = 'scale(0.5)';
+          });
+
           indicator[index + 1].style.transform = 'scale(0.75)';
           indicator[index + 1].style.opacity = '0.4';
+          console.log(indicator[index + 1]);
         }
         if (item.dataset.slide == count) {
+          indicator.forEach(item => {
+            item.style.opacity = '0.1';
+            item.style.transform = 'scale(0.5)';
+          });
+
+          item.style.transform = 'scale(1)';
           item.style.opacity = '1';
+          console.log(item);
+
+          if (index == count && index !== 0 && index !== indicator.length - 1) {
+            indicator[index - 1].style.transform = 'scale(0.75)';
+            indicator[index - 1].style.opacity = '0.4';
+            indicator[index + 1].style.transform = 'scale(0.75)';
+            indicator[index + 1].style.opacity = '0.4';
+            ol.style.right = 1.5 * (index + 1) + 'rem';
+          } else if (index == indicator.length - 1) {
+            indicator[index - 1].style.transform = 'scale(0.75)';
+            indicator[index - 1].style.opacity = '0.4';
+            ol.style.right = 1.5 * index + 'rem';
+          } else {
+            indicator[index + 1].style.transform = 'scale(0.75)';
+            indicator[index + 1].style.opacity = '0.4';
+            ol.style.right = 0 + 'rem';
+          }
         }
       });
     }
 
     function indicatorDynamic() {
-      if (slide.length > 4) {
-        let indicatorContainer = document.querySelector('.banners__box');
-        indicatorContainer.classList.add('banners__box_dynamic');
+      let indicatorContainer = document.querySelector('.banners__box');
+      indicatorContainer.classList.add('banners__box_dynamic');
 
-        indicator.forEach((item, index) => {
-          item.style.left = '4rem';
-          item.style.transform = 'scale(0.5)';
-          if (item.dataset.slide == count) {
-            item.style.transform = 'scale(1)';
+      indicator.forEach((item, index) => {
+        item.style.left = '4rem';
+        item.style.transform = 'scale(0.5)';
+        if (item.dataset.slide == count) {
+          item.style.transform = 'scale(1)';
+        }
+
+        item.addEventListener('click', function () {
+          indicator.forEach(item => {
+            item.style.backgroundColor = 'black';
+            item.style.opacity = '0.1';
+            item.style.transform = 'scale(0.5)';
+          });
+
+          if (index == count && index !== 0 && index !== indicator.length - 1) {
+            indicator[index - 1].style.transform = 'scale(0.75)';
+            indicator[index - 1].style.opacity = '0.4';
+            indicator[index + 1].style.transform = 'scale(0.75)';
+            indicator[index + 1].style.opacity = '0.4';
+            ol.style.right = 1.5 * (index + 1) + 'rem';
+          } else if (index == indicator.length - 1) {
+            indicator[index - 1].style.transform = 'scale(0.75)';
+            indicator[index - 1].style.opacity = '0.4';
+          } else {
+            indicator[index + 1].style.transform = 'scale(0.75)';
+            indicator[index + 1].style.opacity = '0.4';
+            ol.style.right = 0 + 'rem';
           }
 
-          item.addEventListener('click', function () {
-            indicator.forEach(item => {
-              item.style.backgroundColor = 'black';
-              item.style.opacity = '0.1';
-              item.style.transform = 'scale(0.5)';
-            });
-
-            if (index == count && index !== 0 && index !== indicator.length - 1) {
-              indicator[index - 1].style.transform = 'scale(0.75)';
-              indicator[index - 1].style.opacity = '0.4';
-              indicator[index + 1].style.transform = 'scale(0.75)';
-              indicator[index + 1].style.opacity = '0.4';
-              ol.style.right = 1.5 * (index + 1) + 'rem';
-            } else if (index == indicator.length - 1) {
-              indicator[index - 1].style.transform = 'scale(0.75)';
-              indicator[index - 1].style.opacity = '0.4';
-            } else {
-              indicator[index + 1].style.transform = 'scale(0.75)';
-              indicator[index + 1].style.opacity = '0.4';
-              ol.style.right = 0 + 'rem';
-            }
-
-            count = item.dataset.slide;
-            item.style.opacity = '1';
-            item.style.transform = 'scale(1)';
-            rollSlider();
-          });
+          count = item.dataset.slide;
+          item.style.opacity = '1';
+          item.style.transform = 'scale(1)';
+          rollSlider();
         });
-      }
+      });
     }
-    indicatorDynamic();
+
+    if (slide.length > 4) {
+      indicatorDynamic();
+    }
 
     function init() {
       width = item.querySelector('.slider').offsetWidth;
@@ -256,8 +286,6 @@ export default function () {
 
       rollSlider();
       indicatorActive();
-      indicatorDynamic();
-      console.log(count);
     });
 
     item.querySelector('.slider__btn-prev').addEventListener('click', function () {
@@ -282,7 +310,6 @@ export default function () {
 
       rollSlider();
       indicatorActive();
-      indicatorDynamic();
     });
 
     function rollSlider() {
