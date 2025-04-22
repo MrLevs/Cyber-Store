@@ -481,12 +481,9 @@
 
   &__box {
     margin: 0 auto;
-
-    &_dynamic {
-      max-width: 10rem;
-      position: relative;
-      overflow: hidden;
-    }
+    max-width: 10rem;
+    position: relative;
+    overflow: hidden;
   }
 
   &__indicators {

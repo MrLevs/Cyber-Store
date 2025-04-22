@@ -7,6 +7,30 @@ export default function () {
   //---slider banners------
   const sliderBlock = document.querySelector('.slider_block');
 
+  // class Slider {
+  //   constructor(item) {
+  //     this.sliderLine = item.querySelector('.slider__line');
+  //     this.slide = item.querySelectorAll('.slider__slide');
+
+  //     this.count = 0;
+  //     this.width;
+  //     this.widthDevice = document.body.clientWidth;
+  //   }
+
+  //   init(item) {
+  //     this.width = item.querySelector('.slider').offsetWidth;
+  //     if (this.widthDevice <= 866 && this.widthDevice > 586) {
+  //       this.sliderLine.style.width = (this.width / 4) * this.slide.length + 'px';
+  //     } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
+  //       this.sliderLine.style.width = (this.width / 3) * this.slide.length + 'px';
+  //     } else if (this.widthDevice <= 576) {
+  //       this.sliderLine.style.width = (this.width / 2) * (this.slide.length / 3) + 'px';
+  //     } else {
+  //       this.sliderLine.style.width = (this.width / 6) * this.slide.length + 'px';
+  //     }
+  //   }
+  // }
+
   //---slider category-----------
   function sliderWork(item) {
     const sliderLine = item.querySelector('.slider__line');
@@ -15,6 +39,7 @@ export default function () {
     let count = 0;
     let width;
     const widthDevice = document.body.clientWidth;
+
     function init() {
       width = item.querySelector('.slider').offsetWidth;
       if (widthDevice <= 866 && widthDevice > 586) {
@@ -26,6 +51,7 @@ export default function () {
       } else {
         sliderLine.style.width = (width / 6) * slide.length + 'px';
       }
+
       slide.forEach(item => {
         if (widthDevice <= 866 && widthDevice > 586) {
           item.style.width = width / 4 + 'px';
@@ -110,6 +136,10 @@ export default function () {
     const slide = item.querySelectorAll('.slider__slide');
     const indicatorsBox = item.querySelector('.slider__box');
 
+    let count = 0;
+    let width;
+    const widthDevice = document.body.clientWidth;
+
     //---create Indicators-----------
     const ol = document.createElement('ol');
     ol.className = 'banners__indicators';
@@ -123,106 +153,48 @@ export default function () {
       ol.append(li);
     }
 
-    let count = 0;
-    let width;
-    const widthDevice = document.body.clientWidth;
-
     const indicator = item.querySelectorAll('.banners__indicator');
     indicator.forEach(item => {
+      if (slide.length > 4) {
+        item.style.left = '4rem';
+      }
       item.addEventListener('click', function () {
-        indicator.forEach(item => {
-          item.style.opacity = '0.1';
-        });
         count = item.dataset.slide;
-        item.style.opacity = '1';
+        indicatorActive();
         rollSlider();
       });
     });
 
     function indicatorActive() {
       indicator.forEach((item, index) => {
-        if (index == count && index == 0) {
-          indicator.forEach(item => {
-            item.style.opacity = '0.1';
-            item.style.transform = 'scale(0.5)';
-          });
-
-          indicator[index + 1].style.transform = 'scale(0.75)';
-          indicator[index + 1].style.opacity = '0.4';
-          console.log(indicator[index + 1]);
-        }
         if (item.dataset.slide == count) {
           indicator.forEach(item => {
             item.style.opacity = '0.1';
             item.style.transform = 'scale(0.5)';
           });
 
-          item.style.transform = 'scale(1)';
-          item.style.opacity = '1';
-          console.log(item);
-
-          if (index == count && index !== 0 && index !== indicator.length - 1) {
-            indicator[index - 1].style.transform = 'scale(0.75)';
-            indicator[index - 1].style.opacity = '0.4';
-            indicator[index + 1].style.transform = 'scale(0.75)';
-            indicator[index + 1].style.opacity = '0.4';
-            ol.style.right = 1.5 * (index + 1) + 'rem';
-          } else if (index == indicator.length - 1) {
-            indicator[index - 1].style.transform = 'scale(0.75)';
-            indicator[index - 1].style.opacity = '0.4';
-            ol.style.right = 1.5 * index + 'rem';
-          } else {
-            indicator[index + 1].style.transform = 'scale(0.75)';
-            indicator[index + 1].style.opacity = '0.4';
-            ol.style.right = 0 + 'rem';
-          }
-        }
-      });
-    }
-
-    function indicatorDynamic() {
-      let indicatorContainer = document.querySelector('.banners__box');
-      indicatorContainer.classList.add('banners__box_dynamic');
-
-      indicator.forEach((item, index) => {
-        item.style.left = '4rem';
-        item.style.transform = 'scale(0.5)';
-        if (item.dataset.slide == count) {
-          item.style.transform = 'scale(1)';
-        }
-
-        item.addEventListener('click', function () {
-          indicator.forEach(item => {
-            item.style.backgroundColor = 'black';
-            item.style.opacity = '0.1';
-            item.style.transform = 'scale(0.5)';
-          });
-
-          if (index == count && index !== 0 && index !== indicator.length - 1) {
-            indicator[index - 1].style.transform = 'scale(0.75)';
-            indicator[index - 1].style.opacity = '0.4';
-            indicator[index + 1].style.transform = 'scale(0.75)';
-            indicator[index + 1].style.opacity = '0.4';
-            ol.style.right = 1.5 * (index + 1) + 'rem';
-          } else if (index == indicator.length - 1) {
-            indicator[index - 1].style.transform = 'scale(0.75)';
-            indicator[index - 1].style.opacity = '0.4';
-          } else {
-            indicator[index + 1].style.transform = 'scale(0.75)';
-            indicator[index + 1].style.opacity = '0.4';
-            ol.style.right = 0 + 'rem';
+          if (slide.length > 4) {
+            if (index == count && index !== 0 && index !== indicator.length - 1) {
+              indicator[index - 1].style.transform = 'scale(0.75)';
+              indicator[index - 1].style.opacity = '0.4';
+              indicator[index + 1].style.transform = 'scale(0.75)';
+              indicator[index + 1].style.opacity = '0.4';
+              ol.style.right = 1.5 * (index + 1) + 'rem';
+            } else if (index == indicator.length - 1) {
+              indicator[index - 1].style.transform = 'scale(0.75)';
+              indicator[index - 1].style.opacity = '0.4';
+              ol.style.right = 1.5 * index + 'rem';
+            } else {
+              indicator[index + 1].style.transform = 'scale(0.75)';
+              indicator[index + 1].style.opacity = '0.4';
+              ol.style.right = 0 + 'rem';
+            }
           }
 
-          count = item.dataset.slide;
           item.style.opacity = '1';
           item.style.transform = 'scale(1)';
-          rollSlider();
-        });
+        }
       });
-    }
-
-    if (slide.length > 4) {
-      indicatorDynamic();
     }
 
     function init() {
