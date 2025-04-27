@@ -7,128 +7,213 @@ export default function () {
   //---slider banners------
   const sliderBlock = document.querySelector('.slider_block');
 
-  // class Slider {
-  //   constructor(item) {
-  //     this.sliderLine = item.querySelector('.slider__line');
-  //     this.slide = item.querySelectorAll('.slider__slide');
+  class Slider {
+    constructor(item) {
+      this.sliderLine = item.querySelector('.slider__line');
+      this.slide = item.querySelectorAll('.slider__slide');
 
-  //     this.count = 0;
-  //     this.width;
-  //     this.widthDevice = document.body.clientWidth;
-  //   }
+      this.count = 0;
+      this.width;
+      this.widthDevice = document.body.clientWidth;
 
-  //   init(item) {
-  //     this.width = item.querySelector('.slider').offsetWidth;
-  //     if (this.widthDevice <= 866 && this.widthDevice > 586) {
-  //       this.sliderLine.style.width = (this.width / 4) * this.slide.length + 'px';
-  //     } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
-  //       this.sliderLine.style.width = (this.width / 3) * this.slide.length + 'px';
-  //     } else if (this.widthDevice <= 576) {
-  //       this.sliderLine.style.width = (this.width / 2) * (this.slide.length / 3) + 'px';
-  //     } else {
-  //       this.sliderLine.style.width = (this.width / 6) * this.slide.length + 'px';
-  //     }
-  //   }
-  // }
+      this.init(item);
+      window.addEventListener('resize', this.init(item));
 
-  //---slider category-----------
-  function sliderWork(item) {
-    const sliderLine = item.querySelector('.slider__line');
-    const slide = item.querySelectorAll('.slider__slide');
+      this.stepNext = this.stepNext.bind(this);
+      this.stepPrev = this.stepPrev.bind(this);
 
-    let count = 0;
-    let width;
-    const widthDevice = document.body.clientWidth;
+      item.querySelector('.slider__btn-next').addEventListener('click', this.stepNext);
+      item.querySelector('.slider__btn-prev').addEventListener('click', this.stepPrev);
+    }
 
-    function init() {
-      width = item.querySelector('.slider').offsetWidth;
-      if (widthDevice <= 866 && widthDevice > 586) {
-        sliderLine.style.width = (width / 4) * slide.length + 'px';
-      } else if (widthDevice <= 586 && widthDevice > 576) {
-        sliderLine.style.width = (width / 3) * slide.length + 'px';
-      } else if (widthDevice <= 576) {
-        sliderLine.style.width = (width / 2) * (slide.length / 3) + 'px';
+    init(item) {
+      console.log(item);
+      this.width = item.querySelector('.slider').offsetWidth;
+      if (this.widthDevice <= 866 && this.widthDevice > 586) {
+        this.sliderLine.style.width = (this.width / 4) * this.slide.length + 'px';
+      } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
+        this.sliderLine.style.width = (this.width / 3) * this.slide.length + 'px';
+      } else if (this.widthDevice <= 576) {
+        this.sliderLine.style.width = (this.width / 2) * (this.slide.length / 3) + 'px';
       } else {
-        sliderLine.style.width = (width / 6) * slide.length + 'px';
+        this.sliderLine.style.width = (this.width / 6) * this.slide.length + 'px';
       }
 
-      slide.forEach(item => {
-        if (widthDevice <= 866 && widthDevice > 586) {
-          item.style.width = width / 4 + 'px';
-        } else if (widthDevice <= 586 && widthDevice > 576) {
-          item.style.width = width / 3 + 'px';
-        } else if (widthDevice <= 576) {
-          item.style.width = width / 2.1 + 'px';
+      this.slide.forEach(item => {
+        if (this.widthDevice <= 866 && this.widthDevice > 586) {
+          item.style.width = this.width / 4 + 'px';
+        } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
+          item.style.width = this.width / 3 + 'px';
+        } else if (this.widthDevice <= 576) {
+          item.style.width = this.width / 2.1 + 'px';
         } else {
-          item.style.width = width / 6 + 'px';
+          item.style.width = this.width / 6 + 'px';
         }
 
         item.style.height = 'auto';
       });
-      rollSlider();
+      this.rollSlider();
     }
 
-    window.addEventListener('resize', init);
-    init();
-
-    item.querySelector('.slider__btn-next').addEventListener('click', function () {
-      count++;
-      if (widthDevice <= 866 && widthDevice > 586) {
-        if (count > slide.length - 4) {
-          count = 0;
+    stepNext() {
+      this.count++;
+      if (this.widthDevice <= 866 && this.widthDevice > 586) {
+        if (this.count > this.slide.length - 4) {
+          this.count = 0;
         }
-      } else if (widthDevice <= 586 && widthDevice > 576) {
-        if (count > slide.length - 3) {
-          count = 0;
+      } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
+        if (this.count > this.slide.length - 3) {
+          this.count = 0;
         }
-      } else if (widthDevice <= 576) {
-        if (count > slide.length / 6) {
-          count = 0;
+      } else if (this.widthDevice <= 576) {
+        if (this.count > this.slide.length / 6) {
+          this.count = 0;
         }
       } else {
-        if (count > slide.length / 2) {
-          count = 0;
+        if (this.count > this.slide.length / 2) {
+          this.count = 0;
         }
       }
 
-      rollSlider();
-    });
+      this.rollSlider();
+    }
 
-    item.querySelector('.slider__btn-prev').addEventListener('click', function () {
-      count--;
-      if (widthDevice <= 866 && widthDevice > 586) {
-        if (count < 0) {
-          count = slide.length - 4;
+    stepPrev() {
+      this.count--;
+      if (this.widthDevice <= 866 && this.widthDevice > 586) {
+        if (this.count < 0) {
+          this.count = this.slide.length - 4;
         }
-      } else if (widthDevice <= 586 && widthDevice > 576) {
-        if (count < 0) {
-          count = slide.length - 3;
+      } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
+        if (this.count < 0) {
+          this.count = this.slide.length - 3;
         }
-      } else if (widthDevice <= 576) {
-        if (count < 0) {
-          count = slide.length / 6;
+      } else if (this.widthDevice <= 576) {
+        if (this.count < 0) {
+          this.count = this.slide.length / 6;
         }
       } else {
-        if (count < 0) {
-          count = slide.length / 2;
+        if (this.count < 0) {
+          this.count = this.slide.length / 2;
         }
       }
 
-      rollSlider();
-    });
+      this.rollSlider();
+    }
 
-    function rollSlider() {
-      if (widthDevice <= 866 && widthDevice > 586) {
-        sliderLine.style.transform = 'translate(-' + count * (width / 4) + 'px)';
-      } else if (widthDevice <= 586 && widthDevice > 576) {
-        sliderLine.style.transform = 'translate(-' + count * (width / 3) + 'px)';
-      } else if (widthDevice <= 576) {
-        sliderLine.style.transform = 'translate(-' + count * (width / 2) + 'px)';
+    rollSlider() {
+      if (this.widthDevice <= 866 && this.widthDevice > 586) {
+        this.sliderLine.style.transform = 'translate(-' + this.count * (this.width / 4) + 'px)';
+      } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
+        this.sliderLine.style.transform = 'translate(-' + this.count * (this.width / 3) + 'px)';
+      } else if (this.widthDevice <= 576) {
+        this.sliderLine.style.transform = 'translate(-' + this.count * (this.width / 2) + 'px)';
       } else {
-        sliderLine.style.transform = 'translate(-' + count * (width / 6) + 'px)';
+        this.sliderLine.style.transform = 'translate(-' + this.count * (this.width / 6) + 'px)';
       }
     }
   }
+
+  new Slider(sliderBox);
+
+  //---slider category-----------
+  // function sliderWork(item) {
+  //   const sliderLine = item.querySelector('.slider__line');
+  //   const slide = item.querySelectorAll('.slider__slide');
+
+  //   let count = 0;
+  //   let width;
+  //   const widthDevice = document.body.clientWidth;
+
+  //   function init() {
+  //     width = item.querySelector('.slider').offsetWidth;
+  //     if (widthDevice <= 866 && widthDevice > 586) {
+  //       sliderLine.style.width = (width / 4) * slide.length + 'px';
+  //     } else if (widthDevice <= 586 && widthDevice > 576) {
+  //       sliderLine.style.width = (width / 3) * slide.length + 'px';
+  //     } else if (widthDevice <= 576) {
+  //       sliderLine.style.width = (width / 2) * (slide.length / 3) + 'px';
+  //     } else {
+  //       sliderLine.style.width = (width / 6) * slide.length + 'px';
+  //     }
+
+  //     slide.forEach(item => {
+  //       if (widthDevice <= 866 && widthDevice > 586) {
+  //         item.style.width = width / 4 + 'px';
+  //       } else if (widthDevice <= 586 && widthDevice > 576) {
+  //         item.style.width = width / 3 + 'px';
+  //       } else if (widthDevice <= 576) {
+  //         item.style.width = width / 2.1 + 'px';
+  //       } else {
+  //         item.style.width = width / 6 + 'px';
+  //       }
+
+  //       item.style.height = 'auto';
+  //     });
+  //     rollSlider();
+  //   }
+
+  //   window.addEventListener('resize', init);
+  //   init();
+
+  //   item.querySelector('.slider__btn-next').addEventListener('click', function () {
+  //     count++;
+  //     if (widthDevice <= 866 && widthDevice > 586) {
+  //       if (count > slide.length - 4) {
+  //         count = 0;
+  //       }
+  //     } else if (widthDevice <= 586 && widthDevice > 576) {
+  //       if (count > slide.length - 3) {
+  //         count = 0;
+  //       }
+  //     } else if (widthDevice <= 576) {
+  //       if (count > slide.length / 6) {
+  //         count = 0;
+  //       }
+  //     } else {
+  //       if (count > slide.length / 2) {
+  //         count = 0;
+  //       }
+  //     }
+
+  //     rollSlider();
+  //   });
+
+  //   item.querySelector('.slider__btn-prev').addEventListener('click', function () {
+  //     count--;
+  //     if (widthDevice <= 866 && widthDevice > 586) {
+  //       if (count < 0) {
+  //         count = slide.length - 4;
+  //       }
+  //     } else if (widthDevice <= 586 && widthDevice > 576) {
+  //       if (count < 0) {
+  //         count = slide.length - 3;
+  //       }
+  //     } else if (widthDevice <= 576) {
+  //       if (count < 0) {
+  //         count = slide.length / 6;
+  //       }
+  //     } else {
+  //       if (count < 0) {
+  //         count = slide.length / 2;
+  //       }
+  //     }
+
+  //     rollSlider();
+  //   });
+
+  //   function rollSlider() {
+  //     if (widthDevice <= 866 && widthDevice > 586) {
+  //       sliderLine.style.transform = 'translate(-' + count * (width / 4) + 'px)';
+  //     } else if (widthDevice <= 586 && widthDevice > 576) {
+  //       sliderLine.style.transform = 'translate(-' + count * (width / 3) + 'px)';
+  //     } else if (widthDevice <= 576) {
+  //       sliderLine.style.transform = 'translate(-' + count * (width / 2) + 'px)';
+  //     } else {
+  //       sliderLine.style.transform = 'translate(-' + count * (width / 6) + 'px)';
+  //     }
+  //   }
+  // }
 
   //---slider banners------
   function sliderCreate(item) {
@@ -298,7 +383,7 @@ export default function () {
   }
 
   //---slider category-----------
-  sliderWork(sliderBox);
+  // sliderWork(sliderBox);
 
   //---slider banners------
   sliderCreate(sliderBlock);
