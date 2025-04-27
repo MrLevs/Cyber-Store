@@ -114,7 +114,7 @@ export default function () {
     }
   }
 
-  new Slider(sliderBox);
+  new Slider(sliderBox); //test-----------------------------------
 
   //---slider category-----------
   // function sliderWork(item) {
