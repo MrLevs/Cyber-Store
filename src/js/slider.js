@@ -125,52 +125,45 @@ export default function () {
       this.indicatorsBox;
       this.ol;
       this.indicator;
-      console.log(this.indicator);
-      this.indicatorActive = this.indicatorActive.bind(this);
-      this.a = this.a.bind(this);
-
-      this.indicator.forEach(item => {
-        item.addEventListener('click', this.a);
-      });
     }
 
     createIndicators() {
-      this.ol = document.createElement('ol');
-      this.indicatorsBox = document.querySelector('.slider__box');
-      this.ol.className = 'banners__indicators';
-      this.ol.style.width = 2 * this.slide.length + 'rem';
-      this.indicatorsBox.append(this.ol);
+      if (!this.ol) {
+        console.log(this.ol);
+        this.ol = document.createElement('ol');
+        this.indicatorsBox = document.querySelector('.slider__box');
+        this.ol.className = 'banners__indicators';
+        this.ol.style.width = 2 * this.slide.length + 'rem';
+        this.indicatorsBox.append(this.ol);
 
-      for (let i = 0; i < this.slide.length; i++) {
-        const li = document.createElement('li');
-        li.className = 'banners__indicator';
-        li.dataset.slide = i;
-        this.ol.append(li);
+        for (let i = 0; i < this.slide.length; i++) {
+          const li = document.createElement('li');
+          li.className = 'banners__indicator';
+          li.dataset.slide = i;
+          this.ol.append(li);
+        }
+
+        this.indicator = document.querySelectorAll('.banners__indicator');
+        this.indicator.forEach(item => {
+          if (this.slide.length > 4) {
+            item.style.left = '4rem';
+          }
+          item.addEventListener('click', () => {
+            this.count = item.dataset.slide;
+            this.indicatorActive();
+            this.rollSlider();
+          });
+        });
+      } else {
+        console.log(this.ol);
       }
-
-      this.indicator = document.querySelectorAll('.banners__indicator');
-      console.log(this.indicator);
-      // this.indicator.forEach(item => {
-      //   if (this.slide.length > 4) {
-      //     item.style.left = '4rem';
-      //   }
-      //   item.addEventListener('click', function () {
-      //     this.count = item.dataset.slide;
-      //     console.log(this.count);
-      //   });
-      // });
     }
 
-    a() {
-      this.indicatorActive();
-      this.rollSlider();
-    }
     indicatorActive() {
       this.indicator.forEach((item, index) => {
         if (item.dataset.slide == this.count) {
           this.indicator.forEach(item => {
             item.style.opacity = '0.1';
-            console.log(item);
             item.style.transform = 'scale(0.5)';
           });
 
