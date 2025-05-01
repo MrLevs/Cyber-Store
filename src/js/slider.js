@@ -7,32 +7,8 @@ export default function () {
   //---slider banners------
   const sliderBlock = document.querySelector('.slider_block');
 
-  // class Slider {
-  //   constructor(item) {
-  //     this.sliderLine = item.querySelector('.slider__line');
-  //     this.slide = item.querySelectorAll('.slider__slide');
-
-  //     this.count = 0;
-  //     this.width;
-  //     this.widthDevice = document.body.clientWidth;
-  //   }
-
-  //   init(item) {
-  //     this.width = item.querySelector('.slider').offsetWidth;
-  //     if (this.widthDevice <= 866 && this.widthDevice > 586) {
-  //       this.sliderLine.style.width = (this.width / 4) * this.slide.length + 'px';
-  //     } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
-  //       this.sliderLine.style.width = (this.width / 3) * this.slide.length + 'px';
-  //     } else if (this.widthDevice <= 576) {
-  //       this.sliderLine.style.width = (this.width / 2) * (this.slide.length / 3) + 'px';
-  //     } else {
-  //       this.sliderLine.style.width = (this.width / 6) * this.slide.length + 'px';
-  //     }
-  //   }
-  // }
-
   //---slider category-----------
-  function sliderWork(item) {
+  function slider(item) {
     const sliderLine = item.querySelector('.slider__line');
     const slide = item.querySelectorAll('.slider__slide');
 
@@ -130,7 +106,7 @@ export default function () {
     }
   }
 
-  //---slider banners------
+  //----------------------slider banners----------------------------
   function sliderCreate(item) {
     const sliderLine = item.querySelector('.slider__line');
     const slide = item.querySelectorAll('.slider__slide');
@@ -298,7 +274,7 @@ export default function () {
   }
 
   //---slider category-----------
-  sliderWork(sliderBox);
+  slider(sliderBox);
 
   //---slider banners------
   sliderCreate(sliderBlock);
