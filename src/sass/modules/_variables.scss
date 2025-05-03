@@ -1,6 +1,7 @@
 //---max-width 1470px------
 $max-width: 91.875rem;
 //---transition------
+$transition-all: all ease 0.5s;
 $transition-bg: background-color ease 0.5s;
 $transition-color: color ease 0.5s;
 $transition-stroke: stroke ease 0.5s;
@@ -75,9 +76,6 @@ $transition-transform: transform ease 0.5s;
   --category-svg-stroke: #000;
   --category-name-color: #000;
 
-  //---Slider-----
-  --slider-btn-fill-hover: red;
-
   //---Title--------
   --title-color: #000;
 
@@ -102,6 +100,8 @@ $transition-transform: transform ease 0.5s;
   --banners-bg-4: #cdcdcd;
   --banners-title-color: #000;
   --banners-text-color: #090909;
+  --banners-btn-fill: #000;
+  --banners-indicator-bg: #000;
 
   //---Discount-------
   --discount-bg: #fff;
@@ -176,9 +176,6 @@ $transition-transform: transform ease 0.5s;
   --category-svg-stroke: #fff;
   --category-name-color: #fff;
 
-  //---Slider-----
-  --slider-btn-fill-hover: red;
-
   //---Title--------
   --title-color: #fff;
 
@@ -203,6 +200,8 @@ $transition-transform: transform ease 0.5s;
   --banners-bg-4: #1c1c1c;
   --banners-title-color: #fff;
   --banners-text-color: #fff;
+  --banners-btn-fill: #fff;
+  --banners-indicator-bg: #fff;
 
   //---Discount-------
   --discount-bg: #1f1d22;
@@ -278,9 +277,6 @@ $category-slide-bg: var(--category-slide-bg);
 $category-svg-stroke: var(--category-svg-stroke);
 $category-name-color: var(--category-name-color);
 
-//---Slider-----
-$slider-btn-fill-hover: var(--slider-btn-fill-hover);
-
 //---Title------
 $title-color: var(--title-color);
 
@@ -305,6 +301,8 @@ $banners-bg-3: var(--banners-bg-3);
 $banners-bg-4: var(--banners-bg-4);
 $banners-title-color: var(--banners-title-color);
 $banners-text-color: var(--banners-text-color);
+$banners-btn-fill: var(--banners-btn-fill);
+$banners-indicator-bg: var(--banners-indicator-bg);
 
 //---Discount-------
 $discount-bg: var(--discount-bg);

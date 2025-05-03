@@ -206,13 +206,6 @@
       transition: var.$transition-fill;
       fill: var.$category-btn-fill;
     }
-
-    &:hover {
-      svg {
-        fill: var.$slider-btn-fill-hover;
-        transition: var.$transition-fill;
-      }
-    }
   }
 
   &__line {
@@ -435,39 +428,14 @@
 
   &__btn {
     position: absolute;
-    top: 40%;
-    cursor: pointer;
-    background-color: transparent;
-    border: none;
-
-    &:hover {
-      svg {
-        fill: var.$slider-btn-fill-hover;
-        transition: var.$transition-fill;
-      }
-    }
-
-    &_prev {
-      left: 0;
-    }
-
-    &_next {
-      right: 0;
-    }
-  }
-
-  &__btn {
-    position: absolute;
     top: 45%;
     cursor: pointer;
     background-color: transparent;
     border: none;
 
-    &:hover {
-      svg {
-        fill: var.$slider-btn-fill-hover;
-        transition: var.$transition-fill;
-      }
+    svg {
+      fill: var.$banners-btn-fill;
+      transition: var.$transition-fill;
     }
 
     &_prev {
@@ -492,7 +460,7 @@
     position: relative;
     right: 0;
     display: none;
-    transition: all ease 0.5s;
+    transition: var.$transition-all;
   }
 
   &__indicator {
@@ -501,11 +469,10 @@
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    background-color: #000;
+    background-color: var.$banners-indicator-bg;
     opacity: 0.1;
     cursor: pointer;
-    transition: var.$transition-opacity;
-    transition: all ease 0.5s;
+    transition: var.$transition-all;
   }
 }
 
