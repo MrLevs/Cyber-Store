@@ -1,4 +1,5 @@
 'use strict';
+
 import Slider from './modules/slider/class-slider';
 import SliderBanners from './modules/slider/class-slider-banners';
 

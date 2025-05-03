@@ -1,10 +1,11 @@
 'use strict';
 
 import './sass/style.scss';
-//Slider Theme
-import theme from './js/theme.js';
-import burgerMenu from './js/burger-menu.js';
-import slider from './js/slider.js';
+
+import theme from './js/theme.js'; //Slider Theme
+import burgerMenu from './js/burger-menu.js'; //Burger Menu
+import slider from './js/slider.js'; //Slider
+import toggleProducts from './js/toggle-products.js'; //Toggle Products
 
 //Slider Theme
 theme();
@@ -14,3 +15,6 @@ burgerMenu();
 
 //Slider
 slider();
+
+//Toggle Products
+toggleProducts();
