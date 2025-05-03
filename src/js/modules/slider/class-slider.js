@@ -14,8 +14,8 @@ export default class Slider {
     this.count = 0;
     this.width;
     this.widthDevice = document.body.clientWidth;
-    this.down;
-    this.up;
+    this.pointerDown;
+    this.pointerUp;
 
     this.init = this.init.bind(this);
     this.stepNext = this.stepNext.bind(this);
@@ -117,13 +117,22 @@ export default class Slider {
 
   tochMove() {
     this.slider.addEventListener('pointerdown', e => {
-      this.down = e.clientX;
+      e.preventDefault();
+      this.pointerDown = e.clientX;
     });
     this.slider.addEventListener('pointerup', e => {
-      this.up = e.clientX;
-      if (this.down > this.up) {
+      this.pointerUp = e.clientX;
+      let link = this.item.querySelectorAll('a');
+      link.forEach(item => {
+        item.addEventListener('click', e => {
+          if (this.pointerDown != this.pointerUp) {
+            e.preventDefault();
+          }
+        });
+      });
+      if (this.pointerDown > this.pointerUp) {
         this.stepNext();
-      } else if (this.down < this.up) {
+      } else if (this.pointerDown < this.pointerUp) {
         this.stepPrev();
       }
     });
