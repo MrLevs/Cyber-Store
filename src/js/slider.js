@@ -8,6 +8,7 @@ export default function () {
   new Slider(sliderItem);
 
   //---slider banners------
+
   const sliderItemBanners = document.querySelector('.slider_item-banners');
   new SliderBanners(sliderItemBanners);
 }
