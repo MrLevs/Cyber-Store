@@ -86,8 +86,7 @@
       align-items: center;
     }
 
-    &__items {
-      grid-template-rows: repeat(4, 1fr);
+    &__item {
       grid-template-columns: repeat(2, 1fr);
       gap: 1rem;
     }
@@ -107,7 +106,10 @@
 @include mix.tablet {
   //---Banner-------
   .banner {
-    padding: 2rem 0 0 0;
+    &__bg {
+      padding: 2rem 0 0 0;
+    }
+
     &__inner {
       height: 100%;
       flex-direction: column;
@@ -142,7 +144,9 @@
 
   //-------Discount---------
   .discount {
-    padding: 2rem 0;
+    &__bg {
+      padding: 2rem 0;
+    }
   }
 }
 
@@ -215,8 +219,7 @@
       gap: 1rem 0;
     }
 
-    &__items {
-      grid-template-rows: repeat(8, 1fr);
+    &__item {
       grid-template-columns: repeat(1, 1fr);
       gap: 1rem 0;
     }

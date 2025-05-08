@@ -69,7 +69,9 @@
 
   //---Footer------
   .footer {
-    padding: 2.25rem 0;
+    &__bg {
+      padding: 2.25rem 0;
+    }
 
     &__inner,
     &__box,

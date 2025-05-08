@@ -8,463 +8,477 @@
   </head>
   <body>
     <header class="header">
-      <div class="container container-m">
-        <div class="header__inner">
-          <a href="/" class="logo" aria-label="logo Cyber">
-            <svg class="logo__svg" width="66" height="24" viewBox="0 0 66 24" xmlns="http://www.w3.org/2000/svg">
-              <use href="/images/sprite-icon.svg#logo" />
-            </svg>
-          </a>
-          <div class="header__block">
-            <form id="form" class="form-search">
-              <label for="input-search" class="form-search__label" id="lable-search">
-                <svg
-                  class="form-search__icon"
-                  aria-hidden="false"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <use href="/images/sprite-icon.svg#search" />
-                </svg>
+      <div class="header__container container">
+        <div class="header__bg">
+          <div class="header__inner container-m">
+            <a href="/" class="logo" aria-label="logo Cyber">
+              <svg class="logo__svg" width="66" height="24" viewBox="0 0 66 24" xmlns="http://www.w3.org/2000/svg">
+                <use href="/images/sprite-icon.svg#logo" />
+              </svg>
+            </a>
+            <div class="header__block">
+              <form id="form" class="form-search" name="form">
+                <label for="input-search" class="form-search__label" id="lable-search" name="label">
+                  <svg
+                    class="form-search__icon"
+                    aria-hidden="false"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <use href="/images/sprite-icon.svg#search" />
+                  </svg>
+                </label>
+                <input
+                  id="input-search"
+                  type="search"
+                  name="search"
+                  class="form-search__input"
+                  placeholder="Search"
+                  aria-autocomplete="both"
+                  aria-labelledby="lable-search"
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  enterkeyhint="go" />
+                <button
+                  id="button-reset"
+                  class="form-search__button"
+                  type="reset"
+                  name="button"
+                  title="Clear the query"
+                  aria-label="Clear the query">
+                  <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <use href="/images/sprite-icon.svg#cross-cleare" />
+                  </svg>
+                </button>
+              </form>
+              <nav class="header__nav">
+                <ul class="header__menu-list">
+                  <li class="header__menu-item">
+                    <a href="#" class="header__link header__link_active">Home</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="#" class="header__link">About</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="#" class="header__link">Contact Us</a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="#" class="header__link">Blog</a>
+                  </li>
+                </ul>
+              </nav>
+              <nav class="header__nav">
+                <ul class="header__menu-list header__menu-list_icon">
+                  <li class="header__menu-item">
+                    <a href="#" class="header__link" aria-label="all like" title="All Like">
+                      <svg
+                        class="header__like"
+                        width="28"
+                        height="24"
+                        viewBox="0 0 30 24"
+                        preserveAspectRatio="xMaxYMid slice"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <use href="/images/sprite-icon.svg#like" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="#" class="header__link" aria-label="shop" title="Shop">
+                      <svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use href="/images/sprite-icon.svg#shop" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__menu-item">
+                    <a href="#" class="header__link" aria-label="login" title="Login">
+                      <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use href="/images/sprite-icon.svg#login" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <label class="switch-theme" for="slider-theme">
+                <input type="checkbox" id="slider-theme" class="switch-theme__input" />
+                <span class="switch-theme__span"></span>
               </label>
-              <input
-                id="input-search"
-                type="search"
-                class="form-search__input"
-                placeholder="Search"
-                aria-autocomplete="both"
-                aria-labelledby="lable-search"
-                autocomplete="off"
-                autocorrect="off"
-                autocapitalize="off"
-                enterkeyhint="go" />
-              <button
-                id="button-reset"
-                class="form-search__button"
-                title="Clear the query"
-                aria-label="Clear the query">
-                <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <use href="/images/sprite-icon.svg#cross-cleare" />
-                </svg>
-              </button>
-            </form>
-            <nav class="header__nav">
-              <ul class="header__menu-list">
-                <li class="header__menu-item">
-                  <a href="#" class="header__link header__link_active">Home</a>
-                </li>
-                <li class="header__menu-item">
-                  <a href="#" class="header__link">About</a>
-                </li>
-                <li class="header__menu-item">
-                  <a href="#" class="header__link">Contact Us</a>
-                </li>
-                <li class="header__menu-item">
-                  <a href="#" class="header__link">Blog</a>
-                </li>
-              </ul>
-            </nav>
-            <nav class="header__nav">
-              <ul class="header__menu-list header__menu-list_icon">
-                <li class="header__menu-item">
-                  <a href="#" class="header__link" aria-label="all like" title="All Like">
-                    <svg
-                      class="header__like"
-                      width="28"
-                      height="24"
-                      viewBox="0 0 30 24"
-                      preserveAspectRatio="xMaxYMid slice"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <use href="/images/sprite-icon.svg#like" />
-                    </svg>
-                  </a>
-                </li>
-                <li class="header__menu-item">
-                  <a href="#" class="header__link" aria-label="shop" title="Shop">
-                    <svg width="27" height="24" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <use href="/images/sprite-icon.svg#shop" />
-                    </svg>
-                  </a>
-                </li>
-                <li class="header__menu-item">
-                  <a href="#" class="header__link" aria-label="login" title="Login">
-                    <svg width="19" height="24" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <use href="/images/sprite-icon.svg#login" />
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <label class="switch-theme" for="slider-theme">
-              <input type="checkbox" id="slider-theme" class="switch-theme__input" />
-              <span class="switch-theme__span"></span>
-            </label>
-          </div>
-          <button class="btn-menu" id="btn-menu" aria-label="mobile menu">
-            <span class="btn-menu__span"></span>
-          </button>
-          <div id="mobile-menu" class="header__mobile">
-            <nav class="header__nav-mobile">
-              <ul class="header__menu-mobile">
-                <li class="header__item-mobile">
-                  <a href="#" class="header__link-mobile">Home</a>
-                </li>
-                <li class="header__item-mobile">
-                  <a href="#" class="header__link-mobile">About</a>
-                </li>
-                <li class="header__item-mobile">
-                  <a href="#" class="header__link-mobile">Contact Us</a>
-                </li>
-                <li class="header__item-mobile">
-                  <a href="#" class="header__link-mobile">Blog</a>
-                </li>
-                <li class="header__item-mobile">
-                  <a href="#" class="header__link header__link_mobile" aria-label="all like">
-                    <svg
-                      class="header__like"
-                      width="48"
-                      height="44"
-                      viewBox="0 0 30 24"
-                      preserveAspectRatio="xMaxYMid slice"
-                      fill="none"
-                      xmlns="http://www.w3.org/2000/svg">
-                      <use href="/images/sprite-icon.svg#like" />
-                    </svg>
-                  </a>
-                </li>
-                <li class="header__item-mobile">
-                  <a href="#" class="header__link header__link_mobile" aria-label="shop">
-                    <svg width="47" height="44" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <use href="/images/sprite-icon.svg#shop" />
-                    </svg>
-                  </a>
-                </li>
-                <li class="header__item-mobile">
-                  <a href="#" class="header__link header__link_mobile" aria-label="login">
-                    <svg width="39" height="44" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                      <use href="/images/sprite-icon.svg#login" />
-                    </svg>
-                  </a>
-                </li>
-              </ul>
-            </nav>
-            <form id="form-mobile" class="form-search form-search_width">
-              <label for="input-search-mobile" class="form-search__label" id="lable-search-mobile">
-                <svg
-                  class="form-search__icon"
-                  aria-hidden="false"
-                  width="18"
-                  height="18"
-                  viewBox="0 0 18 18"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <use href="/images/sprite-icon.svg#search" />
-                </svg>
+            </div>
+            <button class="btn-menu" id="btn-menu" aria-label="mobile menu">
+              <span class="btn-menu__span"></span>
+            </button>
+            <div id="mobile-menu" class="header__mobile">
+              <nav class="header__nav-mobile">
+                <ul class="header__menu-mobile">
+                  <li class="header__item-mobile">
+                    <a href="#" class="header__link-mobile">Home</a>
+                  </li>
+                  <li class="header__item-mobile">
+                    <a href="#" class="header__link-mobile">About</a>
+                  </li>
+                  <li class="header__item-mobile">
+                    <a href="#" class="header__link-mobile">Contact Us</a>
+                  </li>
+                  <li class="header__item-mobile">
+                    <a href="#" class="header__link-mobile">Blog</a>
+                  </li>
+                  <li class="header__item-mobile">
+                    <a href="#" class="header__link header__link_mobile" aria-label="all like">
+                      <svg
+                        class="header__like"
+                        width="48"
+                        height="44"
+                        viewBox="0 0 30 24"
+                        preserveAspectRatio="xMaxYMid slice"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <use href="/images/sprite-icon.svg#like" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__item-mobile">
+                    <a href="#" class="header__link header__link_mobile" aria-label="shop">
+                      <svg width="47" height="44" viewBox="0 0 27 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use href="/images/sprite-icon.svg#shop" />
+                      </svg>
+                    </a>
+                  </li>
+                  <li class="header__item-mobile">
+                    <a href="#" class="header__link header__link_mobile" aria-label="login">
+                      <svg width="39" height="44" viewBox="0 0 19 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <use href="/images/sprite-icon.svg#login" />
+                      </svg>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <form id="form-mobile" class="form-search form-search_width" name="form">
+                <label for="input-search-mobile" class="form-search__label" id="lable-search-mobile" name="label">
+                  <svg
+                    class="form-search__icon"
+                    aria-hidden="false"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 18 18"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <use href="/images/sprite-icon.svg#search" />
+                  </svg>
+                </label>
+                <input
+                  id="input-search-mobile"
+                  type="search"
+                  name="search"
+                  class="form-search__input"
+                  placeholder="Search"
+                  aria-autocomplete="both"
+                  aria-labelledby="lable-search-mobile"
+                  autocomplete="off"
+                  autocorrect="off"
+                  autocapitalize="off"
+                  enterkeyhint="go" />
+                <button
+                  id="button-reset-mobile"
+                  class="form-search__button"
+                  type="reset"
+                  name="button"
+                  title="Clear the query"
+                  aria-label="Clear the query">
+                  <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                    <use href="/images/sprite-icon.svg#cross-cleare" />
+                  </svg>
+                </button>
+              </form>
+              <label class="switch-theme" for="slider-theme-mobile">
+                <input type="checkbox" id="slider-theme-mobile" class="switch-theme__input" />
+                <span class="switch-theme__span"></span>
               </label>
-              <input
-                id="input-search-mobile"
-                type="search"
-                class="form-search__input"
-                placeholder="Search"
-                aria-autocomplete="both"
-                aria-labelledby="lable-search-mobile"
-                autocomplete="off"
-                autocorrect="off"
-                autocapitalize="off"
-                enterkeyhint="go" />
-              <button
-                id="button-reset-mobile"
-                class="form-search__button"
-                title="Clear the query"
-                aria-label="Clear the query">
-                <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                  <use href="/images/sprite-icon.svg#cross-cleare" />
-                </svg>
-              </button>
-            </form>
-            <label class="switch-theme" for="slider-theme-mobile">
-              <input type="checkbox" id="slider-theme-mobile" class="switch-theme__input" />
-              <span class="switch-theme__span"></span>
-            </label>
+            </div>
           </div>
         </div>
       </div>
     </header>
     <main class="main">
       <section class="banner">
-        <div class="container container-m">
-          <article class="banner__inner">
-            <div class="banner__content">
-              <h2 class="banner__suptitle">Pro.Beyond.</h2>
-              <h1 class="banner__title">IPhone 14 <span class="text-bold">Pro</span></h1>
-              <h3 class="banner__subtitle">Created to change everything for the better. For everyone</h3>
-              <a href="#" class="shop-link" aria-label="shop Iphone 14pro">Shop Now</a>
-            </div>
-            <img src="/images/phone.png" alt="Iphone 14 Pro" class="banner__img" />
-          </article>
-        </div>
-      </section>
-      <section class="banner-m">
-        <div class="container">
-          <div class="banner-m__inner">
-            <article class="banner-m__box banner-m__box_1">
-              <picture class="picture">
-                <source srcset="/images/ps2.png" media="(max-width: 576px)" />
-                <img src="/images/ps.png" alt="Playstation 5" class="banner-m__img" />
-              </picture>
-              <div class="banner-m__content">
-                <h2 class="banner-m__title">Playstation 5</h2>
-                <p class="banner-m__text">
-                  Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation
-                  experience.
-                </p>
+        <div class="banner__container container">
+          <div class="banner__bg">
+            <article class="banner__inner container-m">
+              <div class="banner__content">
+                <h2 class="banner__suptitle">Pro.Beyond.</h2>
+                <h1 class="banner__title">IPhone 14 <span class="text-bold">Pro</span></h1>
+                <h3 class="banner__subtitle">Created to change everything for the better. For everyone</h3>
+                <a href="#" class="shop-link" aria-label="shop Iphone 14pro">Shop Now</a>
               </div>
-            </article>
-            <article class="banner-m__box banner-m__box_2">
-              <picture class="picture">
-                <source srcset="/images/mac-air.png" media="(max-width: 1200px)" />
-                <img src="/images/air.png" alt="Macbook Air" class="banner-m__img" />
-              </picture>
-              <div class="banner-m__content">
-                <h2 class="banner-m__title banner-m__title_font2">Macbook <span>Air</span></h2>
-                <p class="banner-m__text">
-                  The new 15-inch MacBook Air makes room for more of what you love with a spacious Liquid Retina
-                  display.
-                </p>
-                <a href="#" class="shop-link shop-link_color" aria-label="Shop MacBook Air">Shop Now</a>
-              </div>
-            </article>
-            <article class="banner-m__box banner-m__box_3">
-              <picture class="picture">
-                <source srcset="/images/products/airpods-max-s.png" media="(max-width: 576px)" />
-                <img src="/images/airpods-max.png" alt="Apple AirPods Max" class="banner-m__img" />
-              </picture>
-              <div class="banner-m__content">
-                <h2 class="banner-m__title banner-m__title_font3">
-                  Apple<br />
-                  AirPods <span>Max</span>
-                </h2>
-                <p class="banner-m__text">Computational audio. Listen, it's powerful</p>
-              </div>
-            </article>
-            <article class="banner-m__box banner-m__box_4">
-              <picture class="picture">
-                <source srcset="/images/vision-pro.png" media="(max-width: 576px)" />
-                <img src="/images/vision.png" alt="Apple Vision Pro" class="banner-m__img" />
-              </picture>
-              <div class="banner-m__content">
-                <h2 class="banner-m__title banner-m__title_font4">
-                  Apple<br />
-                  Vision <span>Pro</span>
-                </h2>
-                <p class="banner-m__text">An immersive way to experience entertainment</p>
-              </div>
+              <img src="/images/phone.png" alt="Iphone 14 Pro" class="banner__img" />
             </article>
           </div>
         </div>
       </section>
-      <section class="category slider_item">
-        <div class="container container-m">
-          <div class="category__inner">
-            <div class="category__box">
-              <h2 class="title">Browse By Category</h2>
-              <div class="category__buttons">
-                <button class="slider__btn-prev category__btn-prev" aria-label="prev">
-                  <svg width="14" height="24" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
-                    <use href="/images/sprite-icon.svg#btn-prev" />
-                  </svg>
-                </button>
-                <button class="slider__btn-next category__btn-next" aria-label="next">
-                  <svg width="14" height="24" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
-                    <use href="/images/sprite-icon.svg#btn-next" />
-                  </svg>
-                </button>
-              </div>
+      <section class="banner-m">
+        <div class="banner-m__container container">
+          <div class="banner-m__bg">
+            <div class="banner-m__inner">
+              <article class="banner-m__box banner-m__box_1">
+                <picture class="picture">
+                  <source srcset="/images/ps2.png" media="(max-width: 576px)" />
+                  <img src="/images/ps.png" alt="Playstation 5" class="banner-m__img" />
+                </picture>
+                <div class="banner-m__content">
+                  <h2 class="banner-m__title">Playstation 5</h2>
+                  <p class="banner-m__text">
+                    Incredibly powerful CPUs, GPUs, and an SSD with integrated I/O will redefine your PlayStation
+                    experience.
+                  </p>
+                </div>
+              </article>
+              <article class="banner-m__box banner-m__box_2">
+                <picture class="picture">
+                  <source srcset="/images/mac-air.png" media="(max-width: 1200px)" />
+                  <img src="/images/air.png" alt="Macbook Air" class="banner-m__img" />
+                </picture>
+                <div class="banner-m__content">
+                  <h2 class="banner-m__title banner-m__title_font2">Macbook <span>Air</span></h2>
+                  <p class="banner-m__text">
+                    The new 15-inch MacBook Air makes room for more of what you love with a spacious Liquid Retina
+                    display.
+                  </p>
+                  <a href="#" class="shop-link shop-link_color" aria-label="Shop MacBook Air">Shop Now</a>
+                </div>
+              </article>
+              <article class="banner-m__box banner-m__box_3">
+                <picture class="picture">
+                  <source srcset="/images/products/airpods-max-s.png" media="(max-width: 576px)" />
+                  <img src="/images/airpods-max.png" alt="Apple AirPods Max" class="banner-m__img" />
+                </picture>
+                <div class="banner-m__content">
+                  <h2 class="banner-m__title banner-m__title_font3">
+                    Apple<br />
+                    AirPods <span>Max</span>
+                  </h2>
+                  <p class="banner-m__text">Computational audio. Listen, it's powerful</p>
+                </div>
+              </article>
+              <article class="banner-m__box banner-m__box_4">
+                <picture class="picture">
+                  <source srcset="/images/vision-pro.png" media="(max-width: 576px)" />
+                  <img src="/images/vision.png" alt="Apple Vision Pro" class="banner-m__img" />
+                </picture>
+                <div class="banner-m__content">
+                  <h2 class="banner-m__title banner-m__title_font4">
+                    Apple<br />
+                    Vision <span>Pro</span>
+                  </h2>
+                  <p class="banner-m__text">An immersive way to experience entertainment</p>
+                </div>
+              </article>
             </div>
-            <div class="slider category__slider">
-              <div class="slider__line category__line">
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category phones">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#phones" />
-                      </svg>
-                      <h3 class="category__name">Phones</h3>
-                    </div>
-                  </a>
+          </div>
+        </div>
+      </section>
+      <section class="category slider_item">
+        <div class="category__container container">
+          <div class="category__bg">
+            <div class="category__inner container-m">
+              <div class="category__box">
+                <h2 class="title">Browse By Category</h2>
+                <div class="category__buttons">
+                  <button class="slider__btn-prev category__btn-prev" aria-label="prev">
+                    <svg width="14" height="24" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#btn-prev" />
+                    </svg>
+                  </button>
+                  <button class="slider__btn-next category__btn-next" aria-label="next">
+                    <svg width="14" height="24" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#btn-next" />
+                    </svg>
+                  </button>
                 </div>
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category smart watches">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#watches" />
-                      </svg>
-                      <h3 class="category__name">Smart Watches</h3>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category camers">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#camera" />
-                      </svg>
-                      <h3 class="category__name">Cameras</h3>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category headphones">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#headphones" />
-                      </svg>
-                      <h3 class="category__name">Headphones</h3>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category computers">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#computers" />
-                      </svg>
-                      <h3 class="category__name">Computers</h3>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category gaming">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#gaming" />
-                      </svg>
-                      <h3 class="category__name">Gaming</h3>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category phones">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#phones" />
-                      </svg>
-                      <h3 class="category__name">Phones</h3>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category smart watches">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#watches" />
-                      </svg>
-                      <h3 class="category__name">Smart Watches</h3>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category camers">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#camera" />
-                      </svg>
-                      <h3 class="category__name">Cameras</h3>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category headphones">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#headphones" />
-                      </svg>
-                      <h3 class="category__name">Headphones</h3>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category computers">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#computers" />
-                      </svg>
-                      <h3 class="category__name">Computers</h3>
-                    </div>
-                  </a>
-                </div>
-                <div class="slider__slide category__slide">
-                  <a href="#" class="category__link" aria-label="category gaming">
-                    <div class="category__block">
-                      <svg
-                        class="category__svg"
-                        width="48"
-                        height="48"
-                        viewBox="0 0 48 48"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#gaming" />
-                      </svg>
-                      <h3 class="category__name">Gaming</h3>
-                    </div>
-                  </a>
+              </div>
+              <div class="slider category__slider">
+                <div class="slider__line category__line">
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category phones">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#phones" />
+                        </svg>
+                        <h3 class="category__name">Phones</h3>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category smart watches">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#watches" />
+                        </svg>
+                        <h3 class="category__name">Smart Watches</h3>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category camers">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#camera" />
+                        </svg>
+                        <h3 class="category__name">Cameras</h3>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category headphones">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#headphones" />
+                        </svg>
+                        <h3 class="category__name">Headphones</h3>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category computers">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#computers" />
+                        </svg>
+                        <h3 class="category__name">Computers</h3>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category gaming">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#gaming" />
+                        </svg>
+                        <h3 class="category__name">Gaming</h3>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category phones">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#phones" />
+                        </svg>
+                        <h3 class="category__name">Phones</h3>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category smart watches">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#watches" />
+                        </svg>
+                        <h3 class="category__name">Smart Watches</h3>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category camers">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#camera" />
+                        </svg>
+                        <h3 class="category__name">Cameras</h3>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category headphones">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#headphones" />
+                        </svg>
+                        <h3 class="category__name">Headphones</h3>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category computers">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#computers" />
+                        </svg>
+                        <h3 class="category__name">Computers</h3>
+                      </div>
+                    </a>
+                  </div>
+                  <div class="slider__slide category__slide">
+                    <a href="#" class="category__link" aria-label="category gaming">
+                      <div class="category__block">
+                        <svg
+                          class="category__svg"
+                          width="48"
+                          height="48"
+                          viewBox="0 0 48 48"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#gaming" />
+                        </svg>
+                        <h3 class="category__name">Gaming</h3>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -472,294 +486,302 @@
         </div>
       </section>
       <section class="products">
-        <div class="container container-m">
-          <div class="products__inner">
-            <div class="products__buttons">
-              <button class="products__btn" data-filter="new">New Arrival</button>
-              <button class="products__btn" data-filter="bestseller">Bestseller</button>
-              <button class="products__btn" data-filter="featured">Featured Products</button>
-            </div>
-            <div class="products__container">
-              <div class="products__items new">
-                <div class="products__item">
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/iphone14prom.png"
-                        alt="Apple iPhone 14 Pro Max 128GB Deep Purple"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-1">Apple iPhone 14 Pro Max 128GB Deep Purple</h3>
-                      <p class="product-card__price">$900</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-1">Buy Now</a>
-                    </div>
-                  </article>
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/camera6k.png"
-                        alt="Blackmagic Pocket Cinema Camera 6k"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-2">Blackmagic Pocket Cinema Camera 6k</h3>
-                      <p class="product-card__price">$2535</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-2">Buy Now</a>
-                    </div>
-                  </article>
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/watch9.png"
-                        alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-3">Apple Watch Series 9 GPS 41mm Starlight Aluminium</h3>
-                      <p class="product-card__price">$399</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-3">Buy Now</a>
-                    </div>
-                  </article>
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/airpods-max-s.png"
-                        alt="AirPods Max Silver Starlight Aluminium"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-4">AirPods Max Silver Starlight Aluminium</h3>
-                      <p class="product-card__price">$549</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-4">Buy Now</a>
-                    </div>
-                  </article>
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/galaxy-watch6.png"
-                        alt="Samsung Galaxy Watch6 Classic 47mm Black"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-5">Samsung Galaxy Watch6 Classic 47mm Black</h3>
-                      <p class="product-card__price">$369</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-5">Buy Now</a>
-                    </div>
-                  </article>
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/galaxy-z-fold5.png"
-                        alt="Galaxy Z Fold5 Unlocked | 256GB | Phantom Black"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-6">Galaxy Z Fold5 Unlocked | 256GB | Phantom Black</h3>
-                      <p class="product-card__price">$1799</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-6">Buy Now</a>
-                    </div>
-                  </article>
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/galaxy-buds.png"
-                        alt="Galaxy Buds FE Graphite"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-7">
-                        Galaxy Buds FE <br />
-                        Graphite
-                      </h3>
-                      <p class="product-card__price">$99.99</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-7">Buy Now</a>
-                    </div>
-                  </article>
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/ipad9.png"
-                        alt="Apple iPad 9 10.2 64GB Wi-Fi Silver (MK2L3) 2021"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-8">Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021</h3>
-                      <p class="product-card__price">$398</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-8">Buy Now</a>
-                    </div>
-                  </article>
-                </div>
+        <div class="products__container container">
+          <div class="products__bg">
+            <div class="products__inner container-m">
+              <div class="products__buttons">
+                <button class="products__btn" data-filter="new">New Arrival</button>
+                <button class="products__btn" data-filter="bestseller">Bestseller</button>
+                <button class="products__btn" data-filter="featured">Featured Products</button>
               </div>
-              <div class="products__items bestseller">
-                <div class="products__item">
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/galaxy-watch6.png"
-                        alt="Samsung Galaxy Watch6 Classic 47mm Black"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-5">Samsung Galaxy Watch6 Classic 47mm Black</h3>
-                      <p class="product-card__price">$369</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-5">Buy Now</a>
-                    </div>
-                  </article>
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/galaxy-z-fold5.png"
-                        alt="Galaxy Z Fold5 Unlocked | 256GB | Phantom Black"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-6">Galaxy Z Fold5 Unlocked | 256GB | Phantom Black</h3>
-                      <p class="product-card__price">$1799</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-6">Buy Now</a>
-                    </div>
-                  </article>
+              <div class="products__container">
+                <div class="products__items new">
+                  <div class="products__item">
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/iphone14prom.png"
+                          alt="Apple iPhone 14 Pro Max 128GB Deep Purple"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-1">Apple iPhone 14 Pro Max 128GB Deep Purple</h3>
+                        <p class="product-card__price">$900</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-1">Buy Now</a>
+                      </div>
+                    </article>
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/camera6k.png"
+                          alt="Blackmagic Pocket Cinema Camera 6k"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-2">Blackmagic Pocket Cinema Camera 6k</h3>
+                        <p class="product-card__price">$2535</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-2">Buy Now</a>
+                      </div>
+                    </article>
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/watch9.png"
+                          alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-3">
+                          Apple Watch Series 9 GPS 41mm Starlight Aluminium
+                        </h3>
+                        <p class="product-card__price">$399</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-3">Buy Now</a>
+                      </div>
+                    </article>
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/airpods-max-s.png"
+                          alt="AirPods Max Silver Starlight Aluminium"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-4">AirPods Max Silver Starlight Aluminium</h3>
+                        <p class="product-card__price">$549</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-4">Buy Now</a>
+                      </div>
+                    </article>
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/galaxy-watch6.png"
+                          alt="Samsung Galaxy Watch6 Classic 47mm Black"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-5">Samsung Galaxy Watch6 Classic 47mm Black</h3>
+                        <p class="product-card__price">$369</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-5">Buy Now</a>
+                      </div>
+                    </article>
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/galaxy-z-fold5.png"
+                          alt="Galaxy Z Fold5 Unlocked | 256GB | Phantom Black"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-6">Galaxy Z Fold5 Unlocked | 256GB | Phantom Black</h3>
+                        <p class="product-card__price">$1799</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-6">Buy Now</a>
+                      </div>
+                    </article>
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/galaxy-buds.png"
+                          alt="Galaxy Buds FE Graphite"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-7">
+                          Galaxy Buds FE <br />
+                          Graphite
+                        </h3>
+                        <p class="product-card__price">$99.99</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-7">Buy Now</a>
+                      </div>
+                    </article>
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/ipad9.png"
+                          alt="Apple iPad 9 10.2 64GB Wi-Fi Silver (MK2L3) 2021"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-8">
+                          Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021
+                        </h3>
+                        <p class="product-card__price">$398</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-8">Buy Now</a>
+                      </div>
+                    </article>
+                  </div>
                 </div>
-              </div>
-              <div class="products__items featured">
-                <div class="products__item">
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/galaxy-buds.png"
-                        alt="Galaxy Buds FE Graphite"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-7">
-                        Galaxy Buds FE <br />
-                        Graphite
-                      </h3>
-                      <p class="product-card__price">$99.99</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-7">Buy Now</a>
-                    </div>
-                  </article>
-                  <article class="product-card">
-                    <button class="product-card__btn" aria-label="like">
-                      <svg
-                        class="product-card__svg"
-                        width="31"
-                        height="27"
-                        fill="none"
-                        viewBox="2 0 34 27"
-                        xmlns="http://www.w3.org/2000/svg">
-                        <use href="/images/sprite-icon.svg#like" />
-                      </svg>
-                    </button>
-                    <div class="product-card__inner">
-                      <img
-                        src="/images/products/ipad9.png"
-                        alt="Apple iPad 9 10.2 64GB Wi-Fi Silver (MK2L3) 2021"
-                        class="product-card__img" />
-                      <h3 class="product-card__title" id="pct-8">Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021</h3>
-                      <p class="product-card__price">$398</p>
-                      <a href="#" class="product-card__link" aria-describedby="pct-8">Buy Now</a>
-                    </div>
-                  </article>
+                <div class="products__items bestseller">
+                  <div class="products__item">
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/galaxy-watch6.png"
+                          alt="Samsung Galaxy Watch6 Classic 47mm Black"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-5">Samsung Galaxy Watch6 Classic 47mm Black</h3>
+                        <p class="product-card__price">$369</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-5">Buy Now</a>
+                      </div>
+                    </article>
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/galaxy-z-fold5.png"
+                          alt="Galaxy Z Fold5 Unlocked | 256GB | Phantom Black"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-6">Galaxy Z Fold5 Unlocked | 256GB | Phantom Black</h3>
+                        <p class="product-card__price">$1799</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-6">Buy Now</a>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+                <div class="products__items featured">
+                  <div class="products__item">
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/galaxy-buds.png"
+                          alt="Galaxy Buds FE Graphite"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-7">
+                          Galaxy Buds FE <br />
+                          Graphite
+                        </h3>
+                        <p class="product-card__price">$99.99</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-7">Buy Now</a>
+                      </div>
+                    </article>
+                    <article class="product-card">
+                      <button class="product-card__btn" aria-label="like">
+                        <svg
+                          class="product-card__svg"
+                          width="31"
+                          height="27"
+                          fill="none"
+                          viewBox="2 0 34 27"
+                          xmlns="http://www.w3.org/2000/svg">
+                          <use href="/images/sprite-icon.svg#like" />
+                        </svg>
+                      </button>
+                      <div class="product-card__inner">
+                        <img
+                          src="/images/products/ipad9.png"
+                          alt="Apple iPad 9 10.2 64GB Wi-Fi Silver (MK2L3) 2021"
+                          class="product-card__img" />
+                        <h3 class="product-card__title" id="pct-8">
+                          Apple iPad 9 10.2" 64GB Wi-Fi Silver (MK2L3) 2021
+                        </h3>
+                        <p class="product-card__price">$398</p>
+                        <a href="#" class="product-card__link" aria-describedby="pct-8">Buy Now</a>
+                      </div>
+                    </article>
+                  </div>
                 </div>
               </div>
             </div>
@@ -767,268 +789,278 @@
         </div>
       </section>
       <section class="banners slider_item-banners">
-        <div class="container">
-          <div class="slider">
-            <div class="slider__line">
-              <div class="slider__slide banners__slide">
-                <article class="banners__card banners__card_bg">
-                  <img src="/images/popular.png" alt="Popular Products" class="banners__img" />
-                  <h2 class="banners__title" id="bt-1">Popular Products</h2>
-                  <p class="banners__text">
-                    iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease
-                    of use.
-                  </p>
-                  <a href="#" class="shop-link shop-link_color" aria-describedby="bt-1">Shop Now</a>
-                </article>
+        <div class="banners__container container">
+          <div class="banners__bg">
+            <div class="slider">
+              <div class="slider__line">
+                <div class="slider__slide banners__slide">
+                  <article class="banners__card banners__card_bg">
+                    <img src="/images/popular.png" alt="Popular Products" class="banners__img" />
+                    <h2 class="banners__title" id="bt-1">Popular Products</h2>
+                    <p class="banners__text">
+                      iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and
+                      ease of use.
+                    </p>
+                    <a href="#" class="shop-link shop-link_color" aria-describedby="bt-1">Shop Now</a>
+                  </article>
+                </div>
+                <div class="slider__slide banners__slide">
+                  <article class="banners__card banners__card_bg2">
+                    <img src="/images/ipad-pro.png" alt="Ipad Pro" class="banners__img" />
+                    <h2 class="banners__title" id="bt-2">Ipad Pro</h2>
+                    <p class="banners__text">
+                      iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and
+                      ease of use.
+                    </p>
+                    <a href="#" class="shop-link shop-link_color" aria-describedby="bt-2">Shop Now</a>
+                  </article>
+                </div>
+                <div class="slider__slide banners__slide">
+                  <article class="banners__card banners__card_bg3">
+                    <img src="/images/samsung-galaxy.png " alt="Samsung Galaxy " class="banners__img" />
+                    <h2 class="banners__title" id="bt-3">Samsung Galaxy</h2>
+                    <p class="banners__text">
+                      iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and
+                      ease of use.
+                    </p>
+                    <a href="#" class="shop-link shop-link_color" aria-describedby="bt-3">Shop Now</a>
+                  </article>
+                </div>
+                <div class="slider__slide banners__slide">
+                  <article class="banners__card banners__card_bg4">
+                    <img src="/images/macbook-pro.png" alt="Macbook Pro" class="banners__img" />
+                    <h2 class="banners__title" id="bt-4">Macbook Pro</h2>
+                    <p class="banners__text">
+                      iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and
+                      ease of use.
+                    </p>
+                    <a href="#" class="shop-link shop-link_color" aria-describedby="bt-4">Shop Now</a>
+                  </article>
+                </div>
               </div>
-              <div class="slider__slide banners__slide">
-                <article class="banners__card banners__card_bg2">
-                  <img src="/images/ipad-pro.png" alt="Ipad Pro" class="banners__img" />
-                  <h2 class="banners__title" id="bt-2">Ipad Pro</h2>
-                  <p class="banners__text">
-                    iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease
-                    of use.
-                  </p>
-                  <a href="#" class="shop-link shop-link_color" aria-describedby="bt-2">Shop Now</a>
-                </article>
-              </div>
-              <div class="slider__slide banners__slide">
-                <article class="banners__card banners__card_bg3">
-                  <img src="/images/samsung-galaxy.png " alt="Samsung Galaxy " class="banners__img" />
-                  <h2 class="banners__title" id="bt-3">Samsung Galaxy</h2>
-                  <p class="banners__text">
-                    iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease
-                    of use.
-                  </p>
-                  <a href="#" class="shop-link shop-link_color" aria-describedby="bt-3">Shop Now</a>
-                </article>
-              </div>
-              <div class="slider__slide banners__slide">
-                <article class="banners__card banners__card_bg4">
-                  <img src="/images/macbook-pro.png" alt="Macbook Pro" class="banners__img" />
-                  <h2 class="banners__title" id="bt-4">Macbook Pro</h2>
-                  <p class="banners__text">
-                    iPad combines a magnificent 10.2-inch Retina display, incredible performance, multitasking and ease
-                    of use.
-                  </p>
-                  <a href="#" class="shop-link shop-link_color" aria-describedby="bt-4">Shop Now</a>
-                </article>
-              </div>
+              <button class="slider__btn-prev banners__btn banners__btn_prev" aria-label="prev">
+                <svg width="24" height="34" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
+                  <use href="/images/sprite-icon.svg#btn-prev" />
+                </svg>
+              </button>
+              <button class="slider__btn-next banners__btn banners__btn_next" aria-label="next">
+                <svg width="24" height="34" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
+                  <use href="/images/sprite-icon.svg#btn-next" />
+                </svg>
+              </button>
+              <div class="slider__indicators banners__indicators"></div>
             </div>
-            <button class="slider__btn-prev banners__btn banners__btn_prev" aria-label="prev">
-              <svg width="24" height="34" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
-                <use href="/images/sprite-icon.svg#btn-prev" />
-              </svg>
-            </button>
-            <button class="slider__btn-next banners__btn banners__btn_next" aria-label="next">
-              <svg width="24" height="34" viewBox="0 0 14 24" xmlns="http://www.w3.org/2000/svg">
-                <use href="/images/sprite-icon.svg#btn-next" />
-              </svg>
-            </button>
-            <div class="slider__indicators banners__indicators"></div>
           </div>
         </div>
       </section>
       <section class="discount">
-        <div class="container container-m">
-          <div class="discount__inner">
-            <h2 class="title">Discounts up to -50%</h2>
-            <div class="discount__box">
-              <article class="product-card">
-                <button class="product-card__btn" aria-label="like">
-                  <svg
-                    class="product-card__svg"
-                    width="31"
-                    height="27"
-                    fill="none"
-                    viewBox="2 0 34 27"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <use href="/images/sprite-icon.svg#like" />
-                  </svg>
-                </button>
-                <div class="product-card__inner">
-                  <img
-                    src="/images/products/iphone14-pro-gold-512.png"
-                    alt="Apple iPhone 14 Pro 512GB Gold (MQ233)"
-                    class="product-card__img" />
-                  <h3 class="product-card__title" id="pct-iphone-14pro-512">Apple iPhone 14 Pro 512GB Gold (MQ233)</h3>
-                  <p class="product-card__price">$1437</p>
-                  <a href="#" class="product-card__link" aria-describedby="pct-iphone-14pro-512">Buy Now</a>
-                </div>
-              </article>
-              <article class="product-card">
-                <button class="product-card__btn" aria-label="like">
-                  <svg
-                    class="product-card__svg"
-                    width="31"
-                    height="27"
-                    fill="none"
-                    viewBox="2 0 34 27"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <use href="/images/sprite-icon.svg#like" />
-                  </svg>
-                </button>
-                <div class="product-card__inner">
-                  <img
-                    src="/images/products/airpods-max-s.png"
-                    alt="AirPods Max Silver Starlight Aluminium"
-                    class="product-card__img" />
-                  <h3 class="product-card__title" id="pct-airpods-max">AirPods Max Silver Starlight Aluminium</h3>
-                  <p class="product-card__price">$549</p>
-                  <a href="#" class="product-card__link" aria-describedby="pct-airpods-max">Buy Now</a>
-                </div>
-              </article>
-              <article class="product-card">
-                <button class="product-card__btn" aria-label="like">
-                  <svg
-                    class="product-card__svg"
-                    width="31"
-                    height="27"
-                    fill="none"
-                    viewBox="2 0 34 27"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <use href="/images/sprite-icon.svg#like" />
-                  </svg>
-                </button>
-                <div class="product-card__inner">
-                  <img
-                    src="/images/products/watch9.png"
-                    alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium"
-                    class="product-card__img" />
-                  <h3 class="product-card__title" id="pct-apple-watch">
-                    Apple Watch Series 9 GPS 41mm Starlight Aluminium
-                  </h3>
-                  <p class="product-card__price">$399</p>
-                  <a href="#" class="product-card__link" aria-describedby="pct-apple-watch">Buy Now</a>
-                </div>
-              </article>
-              <article class="product-card">
-                <button class="product-card__btn" aria-label="like">
-                  <svg
-                    class="product-card__svg"
-                    width="31"
-                    height="27"
-                    fill="none"
-                    viewBox="2 0 34 27"
-                    xmlns="http://www.w3.org/2000/svg">
-                    <use href="/images/sprite-icon.svg#like" />
-                  </svg>
-                </button>
-                <div class="product-card__inner">
-                  <img
-                    src="/images/products/iphone14-pro-gold.png"
-                    alt="Apple iPhone 14 Pro 1TB Gold (MQ2V3)"
-                    class="product-card__img" />
-                  <h3 class="product-card__title" id="pct-iphone-14pro">Apple iPhone 14 Pro 1TB Gold (MQ2V3)</h3>
-                  <p class="product-card__price">$1499</p>
-                  <a href="#" class="product-card__link" aria-describedby="pct-iphone-14pro">Buy Now</a>
-                </div>
-              </article>
+        <div class="discount__container container">
+          <div class="discount__bg">
+            <div class="discount__inner container-m">
+              <h2 class="title">Discounts up to -50%</h2>
+              <div class="discount__box">
+                <article class="product-card">
+                  <button class="product-card__btn" aria-label="like">
+                    <svg
+                      class="product-card__svg"
+                      width="31"
+                      height="27"
+                      fill="none"
+                      viewBox="2 0 34 27"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#like" />
+                    </svg>
+                  </button>
+                  <div class="product-card__inner">
+                    <img
+                      src="/images/products/iphone14-pro-gold-512.png"
+                      alt="Apple iPhone 14 Pro 512GB Gold (MQ233)"
+                      class="product-card__img" />
+                    <h3 class="product-card__title" id="pct-iphone-14pro-512">
+                      Apple iPhone 14 Pro 512GB Gold (MQ233)
+                    </h3>
+                    <p class="product-card__price">$1437</p>
+                    <a href="#" class="product-card__link" aria-describedby="pct-iphone-14pro-512">Buy Now</a>
+                  </div>
+                </article>
+                <article class="product-card">
+                  <button class="product-card__btn" aria-label="like">
+                    <svg
+                      class="product-card__svg"
+                      width="31"
+                      height="27"
+                      fill="none"
+                      viewBox="2 0 34 27"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#like" />
+                    </svg>
+                  </button>
+                  <div class="product-card__inner">
+                    <img
+                      src="/images/products/airpods-max-s.png"
+                      alt="AirPods Max Silver Starlight Aluminium"
+                      class="product-card__img" />
+                    <h3 class="product-card__title" id="pct-airpods-max">AirPods Max Silver Starlight Aluminium</h3>
+                    <p class="product-card__price">$549</p>
+                    <a href="#" class="product-card__link" aria-describedby="pct-airpods-max">Buy Now</a>
+                  </div>
+                </article>
+                <article class="product-card">
+                  <button class="product-card__btn" aria-label="like">
+                    <svg
+                      class="product-card__svg"
+                      width="31"
+                      height="27"
+                      fill="none"
+                      viewBox="2 0 34 27"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#like" />
+                    </svg>
+                  </button>
+                  <div class="product-card__inner">
+                    <img
+                      src="/images/products/watch9.png"
+                      alt="Apple Watch Series 9 GPS 41mm Starlight Aluminium"
+                      class="product-card__img" />
+                    <h3 class="product-card__title" id="pct-apple-watch">
+                      Apple Watch Series 9 GPS 41mm Starlight Aluminium
+                    </h3>
+                    <p class="product-card__price">$399</p>
+                    <a href="#" class="product-card__link" aria-describedby="pct-apple-watch">Buy Now</a>
+                  </div>
+                </article>
+                <article class="product-card">
+                  <button class="product-card__btn" aria-label="like">
+                    <svg
+                      class="product-card__svg"
+                      width="31"
+                      height="27"
+                      fill="none"
+                      viewBox="2 0 34 27"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#like" />
+                    </svg>
+                  </button>
+                  <div class="product-card__inner">
+                    <img
+                      src="/images/products/iphone14-pro-gold.png"
+                      alt="Apple iPhone 14 Pro 1TB Gold (MQ2V3)"
+                      class="product-card__img" />
+                    <h3 class="product-card__title" id="pct-iphone-14pro">Apple iPhone 14 Pro 1TB Gold (MQ2V3)</h3>
+                    <p class="product-card__price">$1499</p>
+                    <a href="#" class="product-card__link" aria-describedby="pct-iphone-14pro">Buy Now</a>
+                  </div>
+                </article>
+              </div>
             </div>
           </div>
         </div>
       </section>
       <section class="banner-2">
-        <div class="container">
-          <div class="banner-2__inner">
-            <h2 class="banner-2__title" id="banner-2-title">Big Summer <span>Sale</span></h2>
-            <h3 class="banner-2__subtitle">Commodo fames vitae vitae leo mauris in. Eu consequat.</h3>
-            <a href="#" class="shop-link" aria-describedby="banner-2-title">Shop Now</a>
+        <div class="banner-2__container container">
+          <div class="banner-2__bg">
+            <div class="banner-2__inner">
+              <h2 class="banner-2__title" id="banner-2-title">Big Summer <span>Sale</span></h2>
+              <h3 class="banner-2__subtitle">Commodo fames vitae vitae leo mauris in. Eu consequat.</h3>
+              <a href="#" class="shop-link" aria-describedby="banner-2-title">Shop Now</a>
+            </div>
           </div>
         </div>
       </section>
     </main>
     <footer class="footer">
-      <div class="container container-m">
-        <div class="footer__inner">
-          <div class="footer__box">
-            <div class="footer__box-logo">
-              <a href="/" class="logo" aria-label="logo Cyber">
-                <svg
-                  class="logo__svg footer__logo"
-                  width="66"
-                  height="24"
-                  viewBox="0 0 66 24"
-                  xmlns="http://www.w3.org/2000/svg">
-                  <use href="/images/sprite-icon.svg#logo" />
+      <div class="footer__container container">
+        <div class="footer__bg">
+          <div class="footer__inner container-m">
+            <div class="footer__box">
+              <div class="footer__box-logo">
+                <a href="/" class="logo" aria-label="logo Cyber">
+                  <svg
+                    class="logo__svg footer__logo"
+                    width="66"
+                    height="24"
+                    viewBox="0 0 66 24"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <use href="/images/sprite-icon.svg#logo" />
+                  </svg>
+                </a>
+                <p class="footer__text">
+                  We are a residential interior design firm located in Portland. Our boutique-studio offers more than
+                </p>
+              </div>
+              <div class="footer__box-nav">
+                <h2 class="footer__title">Services</h2>
+                <nav class="footer__nav">
+                  <ul class="footer__menu">
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Bonus program</a>
+                    </li>
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Gift cards</a>
+                    </li>
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Credit and payment</a>
+                    </li>
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Service contracts</a>
+                    </li>
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Non-cash account</a>
+                    </li>
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Payment</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+              <div class="footer__box-nav">
+                <h2 class="footer__title">Assistance to the buyer</h2>
+                <nav class="footer__nav">
+                  <ul class="footer__menu">
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Find an order</a>
+                    </li>
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Terms of delivery</a>
+                    </li>
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Exchange and return of goods</a>
+                    </li>
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Guarantee</a>
+                    </li>
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Frequently asked questions</a>
+                    </li>
+                    <li class="footer__item">
+                      <a href="#" class="footer__link">Terms of use of the site</a>
+                    </li>
+                  </ul>
+                </nav>
+              </div>
+            </div>
+            <div class="footer__social-media">
+              <a href="#" class="footer__link" aria-label="twitter">
+                <svg class="footer__svg" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <use href="/images/sprite-icon.svg#twitter" />
                 </svg>
               </a>
-              <p class="footer__text">
-                We are a residential interior design firm located in Portland. Our boutique-studio offers more than
-              </p>
+              <a href="#" class="footer__link" aria-label="facebook">
+                <svg class="footer__svg" width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
+                  <use href="/images/sprite-icon.svg#facebook" />
+                </svg>
+              </a>
+              <a href="#" class="footer__link" aria-label="tiktok">
+                <svg class="footer__svg" width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
+                  <use href="/images/sprite-icon.svg#tiktok" />
+                </svg>
+              </a>
+              <a href="#" class="footer__link" aria-label="instagram">
+                <svg class="footer__svg" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                  <use href="/images/sprite-icon.svg#instagram" />
+                </svg>
+              </a>
             </div>
-            <div class="footer__box-nav">
-              <h2 class="footer__title">Services</h2>
-              <nav class="footer__nav">
-                <ul class="footer__menu">
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Bonus program</a>
-                  </li>
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Gift cards</a>
-                  </li>
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Credit and payment</a>
-                  </li>
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Service contracts</a>
-                  </li>
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Non-cash account</a>
-                  </li>
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Payment</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-            <div class="footer__box-nav">
-              <h2 class="footer__title">Assistance to the buyer</h2>
-              <nav class="footer__nav">
-                <ul class="footer__menu">
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Find an order</a>
-                  </li>
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Terms of delivery</a>
-                  </li>
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Exchange and return of goods</a>
-                  </li>
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Guarantee</a>
-                  </li>
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Frequently asked questions</a>
-                  </li>
-                  <li class="footer__item">
-                    <a href="#" class="footer__link">Terms of use of the site</a>
-                  </li>
-                </ul>
-              </nav>
-            </div>
-          </div>
-          <div class="footer__social-media">
-            <a href="#" class="footer__link" aria-label="twitter">
-              <svg class="footer__svg" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <use href="/images/sprite-icon.svg#twitter" />
-              </svg>
-            </a>
-            <a href="#" class="footer__link" aria-label="facebook">
-              <svg class="footer__svg" width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
-                <use href="/images/sprite-icon.svg#facebook" />
-              </svg>
-            </a>
-            <a href="#" class="footer__link" aria-label="tiktok">
-              <svg class="footer__svg" width="17" height="16" viewBox="0 0 17 16" xmlns="http://www.w3.org/2000/svg">
-                <use href="/images/sprite-icon.svg#tiktok" />
-              </svg>
-            </a>
-            <a href="#" class="footer__link" aria-label="instagram">
-              <svg class="footer__svg" width="16" height="16" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
-                <use href="/images/sprite-icon.svg#instagram" />
-              </svg>
-            </a>
           </div>
         </div>
       </div>
