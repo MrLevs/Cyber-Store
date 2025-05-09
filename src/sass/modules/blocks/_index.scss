@@ -80,6 +80,7 @@
   width: 100%;
 
   &__bg {
+    width: 100%;
     background: var.$banner-m-bg;
     transition: var.$transition-bg;
   }
@@ -188,6 +189,7 @@
 .category {
   &__bg {
     padding: 5rem 0;
+    width: 100%;
     background-color: var.$category-bg;
     transition: var.$transition-bg;
   }
@@ -272,6 +274,7 @@
 .products {
   &__bg {
     padding: 3.5rem 0;
+    width: 100%;
     background-color: var.$products-bg;
     transition: var.$transition-bg;
   }
@@ -394,6 +397,7 @@
 //-------Banners------
 .banners {
   &__bg {
+    width: 100%;
     background-color: var.$banners-bg;
     transition: var.$transition-bg;
   }
@@ -499,6 +503,7 @@
 .discount {
   &__bg {
     padding: 5rem 0;
+    width: 100%;
     background-color: var.$discount-bg;
     transition: var.$transition-bg;
   }
@@ -523,6 +528,7 @@
 //-------Banner-2----------
 .banner-2 {
   width: 100%;
+
   &__bg {
     width: 100%;
     background-color: var.$banner2-bg;

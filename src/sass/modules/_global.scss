@@ -201,12 +201,6 @@ a {
   width: 35%;
   position: relative;
 
-  &:focus-within {
-    .form-search__button {
-      display: block;
-    }
-  }
-
   &_width {
     width: 100%;
   }
@@ -228,11 +222,13 @@ a {
   }
 
   &__input {
-    padding: 0.875em 1.25em 0.875em 2.5em;
+    padding: 0.875rem 1.25rem 0.875rem 2.5rem;
     width: 100%;
     font-size: 1rem;
+    font-weight: 500;
     background-color: var.$form-search-input-bg;
     border: none;
+    outline: none;
     border-radius: 0.5rem;
     color: var.$form-search-input-color;
     transition: var.$transition-bg, var.$transition-color;
@@ -241,6 +237,36 @@ a {
       color: var.$form-search-input-color;
       transition: var.$transition-color;
       opacity: 0.6;
+    }
+  }
+
+  &__suggests {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    right: 0;
+    z-index: 105;
+    background-color: var.$form-search-input-bg;
+    border: none;
+    border-radius: 0.5rem;
+    transition: var.$transition-bg;
+  }
+
+  &__suggests-list {
+    margin: 0;
+    padding: 0.875rem 1.25rem 0.875rem 2.5rem;
+    list-style: none;
+  }
+
+  &__link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$header-link-color;
+    opacity: 0.6;
+    transition: var.$transition-opacity, var.$transition-color;
+
+    &:hover {
+      opacity: 1;
     }
   }
 

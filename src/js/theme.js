@@ -2,6 +2,7 @@
 
 export default function () {
   const sliderTheme = document.querySelectorAll('.switch-theme');
+  const checkboxs = document.querySelectorAll('.switch-theme__input');
 
   sliderTheme.forEach(item => {
     item.addEventListener('change', toggleTheme);
@@ -25,11 +26,16 @@ export default function () {
   function runTheme() {
     if (localStorage.getItem('theme') === 'theme-dark') {
       setTheme('theme-dark');
-      document.querySelector('#slider-theme').checked = false;
+      checkboxs.forEach(item => {
+        item.checked = false;
+      });
     } else {
       setTheme('root');
-      document.querySelector('#slider-theme').checked = true;
+      checkboxs.forEach(item => {
+        item.checked = true;
+      });
     }
   }
+
   runTheme();
 }
