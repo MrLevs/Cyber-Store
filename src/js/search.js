@@ -1,12 +1,12 @@
 'use strict';
 
 export default function () {
-  const form = document.querySelectorAll('.form-search');
+  const forms = document.querySelectorAll('.form-search');
 
   const searchResults = [];
   const data = ['mobile', 'air', 'ipad', 'iphone', 'macbook', 'macmini', 'imac'];
 
-  form.forEach(item => {
+  forms.forEach(item => {
     const input = item.querySelector('.form-search__input');
     const btn = item.querySelector('.form-search__button');
     const resultSuggests = item.querySelector('.form-search__suggests');
@@ -19,20 +19,30 @@ export default function () {
       resultSuggests.style.display = 'block';
       searchResults.splice(0, searchResults.length);
 
-      if (value !== '') {
-        btn.style.display = 'block';
-        data.forEach(item => {
-          if (item.includes(value)) {
-            searchResults.push(item);
-          }
-        });
+      if (valid(value)) {
+        if (value !== '') {
+          btn.style.display = 'block';
+          data.forEach(item => {
+            if (item.includes(value)) {
+              searchResults.push(item);
+            }
+          });
+        } else {
+          resultSuggests.innerHTML = '';
+          resultSuggests.style.display = 'none';
+          btn.style.display = 'none';
+        }
+
+        displayResults(resultSuggests, searchResults);
       } else {
+        if (value == ' ') {
+          console.log(1111);
+        }
+        console.log('error');
         resultSuggests.innerHTML = '';
         resultSuggests.style.display = 'none';
         btn.style.display = 'none';
       }
-
-      displayResults(resultSuggests, searchResults);
     });
 
     btn.addEventListener('click', () => {
@@ -41,6 +51,11 @@ export default function () {
       btn.style.display = 'none';
     });
   });
+
+  function valid(elem) {
+    const pattern = /^[a-zA-Zа-яА-яёЁ0-9\s]+$/;
+    return pattern.test(elem);
+  }
 
   function displayResults(elem, array) {
     elem.innerHTML = '';
@@ -66,4 +81,3 @@ export default function () {
     });
   }
 }
-// Осуществить проверку на защиту ввода в инпут
