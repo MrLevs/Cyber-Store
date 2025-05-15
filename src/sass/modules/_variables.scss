@@ -30,6 +30,7 @@ $transition-transform: transform ease 0.5s;
   --form-search-stroke: #989898;
   --form-search-input-bg: #f5f5f5;
   --form-search-input-color: #000;
+  --form-search-suggests-item-bg: #d5d5d5;
 
   //---switch-theme----
   --switch-theme-bg: #304272;
@@ -130,6 +131,7 @@ $transition-transform: transform ease 0.5s;
   --form-search-stroke: #fff;
   --form-search-input-bg: #1d2a56;
   --form-search-input-color: #fff;
+  --form-search-suggests-item-bg: #0f1c46;
 
   //---switch-theme----
   --switch-theme-bg: rgb(156, 82, 82);
@@ -229,6 +231,7 @@ $logo-bg: var(--logo-bg);
 $form-search-stroke: var(--form-search-stroke);
 $form-search-input-bg: var(--form-search-input-bg);
 $form-search-input-color: var(--form-search-input-color);
+$form-search-suggests-item-bg: var(--form-search-suggests-item-bg);
 
 //---switch-theme----
 $switch-theme-bg: var(--switch-theme-bg);

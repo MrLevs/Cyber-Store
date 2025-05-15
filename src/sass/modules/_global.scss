@@ -215,10 +215,11 @@ a {
     background: none;
     opacity: 0.6;
     cursor: pointer;
-    svg {
-      stroke: var.$form-search-stroke;
-      transition: var.$transition-stroke;
-    }
+  }
+
+  &__icon {
+    stroke: var.$form-search-stroke;
+    transition: var.$transition-stroke;
   }
 
   &__input {
@@ -240,39 +241,8 @@ a {
     }
   }
 
-  &__suggests {
-    position: absolute;
-    top: 2.5rem;
-    left: 0;
-    right: 0;
-    z-index: 105;
-    background-color: var.$form-search-input-bg;
-    border: none;
-    border-radius: 0.5rem;
-    transition: var.$transition-bg;
-  }
-
-  &__suggests-list {
-    margin: 0;
-    padding: 0.875rem 1.25rem 0.875rem 2.5rem;
-    list-style: none;
-  }
-
-  &__link {
-    font-size: 1rem;
-    font-weight: 500;
-    color: var.$header-link-color;
-    opacity: 0.6;
-    transition: var.$transition-opacity, var.$transition-color;
-
-    &:hover {
-      opacity: 1;
-    }
-  }
-
   &__button {
     padding: 0.08333em;
-    display: none;
     position: absolute;
     top: 26.923%;
     right: 4.26%;
@@ -287,6 +257,62 @@ a {
     &:hover {
       opacity: 1;
     }
+  }
+
+  &__suggests {
+    position: absolute;
+    top: 2.5rem;
+    left: 0;
+    right: 0;
+    z-index: 105;
+    background-color: var.$form-search-input-bg;
+    border: none;
+    border-radius: 0.5rem;
+    transition: var.$transition-bg;
+  }
+
+  &__suggests-list {
+    margin: 0;
+    padding: 0 0 0.5rem 0;
+    list-style: none;
+  }
+
+  &__suggests-item {
+    padding: 0rem 1.25rem 0rem 2.5rem;
+
+    &:hover {
+      background-color: var.$form-search-suggests-item-bg;
+    }
+  }
+
+  &__link {
+    &:hover {
+      .form-search__suggests-text,
+      .form-search__suggests-svg {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__suggests-box {
+    padding: 0.5rem 0;
+    display: flex;
+    align-items: center;
+    gap: 0 1rem;
+  }
+
+  &__suggests-svg {
+    opacity: 0.6;
+    stroke: var.$form-search-stroke;
+    transition: var.$transition-stroke;
+  }
+
+  &__suggests-text {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$header-link-color;
+    opacity: 0.6;
+    transition: var.$transition-color;
   }
 }
 
