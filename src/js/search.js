@@ -55,12 +55,14 @@ export default function () {
   });
 
   function valid(elem) {
-    const pattern = /^[\sa-zа-я0-9]+$/i;
+    const pattern = /^[a-zа-я\d\s-]+$/gi;
+    console.log(typeof elem);
     return pattern.test(elem);
   }
 
   function displayResults(elem, array) {
     elem.innerHTML = '';
+    console.log(array);
 
     const ul = document.createElement('ul');
     ul.className = 'form-search__suggests-list';
@@ -110,3 +112,4 @@ export default function () {
   }
 }
 // aria-selected li
+// снять eventlistener, решить вопрос с пустым Input
