@@ -46,6 +46,7 @@ export default function () {
       resultSuggests.classList.remove('form-search__suggests_warning');
       resultSuggests.innerHTML = '';
       resultSuggests.style.display = 'block';
+
       searchResults.splice(0, searchResults.length);
 
       if (input.value !== '') {
