@@ -57,6 +57,7 @@ $transition-transform: transform ease 0.5s;
   --shop-link-color: #fff;
   --shop-link-color-dark: #000;
   --shop-link_color-border-color: #000;
+  --shop-link-bg-hover: #304272;
 
   //---Banner-m-------
   --banner-m-bg: #fafafa;
@@ -158,6 +159,7 @@ $transition-transform: transform ease 0.5s;
   --shop-link-color: #fff;
   --shop-link-color-dark: #fff;
   --shop-link_color-border-color: #fff;
+  --shop-link-bg-hover: #304272;
 
   //---Banner-m-------
   --banner-m-bg: #060820;
@@ -260,6 +262,7 @@ $banner-subtitle-color: var(--banner-subtitle-color);
 $shop-link-color: var(--shop-link-color);
 $shop-link-color-dark: var(--shop-link-color-dark);
 $shop-link_color-border-color: var(--shop-link_color-border-color);
+$shop-link-bg-hover: var(--shop-link-bg-hover);
 
 //---Banner-m-------
 $banner-m-bg: var(--banner-m-bg);

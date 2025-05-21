@@ -14,40 +14,72 @@ export default function () {
     resultSuggests.style.display = 'none';
     btn.style.display = 'none';
 
+    function cancel(e) {
+      if (e.code === 'Enter') {
+        e.preventDefault();
+        displayWarning();
+      }
+    }
+
+    function displayWarning() {
+      const p = document.createElement('p');
+      p.className = 'form-search__warning';
+      p.textContent = 'Warning!!! The input field must not be empty and must contain only letters and numbers!';
+
+      resultSuggests.innerHTML = '';
+      input.classList.add('form-search__input_warning');
+      resultSuggests.append(p);
+      resultSuggests.classList.add('form-search__suggests_warning');
+      resultSuggests.style.display = 'block';
+    }
+
+    if (input.value == '') {
+      input.addEventListener('keydown', cancel);
+    }
+
     input.addEventListener('input', function () {
       let value = input.value.toLowerCase().trim();
 
+      input.removeEventListener('keydown', cancel);
+      input.classList.remove('form-search__input_warning');
+
+      resultSuggests.classList.remove('form-search__suggests_warning');
+      resultSuggests.innerHTML = '';
       resultSuggests.style.display = 'block';
       searchResults.splice(0, searchResults.length);
 
-      if (valid(input.value)) {
+      if (input.value !== '') {
         btn.style.display = 'block';
-        if (value !== '') {
-          data.forEach(item => {
-            if (item.includes(value)) {
-              searchResults.push(item);
-            }
-          });
-          displayResults(resultSuggests, searchResults);
+
+        if (value == '') {
+          input.addEventListener('keydown', cancel);
+        }
+
+        if (valid(input.value)) {
+          if (value !== '') {
+            data.forEach(item => {
+              if (item.includes(value)) {
+                searchResults.push(item);
+              }
+            });
+            displayResults(resultSuggests, searchResults);
+          }
+        } else {
+          resultSuggests.innerHTML = '';
+          resultSuggests.style.display = 'none';
+          input.addEventListener('keydown', cancel);
         }
       } else {
-        if (input.value !== '') {
-          btn.style.display = 'block';
-        } else {
-          btn.style.display = 'none';
-        }
+        btn.style.display = 'none';
         resultSuggests.innerHTML = '';
         resultSuggests.style.display = 'none';
-        input.addEventListener('keydown', e => {
-          if (e.code === 'Enter') {
-            e.preventDefault();
-            alert('Поле ввода должно содержать только буквы и цифры!!!');
-          }
-        });
+        input.addEventListener('keydown', cancel);
       }
     });
 
     btn.addEventListener('click', () => {
+      input.classList.remove('form-search__input_warning');
+      resultSuggests.classList.remove('form-search__suggests_warning');
       resultSuggests.innerHTML = '';
       resultSuggests.style.display = 'none';
       btn.style.display = 'none';
@@ -56,13 +88,11 @@ export default function () {
 
   function valid(elem) {
     const pattern = /^[a-zа-я\d\s-]+$/gi;
-    console.log(typeof elem);
     return pattern.test(elem);
   }
 
   function displayResults(elem, array) {
     elem.innerHTML = '';
-    console.log(array);
 
     const ul = document.createElement('ul');
     ul.className = 'form-search__suggests-list';
@@ -112,4 +142,3 @@ export default function () {
   }
 }
 // aria-selected li
-// снять eventlistener, решить вопрос с пустым Input

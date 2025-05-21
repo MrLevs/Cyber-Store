@@ -82,6 +82,13 @@ a {
       }
     }
 
+    &:focus {
+      opacity: 1;
+      & .header__like {
+        fill: red;
+      }
+    }
+
     svg {
       stroke: var.$header-link-stroke;
       transition: var.$transition-stroke;
@@ -239,6 +246,10 @@ a {
       transition: var.$transition-color;
       opacity: 0.6;
     }
+
+    &_warning {
+      box-shadow: 0 0 0.3125rem 0.1875rem red;
+    }
   }
 
   &__button {
@@ -269,6 +280,10 @@ a {
     border: none;
     border-radius: 0.5rem;
     transition: var.$transition-bg;
+
+    &_warning {
+      box-shadow: 0 0.5625rem 0.3125rem 0.1875rem red;
+    }
   }
 
   &__suggests-list {
@@ -313,6 +328,13 @@ a {
     color: var.$header-link-color;
     opacity: 0.6;
     transition: var.$transition-color;
+  }
+
+  &__warning {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: red;
   }
 }
 
@@ -414,6 +436,7 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1.5rem 0;
+    align-items: flex-start;
   }
 
   &__logo {
@@ -458,8 +481,16 @@ main {
     font-weight: 400;
     color: var.$footer-link-color;
     transition: var.$transition-color;
+
     &:hover {
       color: #fff;
+    }
+
+    &:focus {
+      color: #fff;
+      .footer__svg {
+        transform: rotateZ(30deg) scale(1.5);
+      }
     }
   }
 
@@ -476,6 +507,7 @@ main {
       var.$transition-stroke,
       var.$transition-fill,
       transform ease 0.5s;
+
     &:hover {
       transform: rotateZ(30deg) scale(1.5);
     }

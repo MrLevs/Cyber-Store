@@ -31,9 +31,9 @@ export default class Slider {
 
   init() {
     this.width = this.slider.offsetWidth;
-    if (this.widthDevice <= 866 && this.widthDevice > 586) {
+    if (this.widthDevice <= 866 && this.widthDevice > 613) {
       this.sliderLine.style.width = (this.width / 4) * this.slide.length + 'px';
-    } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
+    } else if (this.widthDevice <= 613 && this.widthDevice > 576) {
       this.sliderLine.style.width = (this.width / 3) * this.slide.length + 'px';
     } else if (this.widthDevice <= 576) {
       this.sliderLine.style.width = (this.width / 2) * (this.slide.length / 3) + 'px';
@@ -42,9 +42,9 @@ export default class Slider {
     }
 
     this.slide.forEach(item => {
-      if (this.widthDevice <= 866 && this.widthDevice > 586) {
+      if (this.widthDevice <= 866 && this.widthDevice > 613) {
         item.style.width = this.width / 4 + 'px';
-      } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
+      } else if (this.widthDevice <= 613 && this.widthDevice > 576) {
         item.style.width = this.width / 3 + 'px';
       } else if (this.widthDevice <= 576) {
         item.style.width = this.width / 2.1 + 'px';
@@ -59,11 +59,11 @@ export default class Slider {
 
   stepNext() {
     this.count++;
-    if (this.widthDevice <= 866 && this.widthDevice > 586) {
+    if (this.widthDevice <= 866 && this.widthDevice > 613) {
       if (this.count > this.slide.length - 4) {
         this.count = 0;
       }
-    } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
+    } else if (this.widthDevice <= 613 && this.widthDevice > 576) {
       if (this.count > this.slide.length - 3) {
         this.count = 0;
       }
@@ -82,11 +82,11 @@ export default class Slider {
 
   stepPrev() {
     this.count--;
-    if (this.widthDevice <= 866 && this.widthDevice > 586) {
+    if (this.widthDevice <= 866 && this.widthDevice > 613) {
       if (this.count < 0) {
         this.count = this.slide.length - 4;
       }
-    } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
+    } else if (this.widthDevice <= 613 && this.widthDevice > 576) {
       if (this.count < 0) {
         this.count = this.slide.length - 3;
       }
@@ -104,9 +104,9 @@ export default class Slider {
   }
 
   rollSlider() {
-    if (this.widthDevice <= 866 && this.widthDevice > 586) {
+    if (this.widthDevice <= 866 && this.widthDevice > 613) {
       this.sliderLine.style.transform = 'translate(-' + this.count * (this.width / 4) + 'px)';
-    } else if (this.widthDevice <= 586 && this.widthDevice > 576) {
+    } else if (this.widthDevice <= 613 && this.widthDevice > 576) {
       this.sliderLine.style.transform = 'translate(-' + this.count * (this.width / 3) + 'px)';
     } else if (this.widthDevice <= 576) {
       this.sliderLine.style.transform = 'translate(-' + this.count * (this.width / 2) + 'px)';
