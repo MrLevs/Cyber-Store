@@ -4,7 +4,44 @@ export default function () {
   const forms = document.querySelectorAll('.form-search');
 
   const searchResults = [];
-  const data = ['mobile', 'air', 'ipad', 'iphone', 'macbook', 'macmini', 'imac', 'iphone 16', 'macbook 16 pro max'];
+  const data = [
+    {
+      name: 'mobile',
+      link: '#mobile',
+    },
+    {
+      name: 'air',
+      link: '#air',
+    },
+    {
+      name: 'ipad',
+      link: '#ipad',
+    },
+    {
+      name: 'iphone',
+      link: '#iphone',
+    },
+    {
+      name: 'macbook',
+      link: '#macbook',
+    },
+    {
+      name: 'macmini',
+      link: '#macmini',
+    },
+    {
+      name: 'imac',
+      link: '#imac',
+    },
+    {
+      name: 'iphone 16',
+      link: '#iphone 16',
+    },
+    {
+      name: 'macbook 16 max',
+      link: '#macbook16max',
+    },
+  ];
 
   forms.forEach(item => {
     const input = item.querySelector('.form-search__input');
@@ -59,7 +96,7 @@ export default function () {
         if (valid(input.value)) {
           if (value !== '') {
             data.forEach(item => {
-              if (item.includes(value)) {
+              if (item.name.includes(value)) {
                 searchResults.push(item);
               }
             });
@@ -110,11 +147,11 @@ export default function () {
         li.className = 'form-search__suggests-item';
 
         a.className = 'form-search__link';
-        a.setAttribute('href', '#');
+        a.setAttribute('href', `${item.link}`);
 
         div.className = 'form-search__suggests-box';
         span.className = 'form-search__suggests-text';
-        span.textContent = item;
+        span.textContent = item.name;
 
         svg.setAttribute('width', '18');
         svg.setAttribute('height', '18');

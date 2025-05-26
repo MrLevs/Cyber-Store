@@ -230,12 +230,12 @@ a {
   }
 
   &__input {
-    padding: 0.875rem 1.25rem 0.875rem 2.5rem;
+    padding: 0.75rem 1.125rem 0.75rem 2.375rem;
     width: 100%;
     font-size: 1rem;
     font-weight: 500;
     background-color: var.$form-search-input-bg;
-    border: none;
+    border: 0.125rem solid transparent;
     outline: none;
     border-radius: 0.5rem;
     color: var.$form-search-input-color;
@@ -248,7 +248,7 @@ a {
     }
 
     &_warning {
-      box-shadow: 0 0 0.3125rem 0.1875rem red;
+      border-color: red;
     }
   }
 
@@ -278,11 +278,13 @@ a {
     z-index: 105;
     background-color: var.$form-search-input-bg;
     border: none;
-    border-radius: 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
     transition: var.$transition-bg;
 
     &_warning {
-      box-shadow: 0 0.5625rem 0.3125rem 0.1875rem red;
+      border-left: 0.125rem solid red;
+      border-right: 0.125rem solid red;
+      border-bottom: 0.125rem solid red;
     }
   }
 
