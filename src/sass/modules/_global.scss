@@ -300,6 +300,14 @@ a {
     &:hover {
       background-color: var.$form-search-suggests-item-bg;
     }
+
+    &_active {
+      background-color: var.$form-search-suggests-item-bg;
+      .form-search__suggests-text,
+      .form-search__suggests-svg {
+        opacity: 1;
+      }
+    }
   }
 
   &__link {
