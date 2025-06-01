@@ -1,0 +1,70 @@
+[
+  {
+    "name": "mobile",
+    "link": "#mobile"
+  },
+  {
+    "name": "air",
+    "link": "#air"
+  },
+  {
+    "name": "ipad",
+    "link": "#ipad"
+  },
+  {
+    "name": "iphone",
+    "link": "#iphone"
+  },
+  {
+    "name": "macbook",
+    "link": "#macbook"
+  },
+  {
+    "name": "macmini",
+    "link": "#macmini"
+  },
+  {
+    "name": "imac",
+    "link": "#imac"
+  },
+  {
+    "name": "iphone 16",
+    "link": "#iphone 16"
+  },
+  {
+    "name": "macbook 16 max",
+    "link": "#macbook16max"
+  },
+  {
+    "name": "macbook21 16 max",
+    "link": "#macbook16max"
+  },
+  {
+    "name": "macbook22 16 max",
+    "link": "#macbook16max"
+  },
+  {
+    "name": "macbook23 16 max",
+    "link": "#macbook16max"
+  },
+  {
+    "name": "macbook24 16 max",
+    "link": "#macbook16max"
+  },
+  {
+    "name": "macbook25 16 max",
+    "link": "#macbook16max"
+  },
+  {
+    "name": "macbook26 16 max",
+    "link": "#macbook16max"
+  },
+  {
+    "name": "macbook27 16 max",
+    "link": "#macbook16max"
+  },
+  {
+    "name": "macbook28 16 max",
+    "link": "#macbook16max"
+  }
+]

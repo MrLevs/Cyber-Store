@@ -3,6 +3,7 @@
 export default function () {
   const forms = document.querySelectorAll('.form-search');
 
+  let valueSearch;
   let searchItems;
   let count = 0;
 
@@ -86,35 +87,17 @@ export default function () {
     resultSuggests.style.display = 'none';
     btn.style.display = 'none';
 
-    function cancel(e) {
-      if (e.code === 'Enter') {
-        e.preventDefault();
-        displayWarning();
-      }
-    }
-
-    function displayWarning() {
-      const p = document.createElement('p');
-      p.className = 'form-search__warning';
-      p.textContent = 'Warning!!! The input field must not be empty and must contain only letters and numbers!';
-
-      resultSuggests.innerHTML = '';
-      input.classList.add('form-search__input_warning');
-      resultSuggests.append(p);
-      resultSuggests.classList.add('form-search__suggests_warning');
-      resultSuggests.style.display = 'block';
-    }
-
     if (input.value == '') {
       input.addEventListener('keydown', cancel);
     }
 
     input.addEventListener('input', function () {
-      let value = input.value.toLowerCase().trim();
+      valueSearch = input.value.toLowerCase().trim();
 
       input.removeEventListener('keydown', cancel);
-      input.removeEventListener('keydown', stepArrow);
+      input.removeEventListener('keydown', stepKey);
       input.classList.remove('form-search__input_warning');
+      console.log(valueSearch);
 
       resultSuggests.classList.remove('form-search__suggests_warning');
       resultSuggests.innerHTML = '';
@@ -125,23 +108,22 @@ export default function () {
       if (input.value !== '') {
         btn.style.display = 'block';
 
-        if (value == '') {
+        if (valueSearch == '') {
           input.addEventListener('keydown', cancel);
         } else if (valid(input.value)) {
-          if (value !== '') {
+          if (valueSearch !== '') {
             for (let i = 0; i < data.length; i++) {
-              if (data[i].name.includes(value)) {
+              if (data[i].name.includes(valueSearch)) {
                 if (searchResults.length < 10) {
                   searchResults.push(data[i]);
                 } else {
-                  console.log(searchResults);
                   break;
                 }
               }
             }
 
             displayResults(resultSuggests, searchResults);
-            input.addEventListener('keydown', stepArrow);
+            input.addEventListener('keydown', stepKey);
           }
         } else {
           resultSuggests.innerHTML = '';
@@ -163,15 +145,37 @@ export default function () {
       resultSuggests.style.display = 'none';
       btn.style.display = 'none';
     });
+
+    //---------------Cancel---------------
+    function cancel(e) {
+      if (e.code === 'Enter') {
+        e.preventDefault();
+        displayWarning();
+      }
+    }
+
+    //--------------Show Warning--------------------
+    function displayWarning() {
+      const p = document.createElement('p');
+      p.className = 'form-search__warning';
+      p.textContent = 'Warning!!! The input field must not be empty and must contain only letters and numbers!';
+
+      resultSuggests.innerHTML = '';
+      input.classList.add('form-search__input_warning');
+      resultSuggests.append(p);
+      resultSuggests.classList.add('form-search__suggests_warning');
+      resultSuggests.style.display = 'block';
+    }
   });
 
+  //--------------------input Validation ------------------------
   function valid(elem) {
     const pattern = /^[a-zа-я\d\s-]+$/gi;
     return pattern.test(elem);
   }
 
-  //--------at work-----
-  function stepArrow(e) {
+  //---------------Controls (ArrowUp, ArrowDown, Enter)-----------
+  function stepKey(e) {
     if (e.code === 'ArrowUp') {
       e.preventDefault();
       count--;
@@ -216,14 +220,14 @@ export default function () {
       }
 
       if (linkHref) {
-        console.log(linkHref);
+        window.location.href = linkHref;
       } else {
-        console.log('STOP');
+        window.location.href = 'http://localhost:5173/catalog' + valueSearch;
       }
     }
   }
-  //---------------------------------------
 
+  //------------------------Show Results----------------------
   function displayResults(elem, array) {
     elem.innerHTML = '';
     count = 0;
@@ -277,5 +281,3 @@ export default function () {
     searchItems = document.querySelectorAll('.form-search__suggests-item');
   }
 }
-
-// Остановка цикла, for || forEach
