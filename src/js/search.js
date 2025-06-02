@@ -2,6 +2,7 @@
 
 export default function () {
   const forms = document.querySelectorAll('.form-search');
+  let data;
 
   forms.forEach(item => {
     const input = item.querySelector('.form-search__input');
@@ -14,19 +15,23 @@ export default function () {
     search(input, btn, resultSuggests);
   });
 
-  async function search(input, btn, resultSuggests) {
+  async function fetchData() {
+    let response = await fetch('/data.json');
+    let result = await response.json();
+    data = result.map(({ name, link }) => ({
+      name: name.toLowerCase(),
+      link: link,
+    }));
+  }
+
+  fetchData();
+
+  function search(input, btn, resultSuggests) {
     let valueSearch;
     let searchItems;
     let count = 0;
 
     let searchResults = [];
-
-    let response = await fetch('../../data.json');
-    let result = await response.json();
-    let data = result.map(({ name, link }) => ({
-      name: name.toLowerCase(),
-      link: link,
-    }));
 
     if (input.value == '') {
       input.addEventListener('keydown', cancel);

@@ -546,16 +546,9 @@
 .banner-2 {
   width: 100%;
 
-  &__bg {
-    width: 100%;
-    background-color: var.$banner2-bg;
-    transition: var.$transition-bg;
-  }
-
   &__inner {
-    padding: 1rem;
     height: 28rem;
-    background-image: url(/images/banner2.jpg);
+    background-image: url(/images/banner2.webp);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
