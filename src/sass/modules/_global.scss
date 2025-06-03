@@ -24,15 +24,13 @@ a {
 }
 
 .container-m {
-  //max-width 1230px
-  max-width: 76.875rem;
+  //max-width 1200px
+  max-width: 75rem;
   margin: 0 auto;
-  padding: 0 0.9375rem;
 }
 
 //-------Header-------
 .header {
-  max-width: var.$max-width;
   width: 100%;
 
   &__bg {
@@ -461,13 +459,11 @@ a {
 
 //-----Main-----
 main {
-  max-width: var.$max-width;
   width: 100%;
 }
 
 //-------footer-------
 .footer {
-  max-width: var.$max-width;
   width: 100%;
 
   &__bg {
