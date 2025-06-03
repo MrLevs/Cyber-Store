@@ -38,6 +38,10 @@ $transition-transform: transform ease 0.5s;
   //---Mobile btn-menu------
   --btn-menu-bg: #000;
 
+  //---Breadcrumbs-------
+  --breadcrumbs-bg: #fff;
+  --breadcrumbs-color: #000;
+
   //---Footer-----
   --footer-bg: #000;
   --footer-logo-fill: #fff;
@@ -139,6 +143,10 @@ $transition-transform: transform ease 0.5s;
   //---Mobile btn-menu------
   --btn-menu-bg: #fff;
 
+  //---Breadcrumbs-------
+  --breadcrumbs-bg: #141a2e;
+  --breadcrumbs-color: #fff;
+
   //---Footer-----
   --footer-bg: #141a2e;
   --footer-logo-fill: #fff;
@@ -238,6 +246,10 @@ $switch-theme-bg: var(--switch-theme-bg);
 
 //---Mobile btn-menu------
 $btn-menu-bg: var(--btn-menu-bg);
+
+//---Breadcrumbs-------
+$breadcrumbs-bg: var(--breadcrumbs-bg);
+$breadcrumbs-color: var(--breadcrumbs-color);
 
 //---Footer-----
 $footer-bg: var(--footer-bg);

@@ -17,6 +17,7 @@ a {
 
 //---Container------
 .container {
+  //max-width 1470px
   max-width: var.$max-width;
   margin: 0 auto;
   padding: 0 0.9375rem;
@@ -40,7 +41,7 @@ a {
   }
 
   &__inner {
-    padding: 1rem 0.5rem;
+    padding: 1rem 0.9375rem;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -410,6 +411,56 @@ a {
     will-change: transform;
     cursor: pointer;
     z-index: 100;
+  }
+}
+
+.breadcrumbs {
+  &__bg {
+    background-color: var.$breadcrumbs-bg;
+    transition: var.$transition-bg;
+  }
+
+  &__inner {
+    padding: 2.75rem 0.9375rem;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 3.5rem;
+    list-style: none;
+  }
+  &__item {
+    position: relative;
+    opacity: 0.6;
+
+    &:last-child {
+      opacity: 1;
+    }
+  }
+
+  &__item:not(:last-child)::after {
+    content: '';
+    width: 1.5rem;
+    height: 1.5rem;
+    bottom: 0;
+    margin: 0 1rem;
+    position: absolute;
+    display: inline-block;
+    background-image: url(/images/arrow.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$breadcrumbs-color;
+    transition: var.$transition-color;
   }
 }
 
