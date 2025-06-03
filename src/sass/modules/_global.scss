@@ -443,17 +443,12 @@ a {
   }
 
   &__item:not(:last-child)::after {
-    content: '';
+    content: url(/images/arrow.webp);
     width: 1.5rem;
     height: 1.5rem;
     bottom: 0;
     margin: 0 1rem;
     position: absolute;
-    display: inline-block;
-    background-image: url(/images/arrow.webp);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
   }
 
   &__link {
