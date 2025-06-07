@@ -41,6 +41,7 @@ $transition-transform: transform ease 0.5s;
   //---Breadcrumbs-------
   --breadcrumbs-bg: #fff;
   --breadcrumbs-color: #000;
+  --breadcrumbs-border-color: #bebebe;
 
   //---Footer-----
   --footer-bg: #000;
@@ -51,6 +52,7 @@ $transition-transform: transform ease 0.5s;
   --footer-svg-stroke: #000;
   --footer-svg-fill: #fff;
 
+  //---Main Index-----
   //---Banner-----
   --banner-bg: #211c24;
   --banner-suptitle-color: #909090;
@@ -115,6 +117,14 @@ $transition-transform: transform ease 0.5s;
   //---Banner-2--------
   --banner2-title-color: #fff;
   --banner2-subtitle-color: #787878;
+
+  //---Main Products----
+  //---Inner-----
+  --inner-bg: #fff;
+
+  //---Filter----
+  --filter-color: #000;
+  --filter-count-color: #929292;
 }
 
 .theme-dark {
@@ -146,6 +156,7 @@ $transition-transform: transform ease 0.5s;
   //---Breadcrumbs-------
   --breadcrumbs-bg: #141a2e;
   --breadcrumbs-color: #fff;
+  --breadcrumbs-border-color: #383838;
 
   //---Footer-----
   --footer-bg: #141a2e;
@@ -156,6 +167,7 @@ $transition-transform: transform ease 0.5s;
   --footer-svg-stroke: #000;
   --footer-svg-fill: #fff;
 
+  //---Main Index-----
   //---Banner-----
   --banner-bg: #170b1e;
   --banner-suptitle-color: #fff;
@@ -220,6 +232,14 @@ $transition-transform: transform ease 0.5s;
   //---Banner-2--------
   --banner2-title-color: #fff;
   --banner2-subtitle-color: #787878;
+
+  //---Main Products----
+  //---Inner-----
+  --inner-bg: #381b1b;
+
+  //---Filter----
+  --filter-color: #fff;
+  --filter-count-color: #a9a9a9;
 }
 
 //---Body----
@@ -250,6 +270,7 @@ $btn-menu-bg: var(--btn-menu-bg);
 //---Breadcrumbs-------
 $breadcrumbs-bg: var(--breadcrumbs-bg);
 $breadcrumbs-color: var(--breadcrumbs-color);
+$breadcrumbs-border-color: var(--breadcrumbs-border-color);
 
 //---Footer-----
 $footer-bg: var(--footer-bg);
@@ -326,6 +347,14 @@ $discount-bg: var(--discount-bg);
 //---Banner-2-------
 $banner2-title-color: var(--banner2-title-color);
 $banner2-subtitle-color: var(--banner2-subtitle-color);
+
+//---Main Products----
+//---Inner-----
+$inner-bg: var(--inner-bg);
+
+//---Filter----
+$filter-color: var(--filter-color);
+$filter-count-color: var(--filter-count-color);
 
 //---breakepoints--------
 //---576px----

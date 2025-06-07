@@ -8,8 +8,8 @@
   </head>
   <body>
     <include src="chunk/header.html"></include>
-    <main class="main">
-      <section class="breadcrumbs">
+    <div class="box">
+      <div class="breadcrumbs">
         <div class="breadcrumbs__container container">
           <div class="breadcrumbs__bg">
             <div class="breadcrumbs__inner container-m">
@@ -29,8 +29,126 @@
             </div>
           </div>
         </div>
-      </section>
-    </main>
+      </div>
+      <div class="inner container">
+        <div class="inner__bg">
+          <div class="block container-m">
+            <aside class="filters">
+              <details class="filter__details">
+                <summary class="filter__summary">Brand</summary>
+                <form id="form-brand" class="form-search" name="form-brand">
+                  <label for="input-search" class="form-search__label" id="lable-search" name="label">
+                    <svg
+                      class="form-search__icon"
+                      aria-hidden="false"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#search" />
+                    </svg>
+                  </label>
+                  <input
+                    id="input-search"
+                    type="search"
+                    name="search"
+                    enterkeyhint="search"
+                    class="form-search__input"
+                    placeholder="Search"
+                    aria-autocomplete="both"
+                    aria-labelledby="lable-search"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    enterkeyhint="go" />
+                  <div class="form-search__suggests"></div>
+                  <button
+                    id="button-reset"
+                    class="form-search__button"
+                    type="reset"
+                    name="button"
+                    title="Clear the query"
+                    aria-label="Clear the query">
+                    <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#cross-cleare" />
+                    </svg>
+                  </button>
+                </form>
+                <form class="filter__form" id="form-brand">
+                  <div class="filter__inner">
+                    <label for="apple" class="filter__label">
+                      <span class="filter__checkbox-box"></span>
+                      <span class="filter__name">
+                        Apple
+                        <span class="filter__count">110</span>
+                      </span>
+                    </label>
+                    <input type="checkbox" class="filter__input" id="apple" value="apple" />
+                  </div>
+                </form>
+              </details>
+              <details class="filter__details">
+                <summary class="filter__summary">Battery capacity</summary>
+                <form id="form-brand" class="form-search" name="form-brand">
+                  <label for="input-search" class="form-search__label" id="lable-search" name="label">
+                    <svg
+                      class="form-search__icon"
+                      aria-hidden="false"
+                      width="18"
+                      height="18"
+                      viewBox="0 0 18 18"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#search" />
+                    </svg>
+                  </label>
+                  <input
+                    id="input-search"
+                    type="search"
+                    name="search"
+                    enterkeyhint="search"
+                    class="form-search__input"
+                    placeholder="Search"
+                    aria-autocomplete="both"
+                    aria-labelledby="lable-search"
+                    autocomplete="off"
+                    autocorrect="off"
+                    autocapitalize="off"
+                    enterkeyhint="go" />
+                  <div class="form-search__suggests"></div>
+                  <button
+                    id="button-reset"
+                    class="form-search__button"
+                    type="reset"
+                    name="button"
+                    title="Clear the query"
+                    aria-label="Clear the query">
+                    <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                      <use href="/images/sprite-icon.svg#cross-cleare" />
+                    </svg>
+                  </button>
+                </form>
+                <form class="filter__form" id="form-brand">
+                  <div class="filter__inner">
+                    <label for="apple" class="filter__label">
+                      <span class="filter__checkbox-box"></span>
+                      <span class="filter__name">
+                        Apple
+                        <span class="filter__count">110</span>
+                      </span>
+                    </label>
+                    <input type="checkbox" class="filter__input" id="apple" value="apple" />
+                  </div>
+                </form>
+              </details>
+            </aside>
+            <main class="main"></main>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <include src="chunk/footer.html"></include>
     <script type="module" src="/src/main.js"></script>
   </body>

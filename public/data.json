@@ -1,74 +1,87 @@
 [
   {
+    "title": "smartphones",
     "name": "mobile",
     "link": "#mobile"
   },
   {
+    "title": "tablet",
     "name": "air",
     "link": "#air"
   },
   {
+    "title": "tablet",
     "name": "ipad",
     "link": "#ipad"
   },
   {
+    "title": "smartphones",
     "name": "iphone",
     "link": "#iphone"
   },
   {
+    "title": "laptop",
     "name": "macbook",
     "link": "#macbook"
   },
   {
+    "title": "nettop",
     "name": "macmini",
     "link": "#macmini"
   },
   {
+    "title": "all-in-one",
     "name": "imac",
     "link": "#imac"
   },
   {
+    "title": "smartphones",
     "name": "iphone 16",
     "link": "#iphone 16"
   },
   {
+    "title": "laptop",
     "name": "macbook 16 max",
     "link": "#macbook16max"
   },
   {
-    "name": "macbook21 16 max",
-    "link": "#macbook16max"
+    "title": "smartphones",
+    "name": "samsung",
+    "link": "#mobilesamsung"
   },
   {
-    "name": "macbook22 16 max",
-    "link": "#macbook16max"
+    "title": "smartphones",
+    "name": "xiaomi",
+    "link": "#mobilexiaomi"
   },
   {
-    "name": "macbook23 16 max",
-    "link": "#macbook16max"
+    "title": "smartphones",
+    "name": "poco",
+    "link": "#mobilepoco"
   },
   {
-    "name": "macbook24 16 max",
-    "link": "#macbook16max"
+    "title": "smartphones",
+    "name": "oppo",
+    "link": "#mobileoppo"
   },
   {
-    "name": "macbook25 16 max",
-    "link": "#macbook16max"
+    "title": "smartphones",
+    "name": "honnor",
+    "link": "#mobilehonnor"
   },
   {
-    "name": "macbook26 16 max",
-    "link": "#macbook16max"
+    "title": "smartphones",
+    "name": "motorola",
+    "link": "#mobilemotorola"
   },
   {
-    "name": "macbook27 16 max",
-    "link": "#macbook16max"
+    "title": "smartphones",
+    "name": "nokia",
+    "link": "#mobilenokia"
   },
   {
-    "name": "macbook28 16 max",
-    "link": "#macbook16max"
-  },
-  {
-    "name": "MacBook29 16 Max",
-    "link": "#macbook16max"
+    "title": "smartphones",
+    "name": "readmi",
+    "link": "#mobilereadmi"
   }
 ]

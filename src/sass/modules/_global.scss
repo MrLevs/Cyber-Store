@@ -195,9 +195,14 @@ a {
 //------Logo--------
 .logo {
   z-index: 100;
+
   &__svg {
     fill: var.$logo-bg;
     transition: var.$transition-fill;
+  }
+
+  &_z-index {
+    z-index: 48;
   }
 }
 
@@ -412,14 +417,15 @@ a {
   }
 }
 
+//------Breadcrumbs-----------
 .breadcrumbs {
-  &__bg {
-    background-color: var.$breadcrumbs-bg;
-    transition: var.$transition-bg;
-  }
+  width: 100%;
 
-  &__inner {
+  &__bg {
     padding: 2.75rem 0.9375rem;
+    background-color: var.$breadcrumbs-bg;
+    transition: var.$transition-bg, var.$transition-border-color;
+    border-top: 0.0625rem solid var.$breadcrumbs-border-color;
   }
 
   &__list {
