@@ -1,7 +1,7 @@
 'use strict';
 
 export default function () {
-  const forms = document.querySelectorAll('.form-search');
+  const forms = document.querySelectorAll('.form-search_global');
   let data;
 
   forms.forEach(item => {

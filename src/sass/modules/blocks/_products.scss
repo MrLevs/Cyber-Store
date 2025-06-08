@@ -11,17 +11,46 @@
     background-color: var.$inner-bg;
     transition: var.$transition-bg;
   }
+
+  &__block {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    grid-template-rows: 1fr;
+    gap: 0 2rem;
+  }
 }
 
-.filter {
+.filters {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem 0;
+
+  &__details {
+    &[open] + .filters__content {
+      grid-template-rows: 1fr;
+    }
+
+    &_active {
+      .filters__summary {
+        &::before {
+          transform: rotateX(180deg) rotateZ(45deg);
+        }
+
+        &::after {
+          transform: rotateX(180deg) rotateZ(-45deg);
+        }
+      }
+    }
+  }
+
   &__summary {
     padding: 0 0 0.75rem 0;
     position: relative;
     font-size: 1.1875rem;
     font-weight: 500;
-    color: var.$filter-color;
-    transition: var.$transition-color;
-    border-bottom: 0.0625rem solid #e3e3e3;
+    color: var.$filters-color;
+    transition: var.$transition-color, var.$transition-border-color;
+    border-bottom: 0.0625rem solid var.$filters-border-color;
     cursor: pointer;
 
     &::marker {
@@ -35,8 +64,8 @@
       height: 0.125rem;
       position: absolute;
       top: 33%;
-      background-color: black;
-      transition: var.$transition-transform;
+      background-color: var.$filters-before-bg;
+      transition: var.$transition-transform, var.$transition-bg;
     }
 
     &::before {
@@ -50,6 +79,22 @@
     }
   }
 
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem 0;
+  }
+
+  &__content {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition-duration: 0.5s;
+  }
+
+  &__content-body {
+    overflow: hidden;
+  }
+
   &__form-search {
     margin: 1rem 0;
   }
@@ -59,35 +104,84 @@
   }
 
   &__label {
-    padding: 0 0 0 1.5rem;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var.$filters-label-bg;
+    }
+
+    &_active {
+      .filters__checkbox {
+        background-color: var.$filters-checkbox-active-bg;
+
+        &::before {
+          transform: scale(1) rotateZ(225deg);
+        }
+
+        &::after {
+          transform: scale(1) rotateZ(135deg);
+        }
+      }
+    }
   }
 
-  &__checkbox-box {
+  &__checkbox {
+    margin-right: 0.5rem;
     display: inline-block;
+    position: relative;
     width: 1rem;
     height: 1rem;
-    border: 1px solid black;
+    background-color: var.$filters-checkbox-bg;
+    border: 1px solid var.$filters-checkbox-border-color;
     border-radius: 0.1875rem;
+    transition: var.$transition-border-color, var.$transition-bg;
+
+    &::before,
+    &::after {
+      content: '';
+      height: 0.125rem;
+      position: absolute;
+      background-color: var.$filters-checkbox-before-bg;
+      transition: var.$transition-transform, var.$transition-bg;
+    }
+
+    &::before {
+      width: 0.375rem;
+      top: 58%;
+      left: 0.0625rem;
+      transform: scale(0) rotateZ(45deg);
+    }
+
+    &::after {
+      width: 0.625rem;
+      top: 50%;
+      right: 0;
+      transform: scale(0) rotateZ(-45deg);
+    }
   }
 
   &__name {
     font-size: 1rem;
     font-weight: 500;
-    color: var.$filter-color;
+    color: var.$filters-color;
     transition: var.$transition-color;
   }
 
   &__count {
     font-weight: 300;
-    color: var.$filter-count-color;
+    color: var.$filters-count-color;
     transition: var.$transition-color;
   }
 
   &__input {
     margin: 0;
+    width: 1px;
+    height: 0;
     position: absolute;
     top: 25%;
     left: 0;
-    opacity: 1;
+    opacity: 0;
   }
 }
