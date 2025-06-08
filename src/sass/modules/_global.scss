@@ -164,11 +164,6 @@ a {
   }
 
   &_active {
-    // &::before,
-    // &::after {
-    //   top: 50%;
-    // }
-
     &::before {
       transform: translateY(0.6875rem) rotateZ(45deg);
     }
@@ -209,7 +204,7 @@ a {
 //-------Form-search-------
 .form-search {
   max-width: 23.4375rem;
-  width: 35%;
+  width: 100%;
   position: relative;
 
   &_width {

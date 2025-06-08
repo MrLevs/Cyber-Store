@@ -14,17 +14,44 @@
 }
 
 .filter {
-  &__details {
-    cursor: pointer;
-  }
-
   &__summary {
     padding: 0 0 0.75rem 0;
-    font-size: 1.25rem;
+    position: relative;
+    font-size: 1.1875rem;
     font-weight: 500;
     color: var.$filter-color;
     transition: var.$transition-color;
     border-bottom: 0.0625rem solid #e3e3e3;
+    cursor: pointer;
+
+    &::marker {
+      content: '';
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      width: 0.75rem;
+      height: 0.125rem;
+      position: absolute;
+      top: 33%;
+      background-color: black;
+      transition: var.$transition-transform;
+    }
+
+    &::before {
+      right: 1.1rem;
+      transform: rotateX(0) rotateZ(45deg);
+    }
+
+    &::after {
+      right: 0.6rem;
+      transform: rotateX(0) rotateZ(-45deg);
+    }
+  }
+
+  &__form-search {
+    margin: 1rem 0;
   }
 
   &__inner {
@@ -33,6 +60,14 @@
 
   &__label {
     padding: 0 0 0 1.5rem;
+  }
+
+  &__checkbox-box {
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border: 1px solid black;
+    border-radius: 0.1875rem;
   }
 
   &__name {
