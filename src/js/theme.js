@@ -6,6 +6,7 @@ export default function () {
 
   sliderTheme.forEach(item => {
     item.addEventListener('change', toggleTheme);
+    item.addEventListener('keydown', toggleThemeEnter);
   });
 
   function setTheme(themeName) {
@@ -17,8 +18,20 @@ export default function () {
   function toggleTheme() {
     if (localStorage.getItem('theme') === 'theme-dark') {
       setTheme('root');
+      checkboxs.forEach(item => {
+        item.checked = true;
+      });
     } else {
       setTheme('theme-dark');
+      checkboxs.forEach(item => {
+        item.checked = false;
+      });
+    }
+  }
+
+  function toggleThemeEnter(e) {
+    if (e.code === 'Enter') {
+      toggleTheme();
     }
   }
 

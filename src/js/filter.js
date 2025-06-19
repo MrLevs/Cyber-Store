@@ -3,6 +3,13 @@
 export default function () {
   const details = document.querySelectorAll('.filters__details');
   const label = document.querySelectorAll('.filters__label');
+
+  const batteryAll = document.querySelector('.battery_all');
+  const batteryLabel = document.querySelectorAll('.battery__label');
+
+  const screenAll = document.querySelector('.screen-diagonal_all');
+  const screenLabel = document.querySelectorAll('.screen-label');
+
   let valueM = [];
 
   details.forEach(item => {
@@ -18,6 +25,7 @@ export default function () {
 
   label.forEach(item => {
     item.addEventListener('click', function () {
+      console.log(this.control.checked);
       if (this.control.checked) {
         item.classList.remove('filters__label_active');
         let valFilter = valueM.filter(val => val !== this.control.value);
@@ -25,9 +33,74 @@ export default function () {
         console.log(valueM);
       } else {
         item.classList.add('filters__label_active');
-        valueM.push(this.control.value);
-        console.log(valueM);
+        if (this.control.value !== 'all') {
+          valueM.push(this.control.value);
+          console.log(valueM);
+        }
       }
     });
+
+    item.addEventListener('keydown', function (e) {
+      if (e.code === 'Enter') {
+        console.log(this.control.checked);
+        if (this.control.checked) {
+          item.classList.remove('filters__label_active');
+          let valFilter = valueM.filter(val => val !== this.control.value);
+          valueM = valFilter;
+          this.control.checked = false;
+          console.log(valueM);
+        } else {
+          item.classList.add('filters__label_active');
+          valueM.push(this.control.value);
+          console.log(valueM);
+          this.control.checked = true;
+        }
+      }
+    });
+  });
+
+  //----button All---------
+  batteryAll.addEventListener('click', function () {
+    if (this.control.checked) {
+      batteryLabel.forEach(item => {
+        item.control.checked = false;
+        item.classList.remove('filters__label_active');
+        let valFilter = valueM.filter(val => val !== item.control.value);
+        valueM = valFilter;
+      });
+
+      console.log(valueM);
+    } else {
+      batteryLabel.forEach(item => {
+        item.control.checked = true;
+        item.classList.add('filters__label_active');
+        let valFilter = valueM.filter(val => val !== item.control.value);
+        valueM = valFilter;
+        valueM.push(item.control.value);
+      });
+      console.log(valueM);
+    }
+  });
+
+  screenAll.addEventListener('click', function () {
+    if (this.control.checked) {
+      screenLabel.forEach(item => {
+        item.control.checked = false;
+        item.classList.remove('filters__label_active');
+        let valFilter = valueM.filter(val => val !== item.control.value);
+        valueM = valFilter;
+      });
+
+      console.log(valueM);
+    } else {
+      screenLabel.forEach(item => {
+        item.control.checked = true;
+        item.classList.add('filters__label_active');
+        let valFilter = valueM.filter(val => val !== item.control.value);
+        valueM = valFilter;
+        valueM.push(item.control.value);
+      });
+      console.log(valueM);
+    }
   });
 }

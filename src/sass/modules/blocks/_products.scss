@@ -80,6 +80,7 @@
   }
 
   &__form {
+    margin: 1rem 0 0 0;
     display: flex;
     flex-direction: column;
     gap: 0.5rem 0;
@@ -96,7 +97,7 @@
   }
 
   &__form-search {
-    margin: 1rem 0;
+    margin: 1rem 0 0 0;
   }
 
   &__inner {

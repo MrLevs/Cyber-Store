@@ -67,7 +67,7 @@
                         class="form-search__input"
                         placeholder="Search"
                         aria-autocomplete="both"
-                        aria-labelledby="lable-search"
+                        aria-labelledby="lable-search-brand"
                         autocomplete="off"
                         autocorrect="off"
                         autocapitalize="off"
@@ -87,94 +87,94 @@
                     </form>
                     <form class="filters__form" id="form-brand">
                       <div class="filters__inner">
-                        <label for="apple" class="filters__label">
+                        <label for="apple" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
                             Apple
                             <span class="filters__count">110</span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="apple" value="apple" />
+                        <input type="checkbox" class="filters__input" id="apple" value="apple" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
-                        <label for="samsung" class="filters__label">
+                        <label for="samsung" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
                             Samsung
                             <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="samsung" value="samsung" />
+                        <input type="checkbox" class="filters__input" id="samsung" value="samsung" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
-                        <label for="xiaomi" class="filters__label">
+                        <label for="xiaomi" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
                             Xiaomi
                             <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="xiaomi" value="xiaomi" />
+                        <input type="checkbox" class="filters__input" id="xiaomi" value="xiaomi" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
-                        <label for="poco" class="filters__label">
+                        <label for="poco" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
                             Poco
                             <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="poco" value="poco" />
+                        <input type="checkbox" class="filters__input" id="poco" value="poco" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
-                        <label for="oppo" class="filters__label">
+                        <label for="oppo" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
                             OPPO
                             <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="oppo" value="oppo" />
+                        <input type="checkbox" class="filters__input" id="oppo" value="oppo" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
-                        <label for="honor" class="filters__label">
+                        <label for="honor" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
                             Honor
                             <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="honor" value="honor" />
+                        <input type="checkbox" class="filters__input" id="honor" value="honor" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
-                        <label for="motorola" class="filters__label">
+                        <label for="motorola" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
                             Motorola
                             <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="motorola" value="motorola" />
+                        <input type="checkbox" class="filters__input" id="motorola" value="motorola" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
-                        <label for="nokia" class="filters__label">
+                        <label for="nokia" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
                             Nokia
                             <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="nokia" value="nokia" />
+                        <input type="checkbox" class="filters__input" id="nokia" value="nokia" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
-                        <label for="realme" class="filters__label">
+                        <label for="realme" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
                             Realme
                             <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="realme" value="realme" />
+                        <input type="checkbox" class="filters__input" id="realme" value="realme" tabindex="-1" />
                       </div>
                     </form>
                   </div>
@@ -188,55 +188,96 @@
                 </details>
                 <div class="filters__content" id="battery" role="definition">
                   <div class="filters__content-body">
-                    <form id="form-search-battery" class="form-search filters__form-search" name="form-search-battery">
-                      <label for="input-search" class="form-search__label" id="lable-search" name="label">
-                        <svg
-                          class="form-search__icon"
-                          aria-hidden="false"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="/images/sprite-icon.svg#search" />
-                        </svg>
-                      </label>
-                      <input
-                        id="input-search-battery"
-                        type="search"
-                        name="input-search-battery"
-                        enterkeyhint="search"
-                        class="form-search__input"
-                        placeholder="Search"
-                        aria-autocomplete="both"
-                        aria-labelledby="lable-search"
-                        autocomplete="off"
-                        autocorrect="off"
-                        autocapitalize="off"
-                        enterkeyhint="go" />
-                      <div class="form-search__suggests"></div>
-                      <button
-                        id="button-reset-battery"
-                        class="form-search__button"
-                        type="reset"
-                        name="button-reset-battery"
-                        title="Clear the query"
-                        aria-label="Clear the query">
-                        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                          <use href="/images/sprite-icon.svg#cross-cleare" />
-                        </svg>
-                      </button>
-                    </form>
                     <form class="filters__form" id="form-battery">
                       <div class="filters__inner">
-                        <label for="apple-battery" class="filters__label">
+                        <label for="battery-all" class="filters__label battery_all" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
-                            Apple
-                            <span class="filters__count">110</span>
+                            All
+                            <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="apple-battery" value="apple-battery" />
+                        <input type="checkbox" class="filters__input" id="battery-all" value="all" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="battery-2499" class="filters__label battery__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            &lt; 2499
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="battery-2499" value="2499" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="battery-3999" class="filters__label battery__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            2500 - 3999
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="battery-3999"
+                          value="2500-3999"
+                          tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="battery-4499" class="filters__label battery__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            4000 - 4499
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="battery-4499"
+                          value="4000-4499"
+                          tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="battery-4999" class="filters__label battery__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            4500 - 4999
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="battery-4999"
+                          value="4500-4999"
+                          tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="battery-5999" class="filters__label battery__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            5000 - 5999
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="battery-5999"
+                          value="5000-5999"
+                          tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="battery-6000" class="filters__label battery__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            6000 &gt;
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="battery-6000" value="6000" tabindex="-1" />
                       </div>
                     </form>
                   </div>
@@ -245,13 +286,20 @@
               <div class="filters__accordion">
                 <details class="filters__details">
                   <summary class="filters__summary">
-                    <span class="filters__title" role="term" aria-details="battery"> Screen type </span>
+                    <span class="filters__title" role="term" aria-details="screen-type"> Screen type </span>
                   </summary>
                 </details>
-                <div class="filters__content" id="battery" role="definition">
+                <div class="filters__content" id="screen-type" role="definition">
                   <div class="filters__content-body">
-                    <form id="form-search-battery" class="form-search filters__form-search" name="form-search-battery">
-                      <label for="input-search" class="form-search__label" id="lable-search" name="label">
+                    <form
+                      id="form-search-screen-type"
+                      class="form-search filters__form-search"
+                      name="form-search-screen-type">
+                      <label
+                        for="input-search-screen-type"
+                        class="form-search__label"
+                        id="lable-search-screen-type"
+                        name="label">
                         <svg
                           class="form-search__icon"
                           aria-hidden="false"
@@ -264,24 +312,24 @@
                         </svg>
                       </label>
                       <input
-                        id="input-search-battery"
+                        id="input-search-screen-type"
                         type="search"
-                        name="input-search-battery"
+                        name="input-search-screen-type"
                         enterkeyhint="search"
                         class="form-search__input"
                         placeholder="Search"
                         aria-autocomplete="both"
-                        aria-labelledby="lable-search"
+                        aria-labelledby="lable-search-screen-type"
                         autocomplete="off"
                         autocorrect="off"
                         autocapitalize="off"
                         enterkeyhint="go" />
                       <div class="form-search__suggests"></div>
                       <button
-                        id="button-reset-battery"
+                        id="button-reset-screen-type"
                         class="form-search__button"
                         type="reset"
-                        name="button-reset-battery"
+                        name="button-reset-screen-type"
                         title="Clear the query"
                         aria-label="Clear the query">
                         <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -289,16 +337,56 @@
                         </svg>
                       </button>
                     </form>
-                    <form class="filters__form" id="form-battery">
+                    <form class="filters__form" id="form-screen-type">
                       <div class="filters__inner">
-                        <label for="apple-battery" class="filters__label">
+                        <label for="ips" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
-                            Apple
-                            <span class="filters__count">110</span>
+                            IPS
+                            <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="apple-battery" value="apple-battery" />
+                        <input type="checkbox" class="filters__input" id="ips" value="ips" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="retina" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            Retina
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="retina" value="retina" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="oled" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            OLED
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="oled" value="oled" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="amoled" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            AMOLED
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="amoled" value="amoled" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="poled" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            POLED
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="poled" value="poled" tabindex="-1" />
                       </div>
                     </form>
                   </div>
@@ -307,60 +395,116 @@
               <div class="filters__accordion">
                 <details class="filters__details">
                   <summary class="filters__summary">
-                    <span class="filters__title" role="term" aria-details="battery"> Screen diagonal </span>
+                    <span class="filters__title" role="term" aria-details="screen-diagonal"> Screen diagonal </span>
                   </summary>
                 </details>
-                <div class="filters__content" id="battery" role="definition">
+                <div class="filters__content" id="screen-diagonal" role="definition">
                   <div class="filters__content-body">
-                    <form id="form-search-battery" class="form-search filters__form-search" name="form-search-battery">
-                      <label for="input-search" class="form-search__label" id="lable-search" name="label">
-                        <svg
-                          class="form-search__icon"
-                          aria-hidden="false"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="/images/sprite-icon.svg#search" />
-                        </svg>
-                      </label>
-                      <input
-                        id="input-search-battery"
-                        type="search"
-                        name="input-search-battery"
-                        enterkeyhint="search"
-                        class="form-search__input"
-                        placeholder="Search"
-                        aria-autocomplete="both"
-                        aria-labelledby="lable-search"
-                        autocomplete="off"
-                        autocorrect="off"
-                        autocapitalize="off"
-                        enterkeyhint="go" />
-                      <div class="form-search__suggests"></div>
-                      <button
-                        id="button-reset-battery"
-                        class="form-search__button"
-                        type="reset"
-                        name="button-reset-battery"
-                        title="Clear the query"
-                        aria-label="Clear the query">
-                        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                          <use href="/images/sprite-icon.svg#cross-cleare" />
-                        </svg>
-                      </button>
-                    </form>
-                    <form class="filters__form" id="form-battery">
+                    <form class="filters__form" id="form-screen-diagonal">
                       <div class="filters__inner">
-                        <label for="apple-battery" class="filters__label">
+                        <label for="screen-diagonal-all" class="filters__label screen-diagonal_all" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
-                            Apple
-                            <span class="filters__count">110</span>
+                            All
+                            <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="apple-battery" value="apple-battery" />
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="screen-diagonal-all"
+                          value="all"
+                          tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="screen-diagonal-6.09" class="filters__label screen-label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            &lt; 6.09
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="screen-diagonal-6.09"
+                          value="6.09"
+                          tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="screen-diagonal-6.29" class="filters__label screen-label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            6.1 - 6.29
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="screen-diagonal-6.29"
+                          value="6.29"
+                          tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="screen-diagonal-6.49" class="filters__label screen-label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            6.3 - 6.49
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="screen-diagonal-6.49"
+                          value="6.49"
+                          tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="screen-diagonal-6.59" class="filters__label screen-label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            6.5 - 6.59
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="screen-diagonal-6.59"
+                          value="6.59"
+                          tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="screen-diagonal-6.79" class="filters__label screen-label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            6.6 - 6.79
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="screen-diagonal-6.79"
+                          value="6.79"
+                          tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="screen-diagonal-6.8" class="filters__label screen-label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            6.8 &gt;
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="screen-diagonal-6.8"
+                          value="6.8"
+                          tabindex="-1" />
                       </div>
                     </form>
                   </div>
@@ -369,60 +513,51 @@
               <div class="filters__accordion">
                 <details class="filters__details">
                   <summary class="filters__summary">
-                    <span class="filters__title" role="term" aria-details="battery"> Protection class </span>
+                    <span class="filters__title" role="term" aria-details="protection-class"> Protection class </span>
                   </summary>
                 </details>
-                <div class="filters__content" id="battery" role="definition">
+                <div class="filters__content" id="protection-class" role="definition">
                   <div class="filters__content-body">
-                    <form id="form-search-battery" class="form-search filters__form-search" name="form-search-battery">
-                      <label for="input-search" class="form-search__label" id="lable-search" name="label">
-                        <svg
-                          class="form-search__icon"
-                          aria-hidden="false"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="/images/sprite-icon.svg#search" />
-                        </svg>
-                      </label>
-                      <input
-                        id="input-search-battery"
-                        type="search"
-                        name="input-search-battery"
-                        enterkeyhint="search"
-                        class="form-search__input"
-                        placeholder="Search"
-                        aria-autocomplete="both"
-                        aria-labelledby="lable-search"
-                        autocomplete="off"
-                        autocorrect="off"
-                        autocapitalize="off"
-                        enterkeyhint="go" />
-                      <div class="form-search__suggests"></div>
-                      <button
-                        id="button-reset-battery"
-                        class="form-search__button"
-                        type="reset"
-                        name="button-reset-battery"
-                        title="Clear the query"
-                        aria-label="Clear the query">
-                        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                          <use href="/images/sprite-icon.svg#cross-cleare" />
-                        </svg>
-                      </button>
-                    </form>
-                    <form class="filters__form" id="form-battery">
+                    <form class="filters__form" id="form-protection-class">
                       <div class="filters__inner">
-                        <label for="apple-battery" class="filters__label">
+                        <label for="ipx4" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
-                            Apple
-                            <span class="filters__count">110</span>
+                            IPx4
+                            <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="apple-battery" value="apple-battery" />
+                        <input type="checkbox" class="filters__input" id="ipx4" value="ipx4" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="ipx5" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            IPx5
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="ipx5" value="ipx5" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="ipx6" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            IPx6
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="ipx6" value="ipx6" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="ipx7" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            IPx7
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="ipx7" value="ipx7" tabindex="-1" />
                       </div>
                     </form>
                   </div>
@@ -431,60 +566,71 @@
               <div class="filters__accordion">
                 <details class="filters__details">
                   <summary class="filters__summary">
-                    <span class="filters__title" role="term" aria-details="battery"> Built-in memory </span>
+                    <span class="filters__title" role="term" aria-details="memory"> Built-in memory </span>
                   </summary>
                 </details>
-                <div class="filters__content" id="battery" role="definition">
+                <div class="filters__content" id="memory" role="definition">
                   <div class="filters__content-body">
-                    <form id="form-search-battery" class="form-search filters__form-search" name="form-search-battery">
-                      <label for="input-search" class="form-search__label" id="lable-search" name="label">
-                        <svg
-                          class="form-search__icon"
-                          aria-hidden="false"
-                          width="18"
-                          height="18"
-                          viewBox="0 0 18 18"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg">
-                          <use href="/images/sprite-icon.svg#search" />
-                        </svg>
-                      </label>
-                      <input
-                        id="input-search-battery"
-                        type="search"
-                        name="input-search-battery"
-                        enterkeyhint="search"
-                        class="form-search__input"
-                        placeholder="Search"
-                        aria-autocomplete="both"
-                        aria-labelledby="lable-search"
-                        autocomplete="off"
-                        autocorrect="off"
-                        autocapitalize="off"
-                        enterkeyhint="go" />
-                      <div class="form-search__suggests"></div>
-                      <button
-                        id="button-reset-battery"
-                        class="form-search__button"
-                        type="reset"
-                        name="button-reset-battery"
-                        title="Clear the query"
-                        aria-label="Clear the query">
-                        <svg width="20" height="20" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                          <use href="/images/sprite-icon.svg#cross-cleare" />
-                        </svg>
-                      </button>
-                    </form>
-                    <form class="filters__form" id="form-battery">
+                    <form class="filters__form" id="form-memory">
                       <div class="filters__inner">
-                        <label for="apple-battery" class="filters__label">
+                        <label for="32" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
                           <span class="filters__name">
-                            Apple
-                            <span class="filters__count">110</span>
+                            32 GB
+                            <span class="filters__count"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="apple-battery" value="apple-battery" />
+                        <input type="checkbox" class="filters__input" id="32" value="32" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="64" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            64 GB
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="64" value="64" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="128" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            128 GB
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="128" value="128" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="256" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            256 GB
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="256" value="256" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="512" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            512 GB
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="512" value="512" tabindex="-1" />
+                      </div>
+                      <div class="filters__inner">
+                        <label for="1024" class="filters__label" tabindex="0">
+                          <span class="filters__checkbox"></span>
+                          <span class="filters__name">
+                            1024 GB
+                            <span class="filters__count"></span>
+                          </span>
+                        </label>
+                        <input type="checkbox" class="filters__input" id="1024" value="1024" tabindex="-1" />
                       </div>
                     </form>
                   </div>
