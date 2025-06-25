@@ -1,6 +1,5 @@
 @use '../variables' as var;
 
-//-------Main-------
 .box {
   width: 100%;
 }
@@ -20,6 +19,7 @@
   }
 }
 
+//----Filters-----
 .filters {
   display: flex;
   flex-direction: column;
@@ -184,5 +184,48 @@
     top: 25%;
     left: 0;
     opacity: 0;
+  }
+}
+
+//-------Main-------
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem 0;
+
+  &__info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__numbers {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$content-numbers-color;
+    transition: var.$transition-color;
+  }
+
+  &__number {
+    font-size: 1.25rem;
+    color: var.$content-number-color;
+    transition: var.$transition-color;
+  }
+
+  &__select {
+    padding: 0.75rem 1rem;
+    border: 0.0625rem solid var.$content-select-border-color;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var.$content-select-color;
+    transition: var.$transition-border-color, var.$transition-color;
+  }
+
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 1.5rem 1rem;
   }
 }

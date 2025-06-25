@@ -118,7 +118,7 @@ $transition-transform: transform ease 0.5s;
   --banner2-title-color: #fff;
   --banner2-subtitle-color: #787878;
 
-  //---Main Products----
+  //---Page Products----
   //---Inner-----
   --inner-bg: #fff;
 
@@ -132,6 +132,13 @@ $transition-transform: transform ease 0.5s;
   --filters-checkbox-border-color: #e3e3e3;
   --filters-checkbox-before-bg: #fff;
   --filters-checkbox-active-bg: #000;
+
+  //---Main-----
+  //---Content-----
+  --content-numbers-color: #6c6c6c;
+  --content-number-color: #000;
+  --content-select-border-color: #d4d4d4;
+  --content-select-color: #000;
 }
 
 .theme-dark {
@@ -240,7 +247,7 @@ $transition-transform: transform ease 0.5s;
   --banner2-title-color: #fff;
   --banner2-subtitle-color: #787878;
 
-  //---Main Products----
+  //---Page Products----
   //---Inner-----
   --inner-bg: #381b1b;
 
@@ -254,6 +261,13 @@ $transition-transform: transform ease 0.5s;
   --filters-checkbox-border-color: #4a4a4a;
   --filters-checkbox-before-bg: #000;
   --filters-checkbox-active-bg: #939393;
+
+  //---Main-----
+  //---Content-----
+  --content-numbers-color: #a99e9e;
+  --content-number-color: #fff;
+  --content-select-border-color: #ef0808;
+  --content-select-color: #fff;
 }
 
 //---Body----
@@ -362,7 +376,7 @@ $discount-bg: var(--discount-bg);
 $banner2-title-color: var(--banner2-title-color);
 $banner2-subtitle-color: var(--banner2-subtitle-color);
 
-//---Main Products----
+//---Page Products----
 //---Inner-----
 $inner-bg: var(--inner-bg);
 
@@ -376,6 +390,13 @@ $filters-checkbox-bg: var(--filters-checkbox-bg);
 $filters-checkbox-border-color: var(--filters-checkbox-border-color);
 $filters-checkbox-before-bg: var(--filters-checkbox-before-bg);
 $filters-checkbox-active-bg: var(--filters-checkbox-active-bg);
+
+//---Main-----
+//---Content-----
+$content-numbers-color: var(--content-numbers-color);
+$content-number-color: var(--content-number-color);
+$content-select-border-color: var(--content-select-border-color);
+$content-select-color: var(--content-select-color);
 
 //---breakepoints--------
 //---576px----
