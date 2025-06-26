@@ -123,6 +123,7 @@ $transition-transform: transform ease 0.5s;
   --inner-bg: #fff;
 
   //---filters----
+  --filters-bg: #fff;
   --filters-color: #000;
   --filters-label-bg: #d5d5d5;
   --filters-count-color: #929292;
@@ -139,6 +140,7 @@ $transition-transform: transform ease 0.5s;
   --content-number-color: #000;
   --content-select-border-color: #d4d4d4;
   --content-select-color: #000;
+  --content-select-bg: #fff;
 }
 
 .theme-dark {
@@ -252,6 +254,7 @@ $transition-transform: transform ease 0.5s;
   --inner-bg: #381b1b;
 
   //---filters----
+  --filters-bg: #381b1b;
   --filters-color: #fff;
   --filters-label-bg: #773e3e;
   --filters-count-color: #a9a9a9;
@@ -266,8 +269,9 @@ $transition-transform: transform ease 0.5s;
   //---Content-----
   --content-numbers-color: #a99e9e;
   --content-number-color: #fff;
-  --content-select-border-color: #ef0808;
+  --content-select-border-color: #070054;
   --content-select-color: #fff;
+  --content-select-bg: #381b1b;
 }
 
 //---Body----
@@ -381,6 +385,7 @@ $banner2-subtitle-color: var(--banner2-subtitle-color);
 $inner-bg: var(--inner-bg);
 
 //---filters----
+$filters-bg: var(--filters-bg);
 $filters-color: var(--filters-color);
 $filters-label-bg: var(--filters-label-bg);
 $filters-count-color: var(--filters-count-color);
@@ -397,6 +402,7 @@ $content-numbers-color: var(--content-numbers-color);
 $content-number-color: var(--content-number-color);
 $content-select-border-color: var(--content-select-border-color);
 $content-select-color: var(--content-select-color);
+$content-select-bg: var(--content-select-bg);
 
 //---breakepoints--------
 //---576px----

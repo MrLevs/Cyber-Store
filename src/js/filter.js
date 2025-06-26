@@ -10,6 +10,25 @@ export default function () {
   const screenAll = document.querySelector('.screen-diagonal_all');
   const screenLabel = document.querySelectorAll('.screen-label');
 
+  //----filters-btn-------
+  const filtersBtnOpen = document.querySelector('#filters-btn-open');
+  const filtersBtnClose = document.querySelector('#filters-btn-close');
+  const filtersMenu = document.querySelector('#filters-menu');
+
+  filtersBtnOpen.addEventListener('click', menuFiltersOpen);
+  filtersBtnClose.addEventListener('click', menuFiltersClose);
+
+  function menuFiltersOpen() {
+    document.body.classList.add('_lock');
+    filtersMenu.classList.add('filters_active');
+  }
+
+  function menuFiltersClose() {
+    document.body.classList.remove('_lock');
+    filtersMenu.classList.remove('filters_active');
+  }
+  //-----------------------------
+
   let valueM = [];
 
   details.forEach(item => {

@@ -1,0 +1,91 @@
+@use '../variables' as var;
+@use '../mixin' as mix;
+
+//max-width: 992px
+@include mix.laptop {
+  //---Inner--------
+  .inner {
+    &__block {
+      grid-template-columns: 1fr 2fr;
+    }
+  }
+
+  //---Content-------
+  .content {
+    &__inner {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+}
+
+//max-width: 768px
+@include mix.tablet {
+  //---Breadcrumbs------
+  .breadcrumbs {
+    display: none;
+  }
+
+  //---Inner--------
+  .inner {
+    &__bg {
+      border-top: 0.0625rem solid var(--breadcrumbs-border-color);
+    }
+
+    &__block {
+      position: relative;
+      grid-template-columns: 1fr;
+    }
+  }
+
+  //---Filters------
+  .filters {
+    padding: 5rem 2rem;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    z-index: 105;
+    overflow: auto;
+    transition: left ease 0.5s;
+
+    &_active {
+      left: 0;
+    }
+
+    &__suptitle {
+      display: block;
+    }
+
+    &__button {
+      display: block;
+    }
+  }
+
+  //---Content-------
+  .content {
+    &__info {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+      gap: 2.5rem 0;
+    }
+
+    &__filters {
+      width: 100%;
+    }
+
+    &__button {
+      display: block;
+    }
+  }
+}
+
+//max-width: 576px
+@include mix.mobile {
+  //---Content-------
+  .content {
+    &__inner {
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+}

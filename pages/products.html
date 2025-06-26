@@ -33,7 +33,8 @@
       <div class="inner container">
         <div class="inner__bg">
           <div class="inner__block container-m">
-            <aside class="filters">
+            <aside class="filters" id="filters-menu">
+              <h1 class="filters__suptitle">Filters</h1>
               <div class="filters__accordion">
                 <details class="filters__details">
                   <summary class="filters__summary">
@@ -624,19 +625,23 @@
                   </div>
                 </div>
               </div>
+              <button class="filters__button" id="filters-btn-close" aria-label="close filters">Close</button>
             </aside>
             <main class="main">
               <section class="content">
                 <div class="content__info">
-                  <h1 class="content__numbers">Selected Products: <span class="content__number">85</span></h1>
-                  <form id="content-form" class="content__form">
-                    <select name="content-select" id="content-select" class="content__select">
-                      <option value="rating" class="content__option">By rating</option>
-                      <option value="ascending-price" class="content__option">By ascending price</option>
-                      <option value="descending-price" class="content__option">By price descending</option>
-                      <option value="new" class="content__option">By new</option>
-                    </select>
-                  </form>
+                  <h2 class="content__numbers">Selected Products: <span class="content__number">85</span></h2>
+                  <div class="content__filters">
+                    <button class="content__button" id="filters-btn-open" aria-label="open filters">Filters</button>
+                    <form id="content-form" class="content__form">
+                      <select name="content-select" id="content-select" class="content__select">
+                        <option value="rating" class="content__option">By rating</option>
+                        <option value="ascending-price" class="content__option">By ascending price</option>
+                        <option value="descending-price" class="content__option">By price descending</option>
+                        <option value="new" class="content__option">By new</option>
+                      </select>
+                    </form>
+                  </div>
                 </div>
                 <div class="content__inner">
                   <article class="product-card">
