@@ -37,6 +37,8 @@
 @include mix.tablet {
   //---Header-----
   .header {
+    position: fixed;
+    z-index: 150;
     &__block {
       display: none;
     }

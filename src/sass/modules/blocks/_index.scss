@@ -261,7 +261,7 @@
   &__name {
     font-size: 1rem;
     font-weight: 500;
-    color: var.$category-name-color;
+    color: var.$global-color;
     transition: var.$transition-color;
   }
 }
@@ -270,7 +270,7 @@
 .title {
   font-size: 1.5rem;
   font-weight: 500;
-  color: var.$title-color;
+  color: var.$global-color;
   transition: var.$transition-color;
 }
 
@@ -320,7 +320,7 @@
 
     &_active {
       opacity: 1;
-      border-bottom: 0.125rem solid var.$products-btn-bottom-color;
+      border-bottom: 0.125rem solid var.$products-btn-border-color;
     }
   }
 
@@ -378,7 +378,7 @@
     font-size: 2.125rem;
     font-weight: 300;
     text-transform: capitalize;
-    color: var.$banners-title-color;
+    color: var.$global-color;
     transition: var.$transition-color;
   }
 

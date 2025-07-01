@@ -32,7 +32,7 @@
     display: none;
     font-size: 1.5rem;
     font-weight: 500;
-    color: var.$filters-color;
+    color: var.$global-color;
     transition: var.$transition-color;
   }
 
@@ -63,7 +63,7 @@
     position: relative;
     font-size: 1.1875rem;
     font-weight: 500;
-    color: var.$filters-color;
+    color: var.$global-color;
     transition: var.$transition-color, var.$transition-border-color;
     border-bottom: 0.0625rem solid var.$filters-border-color;
     cursor: pointer;
@@ -181,7 +181,7 @@
   &__name {
     font-size: 1rem;
     font-weight: 500;
-    color: var.$filters-color;
+    color: var.$global-color;
     transition: var.$transition-color;
   }
 
@@ -209,7 +209,7 @@
     border-radius: 0.5rem;
     font-size: 1rem;
     font-weight: 400;
-    color: var.$content-select-color;
+    color: var.$global-color;
     transition: var.$transition-border-color, var.$transition-color, var.$transition-bg;
   }
 }
@@ -235,7 +235,7 @@
 
   &__number {
     font-size: 1.25rem;
-    color: var.$content-number-color;
+    color: var.$global-color;
     transition: var.$transition-color;
   }
 
@@ -257,7 +257,7 @@
     border-radius: 0.5rem;
     font-size: 1rem;
     font-weight: 400;
-    color: var.$content-select-color;
+    color: var.$global-color;
     transition: var.$transition-border-color, var.$transition-color, var.$transition-bg;
     cursor: pointer;
   }
@@ -295,7 +295,7 @@
     border-radius: 0.5rem;
     font-size: 1rem;
     font-weight: 400;
-    color: var.$content-select-color;
+    color: var.$global-color;
     transition: var.$transition-border-color, var.$transition-color, var.$transition-bg;
     appearance: none;
   }

@@ -13,15 +13,16 @@ $transition-transform: transform ease 0.5s;
 //---var switch-theme----
 //------Themes----------
 :root {
+  //---Global vars-------
+  --global-color: #000;
+
   //---Body----
   --body-bg: #dfdfdf;
 
   //---Header---
   --header-bg: #fff;
-  --header-link-color: #000;
   --header-link-stroke: #000;
   --header-mobile-bg: #fff;
-  --header-mobile-color: #000;
 
   //---Logo-----
   --logo-bg: black;
@@ -29,7 +30,6 @@ $transition-transform: transform ease 0.5s;
   //---Form-search----
   --form-search-stroke: #989898;
   --form-search-input-bg: #f5f5f5;
-  --form-search-input-color: #000;
   --form-search-suggests-item-bg: #d5d5d5;
 
   //---switch-theme----
@@ -40,15 +40,13 @@ $transition-transform: transform ease 0.5s;
 
   //---Breadcrumbs-------
   --breadcrumbs-bg: #fff;
-  --breadcrumbs-color: #000;
   --breadcrumbs-border-color: #bebebe;
 
   //---Footer-----
   --footer-bg: #000;
   --footer-logo-fill: #fff;
-  --footer-text-color: #cfcfcf;
   --footer-title-color: #fff;
-  --footer-link-color: #cfcfcf;
+  --footer-color: #cfcfcf;
   --footer-svg-stroke: #000;
   --footer-svg-fill: #fff;
 
@@ -82,21 +80,15 @@ $transition-transform: transform ease 0.5s;
   --category-btn-fill: #000;
   --category-slide-bg: #ededed;
   --category-svg-stroke: #000;
-  --category-name-color: #000;
-
-  //---Title--------
-  --title-color: #000;
 
   //---Products----
   --products-bg: #fff;
   --products-svg-stroke: #909090;
   --products-btn-color: #000;
-  --products-btn-bottom-color: #000;
+  --products-btn-border-color: #000;
 
   //---Product-card-----
   --product-card-bg: #f6f6f6;
-  --product-card-title-color: #000;
-  --product-card-price-color: #000;
   --product-card-link-bg: #000;
   --product-card-link-color: #fff;
 
@@ -106,7 +98,6 @@ $transition-transform: transform ease 0.5s;
   --banners-bg-2: #f1f1f1;
   --banners-bg-3: #eaeaea;
   --banners-bg-4: #cdcdcd;
-  --banners-title-color: #000;
   --banners-text-color: #090909;
   --banners-btn-fill: #000;
   --banners-indicator-bg: #000;
@@ -124,7 +115,6 @@ $transition-transform: transform ease 0.5s;
 
   //---filters----
   --filters-bg: #fff;
-  --filters-color: #000;
   --filters-label-bg: #d5d5d5;
   --filters-count-color: #929292;
   --filters-border-color: #e3e3e3;
@@ -137,22 +127,21 @@ $transition-transform: transform ease 0.5s;
   //---Main-----
   //---Content-----
   --content-numbers-color: #6c6c6c;
-  --content-number-color: #000;
   --content-select-border-color: #d4d4d4;
-  --content-select-color: #000;
   --content-select-bg: #fff;
 }
 
 .theme-dark {
+  //---Global vars-------
+  --global-color: #fff;
+
   //---Body----
   --body-bg: #1a1a1a;
 
   //---Header---
   --header-bg: #141a2e;
-  --header-link-color: #fff;
   --header-link-stroke: #fff;
   --header-mobile-bg: #141a2e;
-  --header-mobile-color: #fff;
 
   //---Logo-----
   --logo-bg: rgb(255, 255, 255);
@@ -160,7 +149,6 @@ $transition-transform: transform ease 0.5s;
   //---Form-search----
   --form-search-stroke: #fff;
   --form-search-input-bg: #1d2a56;
-  --form-search-input-color: #fff;
   --form-search-suggests-item-bg: #0f1c46;
 
   //---switch-theme----
@@ -171,15 +159,13 @@ $transition-transform: transform ease 0.5s;
 
   //---Breadcrumbs-------
   --breadcrumbs-bg: #141a2e;
-  --breadcrumbs-color: #fff;
   --breadcrumbs-border-color: #383838;
 
   //---Footer-----
   --footer-bg: #141a2e;
   --footer-logo-fill: #fff;
-  --footer-text-color: #cfcfcf;
   --footer-title-color: #fff;
-  --footer-link-color: #cfcfcf;
+  --footer-color: #cfcfcf;
   --footer-svg-stroke: #000;
   --footer-svg-fill: #fff;
 
@@ -213,21 +199,15 @@ $transition-transform: transform ease 0.5s;
   --category-btn-fill: #fff;
   --category-slide-bg: #012e32;
   --category-svg-stroke: #fff;
-  --category-name-color: #fff;
-
-  //---Title--------
-  --title-color: #fff;
 
   //---Products----
   --products-bg: #1f1d22;
   --products-svg-stroke: #fff;
   --products-btn-color: #fff;
-  --products-btn-bottom-color: #fff;
+  --products-btn-border-color: #fff;
 
   //---Product-card-----
   --product-card-bg: #1c1526;
-  --product-card-title-color: #fff;
-  --product-card-price-color: #fff;
   --product-card-link-bg: #040d22;
   --product-card-link-color: #fff;
 
@@ -237,7 +217,6 @@ $transition-transform: transform ease 0.5s;
   --banners-bg-2: #3c3c3c;
   --banners-bg-3: #2c2c2c;
   --banners-bg-4: #1c1c1c;
-  --banners-title-color: #fff;
   --banners-text-color: #fff;
   --banners-btn-fill: #fff;
   --banners-indicator-bg: #fff;
@@ -251,16 +230,15 @@ $transition-transform: transform ease 0.5s;
 
   //---Page Products----
   //---Inner-----
-  --inner-bg: #381b1b;
+  --inner-bg: #1f1d22;
 
   //---filters----
-  --filters-bg: #381b1b;
-  --filters-color: #fff;
+  --filters-bg: #1f1d22;
   --filters-label-bg: #773e3e;
   --filters-count-color: #a9a9a9;
   --filters-border-color: #a9a9a9;
   --filters-before-bg: #fff;
-  --filters-checkbox-bg: #381b1b;
+  --filters-checkbox-bg: #1f1d22;
   --filters-checkbox-border-color: #4a4a4a;
   --filters-checkbox-before-bg: #000;
   --filters-checkbox-active-bg: #939393;
@@ -268,21 +246,20 @@ $transition-transform: transform ease 0.5s;
   //---Main-----
   //---Content-----
   --content-numbers-color: #a99e9e;
-  --content-number-color: #fff;
   --content-select-border-color: #070054;
-  --content-select-color: #fff;
-  --content-select-bg: #381b1b;
+  --content-select-bg: #1f1d22;
 }
+
+//---Global vars-------
+$global-color: var(--global-color);
 
 //---Body----
 $body-bg: var(--body-bg);
 
 //---Header----
 $header-bg: var(--header-bg);
-$header-link-color: var(--header-link-color);
 $header-link-stroke: var(--header-link-stroke);
 $header-mobile-bg: var(--header-mobile-bg);
-$header-mobile-color: var(--header-mobile-color);
 
 //---Logo-----
 $logo-bg: var(--logo-bg);
@@ -290,7 +267,6 @@ $logo-bg: var(--logo-bg);
 //---Form-search----
 $form-search-stroke: var(--form-search-stroke);
 $form-search-input-bg: var(--form-search-input-bg);
-$form-search-input-color: var(--form-search-input-color);
 $form-search-suggests-item-bg: var(--form-search-suggests-item-bg);
 
 //---switch-theme----
@@ -301,15 +277,13 @@ $btn-menu-bg: var(--btn-menu-bg);
 
 //---Breadcrumbs-------
 $breadcrumbs-bg: var(--breadcrumbs-bg);
-$breadcrumbs-color: var(--breadcrumbs-color);
 $breadcrumbs-border-color: var(--breadcrumbs-border-color);
 
 //---Footer-----
 $footer-bg: var(--footer-bg);
 $footer-logo-fill: var(--footer-logo-fill);
-$footer-text-color: var(--footer-text-color);
 $footer-title-color: var(--footer-title-color);
-$footer-link-color: var(--footer-link-color);
+$footer-color: var(--footer-color);
 $footer-svg-stroke: var(--footer-svg-stroke);
 $footer-svg-fill: var(--footer-svg-fill);
 
@@ -344,21 +318,15 @@ $category-bg: var(--category-bg);
 $category-btn-fill: var(--category-btn-fill);
 $category-slide-bg: var(--category-slide-bg);
 $category-svg-stroke: var(--category-svg-stroke);
-$category-name-color: var(--category-name-color);
-
-//---Title------
-$title-color: var(--title-color);
 
 //---Products----
 $products-bg: var(--products-bg);
 $products-svg-stroke: var(--products-svg-stroke);
 $products-btn-color: var(--products-btn-color);
-$products-btn-bottom-color: var(--products-btn-bottom-color);
+$products-btn-border-color: var(--products-btn-border-color);
 
 //---Product-card-----
 $product-card-bg: var(--product-card-bg);
-$product-card-title-color: var(--product-card-title-color);
-$product-card-price-color: var(--product-card-price-color);
 $product-card-link-bg: var(--product-card-link-bg);
 $product-card-link-color: var(--product-card-link-color);
 
@@ -368,7 +336,6 @@ $banners-bg-1: var(--banners-bg-1);
 $banners-bg-2: var(--banners-bg-2);
 $banners-bg-3: var(--banners-bg-3);
 $banners-bg-4: var(--banners-bg-4);
-$banners-title-color: var(--banners-title-color);
 $banners-text-color: var(--banners-text-color);
 $banners-btn-fill: var(--banners-btn-fill);
 $banners-indicator-bg: var(--banners-indicator-bg);
@@ -386,7 +353,6 @@ $inner-bg: var(--inner-bg);
 
 //---filters----
 $filters-bg: var(--filters-bg);
-$filters-color: var(--filters-color);
 $filters-label-bg: var(--filters-label-bg);
 $filters-count-color: var(--filters-count-color);
 $filters-border-color: var(--filters-border-color);
@@ -399,9 +365,7 @@ $filters-checkbox-active-bg: var(--filters-checkbox-active-bg);
 //---Main-----
 //---Content-----
 $content-numbers-color: var(--content-numbers-color);
-$content-number-color: var(--content-number-color);
 $content-select-border-color: var(--content-select-border-color);
-$content-select-color: var(--content-select-color);
 $content-select-bg: var(--content-select-bg);
 
 //---breakepoints--------
