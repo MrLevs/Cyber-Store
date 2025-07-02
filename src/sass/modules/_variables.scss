@@ -120,14 +120,12 @@ $transition-transform: transform ease 0.5s;
   --filters-border-color: #e3e3e3;
   --filters-before-bg: #000;
   --filters-checkbox-bg: #fff;
-  --filters-checkbox-border-color: #e3e3e3;
   --filters-checkbox-before-bg: #fff;
   --filters-checkbox-active-bg: #000;
 
   //---Main-----
   //---Content-----
   --content-numbers-color: #6c6c6c;
-  --content-select-border-color: #d4d4d4;
   --content-select-bg: #fff;
 }
 
@@ -239,14 +237,12 @@ $transition-transform: transform ease 0.5s;
   --filters-border-color: #a9a9a9;
   --filters-before-bg: #fff;
   --filters-checkbox-bg: #1f1d22;
-  --filters-checkbox-border-color: #4a4a4a;
   --filters-checkbox-before-bg: #000;
   --filters-checkbox-active-bg: #939393;
 
   //---Main-----
   //---Content-----
-  --content-numbers-color: #a99e9e;
-  --content-select-border-color: #070054;
+  --content-numbers-color: #c5c5c5;
   --content-select-bg: #1f1d22;
 }
 
@@ -358,14 +354,12 @@ $filters-count-color: var(--filters-count-color);
 $filters-border-color: var(--filters-border-color);
 $filters-before-bg: var(--filters-before-bg);
 $filters-checkbox-bg: var(--filters-checkbox-bg);
-$filters-checkbox-border-color: var(--filters-checkbox-border-color);
 $filters-checkbox-before-bg: var(--filters-checkbox-before-bg);
 $filters-checkbox-active-bg: var(--filters-checkbox-active-bg);
 
 //---Main-----
 //---Content-----
 $content-numbers-color: var(--content-numbers-color);
-$content-select-border-color: var(--content-select-border-color);
 $content-select-bg: var(--content-select-bg);
 
 //---breakepoints--------

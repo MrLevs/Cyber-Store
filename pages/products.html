@@ -38,6 +38,34 @@
               <div class="filters__accordion">
                 <details class="filters__details">
                   <summary class="filters__summary">
+                    <span class="filters__title" role="term" aria-details="price"> Price </span>
+                  </summary>
+                </details>
+                <div class="filters__content" id="price" role="definition">
+                  <div class="filters__content-body">
+                    <form class="filters__form" id="form-price">
+                      <div class="filters__items">
+                        <div class="filters__inner filters__inner-price">
+                          <label for="price-from" class="filters__label-price"> From </label>
+                          <label for="price-to" class="filters__label-price"> To </label>
+                        </div>
+                        <div class="filters__inner filters__inner-price">
+                          <input id="price-from" type="number" class="filters__input-price" />
+                          <div class="filters__dash"></div>
+                          <input id="price-to" type="number" class="filters__input-price" />
+                        </div>
+                      </div>
+                      <div class="filters__inner-range">
+                        <input type="range" class="filters__range" min="0" max="100" value="25" step="10" />
+                        <input type="range" class="filters__range" min="0" max="100" value="25" step="10" />
+                      </div>
+                    </form>
+                  </div>
+                </div>
+              </div>
+              <div class="filters__accordion">
+                <details class="filters__details">
+                  <summary class="filters__summary">
                     <span class="filters__title" role="term" aria-details="brand"> Brand </span>
                   </summary>
                 </details>
