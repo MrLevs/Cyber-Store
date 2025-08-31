@@ -1,8 +1,10 @@
 'use strict';
 
-export default function () {
+import dataBase from './data-base';
+
+export default async function () {
+  const data = await dataBase();
   const forms = document.querySelectorAll('.form-search_header');
-  let data;
 
   forms.forEach(item => {
     const input = item.querySelector('.form-search__input');
@@ -14,17 +16,6 @@ export default function () {
 
     search(input, btn, resultSuggests);
   });
-
-  async function fetchData() {
-    let response = await fetch('/data.json');
-    let result = await response.json();
-    data = result.map(({ name, link }) => ({
-      name: name.toLowerCase(),
-      link: link,
-    }));
-  }
-
-  fetchData();
 
   function search(input, btn, resultSuggests) {
     let valueSearch;
