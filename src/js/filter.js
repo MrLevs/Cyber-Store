@@ -1,6 +1,10 @@
 'use strict';
 
-export default function () {
+import dataBase from './data-base'; //Data base
+
+export default async function () {
+  const data = await dataBase();
+  console.log(data);
   const details = document.querySelectorAll('.filters__details');
   const label = document.querySelectorAll('.filters__label');
 
@@ -10,7 +14,7 @@ export default function () {
   const screenAll = document.querySelector('.screen-diagonal_all');
   const screenLabel = document.querySelectorAll('.screen-label');
 
-  //----filters-btn-------
+  //----filters-btn Open || Close-------
   const filtersBtnOpen = document.querySelector('#filters-btn-open');
   const filtersBtnClose = document.querySelector('#filters-btn-close');
   const filtersMenu = document.querySelector('#filters-menu');
@@ -31,6 +35,7 @@ export default function () {
 
   let valueM = [];
 
+  //----Open accordion---------
   details.forEach(item => {
     let summary = item.querySelector('.filters__summary');
     summary.addEventListener('click', function () {
@@ -42,9 +47,9 @@ export default function () {
     });
   });
 
+  //----Select element-------
   label.forEach(item => {
     item.addEventListener('click', function () {
-      console.log(this.control.checked);
       if (this.control.checked) {
         item.classList.remove('filters__label_active');
         let valFilter = valueM.filter(val => val !== this.control.value);
@@ -57,6 +62,8 @@ export default function () {
           console.log(valueM);
         }
       }
+      console.log(this.control.checked);
+      console.log(this.control);
     });
 
     item.addEventListener('keydown', function (e) {
@@ -78,7 +85,7 @@ export default function () {
     });
   });
 
-  //----button All---------
+  //----button All battery---------
   batteryAll.addEventListener('click', function () {
     if (this.control.checked) {
       batteryLabel.forEach(item => {
@@ -101,6 +108,7 @@ export default function () {
     }
   });
 
+  //----button All screen--------
   screenAll.addEventListener('click', function () {
     if (this.control.checked) {
       screenLabel.forEach(item => {

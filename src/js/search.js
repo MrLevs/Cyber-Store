@@ -1,6 +1,6 @@
 'use strict';
 
-import dataBase from './data-base';
+import dataBase from './data-base'; //Data base
 
 export default async function () {
   const data = await dataBase();
