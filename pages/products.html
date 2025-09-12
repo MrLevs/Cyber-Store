@@ -55,9 +55,27 @@
                           <input id="price-to" type="number" class="filters__input-price" />
                         </div>
                       </div>
-                      <div class="filters__inner-range">
-                        <input type="range" class="filters__range" min="0" max="100" value="25" step="10" />
-                        <input type="range" class="filters__range" min="0" max="100" value="25" step="10" />
+                      <div class="range">
+                        <div class="range__track"></div>
+                        <div class="range__progress"></div>
+                        <div class="range__inner">
+                          <input
+                            id="price-min"
+                            type="range"
+                            class="range__input"
+                            min="0"
+                            max="100"
+                            value="10"
+                            step="1" />
+                          <input
+                            id="price-max"
+                            type="range"
+                            class="range__input"
+                            min="0"
+                            max="100"
+                            value="40"
+                            step="1" />
+                        </div>
                       </div>
                     </form>
                   </div>

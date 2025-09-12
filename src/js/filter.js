@@ -33,7 +33,7 @@ export default async function () {
   }
   //-----------------------------
 
-  let valueM = [];
+  let valueFilters = [];
 
   //----Open accordion---------
   details.forEach(item => {
@@ -52,14 +52,14 @@ export default async function () {
     item.addEventListener('click', function () {
       if (this.control.checked) {
         item.classList.remove('filters__label_active');
-        let valFilter = valueM.filter(val => val !== this.control.value);
-        valueM = valFilter;
-        console.log(valueM);
+        let valFilter = valueFilters.filter(val => val !== this.control.value);
+        valueFilters = valFilter;
+        console.log(valueFilters);
       } else {
         item.classList.add('filters__label_active');
         if (this.control.value !== 'all') {
-          valueM.push(this.control.value);
-          console.log(valueM);
+          valueFilters.push(this.control.value);
+          console.log(valueFilters);
         }
       }
       console.log(this.control.checked);
@@ -71,14 +71,14 @@ export default async function () {
         console.log(this.control.checked);
         if (this.control.checked) {
           item.classList.remove('filters__label_active');
-          let valFilter = valueM.filter(val => val !== this.control.value);
-          valueM = valFilter;
+          let valFilter = valueFilters.filter(val => val !== this.control.value);
+          valueFilters = valFilter;
           this.control.checked = false;
-          console.log(valueM);
+          console.log(valueFilters);
         } else {
           item.classList.add('filters__label_active');
-          valueM.push(this.control.value);
-          console.log(valueM);
+          valueFilters.push(this.control.value);
+          console.log(valueFilters);
           this.control.checked = true;
         }
       }
@@ -91,20 +91,20 @@ export default async function () {
       batteryLabel.forEach(item => {
         item.control.checked = false;
         item.classList.remove('filters__label_active');
-        let valFilter = valueM.filter(val => val !== item.control.value);
-        valueM = valFilter;
+        let valFilter = valueFilters.filter(val => val !== item.control.value);
+        valueFilters = valFilter;
       });
 
-      console.log(valueM);
+      console.log(valueFilters);
     } else {
       batteryLabel.forEach(item => {
         item.control.checked = true;
         item.classList.add('filters__label_active');
-        let valFilter = valueM.filter(val => val !== item.control.value);
-        valueM = valFilter;
-        valueM.push(item.control.value);
+        let valFilter = valueFilters.filter(val => val !== item.control.value);
+        valueFilters = valFilter;
+        valueFilters.push(item.control.value);
       });
-      console.log(valueM);
+      console.log(valueFilters);
     }
   });
 
@@ -114,20 +114,41 @@ export default async function () {
       screenLabel.forEach(item => {
         item.control.checked = false;
         item.classList.remove('filters__label_active');
-        let valFilter = valueM.filter(val => val !== item.control.value);
-        valueM = valFilter;
+        let valFilter = valueFilters.filter(val => val !== item.control.value);
+        valueFilters = valFilter;
       });
 
-      console.log(valueM);
+      console.log(valueFilters);
     } else {
       screenLabel.forEach(item => {
         item.control.checked = true;
         item.classList.add('filters__label_active');
-        let valFilter = valueM.filter(val => val !== item.control.value);
-        valueM = valFilter;
-        valueM.push(item.control.value);
+        let valFilter = valueFilters.filter(val => val !== item.control.value);
+        valueFilters = valFilter;
+        valueFilters.push(item.control.value);
       });
-      console.log(valueM);
+      console.log(valueFilters);
     }
   });
+
+  //------Filters Price-----------
+  const priceMin = document.querySelector('#price-min');
+  const priceMax = document.querySelector('#price-max');
+
+  priceMin.addEventListener('input', handlePriceMin);
+  priceMax.addEventListener('input', handlePriceMax);
+
+  function handlePriceMin(event) {
+    if (parseInt(event.target.value, 10) >= parseInt(priceMax.value, 10)) {
+      event.target.value = priceMax.value;
+    }
+    console.log(event.target.value);
+  }
+
+  function handlePriceMax(event) {
+    if (parseInt(event.target.value, 10) <= parseInt(priceMin.value, 10)) {
+      event.target.value = priceMin.value;
+    }
+    console.log('PRICEMax ' + event.target.value);
+  }
 }
