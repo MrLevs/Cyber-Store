@@ -135,6 +135,9 @@ export default async function () {
   const priceMin = document.querySelector('#price-min');
   const priceMax = document.querySelector('#price-max');
 
+  priceMin.parentNode.parentNode.style.setProperty('--priceMin', '10');
+  priceMax.parentNode.parentNode.style.setProperty('--priceMax', '40');
+
   priceMin.addEventListener('input', handlePriceMin);
   priceMax.addEventListener('input', handlePriceMax);
 
@@ -142,13 +145,27 @@ export default async function () {
     if (parseInt(event.target.value, 10) >= parseInt(priceMax.value, 10)) {
       event.target.value = priceMax.value;
     }
-    console.log(event.target.value);
+
+    if (event.target.value === '100') {
+      event.target.style.zIndex = '50';
+    } else {
+      event.target.style.zIndex = '0';
+    }
+
+    event.target.parentNode.parentNode.style.setProperty('--priceMin', event.target.value);
   }
 
   function handlePriceMax(event) {
     if (parseInt(event.target.value, 10) <= parseInt(priceMin.value, 10)) {
       event.target.value = priceMin.value;
     }
-    console.log('PRICEMax ' + event.target.value);
+
+    if (event.target.value === '0') {
+      event.target.style.zIndex = '50';
+    } else {
+      event.target.style.zIndex = '0';
+    }
+
+    event.target.parentNode.parentNode.style.setProperty('--priceMax', event.target.value);
   }
 }
