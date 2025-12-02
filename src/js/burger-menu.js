@@ -1,6 +1,6 @@
 'use strict';
 
-export default function () {
+export function burgerMenu() {
   const btnMenu = document.querySelector('#btn-menu');
   const mobileMenu = document.querySelector('#mobile-menu');
 

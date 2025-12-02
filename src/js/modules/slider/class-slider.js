@@ -1,6 +1,6 @@
 'use strict';
 
-export default class Slider {
+export class Slider {
   constructor(item) {
     this.item = item;
     this.slider = item.querySelector('.slider');

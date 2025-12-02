@@ -1,6 +1,6 @@
 'use strict';
 
-export default function () {
+export function theme() {
   const sliderTheme = document.querySelectorAll('.switch-theme');
   const checkboxs = document.querySelectorAll('.switch-theme__input');
 

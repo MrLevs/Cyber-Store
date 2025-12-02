@@ -1,9 +1,6 @@
 'use strict';
 
-import dataBase from './data-base'; //Data base
-
-export default async function () {
-  const data = await dataBase();
+export function filter(data) {
   console.log(data);
   const details = document.querySelectorAll('.filters__details');
   const label = document.querySelectorAll('.filters__label');
@@ -19,8 +16,10 @@ export default async function () {
   const filtersBtnClose = document.querySelector('#filters-btn-close');
   const filtersMenu = document.querySelector('#filters-menu');
 
-  filtersBtnOpen.addEventListener('click', menuFiltersOpen);
-  filtersBtnClose.addEventListener('click', menuFiltersClose);
+  if (filtersBtnOpen || filtersBtnClose) {
+    filtersBtnOpen.addEventListener('click', menuFiltersOpen);
+    filtersBtnClose.addEventListener('click', menuFiltersClose);
+  }
 
   function menuFiltersOpen() {
     document.body.classList.add('_lock');
@@ -86,60 +85,66 @@ export default async function () {
   });
 
   //----button All battery---------
-  batteryAll.addEventListener('click', function () {
-    if (this.control.checked) {
-      batteryLabel.forEach(item => {
-        item.control.checked = false;
-        item.classList.remove('filters__label_active');
-        let valFilter = valueFilters.filter(val => val !== item.control.value);
-        valueFilters = valFilter;
-      });
+  if (batteryAll) {
+    batteryAll.addEventListener('click', function () {
+      if (this.control.checked) {
+        batteryLabel.forEach(item => {
+          item.control.checked = false;
+          item.classList.remove('filters__label_active');
+          let valFilter = valueFilters.filter(val => val !== item.control.value);
+          valueFilters = valFilter;
+        });
 
-      console.log(valueFilters);
-    } else {
-      batteryLabel.forEach(item => {
-        item.control.checked = true;
-        item.classList.add('filters__label_active');
-        let valFilter = valueFilters.filter(val => val !== item.control.value);
-        valueFilters = valFilter;
-        valueFilters.push(item.control.value);
-      });
-      console.log(valueFilters);
-    }
-  });
+        console.log(valueFilters);
+      } else {
+        batteryLabel.forEach(item => {
+          item.control.checked = true;
+          item.classList.add('filters__label_active');
+          let valFilter = valueFilters.filter(val => val !== item.control.value);
+          valueFilters = valFilter;
+          valueFilters.push(item.control.value);
+        });
+        console.log(valueFilters);
+      }
+    });
+  }
 
   //----button All screen--------
-  screenAll.addEventListener('click', function () {
-    if (this.control.checked) {
-      screenLabel.forEach(item => {
-        item.control.checked = false;
-        item.classList.remove('filters__label_active');
-        let valFilter = valueFilters.filter(val => val !== item.control.value);
-        valueFilters = valFilter;
-      });
+  if (screenAll) {
+    screenAll.addEventListener('click', function () {
+      if (this.control.checked) {
+        screenLabel.forEach(item => {
+          item.control.checked = false;
+          item.classList.remove('filters__label_active');
+          let valFilter = valueFilters.filter(val => val !== item.control.value);
+          valueFilters = valFilter;
+        });
 
-      console.log(valueFilters);
-    } else {
-      screenLabel.forEach(item => {
-        item.control.checked = true;
-        item.classList.add('filters__label_active');
-        let valFilter = valueFilters.filter(val => val !== item.control.value);
-        valueFilters = valFilter;
-        valueFilters.push(item.control.value);
-      });
-      console.log(valueFilters);
-    }
-  });
+        console.log(valueFilters);
+      } else {
+        screenLabel.forEach(item => {
+          item.control.checked = true;
+          item.classList.add('filters__label_active');
+          let valFilter = valueFilters.filter(val => val !== item.control.value);
+          valueFilters = valFilter;
+          valueFilters.push(item.control.value);
+        });
+        console.log(valueFilters);
+      }
+    });
+  }
 
   //------Filters Price-----------
   const priceMin = document.querySelector('#price-min');
   const priceMax = document.querySelector('#price-max');
 
-  priceMin.parentNode.parentNode.style.setProperty('--priceMin', '10');
-  priceMax.parentNode.parentNode.style.setProperty('--priceMax', '40');
+  if (priceMin || priceMax) {
+    priceMin.parentNode.parentNode.style.setProperty('--priceMin', '10');
+    priceMax.parentNode.parentNode.style.setProperty('--priceMax', '40');
 
-  priceMin.addEventListener('input', handlePriceMin);
-  priceMax.addEventListener('input', handlePriceMax);
+    priceMin.addEventListener('input', handlePriceMin);
+    priceMax.addEventListener('input', handlePriceMax);
+  }
 
   function handlePriceMin(event) {
     if (parseInt(event.target.value, 10) >= parseInt(priceMax.value, 10)) {

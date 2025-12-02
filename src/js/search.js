@@ -1,9 +1,6 @@
 'use strict';
 
-import dataBase from './data-base'; //Data base
-
-export default async function () {
-  const data = await dataBase();
+export function search(data) {
   const forms = document.querySelectorAll('.form-search_header');
 
   forms.forEach(item => {
@@ -48,7 +45,7 @@ export default async function () {
           input.addEventListener('keydown', cancel);
         } else if (valid(valueSearch)) {
           for (let i = 0; i < data.length; i++) {
-            if (data[i].name.includes(valueSearch)) {
+            if (data[i].name.toLowerCase().includes(valueSearch)) {
               if (searchResults.length < 10) {
                 searchResults.push(data[i]);
               } else {

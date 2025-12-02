@@ -1,8 +1,8 @@
 'use strict';
 
-import Slider from './class-slider';
+import { Slider } from './class-slider';
 
-export default class SliderBanners extends Slider {
+export class SliderBanners extends Slider {
   constructor(item) {
     super(item);
     this.ol;

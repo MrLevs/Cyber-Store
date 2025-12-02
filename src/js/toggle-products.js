@@ -1,6 +1,6 @@
 'use strict';
 
-export default function () {
+export function toggleProducts() {
   const button = document.querySelectorAll('.products__btn');
   const container = document.querySelectorAll('.products__items');
 
