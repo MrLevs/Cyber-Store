@@ -1,5 +1,7 @@
 'use strict';
 
+import { createProductCard } from './modules/create-product-card'; //Create Product Card
+
 export function filter(data) {
   console.log(data);
   const filtersDetails = document.querySelectorAll('.filters__details');
@@ -159,3 +161,8 @@ export function filter(data) {
   }
   //-----------------------------------------------
 }
+
+//-------Create Product Card------------
+let contentBlock = document.querySelector('.content__inner');
+
+createProductCard(contentBlock);

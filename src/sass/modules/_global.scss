@@ -641,6 +641,7 @@ main {
     font-weight: 500;
     color: var.$product-card-link-color;
     transition: var.$transition-bg, var.$transition-color;
+    cursor: pointer;
 
     &:hover {
       background-color: #304272;

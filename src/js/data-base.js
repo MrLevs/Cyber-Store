@@ -1,15 +1,15 @@
 'use strict';
 
-import { search } from './search'; //Search
-import { filter } from './filter'; //Filter
+import { formSearch } from './search/formSearch'; //Form Search
+import { filter } from './filter/filter'; //Filter
 
 export async function dataBase() {
   try {
     let response = await fetch('/data.json');
     let result = await response.json();
 
-    //Search
-    search(result);
+    //Form Search
+    formSearch(result);
 
     //Filter
     filter(result);
