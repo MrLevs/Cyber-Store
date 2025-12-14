@@ -1,5 +1,6 @@
 'use strict';
 
+import { filterResult } from './modules/filter-result'; //Filter Result
 import { createProductCard } from './modules/create-product-card'; //Create Product Card
 
 export function filter(data) {
@@ -9,6 +10,10 @@ export function filter(data) {
 
   let filtersValue = [];
 
+  //-------Create Product Card------------
+  let contentBlock = document.querySelector('.content__inner');
+
+  createProductCard(contentBlock, filterResult(data, filtersValue));
   //----Open accordion---------
   filtersDetails.forEach(item => {
     let summary = item.querySelector('.filters__summary');
@@ -30,11 +35,15 @@ export function filter(data) {
         let filter = filtersValue.filter(elem => elem !== this.control.value);
         filtersValue = filter;
         console.log(filtersValue);
+        filterResult(data, filtersValue);
+        createProductCard(contentBlock, filterResult(data, filtersValue));
       } else {
         item.classList.add('filters__label_active');
         if (this.control.value !== 'all') {
           filtersValue.push(this.control.value);
           console.log(filtersValue);
+          filterResult(data, filtersValue);
+          createProductCard(contentBlock, filterResult(data, filtersValue));
         }
       }
       console.log(this.control.checked);
@@ -161,8 +170,3 @@ export function filter(data) {
   }
   //-----------------------------------------------
 }
-
-//-------Create Product Card------------
-let contentBlock = document.querySelector('.content__inner');
-
-createProductCard(contentBlock);

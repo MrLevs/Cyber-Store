@@ -1,53 +1,58 @@
 'use strict';
 
-export function createProductCard(elem) {
-  const productCard = document.createElement('article');
-  const btnProductCard = document.createElement('button');
-  const svgProductCard = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-  const useProductCard = document.createElementNS('http://www.w3.org/2000/svg', 'use');
-  const innerProductCard = document.createElement('div');
-  const imgProductCard = document.createElement('img');
-  const titleProductCard = document.createElement('h3');
-  const priceProductCard = document.createElement('p');
-  const linkProductCard = document.createElement('a');
+export function createProductCard(elem, array) {
+  elem.innerHTML = '';
+  array.forEach(item => {
+    const productCard = document.createElement('article');
+    const btnProductCard = document.createElement('button');
+    const svgProductCard = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+    const useProductCard = document.createElementNS('http://www.w3.org/2000/svg', 'use');
+    const innerProductCard = document.createElement('div');
+    const imgProductCard = document.createElement('img');
+    const titleProductCard = document.createElement('h3');
+    const priceProductCard = document.createElement('p');
+    const linkProductCard = document.createElement('a');
 
-  productCard.className = 'product-card';
-  btnProductCard.className = 'product-card__btn';
-  btnProductCard.setAttribute('aria-label', 'like');
+    let productCardInfo = `${item.brand} ${item.name} ${item.memory}GB ${item.color} (${item.serial})`;
 
-  svgProductCard.setAttribute('class', 'product-card__svg');
-  svgProductCard.setAttribute('width', '31');
-  svgProductCard.setAttribute('height', '27');
-  svgProductCard.setAttribute('viewBox', '2 0 34 27');
-  svgProductCard.setAttribute('fill', 'none');
-  useProductCard.setAttribute('href', '/images/sprite-icon.svg#like');
+    productCard.className = 'product-card';
+    btnProductCard.className = 'product-card__btn';
+    btnProductCard.setAttribute('aria-label', 'like');
 
-  innerProductCard.className = 'product-card__inner';
-  imgProductCard.className = 'product-card__img';
-  imgProductCard.setAttribute('src', '/images/products/apple/iphone14pro.webp');
-  imgProductCard.setAttribute('alt', 'Apple iPhone 14 Pro 512GB Gold (MQ233)');
-  imgProductCard.setAttribute('loading', 'lazy');
+    svgProductCard.setAttribute('class', 'product-card__svg');
+    svgProductCard.setAttribute('width', '31');
+    svgProductCard.setAttribute('height', '27');
+    svgProductCard.setAttribute('viewBox', '2 0 34 27');
+    svgProductCard.setAttribute('fill', 'none');
+    useProductCard.setAttribute('href', '/images/sprite-icon.svg#like');
 
-  titleProductCard.className = 'product-card__title';
-  titleProductCard.textContent = 'Apple iPhone 14 Pro 512GB Gold (MQ233)';
+    innerProductCard.className = 'product-card__inner';
+    imgProductCard.className = 'product-card__img';
+    imgProductCard.setAttribute('src', item.img);
+    imgProductCard.setAttribute('alt', productCardInfo);
+    imgProductCard.setAttribute('loading', 'lazy');
 
-  priceProductCard.className = 'product-card__price';
-  priceProductCard.textContent = '$2437';
+    titleProductCard.className = 'product-card__title';
+    titleProductCard.textContent = productCardInfo;
 
-  linkProductCard.className = 'product-card__link';
-  linkProductCard.textContent = 'Buy Now';
-  linkProductCard.setAttribute('herf', '#');
-  linkProductCard.setAttribute('aria-label', 'buy now Apple iPhone 14 Pro 512GB Gold (MQ233)');
+    priceProductCard.className = 'product-card__price';
+    priceProductCard.textContent = `$${item.price}`;
 
-  innerProductCard.append(imgProductCard);
-  innerProductCard.append(titleProductCard);
-  innerProductCard.append(priceProductCard);
-  innerProductCard.append(linkProductCard);
+    linkProductCard.className = 'product-card__link';
+    linkProductCard.textContent = 'Buy Now';
+    linkProductCard.setAttribute('herf', '#');
+    linkProductCard.setAttribute('aria-label', `Buy Now ${productCardInfo})`);
 
-  svgProductCard.append(useProductCard);
-  btnProductCard.append(svgProductCard);
+    innerProductCard.append(imgProductCard);
+    innerProductCard.append(titleProductCard);
+    innerProductCard.append(priceProductCard);
+    innerProductCard.append(linkProductCard);
 
-  productCard.append(btnProductCard);
-  productCard.append(innerProductCard);
-  elem.append(productCard);
+    svgProductCard.append(useProductCard);
+    btnProductCard.append(svgProductCard);
+
+    productCard.append(btnProductCard);
+    productCard.append(innerProductCard);
+    elem.append(productCard);
+  });
 }

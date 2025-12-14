@@ -12,6 +12,7 @@
     "color": "white",
     "serial": "MQ233",
     "filters": "bestseller",
+    "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobile"
   },
   {
@@ -27,6 +28,7 @@
     "color": "white",
     "serial": "MQ234",
     "filters": "bestseller",
+    "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobile"
   },
   {
@@ -42,6 +44,7 @@
     "color": "black",
     "serial": "MQ235",
     "filters": "bestseller",
+    "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobile"
   },
   {
@@ -57,6 +60,7 @@
     "color": "pink",
     "serial": "MQ244",
     "filters": "bestseller",
+    "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobile"
   },
   {
@@ -72,6 +76,7 @@
     "color": "red",
     "serial": "MQ238",
     "filters": "new",
+    "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobile"
   },
   {
@@ -87,12 +92,13 @@
     "color": "red",
     "serial": "MQ239",
     "filters": "featured",
+    "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "samsung",
-    "name": "Samsung Galaxy Z Fold5",
+    "name": "Galaxy Z Fold5",
     "battery": "2000",
     "screen": "ips",
     "diagonal": "6.02",
@@ -102,12 +108,13 @@
     "color": "white",
     "serial": "MQ233",
     "filters": "bestseller",
+    "img": "/images/products/galaxy-z-fold5.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "samsung",
-    "name": "Samsung Galaxy Z Fold6",
+    "name": "Galaxy Z Fold6",
     "battery": "2600",
     "screen": "oled",
     "diagonal": "6.5",
@@ -117,12 +124,13 @@
     "color": "white",
     "serial": "MQ234",
     "filters": "new",
+    "img": "/images/products/galaxy-z-fold5.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "xiaomi",
-    "name": "Xiaomi 13",
+    "name": "13",
     "battery": "4000",
     "screen": "amoled",
     "diagonal": "8.02",
@@ -132,12 +140,13 @@
     "color": "black",
     "serial": "MQ235",
     "filters": "bestseller",
+    "img": "/images/products/xiaomi.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "xiaomi",
-    "name": "Xiaomi 14",
+    "name": "14",
     "battery": "5000",
     "screen": "poled",
     "diagonal": "6.6",
@@ -147,12 +156,13 @@
     "color": "pink",
     "serial": "MQ244",
     "filters": "bestseller",
+    "img": "/images/products/xiaomi.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "poco",
-    "name": "Poco 16",
+    "name": "16",
     "battery": "7000",
     "screen": "poled",
     "diagonal": "6.7",
@@ -162,12 +172,13 @@
     "color": "red",
     "serial": "MQ238",
     "filters": "new",
+    "img": "/images/products/poco.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "poco",
-    "name": "Poco 17",
+    "name": "17",
     "battery": "7000",
     "screen": "amoled",
     "diagonal": "6.7",
@@ -177,12 +188,13 @@
     "color": "red",
     "serial": "MQ239",
     "filters": "featured",
+    "img": "/images/products/poco.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "oppo",
-    "name": "OPPO Galaxy Z Fold5",
+    "name": "Galaxy Z Fold5",
     "battery": "2000",
     "screen": "ips",
     "diagonal": "6.02",
@@ -192,12 +204,13 @@
     "color": "white",
     "serial": "MQ233",
     "filters": "bestseller",
+    "img": "/images/products/oppo.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "oppo",
-    "name": "OPPO Galaxy Z Fold6",
+    "name": "Galaxy Z Fold6",
     "battery": "2600",
     "screen": "oled",
     "diagonal": "6.5",
@@ -207,12 +220,13 @@
     "color": "white",
     "serial": "MQ234",
     "filters": "new",
+    "img": "/images/products/oppo.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "honor",
-    "name": "Honor 13",
+    "name": "13",
     "battery": "4000",
     "screen": "amoled",
     "diagonal": "8.02",
@@ -222,12 +236,13 @@
     "color": "black",
     "serial": "MQ235",
     "filters": "bestseller",
+    "img": "/images/products/honor.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "honor",
-    "name": "Honor 14",
+    "name": "14",
     "battery": "5000",
     "screen": "poled",
     "diagonal": "6.6",
@@ -237,12 +252,13 @@
     "color": "pink",
     "serial": "MQ244",
     "filters": "bestseller",
+    "img": "/images/products/honor.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "motorola",
-    "name": "Motorola 16",
+    "name": "16",
     "battery": "7000",
     "screen": "poled",
     "diagonal": "6.7",
@@ -252,12 +268,13 @@
     "color": "red",
     "serial": "MQ238",
     "filters": "new",
+    "img": "/images/products/motorola.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "motorola",
-    "name": "Motorola 17",
+    "name": "17",
     "battery": "7000",
     "screen": "amoled",
     "diagonal": "6.7",
@@ -267,12 +284,13 @@
     "color": "red",
     "serial": "MQ239",
     "filters": "featured",
+    "img": "/images/products/motorola.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "nokia",
-    "name": "Nokia Galaxy Z Fold6",
+    "name": "Galaxy Z Fold6",
     "battery": "2600",
     "screen": "oled",
     "diagonal": "6.5",
@@ -282,12 +300,13 @@
     "color": "white",
     "serial": "MQ234",
     "filters": "new",
+    "img": "/images/products/nokia.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "nokia",
-    "name": "Nokia 13",
+    "name": "13",
     "battery": "4000",
     "screen": "amoled",
     "diagonal": "8.02",
@@ -297,12 +316,13 @@
     "color": "black",
     "serial": "MQ235",
     "filters": "bestseller",
+    "img": "/images/products/nokia.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "realme",
-    "name": "Realme 14",
+    "name": "14",
     "battery": "5000",
     "screen": "poled",
     "diagonal": "6.6",
@@ -312,12 +332,13 @@
     "color": "pink",
     "serial": "MQ244",
     "filters": "bestseller",
+    "img": "/images/products/realme.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "realme",
-    "name": "Realme 16",
+    "name": "16",
     "battery": "7000",
     "screen": "poled",
     "diagonal": "6.7",
@@ -327,12 +348,13 @@
     "color": "red",
     "serial": "MQ238",
     "filters": "new",
+    "img": "/images/products/realme.webp",
     "link": "#mobile"
   },
   {
     "title": "smartphones",
     "brand": "realme",
-    "name": "Realme 17",
+    "name": "17",
     "battery": "7000",
     "screen": "amoled",
     "diagonal": "6.7",
@@ -342,6 +364,7 @@
     "color": "red",
     "serial": "MQ239",
     "filters": "featured",
+    "img": "/images/products/realme.webp",
     "link": "#mobile"
   },
   {
