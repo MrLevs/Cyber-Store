@@ -35,14 +35,12 @@ export function filter(data) {
         let filter = filtersValue.filter(elem => elem !== this.control.value);
         filtersValue = filter;
         console.log(filtersValue);
-        filterResult(data, filtersValue);
         createProductCard(contentBlock, filterResult(data, filtersValue));
       } else {
         item.classList.add('filters__label_active');
         if (this.control.value !== 'all') {
           filtersValue.push(this.control.value);
           console.log(filtersValue);
-          filterResult(data, filtersValue);
           createProductCard(contentBlock, filterResult(data, filtersValue));
         }
       }
