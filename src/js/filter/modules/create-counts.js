@@ -6,8 +6,6 @@ export function countSelectedProducts(elem, array) {
 }
 
 export function createCountsFilters(elem, array) {
-  let arrayFiltersProducts = [];
-
   elem.forEach(item => {
     item.innerHTML = '';
     switch (item.dataset.brand) {
@@ -42,18 +40,15 @@ export function createCountsFilters(elem, array) {
   });
 
   function loopFilters(item) {
-    array.forEach(items => {
-      if (
+    let arrayFiltersProducts = array.filter(
+      items =>
         items.brand ===
         item.dataset.brand
           .split(' ')
           .map(word => `${word[0].toUpperCase()}${word.slice(1).toLowerCase()}`)
-          .join(' ')
-      ) {
-        arrayFiltersProducts.push(items);
-      }
-    });
+          .join(' '),
+    );
+
     item.innerHTML = arrayFiltersProducts.length;
-    arrayFiltersProducts = [];
   }
 }
