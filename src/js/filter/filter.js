@@ -2,9 +2,9 @@
 
 import { filterResult } from './modules/filter-result'; //Filter Result
 import { createProductCard } from './modules/create-product-card'; //Create Product Card
+import { countSelectedProducts, createCountsFilters } from './modules/create-counts'; //Count Selected Products, Counts Filters
 
 export function filter(data) {
-  console.log(data);
   const filtersDetails = document.querySelectorAll('.filters__details');
   const filtersLabel = document.querySelectorAll('.filters__label');
 
@@ -12,8 +12,25 @@ export function filter(data) {
 
   //-------Create Product Card------------
   let contentBlock = document.querySelector('.content__inner');
+  if (contentBlock) {
+    createProductCard(contentBlock, filterResult(data, filtersValue));
+  }
+  //--------------------------
 
-  createProductCard(contentBlock, filterResult(data, filtersValue));
+  //-------Create Count Products------------
+  const selectedProducts = document.querySelector('.content__number');
+  if (selectedProducts) {
+    countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+  }
+  //-------------------------------
+
+  //------Create Counts Filters----------------
+  const countsFilters = document.querySelectorAll('.filters__count');
+  if (countsFilters) {
+    createCountsFilters(countsFilters, filterResult(data, filtersValue));
+  }
+  //------------------------------
+
   //----Open accordion---------
   filtersDetails.forEach(item => {
     let summary = item.querySelector('.filters__summary');
@@ -34,34 +51,29 @@ export function filter(data) {
         item.classList.remove('filters__label_active');
         let filter = filtersValue.filter(elem => elem !== this.control.value);
         filtersValue = filter;
-        console.log(filtersValue);
         createProductCard(contentBlock, filterResult(data, filtersValue));
+        countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       } else {
         item.classList.add('filters__label_active');
         if (this.control.value !== 'all') {
           filtersValue.push(this.control.value);
-          console.log(filtersValue);
           createProductCard(contentBlock, filterResult(data, filtersValue));
+          countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
         }
       }
-      console.log(this.control.checked);
-      console.log(this.control);
     });
 
     item.addEventListener('keydown', function (e) {
       if (e.code === 'Enter') {
-        console.log(this.control.checked);
         if (this.control.checked) {
           item.classList.remove('filters__label_active');
           let filter = filtersValue.filter(elem => elem !== this.control.value);
           filtersValue = filter;
           this.control.checked = false;
-          console.log(filtersValue);
         } else {
           item.classList.add('filters__label_active');
           filtersValue.push(this.control.value);
           this.control.checked = true;
-          console.log(filtersValue);
         }
       }
     });
@@ -89,8 +101,6 @@ export function filter(data) {
           filtersValue = filter;
         }
       });
-
-      console.log(filtersValue);
     } else {
       elemAll.forEach(item => {
         if (item !== buttonAll) {
@@ -101,7 +111,6 @@ export function filter(data) {
           filtersValue.push(item.control.value);
         }
       });
-      console.log(filtersValue);
     }
   }
   //---------------------------

@@ -1,24 +1,24 @@
 'use strict';
 
 export function filterResult(arrayData, arrayFilters) {
-  console.log(arrayFilters);
+  let categoryProduct = 'smartphones';
   let dataFilterProduct = [];
   if (arrayFilters.length === 0) {
     arrayData.filter(item => {
-      if (item.brand) {
+      if (item.title === categoryProduct && item.brand) {
         dataFilterProduct.push(item);
       }
     });
   } else {
     arrayFilters.forEach(items => {
       arrayData.filter(item => {
-        if (item.brand === items) {
+        if (item.title === categoryProduct && item.brand === items) {
           dataFilterProduct.push(item);
         }
       });
     });
   }
-  console.log(dataFilterProduct);
+
   let dataProduct = dataFilterProduct.map(item => ({
     title: item.title.toLowerCase(),
     brand: item.brand
