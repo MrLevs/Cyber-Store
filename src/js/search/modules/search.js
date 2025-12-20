@@ -1,6 +1,6 @@
 'use strict';
 
-import { createResults } from './create-results'; //Create Results
+import { createResultsSearch } from './create-results-search'; //Create Results Search
 
 export function search(input, btn, resultSuggests, data) {
   let valueSearch;
@@ -33,7 +33,8 @@ export function search(input, btn, resultSuggests, data) {
         input.addEventListener('keydown', cancel);
       } else if (valid(valueSearch)) {
         for (let i = 0; i < data.length; i++) {
-          if (data[i].name.toLowerCase().includes(valueSearch)) {
+          let fullName = `${data[i].brand} ${data[i].name}`;
+          if (fullName.toLowerCase().includes(valueSearch)) {
             if (searchResults.length < 10) {
               searchResults.push(data[i]);
             } else {
@@ -148,7 +149,7 @@ export function search(input, btn, resultSuggests, data) {
   //------------------------Show Results----------------------
   function displayResults(elem, array) {
     count = 0;
-    createResults(elem, array);
+    createResultsSearch(elem, array);
     searchItems = document.querySelectorAll('.form-search__suggests-item');
   }
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-export function createResults(elem, array) {
+export function createResultsSearch(elem, array) {
   elem.innerHTML = '';
 
   const ul = document.createElement('ul');
@@ -26,7 +26,11 @@ export function createResults(elem, array) {
 
     div.className = 'form-search__suggests-box';
     span.className = 'form-search__suggests-text';
-    span.textContent = item.name;
+    if (item.brand) {
+      span.textContent = `${item.brand.toLowerCase()} ${item.name.toLowerCase()}`;
+    } else {
+      span.textContent = item.name.toLowerCase();
+    }
 
     svg.setAttribute('width', '18');
     svg.setAttribute('height', '18');

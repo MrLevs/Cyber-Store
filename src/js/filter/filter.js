@@ -2,7 +2,7 @@
 
 import { filterResult } from './modules/filter-result'; //Filter Result
 import { createProductCard } from './modules/create-product-card'; //Create Product Card
-import { countSelectedProducts, createCountsFilters } from './modules/create-counts'; //Count Selected Products, Counts Filters
+import { countSelectedProducts, createCountsFilters } from './modules/create-counts-filters'; //Count Selected Products, Counts Filters
 
 export function filter(data) {
   const filtersDetails = document.querySelectorAll('.filters__details');

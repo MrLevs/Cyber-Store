@@ -3,17 +3,23 @@
 export function filterResult(arrayData, arrayFilters) {
   let categoryProduct = 'smartphones';
   let dataFilterProduct = [];
+  console.log(arrayFilters);
   if (arrayFilters.length === 0) {
-    arrayData.filter(item => {
+    arrayData.forEach(item => {
       if (item.title === categoryProduct && item.brand) {
         dataFilterProduct.push(item);
       }
     });
   } else {
     arrayFilters.forEach(items => {
-      arrayData.filter(item => {
-        if (item.title === categoryProduct && item.brand === items) {
-          dataFilterProduct.push(item);
+      arrayData.forEach(item => {
+        if (item.title === categoryProduct) {
+          for (let key in item) {
+            if (item[key] === items) {
+              dataFilterProduct.push(item);
+              console.log(dataFilterProduct);
+            }
+          }
         }
       });
     });
