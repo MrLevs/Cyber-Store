@@ -1,7 +1,7 @@
 'use strict';
 
-import { Slider } from './modules/class-slider';
-import { SliderBanners } from './modules/class-slider-banners';
+import { Slider } from './module/class-slider';
+import { SliderBanners } from './module/class-slider-banners';
 
 export function slider() {
   //---slider category-----------

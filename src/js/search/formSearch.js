@@ -1,6 +1,6 @@
 'use strict';
 
-import { search } from './modules/search'; //Search
+import { search } from './module/search'; //Search
 
 export function formSearch(data) {
   const forms = document.querySelectorAll('.form-search_header');

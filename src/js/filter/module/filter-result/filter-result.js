@@ -1,5 +1,7 @@
 'use strict';
 
+import { productFiltersMap } from './module/product-filters-map';
+
 export function filterResult(arrayData, arrayFilters) {
   let categoryProduct = 'smartphones';
   let filtersProduct = [];
@@ -17,9 +19,15 @@ export function filterResult(arrayData, arrayFilters) {
 
   if (filtersProductAll.length === 0) {
     let dataProduct = productFiltersMap(filtersProduct);
+    console.log('filtersProduct!!!!!');
+    console.log(filtersProduct);
+    console.log(filtersProductAll);
     return dataProduct;
   } else {
     let dataProduct = productFiltersMap(filtersProductAll);
+    console.log('filtersProductAll!!!!');
+    console.log(filtersProductAll);
+    console.log(filtersProduct);
     return dataProduct;
   }
 
@@ -30,11 +38,16 @@ export function filterResult(arrayData, arrayFilters) {
           for (let key in item) {
             switch (items) {
               case item[key]:
+                console.log(item[key]);
                 if (!filtersProduct.includes(item)) {
                   filtersProduct.push(item);
+                  console.log('filterProducts filtersProduct');
+                  console.log(filtersProduct);
                 } else {
                   if (!filtersProductAll.includes(item)) {
                     filtersProductAll.push(item);
+                    console.log('filterProducts filtersProductAll');
+                    console.log(filtersProductAll);
                   }
                 }
                 break;
@@ -152,41 +165,5 @@ export function filterResult(arrayData, arrayFilters) {
         }
       }
     }
-  }
-
-  function productFiltersMap(array) {
-    let dataProduct = array.map(item => ({
-      title: item.title.toLowerCase(),
-      brand: item.brand
-        .split(' ')
-        .map(word => `${word[0].toUpperCase()}${word.slice(1).toLowerCase()}`)
-        .join(' '),
-      name: item.name
-        .toLowerCase()
-        .split(' ')
-        .map(word => {
-          let textName;
-          if (word === 'iphone') {
-            textName = `${word[0]}${word[1].toUpperCase()}${word.slice(2).toLowerCase()}`;
-            return textName;
-          } else {
-            textName = `${word[0].toUpperCase()}${word.slice(1).toLowerCase()}`;
-            return textName;
-          }
-        })
-        .join(' '),
-      battery: item.battery,
-      screen: item.screen.toLowerCase(),
-      diagonal: item.diagonal,
-      protection: item.protection.toLowerCase(),
-      memory: item.memory,
-      price: item.price,
-      color: item.color.toLowerCase(),
-      serial: item.serial.toUpperCase(),
-      filters: item.filters.toLowerCase(),
-      img: item.img,
-      link: item.link,
-    }));
-    return dataProduct;
   }
 }
