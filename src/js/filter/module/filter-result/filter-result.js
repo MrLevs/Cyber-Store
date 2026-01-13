@@ -4,162 +4,158 @@ import { productFiltersMap } from './module/product-filters-map';
 
 export function filterResult(arrayData, arrayFilters) {
   let categoryProduct = 'smartphones';
-  let filtersProduct = [];
-  let filtersProductAll = [];
+  let productFilter = [];
+  let productFilterAll = [];
   console.log(arrayFilters);
   if (arrayFilters.length === 0) {
     arrayData.forEach(item => {
       if (item.title === categoryProduct && item.brand) {
-        filtersProduct.push(item);
+        productFilter.push(item);
       }
     });
   } else {
     filterProducts(arrayData);
   }
 
-  if (filtersProductAll.length === 0) {
-    let dataProduct = productFiltersMap(filtersProduct);
-    console.log('filtersProduct!!!!!');
-    console.log(filtersProduct);
-    console.log(filtersProductAll);
+  if (productFilterAll.length === 0) {
+    console.log(
+      arrayFilters.forEach(elem => {
+        arrayData.filter(item => {
+          return item.brand === elem;
+        });
+      }),
+    );
+    console.log(productFilter);
+    let dataProduct = productFiltersMap(productFilter);
     return dataProduct;
   } else {
-    let dataProduct = productFiltersMap(filtersProductAll);
-    console.log('filtersProductAll!!!!');
-    console.log(filtersProductAll);
-    console.log(filtersProduct);
+    let dataProduct = productFiltersMap(productFilterAll);
     return dataProduct;
   }
 
   function filterProducts(array) {
-    arrayFilters.forEach(items => {
-      array.forEach(item => {
-        if (item.title === categoryProduct) {
+    array.forEach(item => {
+      if (item.title === categoryProduct) {
+        arrayFilters.forEach(filtersValue => {
+          Object.values(item);
           for (let key in item) {
-            switch (items) {
+            switch (filtersValue) {
               case item[key]:
-                console.log(item[key]);
-                if (!filtersProduct.includes(item)) {
-                  filtersProduct.push(item);
-                  console.log('filterProducts filtersProduct');
-                  console.log(filtersProduct);
-                } else {
-                  if (!filtersProductAll.includes(item)) {
-                    filtersProductAll.push(item);
-                    console.log('filterProducts filtersProductAll');
-                    console.log(filtersProductAll);
-                  }
+                if (!productFilter.includes(item)) {
+                  productFilter.push(item);
                 }
                 break;
               case '2499':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
               case '2500-3999':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
               case '4000-4499':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
               case '4500-4999':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
               case '5000-5999':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
               case '6000':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
               case '6.09':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
               case '6.1-6.29':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
               case '6.3-6.49':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
               case '6.5-6.59':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
               case '6.6-6.79':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
               case '6.8':
-                arrayPush(key, items, item);
+                arrayPush(key, filtersValue, item);
                 break;
             }
           }
-        }
-      });
+        });
+      }
     });
+    console.log(productFilter);
+    console.log(productFilterAll);
   }
 
-  function arrayPush(key, items, item) {
-    let itemsValue = items.split('-');
+  function arrayPush(key, filtersValue, item) {
+    let filtersValueValue = filtersValue.split('-');
     if (key === 'battery') {
-      if (itemsValue.length == 1) {
-        if (itemsValue[0] === '2499') {
-          if (+item[key] <= +items) {
-            if (!filtersProduct.includes(item)) {
-              filtersProduct.push(item);
+      if (filtersValueValue.length == 1) {
+        if (filtersValueValue[0] === '2499') {
+          if (+item[key] <= +filtersValue) {
+            if (!productFilter.includes(item)) {
+              productFilter.push(item);
             } else {
-              if (!filtersProductAll.includes(item)) {
-                filtersProductAll.push(item);
+              if (!productFilterAll.includes(item)) {
+                productFilterAll.push(item);
               }
             }
           }
         } else {
-          if (+item[key] >= +items) {
-            if (!filtersProduct.includes(item)) {
-              filtersProduct.push(item);
+          if (+item[key] >= +filtersValue) {
+            if (!productFilter.includes(item)) {
+              productFilter.push(item);
             } else {
-              if (!filtersProductAll.includes(item)) {
-                filtersProductAll.push(item);
+              if (!productFilterAll.includes(item)) {
+                productFilterAll.push(item);
               }
             }
           }
         }
       } else {
-        if (+itemsValue[0] <= +item[key] && +item[key] <= +itemsValue[1]) {
-          if (!filtersProduct.includes(item)) {
-            filtersProduct.push(item);
+        if (+filtersValueValue[0] <= +item[key] && +item[key] <= +filtersValueValue[1]) {
+          if (!productFilter.includes(item)) {
+            productFilter.push(item);
           } else {
-            if (!filtersProductAll.includes(item)) {
-              filtersProductAll.push(item);
+            if (!productFilterAll.includes(item)) {
+              productFilterAll.push(item);
             }
           }
         }
       }
     } else {
-      if (itemsValue.length == 1) {
-        if (itemsValue[0] === '6.09') {
-          if (+item[key] <= +items) {
-            if (!filtersProduct.includes(item)) {
-              filtersProduct.push(item);
+      if (filtersValueValue.length == 1) {
+        if (filtersValueValue[0] === '6.09') {
+          if (+item[key] <= +filtersValue) {
+            if (!productFilter.includes(item)) {
+              productFilter.push(item);
             } else {
-              if (!filtersProductAll.includes(item)) {
-                filtersProductAll.push(item);
+              if (!productFilterAll.includes(item)) {
+                productFilterAll.push(item);
               }
             }
           }
         } else {
-          if (+item[key] >= +items) {
-            if (!filtersProduct.includes(item)) {
-              filtersProduct.push(item);
+          if (+item[key] >= +filtersValue) {
+            if (!productFilter.includes(item)) {
+              productFilter.push(item);
             } else {
-              if (!filtersProductAll.includes(item)) {
-                filtersProductAll.push(item);
+              if (!productFilterAll.includes(item)) {
+                productFilterAll.push(item);
               }
             }
           }
         }
       } else {
-        if (+itemsValue[0] <= +item[key] && +item[key] <= +itemsValue[1]) {
-          if (!filtersProduct.includes(item)) {
-            filtersProduct.push(item);
+        if (+filtersValueValue[0] <= +item[key] && +item[key] <= +filtersValueValue[1]) {
+          if (!productFilter.includes(item)) {
+            productFilter.push(item);
           } else {
-            if (!filtersProductAll.includes(item)) {
-              filtersProductAll.push(item);
+            if (!productFilterAll.includes(item)) {
+              productFilterAll.push(item);
             }
           }
         }
