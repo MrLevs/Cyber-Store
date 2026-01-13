@@ -53,12 +53,14 @@ export function filter(data) {
         filtersValue = filter;
         createProductCard(contentBlock, filterResult(data, filtersValue));
         countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+        createCountsFilters(countsFilters, filterResult(data, filtersValue));
       } else {
         item.classList.add('filters__label_active');
         if (this.control.value !== 'all') {
           filtersValue.push(this.control.value);
           createProductCard(contentBlock, filterResult(data, filtersValue));
           countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+          createCountsFilters(countsFilters, filterResult(data, filtersValue));
         }
       }
     });
