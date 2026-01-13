@@ -18,13 +18,6 @@ export function filterResult(arrayData, arrayFilters) {
   }
 
   if (productFilterAll.length === 0) {
-    console.log(
-      arrayFilters.forEach(elem => {
-        arrayData.filter(item => {
-          return item.brand === elem;
-        });
-      }),
-    );
     console.log(productFilter);
     let dataProduct = productFiltersMap(productFilter);
     return dataProduct;
