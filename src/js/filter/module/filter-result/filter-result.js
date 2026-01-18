@@ -4,8 +4,8 @@ import { productFiltersMap } from './module/product-filters-map';
 
 export function filterResult(arrayData, arrayFilters) {
   let categoryProduct = 'smartphones';
+  let brandFilter = [];
   let productFilter = [];
-  let productFilterAll = [];
   console.log(arrayFilters);
   if (arrayFilters.length === 0) {
     arrayData.forEach(item => {
@@ -17,140 +17,135 @@ export function filterResult(arrayData, arrayFilters) {
     filterProducts(arrayData);
   }
 
-  if (productFilterAll.length === 0) {
-    console.log(productFilter);
-    let dataProduct = productFiltersMap(productFilter);
-    return dataProduct;
-  } else {
-    let dataProduct = productFiltersMap(productFilterAll);
-    return dataProduct;
-  }
+  let dataProduct = productFiltersMap(productFilter);
+  return dataProduct;
 
   function filterProducts(array) {
     array.forEach(item => {
-      if (item.title === categoryProduct) {
-        arrayFilters.forEach(filtersValue => {
-          Object.values(item);
-          for (let key in item) {
-            switch (filtersValue) {
-              case item[key]:
-                if (!productFilter.includes(item)) {
-                  productFilter.push(item);
+      if (item.title === categoryProduct && item.brand) {
+        arrayFilters.forEach(valueFilters => {
+          switch (valueFilters) {
+            case item.brand:
+              brandFilter.push(item);
+              break;
+            case '2499':
+              batteryFiltersPush(item, valueFilters);
+              break;
+            case '2500-3999':
+              batteryFiltersPush(item, valueFilters);
+              break;
+            case '4000-4499':
+              batteryFiltersPush(item, valueFilters);
+              break;
+            case '4500-4999':
+              batteryFiltersPush(item, valueFilters);
+              break;
+            case '5000-5999':
+              batteryFiltersPush(item, valueFilters);
+              break;
+            case '6000':
+              batteryFiltersPush(item, valueFilters);
+              break;
+            case item.screen:
+              if (productFilter.includes(item)) {
+                if (!brandFilter.includes(item)) {
+                  brandFilter.push(item);
                 }
-                break;
-              case '2499':
-                arrayPush(key, filtersValue, item);
-                break;
-              case '2500-3999':
-                arrayPush(key, filtersValue, item);
-                break;
-              case '4000-4499':
-                arrayPush(key, filtersValue, item);
-                break;
-              case '4500-4999':
-                arrayPush(key, filtersValue, item);
-                break;
-              case '5000-5999':
-                arrayPush(key, filtersValue, item);
-                break;
-              case '6000':
-                arrayPush(key, filtersValue, item);
-                break;
-              case '6.09':
-                arrayPush(key, filtersValue, item);
-                break;
-              case '6.1-6.29':
-                arrayPush(key, filtersValue, item);
-                break;
-              case '6.3-6.49':
-                arrayPush(key, filtersValue, item);
-                break;
-              case '6.5-6.59':
-                arrayPush(key, filtersValue, item);
-                break;
-              case '6.6-6.79':
-                arrayPush(key, filtersValue, item);
-                break;
-              case '6.8':
-                arrayPush(key, filtersValue, item);
-                break;
-            }
+              } else {
+                productFilter.push(item);
+              }
+              break;
+            case '6.09':
+              diagonalFiltersPush(item, valueFilters);
+              break;
+            case '6.1-6.29':
+              diagonalFiltersPush(item, valueFilters);
+              break;
+            case '6.3-6.49':
+              diagonalFiltersPush(item, valueFilters);
+              break;
+            case '6.5-6.59':
+              diagonalFiltersPush(item, valueFilters);
+              break;
+            case '6.6-6.79':
+              diagonalFiltersPush(item, valueFilters);
+              break;
+            case '6.8':
+              diagonalFiltersPush(item, valueFilters);
+              break;
+            case item.protection:
+              if (!productFilter.includes(item)) {
+                productFilter.push(item);
+              }
+              break;
+            case item.memory:
+              if (!productFilter.includes(item)) {
+                productFilter.push(item);
+              }
           }
         });
       }
     });
+
+    if (productFilter.length === 0) {
+      productFilter = brandFilter;
+    } else {
+      if (brandFilter.length !== 0) {
+        let s = brandFilter.filter(item => productFilter.includes(item));
+        productFilter = s;
+        console.log('Product', s);
+      }
+    }
     console.log(productFilter);
-    console.log(productFilterAll);
   }
 
-  function arrayPush(key, filtersValue, item) {
-    let filtersValueValue = filtersValue.split('-');
-    if (key === 'battery') {
-      if (filtersValueValue.length == 1) {
-        if (filtersValueValue[0] === '2499') {
-          if (+item[key] <= +filtersValue) {
-            if (!productFilter.includes(item)) {
-              productFilter.push(item);
-            } else {
-              if (!productFilterAll.includes(item)) {
-                productFilterAll.push(item);
-              }
-            }
-          }
-        } else {
-          if (+item[key] >= +filtersValue) {
-            if (!productFilter.includes(item)) {
-              productFilter.push(item);
-            } else {
-              if (!productFilterAll.includes(item)) {
-                productFilterAll.push(item);
-              }
-            }
+  function batteryFiltersPush(item, valueFilters) {
+    let valueNum = valueFilters.split('-');
+
+    if (valueNum.length == 1) {
+      if (valueNum[0] === '2499') {
+        if (+item.battery <= +valueFilters) {
+          if (!productFilter.includes(item)) {
+            productFilter.push(item);
           }
         }
       } else {
-        if (+filtersValueValue[0] <= +item[key] && +item[key] <= +filtersValueValue[1]) {
+        if (+item.battery >= +valueFilters) {
           if (!productFilter.includes(item)) {
             productFilter.push(item);
-          } else {
-            if (!productFilterAll.includes(item)) {
-              productFilterAll.push(item);
-            }
           }
         }
       }
     } else {
-      if (filtersValueValue.length == 1) {
-        if (filtersValueValue[0] === '6.09') {
-          if (+item[key] <= +filtersValue) {
-            if (!productFilter.includes(item)) {
-              productFilter.push(item);
-            } else {
-              if (!productFilterAll.includes(item)) {
-                productFilterAll.push(item);
-              }
-            }
-          }
-        } else {
-          if (+item[key] >= +filtersValue) {
-            if (!productFilter.includes(item)) {
-              productFilter.push(item);
-            } else {
-              if (!productFilterAll.includes(item)) {
-                productFilterAll.push(item);
-              }
-            }
+      if (+valueNum[0] <= +item.battery && +item.battery <= +valueNum[1]) {
+        if (!productFilter.includes(item)) {
+          productFilter.push(item);
+        }
+      }
+    }
+  }
+
+  function diagonalFiltersPush(item, valueFilters) {
+    let valueNum = valueFilters.split('-');
+
+    if (valueNum.length == 1) {
+      if (valueNum[0] === '6.09') {
+        if (+item.diagonal <= +valueFilters) {
+          if (!productFilter.includes(item)) {
+            productFilter.push(item);
           }
         }
       } else {
-        if (+filtersValueValue[0] <= +item[key] && +item[key] <= +filtersValueValue[1]) {
+        if (+item.diagonal >= +valueFilters) {
           if (!productFilter.includes(item)) {
             productFilter.push(item);
-          } else {
-            if (!productFilterAll.includes(item)) {
-              productFilterAll.push(item);
-            }
           }
+        }
+      }
+    } else {
+      if (+valueNum[0] <= +item.diagonal && +item.diagonal <= +valueNum[1]) {
+        if (!productFilter.includes(item)) {
+          productFilter.push(item);
         }
       }
     }
