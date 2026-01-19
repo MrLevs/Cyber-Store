@@ -4,7 +4,6 @@ import { productFiltersMap } from './module/product-filters-map';
 
 export function filterResult(arrayData, arrayFilters) {
   let categoryProduct = 'smartphones';
-  let brandFilter = [];
   let productFilter = [];
   console.log(arrayFilters);
   if (arrayFilters.length === 0) {
@@ -17,16 +16,60 @@ export function filterResult(arrayData, arrayFilters) {
     filterProducts(arrayData);
   }
 
-  let dataProduct = productFiltersMap(productFilter);
+  let product = productFilter.reduce((acc, i) => {
+    if (Object.prototype.hasOwnProperty.call(acc, JSON.stringify(i))) {
+      console.log(888);
+      acc[JSON.stringify(i)] += 1;
+    } else {
+      acc[JSON.stringify(i)] = 1;
+    }
+    return acc;
+  }, {});
+
+  const getMaxKey = obj => {
+    // ищем максимальное значение
+    const maxValue = Math.max.apply(null, Object.values(obj)); /// сократить getMaxKey, преобразовать в filter()!!!
+    // фильтруем по максимальному значению массив ключей
+    return Object.keys(product).filter(k => product[k] === maxValue);
+  };
+
+  let productKey = getMaxKey(product).map(item => {
+    return JSON.parse(item);
+  });
+  console.log(productKey);
+
+  // let dataProduct = productFiltersMap(productFilter); было изначально
+  let dataProduct = productFiltersMap(productKey);
   return dataProduct;
 
   function filterProducts(array) {
+    // let xxx = [];
+    // arrayFilters.forEach(item => {
+    //   let yyy = array.reduce((acc, i, index) => {
+    //     if (Object.values(i).includes(item)) {
+    //       console.log(9999);
+    //       i = index;
+    //       if (acc.hasOwnProperty(i)) {
+    //         acc[i] += 1;
+    //       } else {
+    //         acc[i] = 1;
+    //       }
+    //     }
+    //     return acc;
+    //   }, {});
+    //   xxx.push(yyy);
+    // });
+    // let xxx = array.filter(item => {
+    //   return item.brand === 'apple' && item.battery === '2000';
+
+    // });
+    // console.log(xxx);
     array.forEach(item => {
       if (item.title === categoryProduct && item.brand) {
         arrayFilters.forEach(valueFilters => {
           switch (valueFilters) {
             case item.brand:
-              brandFilter.push(item);
+              productFilter.push(item);
               break;
             case '2499':
               batteryFiltersPush(item, valueFilters);
@@ -47,13 +90,7 @@ export function filterResult(arrayData, arrayFilters) {
               batteryFiltersPush(item, valueFilters);
               break;
             case item.screen:
-              if (productFilter.includes(item)) {
-                if (!brandFilter.includes(item)) {
-                  brandFilter.push(item);
-                }
-              } else {
-                productFilter.push(item);
-              }
+              productFilter.push(item);
               break;
             case '6.09':
               diagonalFiltersPush(item, valueFilters);
@@ -74,28 +111,15 @@ export function filterResult(arrayData, arrayFilters) {
               diagonalFiltersPush(item, valueFilters);
               break;
             case item.protection:
-              if (!productFilter.includes(item)) {
-                productFilter.push(item);
-              }
+              productFilter.push(item);
               break;
             case item.memory:
-              if (!productFilter.includes(item)) {
-                productFilter.push(item);
-              }
+              productFilter.push(item);
+              break;
           }
         });
       }
     });
-
-    if (productFilter.length === 0) {
-      productFilter = brandFilter;
-    } else {
-      if (brandFilter.length !== 0) {
-        let s = brandFilter.filter(item => productFilter.includes(item));
-        productFilter = s;
-        console.log('Product', s);
-      }
-    }
     console.log(productFilter);
   }
 
@@ -105,22 +129,16 @@ export function filterResult(arrayData, arrayFilters) {
     if (valueNum.length == 1) {
       if (valueNum[0] === '2499') {
         if (+item.battery <= +valueFilters) {
-          if (!productFilter.includes(item)) {
-            productFilter.push(item);
-          }
+          productFilter.push(item);
         }
       } else {
         if (+item.battery >= +valueFilters) {
-          if (!productFilter.includes(item)) {
-            productFilter.push(item);
-          }
+          productFilter.push(item);
         }
       }
     } else {
       if (+valueNum[0] <= +item.battery && +item.battery <= +valueNum[1]) {
-        if (!productFilter.includes(item)) {
-          productFilter.push(item);
-        }
+        productFilter.push(item);
       }
     }
   }
@@ -131,22 +149,16 @@ export function filterResult(arrayData, arrayFilters) {
     if (valueNum.length == 1) {
       if (valueNum[0] === '6.09') {
         if (+item.diagonal <= +valueFilters) {
-          if (!productFilter.includes(item)) {
-            productFilter.push(item);
-          }
+          productFilter.push(item);
         }
       } else {
         if (+item.diagonal >= +valueFilters) {
-          if (!productFilter.includes(item)) {
-            productFilter.push(item);
-          }
+          productFilter.push(item);
         }
       }
     } else {
       if (+valueNum[0] <= +item.diagonal && +item.diagonal <= +valueNum[1]) {
-        if (!productFilter.includes(item)) {
-          productFilter.push(item);
-        }
+        productFilter.push(item);
       }
     }
   }
