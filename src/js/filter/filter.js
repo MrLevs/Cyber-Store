@@ -9,6 +9,8 @@ export function filter(data) {
   const filtersLabel = document.querySelectorAll('.filters__label');
 
   let filtersValue = [];
+  let itemsBatteryAll = [];
+  let itemsDiagonalAll = [];
 
   //-------Create Product Card------------
   let contentBlock = document.querySelector('.content__inner');
@@ -46,75 +48,93 @@ export function filter(data) {
 
   //----Select element-------
   filtersLabel.forEach(item => {
-    item.addEventListener('click', function () {
-      if (this.control.checked) {
-        item.classList.remove('filters__label_active');
-        let filter = filtersValue.filter(elem => elem !== this.control.value);
+    item.addEventListener('click', selectItemFilters);
+    item.addEventListener('keydown', pressEnter);
+  });
+
+  function selectItemFilters(event) {
+    console.log(itemsBatteryAll);
+    if (event.currentTarget.control.checked) {
+      event.currentTarget.classList.remove('filters__label_active');
+      if (event.currentTarget.control.value == 'battery-all') {
+        selectAll(event.currentTarget, itemsBatteryAll);
+      } else if (event.currentTarget.control.value == 'diagonal-all') {
+        selectAll(event.currentTarget, itemsDiagonalAll);
+      } else {
+        if (itemsBatteryAll.includes(event.currentTarget)) {
+          let buttonAll = event.currentTarget.parentNode.parentNode.querySelector('.button_all');
+          buttonAll.classList.remove('filters__label_active');
+          buttonAll.control.checked = false;
+          itemsBatteryAll = [];
+        }
+        if (itemsDiagonalAll.includes(event.currentTarget)) {
+          let buttonAll = event.currentTarget.parentNode.parentNode.querySelector('.button_all');
+          buttonAll.classList.remove('filters__label_active');
+          buttonAll.control.checked = false;
+          itemsDiagonalAll = [];
+        }
+        let filter = filtersValue.filter(elem => elem !== event.currentTarget.control.value);
         filtersValue = filter;
         createProductCard(contentBlock, filterResult(data, filtersValue));
         countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
         createCountsFilters(countsFilters, filterResult(data, filtersValue));
-      } else {
-        item.classList.add('filters__label_active');
-        if (this.control.value !== 'all') {
-          filtersValue.push(this.control.value);
-          createProductCard(contentBlock, filterResult(data, filtersValue));
-          countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-          createCountsFilters(countsFilters, filterResult(data, filtersValue));
-        }
       }
-    });
-
-    item.addEventListener('keydown', function (e) {
-      if (e.code === 'Enter') {
-        if (this.control.checked) {
-          item.classList.remove('filters__label_active');
-          let filter = filtersValue.filter(elem => elem !== this.control.value);
-          filtersValue = filter;
-          this.control.checked = false;
-        } else {
-          item.classList.add('filters__label_active');
-          filtersValue.push(this.control.value);
-          this.control.checked = true;
-        }
-      }
-    });
-  });
-  //---------------------------
-
-  //-----ButtonAll (filter ALL battery and screen)------
-  const buttonAll = document.querySelectorAll('.button_all');
-
-  if (buttonAll) {
-    buttonAll.forEach(item => {
-      item.addEventListener('click', selectAll);
-    });
-  }
-
-  function selectAll() {
-    let elemAll = this.control.parentNode.parentNode.querySelectorAll('.filters__label');
-    let buttonAll = this.control.parentNode.parentNode.querySelector('.button_all');
-    if (this.control.checked) {
-      elemAll.forEach(item => {
-        if (item !== buttonAll) {
-          item.control.checked = false;
-          item.classList.remove('filters__label_active');
-          let filter = filtersValue.filter(val => val !== item.control.value);
-          filtersValue = filter;
-        }
-      });
     } else {
-      elemAll.forEach(item => {
-        if (item !== buttonAll) {
-          item.control.checked = true;
-          item.classList.add('filters__label_active');
-          let filter = filtersValue.filter(val => val !== item.control.value);
-          filtersValue = filter;
-          filtersValue.push(item.control.value);
-        }
-      });
+      event.currentTarget.classList.add('filters__label_active');
+      if (event.currentTarget.control.value == 'battery-all') {
+        selectAll(event.currentTarget, itemsBatteryAll);
+      } else if (event.currentTarget.control.value == 'diagonal-all') {
+        selectAll(event.currentTarget, itemsDiagonalAll);
+      } else {
+        filtersValue.push(event.currentTarget.control.value);
+        createProductCard(contentBlock, filterResult(data, filtersValue));
+        countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+        createCountsFilters(countsFilters, filterResult(data, filtersValue));
+      }
     }
   }
+
+  function selectAll(item, array) {
+    let elemAll = Array.from(item.parentNode.parentNode.querySelectorAll('.filters__label')).filter(
+      item => !item.classList.contains('button_all'),
+    );
+    elemAll.forEach(item => array.push(item));
+
+    if (item.control.checked) {
+      elemAll.forEach(item => {
+        item.control.checked = false;
+        item.classList.remove('filters__label_active');
+        let filter = filtersValue.filter(val => val !== item.control.value);
+        filtersValue = filter;
+      });
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue));
+    } else {
+      elemAll.forEach(item => {
+        item.control.checked = true;
+        item.classList.add('filters__label_active');
+        let filter = filtersValue.filter(val => val !== item.control.value);
+        filtersValue = filter;
+        filtersValue.push(item.control.value);
+      });
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue));
+    }
+  }
+
+  function pressEnter(event) {
+    if (event.code === 'Enter') {
+      selectItemFilters(event);
+      if (event.currentTarget.control.checked) {
+        event.currentTarget.control.checked = false;
+      } else {
+        event.currentTarget.control.checked = true;
+      }
+    }
+  }
+
   //---------------------------
 
   //----filters-btn Open || Close-------

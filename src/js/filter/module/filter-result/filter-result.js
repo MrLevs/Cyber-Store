@@ -1,7 +1,7 @@
 'use strict';
 
-import { filterProducts } from './module/filter-products';
-import { productFiltersMap } from './module/product-filters-map';
+import { filterProducts } from './module/filter-products'; //Filter Products
+import { productFiltersMap } from './module/product-filters-map'; //Product Filters Map
 
 export function filterResult(arrayData, arrayFilters) {
   let categoryProduct = 'smartphones';
@@ -25,7 +25,7 @@ export function filterResult(arrayData, arrayFilters) {
     }
     return acc;
   }, {});
-  console.log(productMaxKey);
+
   let getMaxKey = obj => {
     let maxValue = Math.max.apply(null, Object.values(obj));
     return Object.keys(obj).filter(k => obj[k] === maxValue);
@@ -34,7 +34,7 @@ export function filterResult(arrayData, arrayFilters) {
   let product = getMaxKey(productMaxKey).map(item => {
     return JSON.parse(item);
   });
-  console.log(product);
+
   let dataProduct = productFiltersMap(product);
   return dataProduct;
 }
