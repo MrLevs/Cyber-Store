@@ -1,5 +1,6 @@
 'use strict';
 
+import { filterPrice } from './module/filter-price'; //Filter Price
 import { filterResult } from './module/filter-result/filter-result'; //Filter Result
 import { createProductCard } from './module/create-product-card'; //Create Product Card
 import { countSelectedProducts, createCountsFilters } from './module/create-counts-filters'; //Count Selected Products, Counts Filters
@@ -11,6 +12,31 @@ export function filter(data) {
   let filtersValue = [];
   let itemsBatteryAll = [];
   let itemsDiagonalAll = [];
+
+  //----filters-btn Open || Close-------
+  const filtersBtnOpen = document.querySelector('#filters-btn-open');
+  const filtersBtnClose = document.querySelector('#filters-btn-close');
+  const filtersMenu = document.querySelector('#filters-menu');
+
+  if (filtersBtnOpen || filtersBtnClose) {
+    filtersBtnOpen.addEventListener('click', menuFiltersOpen);
+    filtersBtnClose.addEventListener('click', menuFiltersClose);
+  }
+
+  function menuFiltersOpen() {
+    document.body.classList.add('_lock');
+    filtersMenu.classList.add('filters_active');
+  }
+
+  function menuFiltersClose() {
+    document.body.classList.remove('_lock');
+    filtersMenu.classList.remove('filters_active');
+  }
+  //-----------------------------
+
+  //-------Filter Price------------
+  filterPrice(data);
+  //------------------------------
 
   //-------Create Product Card------------
   let contentBlock = document.querySelector('.content__inner');
@@ -53,7 +79,6 @@ export function filter(data) {
   });
 
   function selectItemFilters(event) {
-    console.log(itemsBatteryAll);
     if (event.currentTarget.control.checked) {
       event.currentTarget.classList.remove('filters__label_active');
       if (event.currentTarget.control.value == 'battery-all') {
@@ -134,68 +159,5 @@ export function filter(data) {
       }
     }
   }
-
   //---------------------------
-
-  //----filters-btn Open || Close-------
-  const filtersBtnOpen = document.querySelector('#filters-btn-open');
-  const filtersBtnClose = document.querySelector('#filters-btn-close');
-  const filtersMenu = document.querySelector('#filters-menu');
-
-  if (filtersBtnOpen || filtersBtnClose) {
-    filtersBtnOpen.addEventListener('click', menuFiltersOpen);
-    filtersBtnClose.addEventListener('click', menuFiltersClose);
-  }
-
-  function menuFiltersOpen() {
-    document.body.classList.add('_lock');
-    filtersMenu.classList.add('filters_active');
-  }
-
-  function menuFiltersClose() {
-    document.body.classList.remove('_lock');
-    filtersMenu.classList.remove('filters_active');
-  }
-  //-----------------------------
-
-  //------Filters Price-----------
-  const priceMin = document.querySelector('#price-min');
-  const priceMax = document.querySelector('#price-max');
-
-  if (priceMin || priceMax) {
-    priceMin.parentNode.parentNode.style.setProperty('--priceMin', '10');
-    priceMax.parentNode.parentNode.style.setProperty('--priceMax', '40');
-
-    priceMin.addEventListener('input', handlePriceMin);
-    priceMax.addEventListener('input', handlePriceMax);
-  }
-
-  function handlePriceMin(event) {
-    if (parseInt(event.target.value, 10) >= parseInt(priceMax.value, 10)) {
-      event.target.value = priceMax.value;
-    }
-
-    if (event.target.value === '100') {
-      event.target.style.zIndex = '50';
-    } else {
-      event.target.style.zIndex = '0';
-    }
-
-    event.target.parentNode.parentNode.style.setProperty('--priceMin', event.target.value);
-  }
-
-  function handlePriceMax(event) {
-    if (parseInt(event.target.value, 10) <= parseInt(priceMin.value, 10)) {
-      event.target.value = priceMin.value;
-    }
-
-    if (event.target.value === '0') {
-      event.target.style.zIndex = '50';
-    } else {
-      event.target.style.zIndex = '0';
-    }
-
-    event.target.parentNode.parentNode.style.setProperty('--priceMax', event.target.value);
-  }
-  //-----------------------------------------------
 }
