@@ -43,6 +43,7 @@
   &__details {
     &[open] + .filters__content {
       grid-template-rows: 1fr;
+      visibility: visible;
     }
 
     &_active {
@@ -105,6 +106,7 @@
     display: grid;
     grid-template-rows: 0fr;
     transition-duration: 0.5s;
+    visibility: hidden;
   }
 
   &__content-body {
