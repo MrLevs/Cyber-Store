@@ -1,26 +1,52 @@
 'use strict';
 
-// import { filterPrice } from './module/filter-price';
-//
-//Filter Price решить вопрос!!!!!!!
 import { filterResult } from './module/filter-result/filter-result'; //Filter Result
 import { createProductCard } from './module/create-product-card'; //Create Product Card
 import { countSelectedProducts, createCountsFilters } from './module/create-counts-filters'; //Count Selected Products, Counts Filters
 
 export function filter(data) {
+  //----Open accordion-------
   const filtersDetails = document.querySelectorAll('.filters__details');
+  //----Select element-------
   const filtersLabel = document.querySelectorAll('.filters__label');
-
-  let price = [];
-  let filtersValue = [];
-  let itemsBatteryAll = [];
-  let itemsDiagonalAll = [];
-
   //----filters-btn Open || Close-------
   const filtersBtnOpen = document.querySelector('#filters-btn-open');
   const filtersBtnClose = document.querySelector('#filters-btn-close');
   const filtersMenu = document.querySelector('#filters-menu');
+  //-------Filter Price------------
+  const priceFrom = document.querySelector('#price-from');
+  const priceTo = document.querySelector('#price-to');
+  const range = document.querySelector('#price-range');
+  const priceMin = document.querySelector('#price-min');
+  const priceMax = document.querySelector('#price-max');
+  //-------Create Product Card------------
+  const contentBlock = document.querySelector('.content__inner');
+  //-------Create Count Products------------
+  const selectedProducts = document.querySelector('.content__number');
+  //------Create Counts Filters----------------
+  const countsFilters = document.querySelectorAll('.filters__count');
 
+  let priceAll = [];
+  let filtersValue = [];
+  let itemsBatteryAll = [];
+  let itemsDiagonalAll = [];
+
+  //-------Create Product Card------------
+  if (contentBlock) {
+    createProductCard(contentBlock, filterResult(data, filtersValue));
+  }
+  //--------------------------
+  //-------Create Count Products------------
+  if (selectedProducts) {
+    countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+  }
+  //-------------------------------
+  //------Create Counts Filters----------------
+  if (countsFilters) {
+    createCountsFilters(countsFilters, filterResult(data, filtersValue));
+  }
+  //------------------------------
+  //----filters-btn Open || Close-------
   if (filtersBtnOpen || filtersBtnClose) {
     filtersBtnOpen.addEventListener('click', menuFiltersOpen);
     filtersBtnClose.addEventListener('click', menuFiltersClose);
@@ -36,18 +62,8 @@ export function filter(data) {
     filtersMenu.classList.remove('filters_active');
   }
   //-----------------------------
-
-  //-------Filter Price------------ // Решить вопрос!!!!
-  const priceFrom = document.querySelector('#price-from');
-  const priceTo = document.querySelector('#price-to');
-  const range = document.querySelector('#price-range');
-  const priceMin = document.querySelector('#price-min');
-  const priceMax = document.querySelector('#price-max');
-
+  //-------Filter Price------------
   if (priceFrom || priceTo || range || priceMin || priceMax) {
-    let priceAll = [];
-    // let priceAllxxx = [];
-
     data.forEach(item => {
       if (item.price) {
         priceAll.push(parseInt(item.price));
@@ -91,6 +107,9 @@ export function filter(data) {
       let filter = filtersValue.filter(val => !val.includes('min'));
       filtersValue = filter;
       filtersValue.push(`min${event.target.value}`);
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue));
     }
 
     function selectPriceMax(event) {
@@ -103,6 +122,9 @@ export function filter(data) {
       let filter = filtersValue.filter(val => !val.includes('max'));
       filtersValue = filter;
       filtersValue.push(`max${event.target.value}`);
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue));
     }
 
     function handlePriceMin(event) {
@@ -122,6 +144,9 @@ export function filter(data) {
       let filter = filtersValue.filter(val => !val.includes('min'));
       filtersValue = filter;
       filtersValue.push(`min${event.target.value}`);
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue));
     }
 
     function handlePriceMax(event) {
@@ -141,48 +166,12 @@ export function filter(data) {
       let filter = filtersValue.filter(val => !val.includes('max'));
       filtersValue = filter;
       filtersValue.push(`max${event.target.value}`);
-      console.log(filtersValue);
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue));
     }
-
-    // function priceFilter(data) {
-    //   let dataPrice = data.filter(item => {
-    //     if (
-    //       parseInt(priceMin.value, 10) <= parseInt(item.price, 10) &&
-    //       parseInt(item.price, 10) <= parseInt(priceMax.value, 10)
-    //     ) {
-    //       return item;
-    //     }
-    //   });
-    //   priceAllxxx.push(`min${priceMin.value}`);
-    //   console.log('Minxxx', priceAllxxx);
-    //   console.log('Min', priceMin.value);
-    //   console.log('Max', priceMax.value);
-    //   console.log(dataPrice);
-    // }
   }
   //------------------------------
-
-  //-------Create Product Card------------
-  let contentBlock = document.querySelector('.content__inner');
-  if (contentBlock) {
-    createProductCard(contentBlock, filterResult(data, filtersValue, price));
-  }
-  //--------------------------
-
-  //-------Create Count Products------------
-  const selectedProducts = document.querySelector('.content__number');
-  if (selectedProducts) {
-    countSelectedProducts(selectedProducts, filterResult(data, filtersValue, price));
-  }
-  //-------------------------------
-
-  //------Create Counts Filters----------------
-  const countsFilters = document.querySelectorAll('.filters__count');
-  if (countsFilters) {
-    createCountsFilters(countsFilters, filterResult(data, filtersValue, price));
-  }
-  //------------------------------
-
   //----Open accordion---------
   filtersDetails.forEach(item => {
     let summary = item.querySelector('.filters__summary');
@@ -195,7 +184,6 @@ export function filter(data) {
     });
   });
   //------------------------
-
   //----Select element-------
   filtersLabel.forEach(item => {
     item.addEventListener('click', selectItemFilters);
@@ -224,9 +212,9 @@ export function filter(data) {
         }
         let filter = filtersValue.filter(elem => elem !== event.currentTarget.control.value);
         filtersValue = filter;
-        createProductCard(contentBlock, filterResult(data, filtersValue, price));
-        countSelectedProducts(selectedProducts, filterResult(data, filtersValue, price));
-        createCountsFilters(countsFilters, filterResult(data, filtersValue, price));
+        createProductCard(contentBlock, filterResult(data, filtersValue));
+        countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+        createCountsFilters(countsFilters, filterResult(data, filtersValue));
       }
     } else {
       event.currentTarget.classList.add('filters__label_active');
@@ -236,12 +224,11 @@ export function filter(data) {
         selectAll(event.currentTarget, itemsDiagonalAll);
       } else {
         filtersValue.push(event.currentTarget.control.value);
-        createProductCard(contentBlock, filterResult(data, filtersValue, price));
-        countSelectedProducts(selectedProducts, filterResult(data, filtersValue, price));
-        createCountsFilters(countsFilters, filterResult(data, filtersValue, price));
+        createProductCard(contentBlock, filterResult(data, filtersValue));
+        countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+        createCountsFilters(countsFilters, filterResult(data, filtersValue));
       }
     }
-    console.log(filtersValue);
   }
 
   function selectAll(item, array) {
@@ -257,9 +244,9 @@ export function filter(data) {
         let filter = filtersValue.filter(val => val !== item.control.value);
         filtersValue = filter;
       });
-      createProductCard(contentBlock, filterResult(data, filtersValue, price));
-      countSelectedProducts(selectedProducts, filterResult(data, filtersValue, price));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue, price));
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue));
     } else {
       elemAll.forEach(item => {
         item.control.checked = true;
@@ -268,9 +255,9 @@ export function filter(data) {
         filtersValue = filter;
         filtersValue.push(item.control.value);
       });
-      createProductCard(contentBlock, filterResult(data, filtersValue, price));
-      countSelectedProducts(selectedProducts, filterResult(data, filtersValue, price));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue, price));
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue));
     }
   }
 

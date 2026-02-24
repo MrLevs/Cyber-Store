@@ -1,6 +1,7 @@
 'use strict';
 
 export function filterProducts(array, categoryProduct, arrayFilters, productFilter) {
+  let priceValue = [];
   array.forEach(item => {
     if (item.title === categoryProduct && item.brand) {
       arrayFilters.forEach(valueFilters => {
@@ -54,9 +55,38 @@ export function filterProducts(array, categoryProduct, arrayFilters, productFilt
             productFilter.push(item);
             break;
         }
+        if (valueFilters.includes('min') || valueFilters.includes('max')) {
+          if (!priceValue.includes(valueFilters)) {
+            priceValue.push(valueFilters);
+          }
+        }
       });
     }
   });
+
+  if (priceValue.length !== 0) {
+    let minPrice = priceValue.filter(item => item.includes('min')).map(item => item.replace('min', ''));
+    let maxPrice = priceValue.filter(item => item.includes('max')).map(item => item.replace('max', ''));
+
+    array.forEach(item => {
+      if (minPrice.length === 0) {
+        if (parseInt(item.price, 10) <= parseInt(maxPrice[0], 10)) {
+          productFilter.push(item);
+        }
+      } else if (maxPrice.length === 0) {
+        if (parseInt(item.price, 10) >= parseInt(minPrice[0], 10)) {
+          productFilter.push(item);
+        }
+      } else {
+        if (
+          parseInt(item.price, 10) >= parseInt(minPrice[0], 10) &&
+          parseInt(item.price, 10) <= parseInt(maxPrice[0], 10)
+        ) {
+          productFilter.push(item);
+        }
+      }
+    });
+  }
 
   function batteryFiltersPush(item, valueFilters) {
     let valueNum = valueFilters.split('-');
