@@ -186,9 +186,30 @@ export function filter(data) {
   //------------------------
   //----Select element-------
   filtersLabel.forEach(item => {
-    item.addEventListener('click', selectItemFilters);
+    item.addEventListener('click', selectCreate);
     item.addEventListener('keydown', pressEnter);
   });
+
+  function selectCreate(event) {
+    selectItemFilters(event);
+    createProductCard(contentBlock, filterResult(data, filtersValue));
+    countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+    createCountsFilters(countsFilters, filterResult(data, filtersValue));
+  }
+
+  function pressEnter(event) {
+    if (event.code === 'Enter') {
+      selectItemFilters(event);
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue));
+      if (event.currentTarget.control.checked) {
+        event.currentTarget.control.checked = false;
+      } else {
+        event.currentTarget.control.checked = true;
+      }
+    }
+  }
 
   function selectItemFilters(event) {
     if (event.currentTarget.control.checked) {
@@ -212,9 +233,6 @@ export function filter(data) {
         }
         let filter = filtersValue.filter(elem => elem !== event.currentTarget.control.value);
         filtersValue = filter;
-        createProductCard(contentBlock, filterResult(data, filtersValue));
-        countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-        createCountsFilters(countsFilters, filterResult(data, filtersValue));
       }
     } else {
       event.currentTarget.classList.add('filters__label_active');
@@ -224,9 +242,6 @@ export function filter(data) {
         selectAll(event.currentTarget, itemsDiagonalAll);
       } else {
         filtersValue.push(event.currentTarget.control.value);
-        createProductCard(contentBlock, filterResult(data, filtersValue));
-        countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-        createCountsFilters(countsFilters, filterResult(data, filtersValue));
       }
     }
   }
@@ -244,9 +259,6 @@ export function filter(data) {
         let filter = filtersValue.filter(val => val !== item.control.value);
         filtersValue = filter;
       });
-      createProductCard(contentBlock, filterResult(data, filtersValue));
-      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue));
     } else {
       elemAll.forEach(item => {
         item.control.checked = true;
@@ -255,20 +267,6 @@ export function filter(data) {
         filtersValue = filter;
         filtersValue.push(item.control.value);
       });
-      createProductCard(contentBlock, filterResult(data, filtersValue));
-      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue));
-    }
-  }
-
-  function pressEnter(event) {
-    if (event.code === 'Enter') {
-      selectItemFilters(event);
-      if (event.currentTarget.control.checked) {
-        event.currentTarget.control.checked = false;
-      } else {
-        event.currentTarget.control.checked = true;
-      }
     }
   }
   //---------------------------
