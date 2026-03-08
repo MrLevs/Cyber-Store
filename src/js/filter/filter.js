@@ -1,5 +1,7 @@
 'use strict';
 
+import { selectItemFilters } from './module/select-item-filters'; //Select Item Filters
+import { selectPriceMin, selectPriceMax, handlePriceMin, handlePriceMax } from './module/filter-price'; //Filter Price
 import { filterResult } from './module/filter-result/filter-result'; //Filter Result
 import { createProductCard } from './module/create-product-card'; //Create Product Card
 import { countSelectedProducts, createCountsFilters } from './module/create-counts-filters'; //Count Selected Products, Counts Filters
@@ -62,7 +64,7 @@ export function filter(data) {
     filtersMenu.classList.remove('filters_active');
   }
   //-----------------------------
-  //-------Filter Price------------
+  //-------Filter Price------------ Настроить Price так чтобы не опускаться нижнего предела(min) или выше(max)!!!!
   if (priceFrom || priceTo || range || priceMin || priceMax) {
     data.forEach(item => {
       if (item.price) {
@@ -94,78 +96,35 @@ export function filter(data) {
     priceMin.parentNode.parentNode.style.setProperty('--priceMin', '0');
     priceMax.parentNode.parentNode.style.setProperty('--priceMax', '100');
 
-    priceFrom.addEventListener('input', selectPriceMin);
-    priceTo.addEventListener('input', selectPriceMax);
+    priceFrom.addEventListener('input', selectPriceMinAndCreate);
+    priceTo.addEventListener('input', selectPriceMaxAndCreate);
 
-    priceMin.addEventListener('input', handlePriceMin);
-    priceMax.addEventListener('input', handlePriceMax);
+    priceMin.addEventListener('input', handlePriceMinAndCreate);
+    priceMax.addEventListener('input', handlePriceMaxAndCreate);
 
-    function selectPriceMin(event) {
-      priceMin.value = event.target.value;
-      let percent = ((parseInt(event.target.value, 10) - min) / ((max - min) / (100 - 0))).toString();
-      range.style.setProperty('--priceMin', percent);
-      let filter = filtersValue.filter(val => !val.includes('min'));
-      filtersValue = filter;
-      filtersValue.push(`min${event.target.value}`);
+    function selectPriceMinAndCreate(event) {
+      selectPriceMin(event, filtersValue, priceMin, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       createCountsFilters(countsFilters, filterResult(data, filtersValue));
     }
 
-    function selectPriceMax(event) {
-      if (priceTo.value === (min - 1).toString()) {
-        priceTo.value = max.toString();
-      }
-      priceMax.value = event.target.value;
-      let percent = ((parseInt(event.target.value, 10) - min) / ((max - min) / (100 - 0))).toString();
-      range.style.setProperty('--priceMax', percent);
-      let filter = filtersValue.filter(val => !val.includes('max'));
-      filtersValue = filter;
-      filtersValue.push(`max${event.target.value}`);
+    function selectPriceMaxAndCreate(event) {
+      selectPriceMax(event, filtersValue, priceTo, priceMax, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       createCountsFilters(countsFilters, filterResult(data, filtersValue));
     }
 
-    function handlePriceMin(event) {
-      if (parseInt(event.target.value, 10) >= parseInt(priceMax.value, 10)) {
-        event.target.value = priceMax.value;
-      }
-
-      if (event.target.value === max.toString()) {
-        event.target.style.zIndex = '50';
-      } else {
-        event.target.style.zIndex = '0';
-      }
-
-      let percent = ((parseInt(event.target.value, 10) - min) / ((max - min) / (100 - 0))).toString();
-      range.style.setProperty('--priceMin', percent);
-      priceFrom.value = event.target.value;
-      let filter = filtersValue.filter(val => !val.includes('min'));
-      filtersValue = filter;
-      filtersValue.push(`min${event.target.value}`);
+    function handlePriceMinAndCreate(event) {
+      handlePriceMin(event, filtersValue, priceFrom, priceMax, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       createCountsFilters(countsFilters, filterResult(data, filtersValue));
     }
 
-    function handlePriceMax(event) {
-      if (parseInt(event.target.value, 10) <= parseInt(priceMin.value, 10)) {
-        event.target.value = priceMin.value;
-      }
-
-      if (event.target.value === min.toString()) {
-        event.target.style.zIndex = '50';
-      } else {
-        event.target.style.zIndex = '0';
-      }
-
-      let percent = ((parseInt(event.target.value, 10) - min) / ((max - min) / (100 - 0))).toString();
-      range.style.setProperty('--priceMax', percent);
-      priceTo.value = event.target.value;
-      let filter = filtersValue.filter(val => !val.includes('max'));
-      filtersValue = filter;
-      filtersValue.push(`max${event.target.value}`);
+    function handlePriceMaxAndCreate(event) {
+      handlePriceMax(event, filtersValue, priceTo, priceMin, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       createCountsFilters(countsFilters, filterResult(data, filtersValue));
@@ -186,12 +145,12 @@ export function filter(data) {
   //------------------------
   //----Select element-------
   filtersLabel.forEach(item => {
-    item.addEventListener('click', selectCreate);
+    item.addEventListener('click', selectAndCreate);
     item.addEventListener('keydown', pressEnter);
   });
 
-  function selectCreate(event) {
-    selectItemFilters(event);
+  function selectAndCreate(event) {
+    selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
     createProductCard(contentBlock, filterResult(data, filtersValue));
     countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
     createCountsFilters(countsFilters, filterResult(data, filtersValue));
@@ -199,7 +158,7 @@ export function filter(data) {
 
   function pressEnter(event) {
     if (event.code === 'Enter') {
-      selectItemFilters(event);
+      selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       createCountsFilters(countsFilters, filterResult(data, filtersValue));
@@ -208,65 +167,6 @@ export function filter(data) {
       } else {
         event.currentTarget.control.checked = true;
       }
-    }
-  }
-
-  function selectItemFilters(event) {
-    if (event.currentTarget.control.checked) {
-      event.currentTarget.classList.remove('filters__label_active');
-      if (event.currentTarget.control.value == 'battery-all') {
-        selectAll(event.currentTarget, itemsBatteryAll);
-      } else if (event.currentTarget.control.value == 'diagonal-all') {
-        selectAll(event.currentTarget, itemsDiagonalAll);
-      } else {
-        if (itemsBatteryAll.includes(event.currentTarget)) {
-          let buttonAll = event.currentTarget.parentNode.parentNode.querySelector('.button_all');
-          buttonAll.classList.remove('filters__label_active');
-          buttonAll.control.checked = false;
-          itemsBatteryAll = [];
-        }
-        if (itemsDiagonalAll.includes(event.currentTarget)) {
-          let buttonAll = event.currentTarget.parentNode.parentNode.querySelector('.button_all');
-          buttonAll.classList.remove('filters__label_active');
-          buttonAll.control.checked = false;
-          itemsDiagonalAll = [];
-        }
-        let filter = filtersValue.filter(elem => elem !== event.currentTarget.control.value);
-        filtersValue = filter;
-      }
-    } else {
-      event.currentTarget.classList.add('filters__label_active');
-      if (event.currentTarget.control.value == 'battery-all') {
-        selectAll(event.currentTarget, itemsBatteryAll);
-      } else if (event.currentTarget.control.value == 'diagonal-all') {
-        selectAll(event.currentTarget, itemsDiagonalAll);
-      } else {
-        filtersValue.push(event.currentTarget.control.value);
-      }
-    }
-  }
-
-  function selectAll(item, array) {
-    let elemAll = Array.from(item.parentNode.parentNode.querySelectorAll('.filters__label')).filter(
-      item => !item.classList.contains('button_all'),
-    );
-    elemAll.forEach(item => array.push(item));
-
-    if (item.control.checked) {
-      elemAll.forEach(item => {
-        item.control.checked = false;
-        item.classList.remove('filters__label_active');
-        let filter = filtersValue.filter(val => val !== item.control.value);
-        filtersValue = filter;
-      });
-    } else {
-      elemAll.forEach(item => {
-        item.control.checked = true;
-        item.classList.add('filters__label_active');
-        let filter = filtersValue.filter(val => val !== item.control.value);
-        filtersValue = filter;
-        filtersValue.push(item.control.value);
-      });
     }
   }
   //---------------------------
