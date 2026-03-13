@@ -1,6 +1,13 @@
 'use strict';
 
-export function selectPriceMin(event, arrayFiltersValue, priceMin, range, min, max) {
+export function selectPriceMin(event, arrayFiltersValue, priceFrom, priceMin, range, min, max) {
+  if (parseInt(priceFrom.value, 10) < min) {
+    priceFrom.value = min.toString();
+  }
+
+  if (parseInt(priceFrom.value, 10) > max) {
+    priceFrom.value = max.toString();
+  }
   priceMin.value = event.target.value;
 
   let percent = ((parseInt(event.target.value, 10) - min) / ((max - min) / (100 - 0))).toString();
@@ -13,10 +20,16 @@ export function selectPriceMin(event, arrayFiltersValue, priceMin, range, min, m
 }
 
 export function selectPriceMax(event, arrayFiltersValue, priceTo, priceMax, range, min, max) {
-  if (priceTo.value === (min - 1).toString()) {
+  if (parseInt(priceTo.value, 10) === min - 1) {
     priceTo.value = max.toString();
   }
+  if (parseInt(priceTo.value, 10) < min - 1) {
+    priceTo.value = min.toString();
+  }
 
+  if (parseInt(priceTo.value, 10) > max) {
+    priceTo.value = max.toString();
+  }
   priceMax.value = event.target.value;
 
   let percent = ((parseInt(event.target.value, 10) - min) / ((max - min) / (100 - 0))).toString();

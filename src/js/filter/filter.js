@@ -64,9 +64,9 @@ export function filter(data) {
     filtersMenu.classList.remove('filters_active');
   }
   //-----------------------------
-  //-------Filter Price------------ Настроить Price так чтобы не опускаться нижнего предела(min) или выше(max)!!!!
+  //-------Filter Price------------
   if (priceFrom || priceTo || range || priceMin || priceMax) {
-    data.forEach(item => {
+    filterResult(data, filtersValue).forEach(item => {
       if (item.price) {
         priceAll.push(parseInt(item.price));
       }
@@ -96,14 +96,14 @@ export function filter(data) {
     priceMin.parentNode.parentNode.style.setProperty('--priceMin', '0');
     priceMax.parentNode.parentNode.style.setProperty('--priceMax', '100');
 
-    priceFrom.addEventListener('input', selectPriceMinAndCreate);
-    priceTo.addEventListener('input', selectPriceMaxAndCreate);
+    priceFrom.addEventListener('change', selectPriceMinAndCreate);
+    priceTo.addEventListener('change', selectPriceMaxAndCreate);
 
     priceMin.addEventListener('input', handlePriceMinAndCreate);
     priceMax.addEventListener('input', handlePriceMaxAndCreate);
 
     function selectPriceMinAndCreate(event) {
-      selectPriceMin(event, filtersValue, priceMin, range, min, max);
+      selectPriceMin(event, filtersValue, priceFrom, priceMin, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       createCountsFilters(countsFilters, filterResult(data, filtersValue));
