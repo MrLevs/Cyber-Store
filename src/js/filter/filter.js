@@ -45,7 +45,7 @@ export function filter(data) {
   //-------------------------------
   //------Create Counts Filters----------------
   if (countsFilters) {
-    createCountsFilters(countsFilters, filterResult(data, filtersValue));
+    createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
   }
   //------------------------------
   //----filters-btn Open || Close-------
@@ -64,6 +64,45 @@ export function filter(data) {
     filtersMenu.classList.remove('filters_active');
   }
   //-----------------------------
+  //----Open accordion---------
+  filtersDetails.forEach(item => {
+    let summary = item.querySelector('.filters__summary');
+    summary.addEventListener('click', function () {
+      if (item.hasAttribute('open')) {
+        item.classList.remove('filters__details_active');
+      } else {
+        item.classList.add('filters__details_active');
+      }
+    });
+  });
+  //------------------------
+  //----Select element-------
+  filtersLabel.forEach(item => {
+    item.addEventListener('click', selectAndCreate);
+    item.addEventListener('keydown', pressEnter);
+  });
+
+  function selectAndCreate(event) {
+    selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
+    createProductCard(contentBlock, filterResult(data, filtersValue));
+    countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+    createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
+  }
+
+  function pressEnter(event) {
+    if (event.code === 'Enter') {
+      selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
+      if (event.currentTarget.control.checked) {
+        event.currentTarget.control.checked = false;
+      } else {
+        event.currentTarget.control.checked = true;
+      }
+    }
+  }
+  //---------------------------
   //-------Filter Price------------
   if (priceFrom || priceTo || range || priceMin || priceMax) {
     filterResult(data, filtersValue).forEach(item => {
@@ -106,68 +145,29 @@ export function filter(data) {
       selectPriceMin(event, filtersValue, priceFrom, priceMin, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
     }
 
     function selectPriceMaxAndCreate(event) {
       selectPriceMax(event, filtersValue, priceTo, priceMax, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
     }
 
     function handlePriceMinAndCreate(event) {
       handlePriceMin(event, filtersValue, priceFrom, priceMax, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
     }
 
     function handlePriceMaxAndCreate(event) {
       handlePriceMax(event, filtersValue, priceTo, priceMin, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue));
+      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
     }
   }
   //------------------------------
-  //----Open accordion---------
-  filtersDetails.forEach(item => {
-    let summary = item.querySelector('.filters__summary');
-    summary.addEventListener('click', function () {
-      if (item.hasAttribute('open')) {
-        item.classList.remove('filters__details_active');
-      } else {
-        item.classList.add('filters__details_active');
-      }
-    });
-  });
-  //------------------------
-  //----Select element-------
-  filtersLabel.forEach(item => {
-    item.addEventListener('click', selectAndCreate);
-    item.addEventListener('keydown', pressEnter);
-  });
-
-  function selectAndCreate(event) {
-    selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
-    createProductCard(contentBlock, filterResult(data, filtersValue));
-    countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-    createCountsFilters(countsFilters, filterResult(data, filtersValue));
-  }
-
-  function pressEnter(event) {
-    if (event.code === 'Enter') {
-      selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
-      createProductCard(contentBlock, filterResult(data, filtersValue));
-      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue));
-      if (event.currentTarget.control.checked) {
-        event.currentTarget.control.checked = false;
-      } else {
-        event.currentTarget.control.checked = true;
-      }
-    }
-  }
-  //---------------------------
 }
