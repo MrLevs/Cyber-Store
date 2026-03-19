@@ -5,8 +5,19 @@ export function countSelectedProducts(elem, array) {
   elem.append(array.length);
 }
 
-export function createCountsFilters(elem, array, arrayFiltersValue, arrayData) {
-  // Доделать Count по анологии countBrandFilters смотреть ниже!!!!
+export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, arrayData) {
+  let categoryProduct = 'smartphones';
+  let productFilter = [];
+
+  let divAll = document.querySelectorAll('.filters__disabled');
+  divAll.forEach(elem => elem.remove());
+
+  arrayData.forEach(item => {
+    if (item.title === categoryProduct && item.brand) {
+      productFilter.push(item);
+    }
+  });
+
   let arrayExceptBrand = arrayFiltersValue.filter(
     items =>
       items !== 'apple' &&
@@ -28,6 +39,29 @@ export function createCountsFilters(elem, array, arrayFiltersValue, arrayData) {
       items !== '4500-4999' &&
       items !== '5000-5999' &&
       items !== '6000',
+  );
+
+  let arrayExceptScreen = arrayFiltersValue.filter(
+    items => items !== 'ips' && items !== 'retina' && items !== 'oled' && items !== 'amoled' && items !== 'poled',
+  );
+
+  let arrayExceptDiagonal = arrayFiltersValue.filter(
+    items =>
+      items !== '6.09' &&
+      items !== '6.1-6.29' &&
+      items !== '6.3-6.49' &&
+      items !== '6.5-6.59' &&
+      items !== '6.6-6.79' &&
+      items !== '6.8',
+  );
+
+  let arrayExceptProtection = arrayFiltersValue.filter(
+    items => items !== 'ipx4' && items !== 'ipx5' && items !== 'ipx6' && items !== 'ipx7',
+  );
+
+  let arrayExceptMemory = arrayFiltersValue.filter(
+    items =>
+      items !== '32' && items !== '64' && items !== '128' && items !== '256' && items !== '512' && items !== '1024',
   );
 
   elem.forEach(item => {
@@ -179,10 +213,10 @@ export function createCountsFilters(elem, array, arrayFiltersValue, arrayData) {
 
   function countBrandFilters(item) {
     if (arrayExceptBrand.length === 0) {
-      let arrayCount = arrayData.filter(items => items.brand === item.dataset.brand);
-      item.innerHTML = arrayCount.length;
+      let arrayCount = productFilter.filter(items => items.brand === item.dataset.brand);
+      filterCountInnerHtml(item, arrayCount);
     } else {
-      let arrayCount = array.filter(
+      let arrayCount = arrayFilterResult.filter(
         items =>
           items.brand ===
           item.dataset.brand
@@ -190,7 +224,7 @@ export function createCountsFilters(elem, array, arrayFiltersValue, arrayData) {
             .map(word => `${word[0].toUpperCase()}${word.slice(1).toLowerCase()}`)
             .join(' '),
       );
-      item.innerHTML = arrayCount.length;
+      filterCountInnerHtml(item, arrayCount);
     }
   }
 
@@ -200,67 +234,121 @@ export function createCountsFilters(elem, array, arrayFiltersValue, arrayData) {
       let datasetValue = datasetKey[key].split('-');
       if (key === 'battery') {
         if (arrayExceptBattery.length === 0) {
-          if (datasetValue.length == 1) {
+          if (datasetValue.length === 1) {
             if (datasetValue[0] === '6000') {
-              let arrayCount = arrayData.filter(items => items.battery >= datasetValue[0]);
-              item.innerHTML = arrayCount.length;
+              let arrayCount = productFilter.filter(items => items.battery >= datasetValue[0]);
+              filterCountInnerHtml(item, arrayCount);
             } else {
-              let arrayCount = arrayData.filter(items => items.battery <= datasetValue[0]);
-              item.innerHTML = arrayCount.length;
+              let arrayCount = productFilter.filter(items => items.battery <= datasetValue[0]);
+              filterCountInnerHtml(item, arrayCount);
             }
           } else {
-            let arrayCount = arrayData.filter(
+            let arrayCount = productFilter.filter(
               items => datasetValue[0] <= items.battery && items.battery <= datasetValue[1],
             );
-            item.innerHTML = arrayCount.length;
+            filterCountInnerHtml(item, arrayCount);
           }
         } else {
-          if (datasetValue.length == 1) {
+          if (datasetValue.length === 1) {
             if (datasetValue[0] === '6000') {
-              let arrayCount = array.filter(items => items.battery >= datasetValue[0]);
-              item.innerHTML = arrayCount.length;
+              let arrayCount = arrayFilterResult.filter(items => items.battery >= datasetValue[0]);
+              filterCountInnerHtml(item, arrayCount);
             } else {
-              let arrayCount = array.filter(items => items.battery <= datasetValue[0]);
-              item.innerHTML = arrayCount.length;
+              let arrayCount = arrayFilterResult.filter(items => items.battery <= datasetValue[0]);
+              filterCountInnerHtml(item, arrayCount);
             }
           } else {
-            let arrayCount = array.filter(
+            let arrayCount = arrayFilterResult.filter(
               items => datasetValue[0] <= items.battery && items.battery <= datasetValue[1],
             );
-            item.innerHTML = arrayCount.length;
+            filterCountInnerHtml(item, arrayCount);
           }
         }
       } else {
-        if (datasetValue.length == 1) {
-          if (datasetValue[0] === '6.8') {
-            let arrayCount = array.filter(items => items.diagonal >= datasetValue[0]);
-            item.innerHTML = arrayCount.length;
+        if (arrayExceptDiagonal.length === 0) {
+          if (datasetValue.length === 1) {
+            if (datasetValue[0] === '6.8') {
+              let arrayCount = productFilter.filter(items => items.diagonal >= datasetValue[0]);
+              filterCountInnerHtml(item, arrayCount);
+            } else {
+              let arrayCount = productFilter.filter(items => items.diagonal <= datasetValue[0]);
+              filterCountInnerHtml(item, arrayCount);
+            }
           } else {
-            let arrayCount = array.filter(items => items.diagonal <= datasetValue[0]);
-            item.innerHTML = arrayCount.length;
+            let arrayCount = productFilter.filter(
+              items => datasetValue[0] <= items.diagonal && items.diagonal <= datasetValue[1],
+            );
+            filterCountInnerHtml(item, arrayCount);
           }
         } else {
-          let arrayCount = array.filter(
-            items => datasetValue[0] <= items.diagonal && items.diagonal <= datasetValue[1],
-          );
-          item.innerHTML = arrayCount.length;
+          if (datasetValue.length === 1) {
+            if (datasetValue[0] === '6.8') {
+              let arrayCount = arrayFilterResult.filter(items => items.diagonal >= datasetValue[0]);
+              filterCountInnerHtml(item, arrayCount);
+            } else {
+              let arrayCount = arrayFilterResult.filter(items => items.diagonal <= datasetValue[0]);
+              filterCountInnerHtml(item, arrayCount);
+            }
+          } else {
+            let arrayCount = arrayFilterResult.filter(
+              items => datasetValue[0] <= items.diagonal && items.diagonal <= datasetValue[1],
+            );
+            filterCountInnerHtml(item, arrayCount);
+          }
         }
       }
     }
   }
 
   function countScreenFilters(item) {
-    let arrayCount = array.filter(items => items.screen === item.dataset.screen);
-    item.innerHTML = arrayCount.length;
+    if (arrayExceptScreen.length === 0) {
+      let arrayCount = productFilter.filter(items => items.screen === item.dataset.screen);
+      filterCountInnerHtml(item, arrayCount);
+    } else {
+      let arrayCount = arrayFilterResult.filter(items => items.screen === item.dataset.screen);
+      filterCountInnerHtml(item, arrayCount);
+    }
   }
 
   function countProtectionFilters(item) {
-    let arrayCount = array.filter(items => items.protection === item.dataset.protection);
-    item.innerHTML = arrayCount.length;
+    if (arrayExceptProtection.length === 0) {
+      let arrayCount = productFilter.filter(items => items.protection === item.dataset.protection);
+      filterCountInnerHtml(item, arrayCount);
+    } else {
+      let arrayCount = arrayFilterResult.filter(items => items.protection === item.dataset.protection);
+      filterCountInnerHtml(item, arrayCount);
+    }
   }
 
   function countMemoryFilters(item) {
-    let arrayCount = array.filter(items => items.memory === item.dataset.memory);
+    if (arrayExceptMemory.length === 0) {
+      let arrayCount = productFilter.filter(items => items.memory === item.dataset.memory);
+      filterCountInnerHtml(item, arrayCount);
+    } else {
+      let arrayCount = arrayFilterResult.filter(items => items.memory === item.dataset.memory);
+      filterCountInnerHtml(item, arrayCount);
+    }
+  }
+}
+
+function filterCountInnerHtml(item, arrayCount) {
+  let parentItem = item.parentNode.parentNode;
+  let filtersItem = item.parentNode.parentNode.parentNode;
+
+  let div = document.createElement('div');
+  div.className = 'filters__disabled';
+  div.style.width = `${filtersItem.offsetWidth}px`;
+  div.style.height = `${filtersItem.offsetHeight}px`;
+  div.style.position = 'absolute';
+  div.style.top = '0';
+  div.style.left = '0';
+  div.style.zIndex = '30';
+
+  parentItem.classList.remove('filters__label_disabled');
+  if (arrayCount.length === 0) {
+    parentItem.classList.add('filters__label_disabled');
+    filtersItem.append(div);
+  } else {
     item.innerHTML = arrayCount.length;
   }
 }

@@ -182,6 +182,16 @@
         }
       }
     }
+
+    &_disabled {
+      .filters__name {
+        opacity: 0.3;
+      }
+
+      .filters__checkbox {
+        opacity: 0.3;
+      }
+    }
   }
 
   &__checkbox {
