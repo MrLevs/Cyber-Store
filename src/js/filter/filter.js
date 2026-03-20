@@ -1,5 +1,7 @@
 'use strict';
 
+import { createFilterBrand } from './module/create-filters/create-filter-brand'; //Create Filter Brand
+import { createFilterScreenType } from './module/create-filters/create-filter-screen-type'; //Create Filter Screen Type
 import { selectItemFilters } from './module/select-item-filters'; //Select Item Filters
 import { selectPriceMin, selectPriceMax, handlePriceMin, handlePriceMax } from './module/filter-price'; //Filter Price
 import { filterResult } from './module/filter-result/filter-result'; //Filter Result
@@ -7,7 +9,13 @@ import { createProductCard } from './module/create-product-card'; //Create Produ
 import { countSelectedProducts, createCountsFilters } from './module/create-counts-filters'; //Count Selected Products, Counts Filters
 
 export function filter(data) {
-  //----Open accordion-------
+  //----Filter Brand------------ Сделать поисковики Brand and Screen!!!!!!!!!!!!
+  const formBrand = document.querySelector('#form-brand');
+  createFilterBrand(formBrand, data);
+  //----Filter Screen Type-------
+  const formScreenType = document.querySelector('#form-screen-type');
+  createFilterScreenType(formScreenType, data);
+  //----Open accordion--------
   const filtersDetails = document.querySelectorAll('.filters__details');
   //----Select element-------
   const filtersLabel = document.querySelectorAll('.filters__label');

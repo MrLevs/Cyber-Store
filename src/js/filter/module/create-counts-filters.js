@@ -214,7 +214,7 @@ export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, 
   function countBrandFilters(item) {
     if (arrayExceptBrand.length === 0) {
       let arrayCount = productFilter.filter(items => items.brand === item.dataset.brand);
-      filterCountInnerHtml(item, arrayCount);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
     } else {
       let arrayCount = arrayFilterResult.filter(
         items =>
@@ -224,7 +224,7 @@ export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, 
             .map(word => `${word[0].toUpperCase()}${word.slice(1).toLowerCase()}`)
             .join(' '),
       );
-      filterCountInnerHtml(item, arrayCount);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
     }
   }
 
@@ -237,31 +237,31 @@ export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, 
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6000') {
               let arrayCount = productFilter.filter(items => items.battery >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
             } else {
               let arrayCount = productFilter.filter(items => items.battery <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
             }
           } else {
             let arrayCount = productFilter.filter(
               items => datasetValue[0] <= items.battery && items.battery <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
           }
         } else {
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6000') {
               let arrayCount = arrayFilterResult.filter(items => items.battery >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
             } else {
               let arrayCount = arrayFilterResult.filter(items => items.battery <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
             }
           } else {
             let arrayCount = arrayFilterResult.filter(
               items => datasetValue[0] <= items.battery && items.battery <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
           }
         }
       } else {
@@ -269,31 +269,31 @@ export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, 
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6.8') {
               let arrayCount = productFilter.filter(items => items.diagonal >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
             } else {
               let arrayCount = productFilter.filter(items => items.diagonal <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
             }
           } else {
             let arrayCount = productFilter.filter(
               items => datasetValue[0] <= items.diagonal && items.diagonal <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
           }
         } else {
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6.8') {
               let arrayCount = arrayFilterResult.filter(items => items.diagonal >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
             } else {
               let arrayCount = arrayFilterResult.filter(items => items.diagonal <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
             }
           } else {
             let arrayCount = arrayFilterResult.filter(
               items => datasetValue[0] <= items.diagonal && items.diagonal <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
           }
         }
       }
@@ -303,37 +303,38 @@ export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, 
   function countScreenFilters(item) {
     if (arrayExceptScreen.length === 0) {
       let arrayCount = productFilter.filter(items => items.screen === item.dataset.screen);
-      filterCountInnerHtml(item, arrayCount);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
     } else {
       let arrayCount = arrayFilterResult.filter(items => items.screen === item.dataset.screen);
-      filterCountInnerHtml(item, arrayCount);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
     }
   }
 
   function countProtectionFilters(item) {
     if (arrayExceptProtection.length === 0) {
       let arrayCount = productFilter.filter(items => items.protection === item.dataset.protection);
-      filterCountInnerHtml(item, arrayCount);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
     } else {
       let arrayCount = arrayFilterResult.filter(items => items.protection === item.dataset.protection);
-      filterCountInnerHtml(item, arrayCount);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
     }
   }
 
   function countMemoryFilters(item) {
     if (arrayExceptMemory.length === 0) {
       let arrayCount = productFilter.filter(items => items.memory === item.dataset.memory);
-      filterCountInnerHtml(item, arrayCount);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
     } else {
       let arrayCount = arrayFilterResult.filter(items => items.memory === item.dataset.memory);
-      filterCountInnerHtml(item, arrayCount);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
     }
   }
 }
 
-function filterCountInnerHtml(item, arrayCount) {
+function filterCountInnerHtml(item, arrayCount, arrayFiltersValue) {
   let parentItem = item.parentNode.parentNode;
   let filtersItem = item.parentNode.parentNode.parentNode;
+  let filtersLabel = item.parentNode.parentNode;
 
   let div = document.createElement('div');
   div.className = 'filters__disabled';
@@ -348,6 +349,13 @@ function filterCountInnerHtml(item, arrayCount) {
   if (arrayCount.length === 0) {
     parentItem.classList.add('filters__label_disabled');
     filtersItem.append(div);
+    if (filtersLabel.control.checked) {
+      filtersLabel.control.checked = false;
+      filtersLabel.classList.remove('filters__label_active');
+      let filter = arrayFiltersValue.filter(elem => elem !== filtersLabel.control.value);
+      arrayFiltersValue.length = 0;
+      arrayFiltersValue.push(...filter);
+    }
   } else {
     item.innerHTML = arrayCount.length;
   }
