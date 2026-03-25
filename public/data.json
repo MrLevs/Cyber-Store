@@ -13,7 +13,7 @@
     "serial": "MQ233",
     "filters": "bestseller",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobile"
+    "link": "#mobileiPhoneX"
   },
   {
     "title": "smartphones",
@@ -29,7 +29,7 @@
     "serial": "MQ234",
     "filters": "bestseller",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobile"
+    "link": "#mobileiPhone12"
   },
   {
     "title": "smartphones",
@@ -45,7 +45,7 @@
     "serial": "MQ235",
     "filters": "bestseller",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobile"
+    "link": "#mobileiPhone13"
   },
   {
     "title": "smartphones",
@@ -61,7 +61,7 @@
     "serial": "MQ244",
     "filters": "bestseller",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobile"
+    "link": "#mobileiPhone14"
   },
   {
     "title": "smartphones",
@@ -77,7 +77,7 @@
     "serial": "MQ238",
     "filters": "new",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobile"
+    "link": "#mobileiPhone16"
   },
   {
     "title": "smartphones",
@@ -93,7 +93,7 @@
     "serial": "MQ239",
     "filters": "featured",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobile"
+    "link": "#mobileiPhone17"
   },
   {
     "title": "smartphones",
@@ -109,7 +109,7 @@
     "serial": "MQ233",
     "filters": "bestseller",
     "img": "/images/products/galaxy-z-fold5.webp",
-    "link": "#mobile"
+    "link": "#mobileGalaxyZFold5"
   },
   {
     "title": "smartphones",
@@ -125,7 +125,7 @@
     "serial": "MQ234",
     "filters": "new",
     "img": "/images/products/galaxy-z-fold5.webp",
-    "link": "#mobile"
+    "link": "#mobileGalaxyZFold6"
   },
   {
     "title": "smartphones",
@@ -141,7 +141,7 @@
     "serial": "MQ235",
     "filters": "bestseller",
     "img": "/images/products/xiaomi.webp",
-    "link": "#mobile"
+    "link": "#mobilexiaomi13"
   },
   {
     "title": "smartphones",
@@ -157,7 +157,7 @@
     "serial": "MQ244",
     "filters": "bestseller",
     "img": "/images/products/xiaomi.webp",
-    "link": "#mobile"
+    "link": "#mobilexiaomi14"
   },
   {
     "title": "smartphones",
@@ -173,7 +173,7 @@
     "serial": "MQ238",
     "filters": "new",
     "img": "/images/products/poco.webp",
-    "link": "#mobile"
+    "link": "#mobilepoco16"
   },
   {
     "title": "smartphones",
@@ -189,12 +189,12 @@
     "serial": "MQ239",
     "filters": "featured",
     "img": "/images/products/poco.webp",
-    "link": "#mobile"
+    "link": "#mobilepoco17"
   },
   {
     "title": "smartphones",
     "brand": "oppo",
-    "name": "Galaxy Z Fold5",
+    "name": "Reno 14",
     "battery": "2000",
     "screen": "ips",
     "diagonal": "6.02",
@@ -205,12 +205,12 @@
     "serial": "MQ233",
     "filters": "bestseller",
     "img": "/images/products/oppo.webp",
-    "link": "#mobile"
+    "link": "#mobileReno14"
   },
   {
     "title": "smartphones",
     "brand": "oppo",
-    "name": "Galaxy Z Fold6",
+    "name": "Reno 15",
     "battery": "2600",
     "screen": "oled",
     "diagonal": "6.5",
@@ -221,7 +221,7 @@
     "serial": "MQ234",
     "filters": "new",
     "img": "/images/products/oppo.webp",
-    "link": "#mobile"
+    "link": "#mobileReno15"
   },
   {
     "title": "smartphones",
@@ -237,7 +237,7 @@
     "serial": "MQ235",
     "filters": "bestseller",
     "img": "/images/products/honor.webp",
-    "link": "#mobile"
+    "link": "#mobileHonor13"
   },
   {
     "title": "smartphones",
@@ -253,7 +253,7 @@
     "serial": "MQ244",
     "filters": "bestseller",
     "img": "/images/products/honor.webp",
-    "link": "#mobile"
+    "link": "#mobileHonor14"
   },
   {
     "title": "smartphones",
@@ -269,7 +269,7 @@
     "serial": "MQ238",
     "filters": "new",
     "img": "/images/products/motorola.webp",
-    "link": "#mobile"
+    "link": "#mobilemotorola16"
   },
   {
     "title": "smartphones",
@@ -285,7 +285,7 @@
     "serial": "MQ239",
     "filters": "featured",
     "img": "/images/products/motorola.webp",
-    "link": "#mobile"
+    "link": "#mobilemotorola17"
   },
   {
     "title": "smartphones",
@@ -301,7 +301,7 @@
     "serial": "MQ234",
     "filters": "new",
     "img": "/images/products/nokia.webp",
-    "link": "#mobile"
+    "link": "#mobilenokia"
   },
   {
     "title": "smartphones",
@@ -317,7 +317,7 @@
     "serial": "MQ235",
     "filters": "bestseller",
     "img": "/images/products/nokia.webp",
-    "link": "#mobile"
+    "link": "#mobilenokia"
   },
   {
     "title": "smartphones",
@@ -333,7 +333,7 @@
     "serial": "MQ244",
     "filters": "bestseller",
     "img": "/images/products/realme.webp",
-    "link": "#mobile"
+    "link": "#mobilerealme"
   },
   {
     "title": "smartphones",
@@ -349,7 +349,7 @@
     "serial": "MQ238",
     "filters": "new",
     "img": "/images/products/realme.webp",
-    "link": "#mobile"
+    "link": "#mobilerealme"
   },
   {
     "title": "smartphones",
@@ -365,12 +365,17 @@
     "serial": "MQ239",
     "filters": "featured",
     "img": "/images/products/realme.webp",
-    "link": "#mobile"
+    "link": "#mobilerealme"
   },
   {
     "title": "tablet",
     "name": "air",
     "link": "#air"
+  },
+  {
+    "title": "tablet",
+    "name": "tablet",
+    "link": "#tablet"
   },
   {
     "title": "tablet",

@@ -1,15 +1,7 @@
 'use strict';
 
-export function createFilterBrand(elem, arrayData) {
-  let categoryProduct = 'smartphones';
-  let productBrand = [];
-
-  arrayData.forEach(item => {
-    if (item.title === categoryProduct && item.brand && !productBrand.includes(item.brand)) {
-      productBrand.push(item.brand);
-    }
-  });
-
+export function createFilterBrand(elem, productBrand) {
+  elem.innerHTML = '';
   productBrand.sort().forEach(item => {
     const div = document.createElement('div');
     const label = document.createElement('label');

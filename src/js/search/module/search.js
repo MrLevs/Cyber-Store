@@ -29,12 +29,10 @@ export function search(input, btn, resultSuggests, data) {
     if (input.value !== '') {
       btn.style.display = 'block';
 
-      if (valueSearch == '') {
-        input.addEventListener('keydown', cancel);
-      } else if (valid(valueSearch)) {
+      if (valid(valueSearch)) {
         for (let i = 0; i < data.length; i++) {
           let fullName = `${data[i].brand} ${data[i].name}`;
-          if (fullName.toLowerCase().includes(valueSearch)) {
+          if (fullName.toLowerCase().includes(valueSearch) || data[i].title.toLowerCase().includes(valueSearch)) {
             if (searchResults.length < 10) {
               searchResults.push(data[i]);
             } else {
