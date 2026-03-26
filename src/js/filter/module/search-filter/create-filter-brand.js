@@ -1,16 +1,9 @@
 'use strict';
 
-export function createFilterScreenType(elem, arrayData) {
-  let categoryProduct = 'smartphones';
-  let productScreenType = [];
+export function createFilterBrand(elem, arrayProduct) {
+  elem.innerHTML = '';
 
-  arrayData.forEach(item => {
-    if (item.title === categoryProduct && item.brand && !productScreenType.includes(item.screen)) {
-      productScreenType.push(item.screen);
-    }
-  });
-
-  productScreenType.sort().forEach(item => {
+  arrayProduct.sort().forEach(item => {
     const div = document.createElement('div');
     const label = document.createElement('label');
     const input = document.createElement('input');
@@ -20,11 +13,11 @@ export function createFilterScreenType(elem, arrayData) {
 
     div.className = 'filters__inner';
     label.className = 'filters__label';
-    label.setAttribute('for', `screen-${item}`);
+    label.setAttribute('for', `brand-${item}`);
     label.setAttribute('tabindex', '0');
 
     input.className = 'filters__input';
-    input.setAttribute('id', `screen-${item}`);
+    input.setAttribute('id', `brand-${item}`);
     input.setAttribute('type', 'checkbox');
     input.setAttribute('value', `${item}`);
     input.setAttribute('tabindex', '-1');
@@ -32,14 +25,14 @@ export function createFilterScreenType(elem, arrayData) {
     spanCheckbox.className = 'filters__checkbox';
     spanName.className = 'filters__name';
 
-    if (item === 'retina') {
-      spanName.textContent = `${item[0].toUpperCase()}${item.slice(1).toLowerCase()} `;
-    } else {
+    if (item === 'oppo' || item === 'poco') {
       spanName.textContent = `${item.toUpperCase()} `;
+    } else {
+      spanName.textContent = `${item[0].toUpperCase()}${item.slice(1).toLowerCase()} `;
     }
 
     spanCount.className = 'filters__count';
-    spanCount.setAttribute('data-screen', `${item}`);
+    spanCount.setAttribute('data-brand', `${item}`);
 
     spanName.append(spanCount);
     label.append(spanCheckbox);

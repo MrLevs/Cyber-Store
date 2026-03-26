@@ -5,7 +5,14 @@ export function countSelectedProducts(elem, array) {
   elem.append(array.length);
 }
 
-export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, arrayData) {
+export function createCountsFilters(
+  elem,
+  arrayFilterResult,
+  arrayFiltersValue,
+  arrayData,
+  itemsBatteryAll,
+  itemsDiagonalAll,
+) {
   let categoryProduct = 'smartphones';
   let productFilter = [];
 
@@ -214,7 +221,7 @@ export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, 
   function countBrandFilters(item) {
     if (arrayExceptBrand.length === 0) {
       let arrayCount = productFilter.filter(items => items.brand === item.dataset.brand);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
     } else {
       let arrayCount = arrayFilterResult.filter(
         items =>
@@ -224,7 +231,7 @@ export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, 
             .map(word => `${word[0].toUpperCase()}${word.slice(1).toLowerCase()}`)
             .join(' '),
       );
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
     }
   }
 
@@ -237,31 +244,31 @@ export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, 
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6000') {
               let arrayCount = productFilter.filter(items => items.battery >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
             } else {
               let arrayCount = productFilter.filter(items => items.battery <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
             }
           } else {
             let arrayCount = productFilter.filter(
               items => datasetValue[0] <= items.battery && items.battery <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
           }
         } else {
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6000') {
               let arrayCount = arrayFilterResult.filter(items => items.battery >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
             } else {
               let arrayCount = arrayFilterResult.filter(items => items.battery <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
             }
           } else {
             let arrayCount = arrayFilterResult.filter(
               items => datasetValue[0] <= items.battery && items.battery <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
           }
         }
       } else {
@@ -269,31 +276,31 @@ export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, 
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6.8') {
               let arrayCount = productFilter.filter(items => items.diagonal >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
             } else {
               let arrayCount = productFilter.filter(items => items.diagonal <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
             }
           } else {
             let arrayCount = productFilter.filter(
               items => datasetValue[0] <= items.diagonal && items.diagonal <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
           }
         } else {
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6.8') {
               let arrayCount = arrayFilterResult.filter(items => items.diagonal >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
             } else {
               let arrayCount = arrayFilterResult.filter(items => items.diagonal <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
             }
           } else {
             let arrayCount = arrayFilterResult.filter(
               items => datasetValue[0] <= items.diagonal && items.diagonal <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
           }
         }
       }
@@ -303,35 +310,35 @@ export function createCountsFilters(elem, arrayFilterResult, arrayFiltersValue, 
   function countScreenFilters(item) {
     if (arrayExceptScreen.length === 0) {
       let arrayCount = productFilter.filter(items => items.screen === item.dataset.screen);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
     } else {
       let arrayCount = arrayFilterResult.filter(items => items.screen === item.dataset.screen);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
     }
   }
 
   function countProtectionFilters(item) {
     if (arrayExceptProtection.length === 0) {
       let arrayCount = productFilter.filter(items => items.protection === item.dataset.protection);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
     } else {
       let arrayCount = arrayFilterResult.filter(items => items.protection === item.dataset.protection);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
     }
   }
 
   function countMemoryFilters(item) {
     if (arrayExceptMemory.length === 0) {
       let arrayCount = productFilter.filter(items => items.memory === item.dataset.memory);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
     } else {
       let arrayCount = arrayFilterResult.filter(items => items.memory === item.dataset.memory);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
     }
   }
 }
 
-function filterCountInnerHtml(item, arrayCount, arrayFiltersValue) {
+function filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll) {
   let parentItem = item.parentNode.parentNode;
   let filtersItem = item.parentNode.parentNode.parentNode;
   let filtersLabel = item.parentNode.parentNode;
@@ -355,6 +362,17 @@ function filterCountInnerHtml(item, arrayCount, arrayFiltersValue) {
       let filter = arrayFiltersValue.filter(elem => elem !== filtersLabel.control.value);
       arrayFiltersValue.length = 0;
       arrayFiltersValue.push(...filter);
+      if (itemsBatteryAll.includes(filtersLabel.control.value)) {
+        let filterArray = itemsBatteryAll.filter(val => val !== filtersLabel.control.value);
+        itemsBatteryAll.length = 0;
+        itemsBatteryAll.push(...filterArray);
+      }
+      if (itemsDiagonalAll.includes(filtersLabel.control.value)) {
+        let filterArray = itemsDiagonalAll.filter(val => val !== filtersLabel.control.value);
+        itemsDiagonalAll.length = 0;
+        itemsDiagonalAll.push(...filterArray);
+        console.log('itemsDiagonalAll', itemsDiagonalAll); //доделать фильтр чтобы все галочки стояли при изменении парамеиров diagonal & battery!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      }
     }
   } else {
     item.innerHTML = arrayCount.length;
