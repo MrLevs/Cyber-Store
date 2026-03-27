@@ -338,7 +338,25 @@ export function createCountsFilters(
   }
 }
 
-function filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll) {
+function filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll) {
+  const filterBattery = document.querySelector('#filter-battery');
+  const filterBatteryAll = Array.from(filterBattery.querySelectorAll('.filters__label')).filter(item => {
+    if (!item.classList.contains('button_all')) {
+      if (!item.classList.contains('filters__label_disabled')) {
+        return item;
+      }
+    }
+  });
+  const btnAllFilterBattery = filterBattery.querySelector('.button_all');
+  const filterScreenDiagonal = document.querySelector('#filter-screen-diagonal');
+  const filterScreenDiagonalAll = Array.from(filterScreenDiagonal.querySelectorAll('.filters__label')).filter(item => {
+    if (!item.classList.contains('button_all')) {
+      if (!item.classList.contains('filters__label_disabled')) {
+        return item;
+      }
+    }
+  });
+  const btnAllFilterScreenDiagonal = filterScreenDiagonal.querySelector('.button_all');
   let parentItem = item.parentNode.parentNode;
   let filtersItem = item.parentNode.parentNode.parentNode;
   let filtersLabel = item.parentNode.parentNode;
@@ -362,19 +380,30 @@ function filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryA
       let filter = arrayFiltersValue.filter(elem => elem !== filtersLabel.control.value);
       arrayFiltersValue.length = 0;
       arrayFiltersValue.push(...filter);
-      if (itemsBatteryAll.includes(filtersLabel.control.value)) {
-        let filterArray = itemsBatteryAll.filter(val => val !== filtersLabel.control.value);
-        itemsBatteryAll.length = 0;
-        itemsBatteryAll.push(...filterArray);
+      if (arrayItemsBatteryAll.includes(filtersLabel.control.value)) {
+        let filterArray = arrayItemsBatteryAll.filter(val => val !== filtersLabel.control.value);
+        arrayItemsBatteryAll.length = 0;
+        arrayItemsBatteryAll.push(...filterArray);
       }
-      if (itemsDiagonalAll.includes(filtersLabel.control.value)) {
-        let filterArray = itemsDiagonalAll.filter(val => val !== filtersLabel.control.value);
-        itemsDiagonalAll.length = 0;
-        itemsDiagonalAll.push(...filterArray);
-        console.log('itemsDiagonalAll', itemsDiagonalAll); //доделать фильтр чтобы все галочки стояли при изменении парамеиров diagonal & battery!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      if (arrayItemsDiagonalAll.includes(filtersLabel.control.value)) {
+        let filterArray = arrayItemsDiagonalAll.filter(val => val !== filtersLabel.control.value);
+        arrayItemsDiagonalAll.length = 0;
+        arrayItemsDiagonalAll.push(...filterArray);
+        console.log('itemsDiagonalAll', arrayItemsDiagonalAll); //доделать фильтр чтобы все галочки стояли при изменении парамеиров diagonal & battery!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Не работает All
       }
     }
   } else {
     item.innerHTML = arrayCount.length;
+  }
+  if (arrayItemsBatteryAll.length !== filterBatteryAll.length) {
+    btnAllFilterBattery.classList.remove('filters__label_active');
+    btnAllFilterBattery.control.checked = false;
+    console.log('arrayItemsBatteryAll.length ', arrayItemsBatteryAll.length);
+    console.log('filterBatteryAll.length ', filterBatteryAll.length);
+    console.log('filterBat ', filterBatteryAll);
+  }
+  if (arrayItemsDiagonalAll.length !== filterScreenDiagonalAll.length) {
+    btnAllFilterScreenDiagonal.classList.remove('filters__label_active');
+    btnAllFilterScreenDiagonal.control.checked = false;
   }
 }
