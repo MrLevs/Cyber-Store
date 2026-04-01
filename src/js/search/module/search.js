@@ -47,6 +47,7 @@ export function search(input, btn, resultSuggests, data) {
         resultSuggests.innerHTML = '';
         resultSuggests.style.display = 'none';
         input.addEventListener('keydown', cancel);
+        displayWarning();
       }
     } else {
       btn.style.display = 'none';

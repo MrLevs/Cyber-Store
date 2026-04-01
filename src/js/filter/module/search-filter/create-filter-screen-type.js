@@ -1,8 +1,9 @@
 'use strict';
 
-export function createFilterBrand(elem, productBrand) {
+export function createFilterScreenType(elem, arrayProduct) {
   elem.innerHTML = '';
-  productBrand.sort().forEach(item => {
+
+  arrayProduct.sort().forEach(item => {
     const div = document.createElement('div');
     const label = document.createElement('label');
     const input = document.createElement('input');
@@ -12,11 +13,11 @@ export function createFilterBrand(elem, productBrand) {
 
     div.className = 'filters__inner';
     label.className = 'filters__label';
-    label.setAttribute('for', `brand-${item}`);
+    label.setAttribute('for', `screen-${item}`);
     label.setAttribute('tabindex', '0');
 
     input.className = 'filters__input';
-    input.setAttribute('id', `brand-${item}`);
+    input.setAttribute('id', `screen-${item}`);
     input.setAttribute('type', 'checkbox');
     input.setAttribute('value', `${item}`);
     input.setAttribute('tabindex', '-1');
@@ -24,14 +25,14 @@ export function createFilterBrand(elem, productBrand) {
     spanCheckbox.className = 'filters__checkbox';
     spanName.className = 'filters__name';
 
-    if (item === 'oppo' || item === 'poco') {
-      spanName.textContent = `${item.toUpperCase()} `;
-    } else {
+    if (item === 'retina') {
       spanName.textContent = `${item[0].toUpperCase()}${item.slice(1).toLowerCase()} `;
+    } else {
+      spanName.textContent = `${item.toUpperCase()} `;
     }
 
     spanCount.className = 'filters__count';
-    spanCount.setAttribute('data-brand', `${item}`);
+    spanCount.setAttribute('data-screen', `${item}`);
 
     spanName.append(spanCount);
     label.append(spanCheckbox);

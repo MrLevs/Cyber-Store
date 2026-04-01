@@ -1,8 +1,8 @@
 'use strict';
 
-import { createFilterBrand } from './module/create-filters/create-filter-brand'; //Create Filter Brand
-import { createFilterScreenType } from './module/create-filters/create-filter-screen-type'; //Create Filter Screen Type
-import { searchFiltersItem } from './module/create-filters/search-filters-item'; // Search Filters Item
+import { createFilterBrand } from './module/search-filter/create-filter-brand'; //Create Filter Brand
+import { createFilterScreenType } from './module/search-filter/create-filter-screen-type'; //Create Filter Screen Type
+import { searchFiltersItem } from './module/search-filter/search-filters-item'; // Search Filters Item
 import { selectItemFilters } from './module/select-item-filters'; //Select Item Filters
 import { selectPriceMin, selectPriceMax, handlePriceMin, handlePriceMax } from './module/filter-price'; //Filter Price
 import { filterResult } from './module/filter-result/filter-result'; //Filter Result
@@ -10,90 +10,67 @@ import { createProductCard } from './module/create-product-card'; //Create Produ
 import { countSelectedProducts, createCountsFilters } from './module/create-counts-filters'; //Count Selected Products, Counts Filters
 
 export function filter(data) {
+  const categoryProduct = 'smartphones';
   //----Filter Brand------------
-  const formSearchBrand = document.querySelector('#form-search-brand');
-  const formBrand = document.querySelector('#form-brand');
+  const filterBrand = document.querySelector('#filter-brand');
 
-  let categoryProduct = 'smartphones';
-  let productBrand = [];
-  let productBrandSearch = [];
-
-  data.forEach(item => {
-    if (item.title === categoryProduct && item.brand && !productBrand.includes(item.brand)) {
-      productBrand.push(item.brand);
-    }
-  });
-
-  if (formBrand) {
-    createFilterBrand(formBrand, productBrand);
-  }
-
-  if (formSearchBrand) {
+  if (filterBrand) {
+    const formSearchBrand = filterBrand.querySelector('#form-search-brand');
     const inputFSBrand = formSearchBrand.querySelector('#input-search-brand');
     const btnResetBrand = formSearchBrand.querySelector('#button-reset-brand');
+    const suggestsBrand = formSearchBrand.querySelector('.form-search__suggests');
+    const formBrand = filterBrand.querySelector('#form-brand');
 
-    btnResetBrand.style.display = 'none';
+    let productBrand = [];
+    let productBrandSearch = [];
 
-    inputFSBrand.addEventListener('input', searchBrand);
-    inputFSBrand.addEventListener('keydown', cancel);
-    btnResetBrand.addEventListener('click', btnResetBrandStyle);
-
-    function searchBrand() {
-      searchFiltersItem(inputFSBrand, btnResetBrand, productBrand, productBrandSearch);
-      if (productBrandSearch.length === 0) {
-        createFilterBrand(formBrand, productBrand);
-      } else {
-        createFilterBrand(formBrand, productBrandSearch);
+    data.forEach(item => {
+      if (item.title === categoryProduct && item.brand && !productBrand.includes(item.brand)) {
+        productBrand.push(item.brand);
       }
+    });
 
-      countsFilters = document.querySelectorAll('.filters__count');
-      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
-
-      filtersLabel = document.querySelectorAll('.filters__label');
-      filtersLabel.forEach(item => {
-        item.removeEventListener('click', selectAndCreate);
-        item.removeEventListener('keydown', pressEnter);
-      });
-
-      filtersLabel.forEach(item => {
-        item.addEventListener('click', selectAndCreate);
-        item.addEventListener('keydown', pressEnter);
-      });
-    }
-
-    function btnResetBrandStyle() {
-      btnResetBrand.style.display = 'none';
-      productBrandSearch.length = 0;
-      createFilterBrand(formBrand, productBrand);
-
-      countsFilters = document.querySelectorAll('.filters__count');
-      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
-
-      filtersLabel = document.querySelectorAll('.filters__label');
-      filtersLabel.forEach(item => {
-        item.removeEventListener('click', selectAndCreate);
-        item.removeEventListener('keydown', pressEnter);
-      });
-
-      filtersLabel.forEach(item => {
-        item.addEventListener('click', selectAndCreate);
-        item.addEventListener('keydown', pressEnter);
-      });
-    }
-
-    //--------Cancel---------------
-    function cancel(e) {
-      if (e.code === 'Enter') {
-        e.preventDefault();
-        // displayWarning();
-      }
-    }
+    createFilterBrand(formBrand, productBrand);
+    searchFilters(
+      formSearchBrand,
+      formBrand,
+      inputFSBrand,
+      btnResetBrand,
+      suggestsBrand,
+      productBrand,
+      productBrandSearch,
+    );
   }
-  //--------------------------------
+  //-----------------------------
   //----Filter Screen Type-------
-  const formScreenType = document.querySelector('#form-screen-type');
-  if (formScreenType) {
-    createFilterScreenType(formScreenType, data);
+  const filterScreenType = document.querySelector('#filter-screen-type');
+
+  if (filterScreenType) {
+    const formSearchScreenType = filterScreenType.querySelector('#form-search-screen-type');
+    const inputFSScreenType = formSearchScreenType.querySelector('#input-search-screen-type');
+    const btnResetScreenType = formSearchScreenType.querySelector('#button-reset-screen-type');
+    const suggestsScreenType = formSearchScreenType.querySelector('.form-search__suggests');
+    const formScreenType = filterScreenType.querySelector('#form-screen-type');
+
+    let productScreenType = [];
+    let productScreenTypeSearch = [];
+
+    data.forEach(item => {
+      if (item.title === categoryProduct && item.brand && !productScreenType.includes(item.screen)) {
+        productScreenType.push(item.screen);
+      }
+    });
+
+    createFilterScreenType(formScreenType, productScreenType);
+    searchFilters(
+      formSearchScreenType,
+      formScreenType,
+      inputFSScreenType,
+      btnResetScreenType,
+      suggestsScreenType,
+      productScreenType,
+      productScreenTypeSearch,
+    );
   }
   //-------------------------------
   //----Open accordion--------
@@ -134,7 +111,14 @@ export function filter(data) {
   //-------------------------------
   //------Create Counts Filters----------------
   if (countsFilters) {
-    createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
+    createCountsFilters(
+      countsFilters,
+      filterResult(data, filtersValue),
+      filtersValue,
+      data,
+      itemsBatteryAll,
+      itemsDiagonalAll,
+    );
   }
   //------------------------------
   //----filters-btn Open || Close-------
@@ -175,7 +159,14 @@ export function filter(data) {
     selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
     createProductCard(contentBlock, filterResult(data, filtersValue));
     countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-    createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
+    createCountsFilters(
+      countsFilters,
+      filterResult(data, filtersValue),
+      filtersValue,
+      data,
+      itemsBatteryAll,
+      itemsDiagonalAll,
+    );
   }
 
   function pressEnter(event) {
@@ -183,7 +174,14 @@ export function filter(data) {
       selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
+      createCountsFilters(
+        countsFilters,
+        filterResult(data, filtersValue),
+        filtersValue,
+        data,
+        itemsBatteryAll,
+        itemsDiagonalAll,
+      );
       if (event.currentTarget.control.checked) {
         event.currentTarget.control.checked = false;
       } else {
@@ -234,29 +232,157 @@ export function filter(data) {
       selectPriceMin(event, filtersValue, priceFrom, priceMin, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
+      createCountsFilters(
+        countsFilters,
+        filterResult(data, filtersValue),
+        filtersValue,
+        data,
+        itemsBatteryAll,
+        itemsDiagonalAll,
+      );
     }
 
     function selectPriceMaxAndCreate(event) {
       selectPriceMax(event, filtersValue, priceTo, priceMax, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
+      createCountsFilters(
+        countsFilters,
+        filterResult(data, filtersValue),
+        filtersValue,
+        data,
+        itemsBatteryAll,
+        itemsDiagonalAll,
+      );
     }
 
     function handlePriceMinAndCreate(event) {
       handlePriceMin(event, filtersValue, priceFrom, priceMax, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
+      createCountsFilters(
+        countsFilters,
+        filterResult(data, filtersValue),
+        filtersValue,
+        data,
+        itemsBatteryAll,
+        itemsDiagonalAll,
+      );
     }
 
     function handlePriceMaxAndCreate(event) {
       handlePriceMax(event, filtersValue, priceTo, priceMin, range, min, max);
       createProductCard(contentBlock, filterResult(data, filtersValue));
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(countsFilters, filterResult(data, filtersValue), filtersValue, data);
+      createCountsFilters(
+        countsFilters,
+        filterResult(data, filtersValue),
+        filtersValue,
+        data,
+        itemsBatteryAll,
+        itemsDiagonalAll,
+      );
     }
   }
-  //------------------------------
+  //-----------------------------------------
+  //-----Search Filters---------------------
+  function searchFilters(formSearch, form, input, btn, suggests, arrayProduct, arrayProductSearch) {
+    const element = formSearch.querySelector('#input-search-brand');
+
+    btn.style.display = 'none';
+    suggests.style.display = 'none';
+
+    input.addEventListener('input', searchFilterBrand);
+    input.addEventListener('keydown', cancel);
+    btn.addEventListener('click', btnResetSearchBrand);
+
+    function searchFilterBrand() {
+      let filter = filtersValue.filter(item => !arrayProduct.includes(item));
+      filtersValue.length = 0;
+      filtersValue.push(...filter);
+
+      searchFiltersItem(input, btn, arrayProduct, arrayProductSearch, suggests);
+      if (arrayProductSearch.length === 0) {
+        if (element) {
+          createFilterBrand(form, arrayProduct);
+        } else {
+          createFilterScreenType(form, arrayProduct);
+        }
+      } else {
+        if (element) {
+          createFilterBrand(form, arrayProductSearch);
+        } else {
+          createFilterScreenType(form, arrayProductSearch);
+        }
+      }
+
+      countsFilters = document.querySelectorAll('.filters__count');
+      createCountsFilters(
+        countsFilters,
+        filterResult(data, filtersValue),
+        filtersValue,
+        data,
+        itemsBatteryAll,
+        itemsDiagonalAll,
+      );
+
+      filtersLabel = document.querySelectorAll('.filters__label');
+      filtersLabel.forEach(item => {
+        item.removeEventListener('click', selectAndCreate);
+        item.removeEventListener('keydown', pressEnter);
+        item.addEventListener('click', selectAndCreate);
+        item.addEventListener('keydown', pressEnter);
+      });
+
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+    }
+
+    function btnResetSearchBrand() {
+      let filter = filtersValue.filter(item => !arrayProduct.includes(item));
+      filtersValue.length = 0;
+      filtersValue.push(...filter);
+
+      btn.style.display = 'none';
+      input.classList.remove('form-search__input_warning');
+      suggests.classList.remove('form-search__suggests_warning');
+      suggests.innerHTML = '';
+      suggests.style.display = 'none';
+      arrayProductSearch.length = 0;
+      if (element) {
+        createFilterBrand(form, arrayProduct);
+      } else {
+        createFilterScreenType(form, arrayProduct);
+      }
+
+      countsFilters = document.querySelectorAll('.filters__count');
+      createCountsFilters(
+        countsFilters,
+        filterResult(data, filtersValue),
+        filtersValue,
+        data,
+        itemsBatteryAll,
+        itemsDiagonalAll,
+      );
+
+      filtersLabel = document.querySelectorAll('.filters__label');
+      filtersLabel.forEach(item => {
+        item.removeEventListener('click', selectAndCreate);
+        item.removeEventListener('keydown', pressEnter);
+        item.addEventListener('click', selectAndCreate);
+        item.addEventListener('keydown', pressEnter);
+      });
+
+      createProductCard(contentBlock, filterResult(data, filtersValue));
+      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
+    }
+  }
+  //----------------------------------------------------------------
+  //--------Cancel---------------
+  function cancel(e) {
+    if (e.code === 'Enter') {
+      e.preventDefault();
+    }
+  }
+  //-------------------------------
 }
