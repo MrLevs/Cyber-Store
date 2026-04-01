@@ -10,8 +10,8 @@ export function createCountsFilters(
   arrayFilterResult,
   arrayFiltersValue,
   arrayData,
-  itemsBatteryAll,
-  itemsDiagonalAll,
+  arrayItemsBatteryAll,
+  arrayItemsDiagonalAll,
 ) {
   let categoryProduct = 'smartphones';
   let productFilter = [];
@@ -218,10 +218,13 @@ export function createCountsFilters(
     }
   });
 
+  btnAllToggle(arrayItemsBatteryAll, arrayItemsDiagonalAll);
+  //---------------------------------------------------------------------
+  //------Count Brand Filters---------------------------------------------
   function countBrandFilters(item) {
     if (arrayExceptBrand.length === 0) {
       let arrayCount = productFilter.filter(items => items.brand === item.dataset.brand);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
     } else {
       let arrayCount = arrayFilterResult.filter(
         items =>
@@ -231,10 +234,11 @@ export function createCountsFilters(
             .map(word => `${word[0].toUpperCase()}${word.slice(1).toLowerCase()}`)
             .join(' '),
       );
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
     }
   }
-
+  //-------------------------------------------------------------------
+  //------Count Filters------------------------------------------------
   function countFilters(item) {
     let datasetKey = item.dataset;
     for (let key in datasetKey) {
@@ -244,31 +248,31 @@ export function createCountsFilters(
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6000') {
               let arrayCount = productFilter.filter(items => items.battery >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
             } else {
               let arrayCount = productFilter.filter(items => items.battery <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
             }
           } else {
             let arrayCount = productFilter.filter(
               items => datasetValue[0] <= items.battery && items.battery <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
           }
         } else {
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6000') {
               let arrayCount = arrayFilterResult.filter(items => items.battery >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
             } else {
               let arrayCount = arrayFilterResult.filter(items => items.battery <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
             }
           } else {
             let arrayCount = arrayFilterResult.filter(
               items => datasetValue[0] <= items.battery && items.battery <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
           }
         }
       } else {
@@ -276,87 +280,73 @@ export function createCountsFilters(
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6.8') {
               let arrayCount = productFilter.filter(items => items.diagonal >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
             } else {
               let arrayCount = productFilter.filter(items => items.diagonal <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
             }
           } else {
             let arrayCount = productFilter.filter(
               items => datasetValue[0] <= items.diagonal && items.diagonal <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
           }
         } else {
           if (datasetValue.length === 1) {
             if (datasetValue[0] === '6.8') {
               let arrayCount = arrayFilterResult.filter(items => items.diagonal >= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
             } else {
               let arrayCount = arrayFilterResult.filter(items => items.diagonal <= datasetValue[0]);
-              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+              filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
             }
           } else {
             let arrayCount = arrayFilterResult.filter(
               items => datasetValue[0] <= items.diagonal && items.diagonal <= datasetValue[1],
             );
-            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+            filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
           }
         }
       }
     }
   }
-
+  //----------------------------------------------------------
+  //-------Count Screen Filters-------------------------------
   function countScreenFilters(item) {
     if (arrayExceptScreen.length === 0) {
       let arrayCount = productFilter.filter(items => items.screen === item.dataset.screen);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
     } else {
       let arrayCount = arrayFilterResult.filter(items => items.screen === item.dataset.screen);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
     }
   }
-
+  //--------------------------------------------------------------
+  //-----Count Protection Filters---------------------------------
   function countProtectionFilters(item) {
     if (arrayExceptProtection.length === 0) {
       let arrayCount = productFilter.filter(items => items.protection === item.dataset.protection);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
     } else {
       let arrayCount = arrayFilterResult.filter(items => items.protection === item.dataset.protection);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
     }
   }
-
+  //-------------------------------------------------------------
+  //-----Count Memory Filters------------------------------------
   function countMemoryFilters(item) {
     if (arrayExceptMemory.length === 0) {
       let arrayCount = productFilter.filter(items => items.memory === item.dataset.memory);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
     } else {
       let arrayCount = arrayFilterResult.filter(items => items.memory === item.dataset.memory);
-      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, itemsBatteryAll, itemsDiagonalAll);
+      filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll);
     }
   }
 }
-
+//-----------------------------------------------------------------------
+//---------Filter Count InnerHtml----------------------------------------
 function filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll) {
-  const filterBattery = document.querySelector('#filter-battery');
-  const filterBatteryAll = Array.from(filterBattery.querySelectorAll('.filters__label')).filter(item => {
-    if (!item.classList.contains('button_all')) {
-      if (!item.classList.contains('filters__label_disabled')) {
-        return item;
-      }
-    }
-  });
-  const btnAllFilterBattery = filterBattery.querySelector('.button_all');
-  const filterScreenDiagonal = document.querySelector('#filter-screen-diagonal');
-  const filterScreenDiagonalAll = Array.from(filterScreenDiagonal.querySelectorAll('.filters__label')).filter(item => {
-    if (!item.classList.contains('button_all')) {
-      if (!item.classList.contains('filters__label_disabled')) {
-        return item;
-      }
-    }
-  });
-  const btnAllFilterScreenDiagonal = filterScreenDiagonal.querySelector('.button_all');
   let parentItem = item.parentNode.parentNode;
   let filtersItem = item.parentNode.parentNode.parentNode;
   let filtersLabel = item.parentNode.parentNode;
@@ -389,21 +379,63 @@ function filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBat
         let filterArray = arrayItemsDiagonalAll.filter(val => val !== filtersLabel.control.value);
         arrayItemsDiagonalAll.length = 0;
         arrayItemsDiagonalAll.push(...filterArray);
-        console.log('itemsDiagonalAll', arrayItemsDiagonalAll); //доделать фильтр чтобы все галочки стояли при изменении парамеиров diagonal & battery!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! Не работает All
       }
     }
   } else {
     item.innerHTML = arrayCount.length;
   }
-  if (arrayItemsBatteryAll.length !== filterBatteryAll.length) {
+}
+//--------------------------------------------------------------------------
+//------Btn ALL Toggle-----------------------------------------------------
+function btnAllToggle(arrayItemsBatteryAll, arrayItemsDiagonalAll) {
+  const filterBattery = document.querySelector('#filter-battery');
+  const btnAllFilterBattery = filterBattery.querySelector('.button_all');
+  const filterBatteryAll = Array.from(filterBattery.querySelectorAll('.filters__label')).filter(item => {
+    if (!item.classList.contains('button_all')) {
+      if (!item.classList.contains('filters__label_disabled')) {
+        return item;
+      }
+    }
+  });
+
+  const filterScreenDiagonal = document.querySelector('#filter-screen-diagonal');
+  const btnAllFilterScreenDiagonal = filterScreenDiagonal.querySelector('.button_all');
+  const filterScreenDiagonalAll = Array.from(filterScreenDiagonal.querySelectorAll('.filters__label')).filter(item => {
+    if (!item.classList.contains('button_all')) {
+      if (!item.classList.contains('filters__label_disabled')) {
+        return item;
+      }
+    }
+  });
+
+  if (
+    arrayItemsBatteryAll.length !== filterBatteryAll.length &&
+    arrayItemsBatteryAll.length !== 0 &&
+    btnAllFilterBattery.classList.contains('filters__label_active')
+  ) {
     btnAllFilterBattery.classList.remove('filters__label_active');
     btnAllFilterBattery.control.checked = false;
-    console.log('arrayItemsBatteryAll.length ', arrayItemsBatteryAll.length);
-    console.log('filterBatteryAll.length ', filterBatteryAll.length);
-    console.log('filterBat ', filterBatteryAll);
+  } else if (
+    arrayItemsBatteryAll.length === filterBatteryAll.length &&
+    !btnAllFilterBattery.classList.contains('filters__label_active')
+  ) {
+    btnAllFilterBattery.classList.add('filters__label_active');
+    btnAllFilterBattery.control.checked = true;
   }
-  if (arrayItemsDiagonalAll.length !== filterScreenDiagonalAll.length) {
+
+  if (
+    arrayItemsDiagonalAll.length !== filterScreenDiagonalAll.length &&
+    arrayItemsDiagonalAll.length !== 0 &&
+    btnAllFilterScreenDiagonal.classList.contains('filters__label_active')
+  ) {
     btnAllFilterScreenDiagonal.classList.remove('filters__label_active');
     btnAllFilterScreenDiagonal.control.checked = false;
+  } else if (
+    arrayItemsDiagonalAll.length === filterScreenDiagonalAll.length &&
+    !btnAllFilterScreenDiagonal.classList.contains('filters__label_active')
+  ) {
+    btnAllFilterScreenDiagonal.classList.add('filters__label_active');
+    btnAllFilterScreenDiagonal.control.checked = true;
   }
 }
+//----------------------------------------------------------------------------

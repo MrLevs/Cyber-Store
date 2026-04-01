@@ -2,6 +2,10 @@
 
 export function selectItemFilters(event, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll) {
   const filterBattery = document.querySelector('#filter-battery');
+  const filterScreenDiagonal = document.querySelector('#filter-screen-diagonal');
+  const btnAllFilterBattery = filterBattery.querySelector('.button_all');
+  const btnAllFilterScreenDiagonal = filterScreenDiagonal.querySelector('.button_all');
+
   const filterBatteryAll = Array.from(filterBattery.querySelectorAll('.filters__label')).filter(item => {
     if (!item.classList.contains('button_all')) {
       if (!item.classList.contains('filters__label_disabled')) {
@@ -9,8 +13,7 @@ export function selectItemFilters(event, arrayFiltersValue, arrayItemsBatteryAll
       }
     }
   });
-  const btnAllFilterBattery = filterBattery.querySelector('.button_all');
-  const filterScreenDiagonal = document.querySelector('#filter-screen-diagonal');
+
   const filterScreenDiagonalAll = Array.from(filterScreenDiagonal.querySelectorAll('.filters__label')).filter(item => {
     if (!item.classList.contains('button_all')) {
       if (!item.classList.contains('filters__label_disabled')) {
@@ -18,7 +21,7 @@ export function selectItemFilters(event, arrayFiltersValue, arrayItemsBatteryAll
       }
     }
   });
-  const btnAllFilterScreenDiagonal = filterScreenDiagonal.querySelector('.button_all');
+
   let targetValue = event.currentTarget.control.value;
 
   if (event.currentTarget.control.checked) {
@@ -55,22 +58,6 @@ export function selectItemFilters(event, arrayFiltersValue, arrayItemsBatteryAll
     } else {
       arrayFiltersValue.push(targetValue);
 
-      if (arrayItemsBatteryAll.length === filterBatteryAll.length) {
-        btnAllFilterBattery.classList.add('filters__label_active');
-        btnAllFilterBattery.control.checked = true;
-      } else {
-        btnAllFilterBattery.classList.remove('filters__label_active');
-        btnAllFilterBattery.control.checked = false;
-      }
-
-      if (arrayItemsDiagonalAll.length === filterScreenDiagonalAll.length) {
-        btnAllFilterScreenDiagonal.classList.add('filters__label_active');
-        btnAllFilterScreenDiagonal.control.checked = true;
-      } else {
-        btnAllFilterScreenDiagonal.classList.remove('filters__label_active');
-        btnAllFilterScreenDiagonal.control.checked = false;
-      }
-
       if (
         targetValue === '2499' ||
         targetValue === '2500-3999' ||
@@ -80,13 +67,6 @@ export function selectItemFilters(event, arrayFiltersValue, arrayItemsBatteryAll
         targetValue === '6000'
       ) {
         arrayItemsBatteryAll.push(targetValue);
-        if (arrayItemsBatteryAll.length === filterBatteryAll.length) {
-          btnAllFilterBattery.classList.add('filters__label_active');
-          btnAllFilterBattery.control.checked = true;
-        } else {
-          btnAllFilterBattery.classList.remove('filters__label_active');
-          btnAllFilterBattery.control.checked = false;
-        }
       }
       if (
         targetValue === '6.09' ||
@@ -97,21 +77,25 @@ export function selectItemFilters(event, arrayFiltersValue, arrayItemsBatteryAll
         targetValue === '6.8'
       ) {
         arrayItemsDiagonalAll.push(targetValue);
-        if (arrayItemsDiagonalAll.length === filterScreenDiagonalAll.length) {
-          btnAllFilterScreenDiagonal.classList.add('filters__label_active');
-          btnAllFilterScreenDiagonal.control.checked = true;
-        } else {
-          btnAllFilterScreenDiagonal.classList.remove('filters__label_active');
-          btnAllFilterScreenDiagonal.control.checked = false;
-        }
+      }
+
+      if (
+        arrayItemsBatteryAll.length === filterBatteryAll.length &&
+        !btnAllFilterBattery.classList.contains('filters__label_active')
+      ) {
+        btnAllFilterBattery.classList.add('filters__label_active');
+        btnAllFilterBattery.control.checked = true;
+      }
+
+      if (
+        arrayItemsDiagonalAll.length === filterScreenDiagonalAll.length &&
+        !btnAllFilterScreenDiagonal.classList.contains('filters__label_active')
+      ) {
+        btnAllFilterScreenDiagonal.classList.add('filters__label_active');
+        btnAllFilterScreenDiagonal.control.checked = true;
       }
     }
   }
-  console.log('Item: ', event.currentTarget);
-  console.log('ArrayBattery: ', arrayItemsBatteryAll);
-  console.log('ArrayBattery: ', filterBatteryAll.length);
-  console.log('ArrayDiagonal: ', arrayItemsDiagonalAll);
-  console.log('ArrayDiagonal: ', filterScreenDiagonalAll.length);
 }
 
 function selectAll(item, arrayAll, arrayFiltersValue) {
