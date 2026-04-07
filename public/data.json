@@ -10,10 +10,12 @@
     "memory": "64",
     "price": "400",
     "color": "white",
-    "serial": "MQ233",
+    "serial": "MQ23345",
     "filters": "bestseller",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobileiPhoneX"
+    "link": "#mobileiPhoneX",
+    "date": "2017-11-03",
+    "rating": "5.0"
   },
   {
     "title": "smartphones",
@@ -29,7 +31,9 @@
     "serial": "MQ234",
     "filters": "bestseller",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobileiPhone12"
+    "link": "#mobileiPhone12",
+    "date": "2020-10-23",
+    "rating": "5.0"
   },
   {
     "title": "smartphones",
@@ -45,7 +49,9 @@
     "serial": "MQ235",
     "filters": "bestseller",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobileiPhone13"
+    "link": "#mobileiPhone13",
+    "date": "2021-09-21",
+    "rating": "5.0"
   },
   {
     "title": "smartphones",
@@ -61,7 +67,9 @@
     "serial": "MQ244",
     "filters": "bestseller",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobileiPhone14"
+    "link": "#mobileiPhone14",
+    "date": "2022-09-16",
+    "rating": "5.0"
   },
   {
     "title": "smartphones",
@@ -77,7 +85,9 @@
     "serial": "MQ238",
     "filters": "new",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobileiPhone16"
+    "link": "#mobileiPhone16",
+    "date": "2024-09-24",
+    "rating": "5.0"
   },
   {
     "title": "smartphones",
@@ -93,7 +103,9 @@
     "serial": "MQ239",
     "filters": "featured",
     "img": "/images/products/apple/iphone14pro.webp",
-    "link": "#mobileiPhone17"
+    "link": "#mobileiPhone17",
+    "date": "2025-09-24",
+    "rating": "5.0"
   },
   {
     "title": "smartphones",
@@ -109,7 +121,9 @@
     "serial": "MQ233",
     "filters": "bestseller",
     "img": "/images/products/galaxy-z-fold5.webp",
-    "link": "#mobileGalaxyZFold5"
+    "link": "#mobileGalaxyZFold5",
+    "date": "2020-11-20",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -125,7 +139,9 @@
     "serial": "MQ234",
     "filters": "new",
     "img": "/images/products/galaxy-z-fold5.webp",
-    "link": "#mobileGalaxyZFold6"
+    "link": "#mobileGalaxyZFold6",
+    "date": "2020-11-23",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -141,7 +157,9 @@
     "serial": "MQ235",
     "filters": "bestseller",
     "img": "/images/products/xiaomi.webp",
-    "link": "#mobilexiaomi13"
+    "link": "#mobilexiaomi13",
+    "date": "2022-11-11",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -157,7 +175,9 @@
     "serial": "MQ244",
     "filters": "bestseller",
     "img": "/images/products/xiaomi.webp",
-    "link": "#mobilexiaomi14"
+    "link": "#mobilexiaomi14",
+    "date": "2023-09-12",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -173,7 +193,9 @@
     "serial": "MQ238",
     "filters": "new",
     "img": "/images/products/poco.webp",
-    "link": "#mobilepoco16"
+    "link": "#mobilepoco16",
+    "date": "2025-11-22",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -189,7 +211,9 @@
     "serial": "MQ239",
     "filters": "featured",
     "img": "/images/products/poco.webp",
-    "link": "#mobilepoco17"
+    "link": "#mobilepoco17",
+    "date": "2025-11-01",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -205,7 +229,9 @@
     "serial": "MQ233",
     "filters": "bestseller",
     "img": "/images/products/oppo.webp",
-    "link": "#mobileReno14"
+    "link": "#mobileReno14",
+    "date": "2023-11-23",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -221,7 +247,9 @@
     "serial": "MQ234",
     "filters": "new",
     "img": "/images/products/oppo.webp",
-    "link": "#mobileReno15"
+    "link": "#mobileReno15",
+    "date": "2024-09-03",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -237,7 +265,9 @@
     "serial": "MQ235",
     "filters": "bestseller",
     "img": "/images/products/honor.webp",
-    "link": "#mobileHonor13"
+    "link": "#mobileHonor13",
+    "date": "2024-10-24",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -253,7 +283,9 @@
     "serial": "MQ244",
     "filters": "bestseller",
     "img": "/images/products/honor.webp",
-    "link": "#mobileHonor14"
+    "link": "#mobileHonor14",
+    "date": "2021-11-15",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -269,7 +301,9 @@
     "serial": "MQ238",
     "filters": "new",
     "img": "/images/products/motorola.webp",
-    "link": "#mobilemotorola16"
+    "link": "#mobilemotorola16",
+    "date": "2024-11-16",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -285,7 +319,9 @@
     "serial": "MQ239",
     "filters": "featured",
     "img": "/images/products/motorola.webp",
-    "link": "#mobilemotorola17"
+    "link": "#mobilemotorola17",
+    "date": "2024-10-23",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -301,7 +337,9 @@
     "serial": "MQ234",
     "filters": "new",
     "img": "/images/products/nokia.webp",
-    "link": "#mobilenokia"
+    "link": "#mobilenokia",
+    "date": "2020-09-01",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -317,7 +355,9 @@
     "serial": "MQ235",
     "filters": "bestseller",
     "img": "/images/products/nokia.webp",
-    "link": "#mobilenokia"
+    "link": "#mobilenokia",
+    "date": "2018-11-03",
+    "rating": "4.0"
   },
   {
     "title": "smartphones",
@@ -333,7 +373,9 @@
     "serial": "MQ244",
     "filters": "bestseller",
     "img": "/images/products/realme.webp",
-    "link": "#mobilerealme"
+    "link": "#mobilerealme",
+    "date": "2019-11-03",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -349,7 +391,9 @@
     "serial": "MQ238",
     "filters": "new",
     "img": "/images/products/realme.webp",
-    "link": "#mobilerealme"
+    "link": "#mobilerealme",
+    "date": "2020-01-03",
+    "rating": "4.5"
   },
   {
     "title": "smartphones",
@@ -365,7 +409,9 @@
     "serial": "MQ239",
     "filters": "featured",
     "img": "/images/products/realme.webp",
-    "link": "#mobilerealme"
+    "link": "#mobilerealme",
+    "date": "2020-09-03",
+    "rating": "4.5"
   },
   {
     "title": "tablet",

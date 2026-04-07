@@ -5,7 +5,16 @@ export function productFiltersMap(array) {
     title: item.title.toLowerCase(),
     brand: item.brand
       .split(' ')
-      .map(word => `${word[0].toUpperCase()}${word.slice(1).toLowerCase()}`)
+      .map(word => {
+        let textBrand;
+        if (word === 'oppo' || word === 'poco') {
+          textBrand = `${word.toUpperCase()}`;
+          return textBrand;
+        } else {
+          textBrand = `${word[0].toUpperCase()}${word.slice(1).toLowerCase()}`;
+          return textBrand;
+        }
+      })
       .join(' '),
     name: item.name
       .toLowerCase()
@@ -32,6 +41,8 @@ export function productFiltersMap(array) {
     filters: item.filters.toLowerCase(),
     img: item.img,
     link: item.link,
+    date: item.date,
+    rating: item.rating,
   }));
   return dataProduct;
 }

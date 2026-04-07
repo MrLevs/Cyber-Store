@@ -14,7 +14,7 @@ export async function dataBase() {
     //Filter
     filter(result);
   } catch (err) {
-    alert(err + ' ' + 'Data base not working!');
-    console.log(err + ' ' + 'Data base not working!');
+    alert('Data base not working!');
+    console.error(err);
   }
 }

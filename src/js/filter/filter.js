@@ -93,6 +93,8 @@ export function filter(data) {
   const selectedProducts = document.querySelector('.content__number');
   //------Create Counts Filters----------------
   let countsFilters = document.querySelectorAll('.filters__count');
+  //------Select Filter Content-----------------
+  const selectFilterContent = document.querySelector('#content-select');
 
   let priceAll = [];
   let filtersValue = [];
@@ -101,7 +103,7 @@ export function filter(data) {
 
   //-------Create Product Card------------
   if (contentBlock) {
-    createProductCard(contentBlock, filterResult(data, filtersValue));
+    createSortProductCard();
   }
   //--------------------------
   //-------Create Count Products------------
@@ -110,7 +112,7 @@ export function filter(data) {
   }
   //-------------------------------
   //------Create Counts Filters----------------
-  if (countsFilters) {
+  if (countsFilters.length > 0) {
     createCountsFilters(
       countsFilters,
       filterResult(data, filtersValue),
@@ -138,26 +140,30 @@ export function filter(data) {
   }
   //-----------------------------
   //----Open accordion---------
-  filtersDetails.forEach(item => {
-    let summary = item.querySelector('.filters__summary');
-    summary.addEventListener('click', function () {
-      if (item.hasAttribute('open')) {
-        item.classList.remove('filters__details_active');
-      } else {
-        item.classList.add('filters__details_active');
-      }
+  if (filtersDetails.length > 0) {
+    filtersDetails.forEach(item => {
+      let summary = item.querySelector('.filters__summary');
+      summary.addEventListener('click', function () {
+        if (item.hasAttribute('open')) {
+          item.classList.remove('filters__details_active');
+        } else {
+          item.classList.add('filters__details_active');
+        }
+      });
     });
-  });
+  }
   //------------------------
   //----Select element-------
-  filtersLabel.forEach(item => {
-    item.addEventListener('click', selectAndCreate);
-    item.addEventListener('keydown', pressEnter);
-  });
+  if (filtersLabel.length > 0) {
+    filtersLabel.forEach(item => {
+      item.addEventListener('click', selectAndCreate);
+      item.addEventListener('keydown', pressEnter);
+    });
+  }
 
   function selectAndCreate(event) {
     selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
-    createProductCard(contentBlock, filterResult(data, filtersValue));
+    createSortProductCard();
     countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
     createCountsFilters(
       countsFilters,
@@ -172,7 +178,7 @@ export function filter(data) {
   function pressEnter(event) {
     if (event.code === 'Enter') {
       selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
-      createProductCard(contentBlock, filterResult(data, filtersValue));
+      createSortProductCard();
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       createCountsFilters(
         countsFilters,
@@ -230,7 +236,7 @@ export function filter(data) {
 
     function selectPriceMinAndCreate(event) {
       selectPriceMin(event, filtersValue, priceFrom, priceMin, range, min, max);
-      createProductCard(contentBlock, filterResult(data, filtersValue));
+      createSortProductCard();
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       createCountsFilters(
         countsFilters,
@@ -244,7 +250,7 @@ export function filter(data) {
 
     function selectPriceMaxAndCreate(event) {
       selectPriceMax(event, filtersValue, priceTo, priceMax, range, min, max);
-      createProductCard(contentBlock, filterResult(data, filtersValue));
+      createSortProductCard();
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       createCountsFilters(
         countsFilters,
@@ -258,7 +264,7 @@ export function filter(data) {
 
     function handlePriceMinAndCreate(event) {
       handlePriceMin(event, filtersValue, priceFrom, priceMax, range, min, max);
-      createProductCard(contentBlock, filterResult(data, filtersValue));
+      createSortProductCard();
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       createCountsFilters(
         countsFilters,
@@ -272,7 +278,7 @@ export function filter(data) {
 
     function handlePriceMaxAndCreate(event) {
       handlePriceMax(event, filtersValue, priceTo, priceMin, range, min, max);
-      createProductCard(contentBlock, filterResult(data, filtersValue));
+      createSortProductCard();
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
       createCountsFilters(
         countsFilters,
@@ -334,7 +340,7 @@ export function filter(data) {
         item.addEventListener('keydown', pressEnter);
       });
 
-      createProductCard(contentBlock, filterResult(data, filtersValue));
+      createSortProductCard();
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
     }
 
@@ -373,7 +379,7 @@ export function filter(data) {
         item.addEventListener('keydown', pressEnter);
       });
 
-      createProductCard(contentBlock, filterResult(data, filtersValue));
+      createSortProductCard();
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
     }
   }
@@ -385,4 +391,34 @@ export function filter(data) {
     }
   }
   //-------------------------------
+  //------Select Filter Content-----------------
+  if (selectFilterContent) {
+    selectFilterContent.addEventListener('change', createSortProductCard);
+  }
+  //-----------------------------------------------------------------------------
+  //-------Create and Sort Product Card-----------------------
+  function createSortProductCard() {
+    if (selectFilterContent.value === 'rating') {
+      createProductCard(
+        contentBlock,
+        filterResult(data, filtersValue).sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating)),
+      );
+    } else if (selectFilterContent.value === 'ascending-price') {
+      createProductCard(
+        contentBlock,
+        filterResult(data, filtersValue).sort((a, b) => parseInt(a.price, 10) - parseInt(b.price, 10)),
+      );
+    } else if (selectFilterContent.value === 'descending-price') {
+      createProductCard(
+        contentBlock,
+        filterResult(data, filtersValue).sort((a, b) => parseInt(b.price, 10) - parseInt(a.price, 10)),
+      );
+    } else if (selectFilterContent.value === 'new') {
+      createProductCard(
+        contentBlock,
+        filterResult(data, filtersValue).sort((a, b) => new Date(b.date) - new Date(a.date)),
+      );
+    }
+  }
+  //---------------------------------------------------------------------
 }
