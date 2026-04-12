@@ -1,6 +1,6 @@
 'use strict';
 
-export function createProductCard(elem, array) {
+export function createProductCard(elem, array, arrayLike) {
   elem.innerHTML = '';
   array.forEach(item => {
     const productCard = document.createElement('article');
@@ -18,6 +18,15 @@ export function createProductCard(elem, array) {
     productCard.className = 'product-card';
     btnProductCard.className = 'product-card__btn';
     btnProductCard.setAttribute('aria-label', 'like');
+    btnProductCard.setAttribute('name', 'serial-number');
+    btnProductCard.setAttribute('value', item['serial-number']);
+
+    if (arrayLike) {
+      let itemLike = arrayLike.find(elem => elem['serial-number'] === item['serial-number']);
+      if (itemLike) {
+        btnProductCard.classList.add('product-card__btn_active');
+      }
+    }
 
     svgProductCard.setAttribute('class', 'product-card__svg');
     svgProductCard.setAttribute('width', '31');

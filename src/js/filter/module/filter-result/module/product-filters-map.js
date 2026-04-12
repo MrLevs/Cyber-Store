@@ -43,6 +43,7 @@ export function productFiltersMap(array) {
     link: item.link,
     date: item.date,
     rating: item.rating,
+    'serial-number': item['serial-number'],
   }));
   return dataProduct;
 }

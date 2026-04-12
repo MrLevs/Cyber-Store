@@ -100,12 +100,25 @@ export function filter(data) {
   let filtersValue = [];
   let itemsBatteryAll = [];
   let itemsDiagonalAll = [];
+  let like = JSON.parse(window.localStorage.getItem('like')); //Local Storage----Replacement DB
+  if (like === null) {
+    like = [];
+  }
 
   //-------Create Product Card------------
   if (contentBlock) {
     createSortProductCard();
   }
   //--------------------------
+  //----Product Card Button Like-------------
+  let btnLike = document.querySelectorAll('.product-card__btn');
+  if (btnLike.length > 0) {
+    btnLike.forEach(item => {
+      item.addEventListener('click', pressLike);
+      item.addEventListener('keydown', pressLikeEnter);
+    });
+  }
+  //------------------------------------------------------------
   //-------Create Count Products------------
   if (selectedProducts) {
     countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
@@ -173,21 +186,21 @@ export function filter(data) {
       itemsBatteryAll,
       itemsDiagonalAll,
     );
+
+    btnLike = document.querySelectorAll('.product-card__btn');
+    if (btnLike.length > 0) {
+      btnLike.forEach(item => {
+        item.addEventListener('click', pressLike);
+        item.addEventListener('keydown', pressLikeEnter);
+      });
+    }
   }
 
   function pressEnter(event) {
     if (event.code === 'Enter') {
-      selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
-      createSortProductCard();
-      countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
-      createCountsFilters(
-        countsFilters,
-        filterResult(data, filtersValue),
-        filtersValue,
-        data,
-        itemsBatteryAll,
-        itemsDiagonalAll,
-      );
+      event.preventDefault();
+      selectAndCreate(event);
+
       if (event.currentTarget.control.checked) {
         event.currentTarget.control.checked = false;
       } else {
@@ -333,12 +346,12 @@ export function filter(data) {
       );
 
       filtersLabel = document.querySelectorAll('.filters__label');
-      filtersLabel.forEach(item => {
-        item.removeEventListener('click', selectAndCreate);
-        item.removeEventListener('keydown', pressEnter);
-        item.addEventListener('click', selectAndCreate);
-        item.addEventListener('keydown', pressEnter);
-      });
+      if (filtersLabel.length > 0) {
+        filtersLabel.forEach(item => {
+          item.addEventListener('click', selectAndCreate);
+          item.addEventListener('keydown', pressEnter);
+        });
+      }
 
       createSortProductCard();
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
@@ -372,12 +385,12 @@ export function filter(data) {
       );
 
       filtersLabel = document.querySelectorAll('.filters__label');
-      filtersLabel.forEach(item => {
-        item.removeEventListener('click', selectAndCreate);
-        item.removeEventListener('keydown', pressEnter);
-        item.addEventListener('click', selectAndCreate);
-        item.addEventListener('keydown', pressEnter);
-      });
+      if (filtersLabel.length > 0) {
+        filtersLabel.forEach(item => {
+          item.addEventListener('click', selectAndCreate);
+          item.addEventListener('keydown', pressEnter);
+        });
+      }
 
       createSortProductCard();
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
@@ -402,23 +415,51 @@ export function filter(data) {
       createProductCard(
         contentBlock,
         filterResult(data, filtersValue).sort((a, b) => parseFloat(b.rating) - parseFloat(a.rating)),
+        like,
       );
     } else if (selectFilterContent.value === 'ascending-price') {
       createProductCard(
         contentBlock,
         filterResult(data, filtersValue).sort((a, b) => parseInt(a.price, 10) - parseInt(b.price, 10)),
+        like,
       );
     } else if (selectFilterContent.value === 'descending-price') {
       createProductCard(
         contentBlock,
         filterResult(data, filtersValue).sort((a, b) => parseInt(b.price, 10) - parseInt(a.price, 10)),
+        like,
       );
     } else if (selectFilterContent.value === 'new') {
       createProductCard(
         contentBlock,
         filterResult(data, filtersValue).sort((a, b) => new Date(b.date) - new Date(a.date)),
+        like,
       );
     }
   }
   //---------------------------------------------------------------------
+  //-----Like--Local Storage---Replacement DB--------------------------
+  function pressLike(event) {
+    let targetValue = event.currentTarget.value;
+    let storage = window.localStorage;
+    if (event.currentTarget.classList.contains('product-card__btn_active')) {
+      event.currentTarget.classList.remove('product-card__btn_active');
+      let filter = like.filter(item => item['serial-number'] !== targetValue);
+      like.length = 0;
+      like.push(...filter);
+    } else {
+      event.currentTarget.classList.add('product-card__btn_active');
+      let filter = filterResult(data, filtersValue).filter(item => item['serial-number'] === targetValue);
+      like.push(...filter);
+    }
+    storage.setItem('like', JSON.stringify(like));
+    like = JSON.parse(storage.getItem('like'));
+  }
+
+  function pressLikeEnter(event) {
+    if (event.code === 'Enter') {
+      event.preventDefault();
+      pressLike(event);
+    }
+  }
 }

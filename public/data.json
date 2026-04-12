@@ -15,7 +15,8 @@
     "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobileiPhoneX",
     "date": "2017-11-03",
-    "rating": "5.0"
+    "rating": "5.0",
+    "serial-number": "1111111111111111"
   },
   {
     "title": "smartphones",
@@ -33,7 +34,8 @@
     "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobileiPhone12",
     "date": "2020-10-23",
-    "rating": "5.0"
+    "rating": "5.0",
+    "serial-number": "1111111111111112"
   },
   {
     "title": "smartphones",
@@ -51,7 +53,8 @@
     "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobileiPhone13",
     "date": "2021-09-21",
-    "rating": "5.0"
+    "rating": "5.0",
+    "serial-number": "1111111111111113"
   },
   {
     "title": "smartphones",
@@ -69,7 +72,8 @@
     "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobileiPhone14",
     "date": "2022-09-16",
-    "rating": "5.0"
+    "rating": "5.0",
+    "serial-number": "1111111111111114"
   },
   {
     "title": "smartphones",
@@ -87,7 +91,8 @@
     "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobileiPhone16",
     "date": "2024-09-24",
-    "rating": "5.0"
+    "rating": "5.0",
+    "serial-number": "1111111111111115"
   },
   {
     "title": "smartphones",
@@ -105,7 +110,8 @@
     "img": "/images/products/apple/iphone14pro.webp",
     "link": "#mobileiPhone17",
     "date": "2025-09-24",
-    "rating": "5.0"
+    "rating": "5.0",
+    "serial-number": "1111111111111116"
   },
   {
     "title": "smartphones",
@@ -123,7 +129,8 @@
     "img": "/images/products/galaxy-z-fold5.webp",
     "link": "#mobileGalaxyZFold5",
     "date": "2020-11-20",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111117"
   },
   {
     "title": "smartphones",
@@ -141,7 +148,8 @@
     "img": "/images/products/galaxy-z-fold5.webp",
     "link": "#mobileGalaxyZFold6",
     "date": "2020-11-23",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111118"
   },
   {
     "title": "smartphones",
@@ -159,7 +167,8 @@
     "img": "/images/products/xiaomi.webp",
     "link": "#mobilexiaomi13",
     "date": "2022-11-11",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111119"
   },
   {
     "title": "smartphones",
@@ -177,7 +186,8 @@
     "img": "/images/products/xiaomi.webp",
     "link": "#mobilexiaomi14",
     "date": "2023-09-12",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111120"
   },
   {
     "title": "smartphones",
@@ -195,7 +205,8 @@
     "img": "/images/products/poco.webp",
     "link": "#mobilepoco16",
     "date": "2025-11-22",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111121"
   },
   {
     "title": "smartphones",
@@ -213,7 +224,8 @@
     "img": "/images/products/poco.webp",
     "link": "#mobilepoco17",
     "date": "2025-11-01",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111122"
   },
   {
     "title": "smartphones",
@@ -231,7 +243,8 @@
     "img": "/images/products/oppo.webp",
     "link": "#mobileReno14",
     "date": "2023-11-23",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111123"
   },
   {
     "title": "smartphones",
@@ -249,7 +262,8 @@
     "img": "/images/products/oppo.webp",
     "link": "#mobileReno15",
     "date": "2024-09-03",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111124"
   },
   {
     "title": "smartphones",
@@ -267,7 +281,8 @@
     "img": "/images/products/honor.webp",
     "link": "#mobileHonor13",
     "date": "2024-10-24",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111125"
   },
   {
     "title": "smartphones",
@@ -285,7 +300,8 @@
     "img": "/images/products/honor.webp",
     "link": "#mobileHonor14",
     "date": "2021-11-15",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111126"
   },
   {
     "title": "smartphones",
@@ -303,7 +319,8 @@
     "img": "/images/products/motorola.webp",
     "link": "#mobilemotorola16",
     "date": "2024-11-16",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111127"
   },
   {
     "title": "smartphones",
@@ -321,7 +338,8 @@
     "img": "/images/products/motorola.webp",
     "link": "#mobilemotorola17",
     "date": "2024-10-23",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111128"
   },
   {
     "title": "smartphones",
@@ -339,7 +357,8 @@
     "img": "/images/products/nokia.webp",
     "link": "#mobilenokia",
     "date": "2020-09-01",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111129"
   },
   {
     "title": "smartphones",
@@ -357,7 +376,8 @@
     "img": "/images/products/nokia.webp",
     "link": "#mobilenokia",
     "date": "2018-11-03",
-    "rating": "4.0"
+    "rating": "4.0",
+    "serial-number": "1111111111111130"
   },
   {
     "title": "smartphones",
@@ -375,7 +395,8 @@
     "img": "/images/products/realme.webp",
     "link": "#mobilerealme",
     "date": "2019-11-03",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111131"
   },
   {
     "title": "smartphones",
@@ -393,7 +414,8 @@
     "img": "/images/products/realme.webp",
     "link": "#mobilerealme",
     "date": "2020-01-03",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111132"
   },
   {
     "title": "smartphones",
@@ -411,7 +433,8 @@
     "img": "/images/products/realme.webp",
     "link": "#mobilerealme",
     "date": "2020-09-03",
-    "rating": "4.5"
+    "rating": "4.5",
+    "serial-number": "1111111111111133"
   },
   {
     "title": "tablet",
