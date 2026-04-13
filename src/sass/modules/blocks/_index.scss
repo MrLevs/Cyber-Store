@@ -267,14 +267,6 @@
   }
 }
 
-//-------Title--------
-.title {
-  font-size: 1.5rem;
-  font-weight: 500;
-  color: var.$global-color;
-  transition: var.$transition-color;
-}
-
 //-------Products-------
 .products {
   &__bg {
@@ -437,32 +429,6 @@
     opacity: 0.1;
     cursor: pointer;
     transition: var.$transition-all;
-  }
-}
-
-//-------Discount---------
-.discount {
-  &__bg {
-    padding: 5rem 0;
-    width: 100%;
-    background-color: var.$discount-bg;
-    transition: var.$transition-bg;
-  }
-
-  &__inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 2rem 0;
-  }
-
-  &__box {
-    display: grid;
-    grid-template-rows: 1fr;
-    grid-template-columns: repeat(4, 1fr);
-    grid-auto-columns: 1fr;
-    grid-auto-rows: 1fr;
-    gap: 2rem;
   }
 }
 

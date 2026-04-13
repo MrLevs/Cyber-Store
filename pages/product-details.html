@@ -8,7 +8,47 @@
   </head>
   <body>
     <include src="chunk/header.html"></include>
-    <main class="main">PRODUCTS-DETAILS</main>
+    <div class="breadcrumbs">
+      <div class="breadcrumbs__container container">
+        <div class="breadcrumbs__bg">
+          <div class="breadcrumbs__inner container-m">
+            <nav class="breadcrumbs__nav" aria-label="breadcrumbs">
+              <ul class="breadcrumbs__list">
+                <li class="breadcrumbs__item">
+                  <a href="#" class="breadcrumbs__link">Home</a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <a href="#" class="breadcrumbs__link">Catalog</a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <a href="#" class="breadcrumbs__link">Smartphones</a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <a href="#" class="breadcrumbs__link">Apple</a>
+                </li>
+                <li class="breadcrumbs__item">
+                  <a href="#" class="breadcrumbs__link">iPhone 14 Pro Max</a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <main class="main"> <!-- Создать фаил JS для данной страницы! Создать функцию Рекомендуемые товары(Related Products) смотри ниже, на данный момент работает как дисконт см в Filter.js-->
+      <section class="info"></section>
+      <section class="details"></section>
+      <section class="reviews"></section>
+      <section class="discount">
+        <div class="discount__container container">
+          <div class="discount__bg">
+            <div class="discount__inner container-m">
+              <h2 class="title">Related Products</h2>
+              <div id="discounts" class="discount__box"></div>
+            </div>
+          </div>
+      </section>
+    </main>
     <include src="chunk/footer.html"></include>
     <script type="module" src="/src/main.js"></script>
   </body>

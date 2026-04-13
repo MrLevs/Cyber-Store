@@ -20,9 +20,11 @@ export function filter(data) {
   const newBlock = document.querySelector('#new-products');
   const bestsellerBlock = document.querySelector('#bestseller-products');
   const featuredBlock = document.querySelector('#featured-products');
+  const discountsBlock = document.querySelector('#discounts');
   let newProducts = [];
   let bestsellerProducts = [];
   let featuredProducts = [];
+  let discountsProducts = [];
 
   if (newBlock || bestsellerBlock || featuredBlock) {
     creationPCByCategory(
@@ -33,7 +35,12 @@ export function filter(data) {
       newBlock,
       bestsellerBlock,
       featuredBlock,
+      like,
     );
+  }
+
+  if (discountsBlock) {
+    discountsCreatePC(data, discountsProducts, discountsBlock, like);
   }
 
   //-----Create Product Card by Category------------------------------
@@ -45,6 +52,7 @@ export function filter(data) {
     newBlock,
     bestsellerBlock,
     featuredBlock,
+    like,
   ) {
     data.forEach(item => {
       switch (item.category) {
@@ -64,6 +72,18 @@ export function filter(data) {
     createProductCard(featuredBlock, arrayFeaturedProducts, like);
   }
   //---------------------------------------------------------------------------
+  //-----Discounts Create Product Card----------------------------------------
+  function discountsCreatePC(data, arrayDiscountsProducts, discountsBlock, like) {
+    data.forEach(item => {
+      if (item.category === 'discounts') {
+        if (arrayDiscountsProducts.length < 4) {
+          arrayDiscountsProducts.push(item);
+        }
+      }
+    });
+    createProductCard(discountsBlock, arrayDiscountsProducts, like);
+  }
+  //-----------------------------------------------------------------
   //---The END Index.html----------------------------------------------------
   //----Products.html-------------------------
   //----Filter Brand------------
