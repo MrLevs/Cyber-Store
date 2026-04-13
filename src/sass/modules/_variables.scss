@@ -91,6 +91,7 @@ $transition-transform: transform ease 0.5s;
   --product-card-bg: #f6f6f6;
   --product-card-link-bg: #000;
   --product-card-link-color: #fff;
+  --product-card-svg-stroke-hover: #fd0505;
 
   //---Banners-------
   --banners-bg: #fff;
@@ -213,6 +214,7 @@ $transition-transform: transform ease 0.5s;
   --product-card-bg: #1c1526;
   --product-card-link-bg: #040d22;
   --product-card-link-color: #fff;
+  --product-card-svg-stroke-hover: #ff0000;
 
   //---Banners-------
   --banners-bg: #1f1d22;
@@ -342,6 +344,7 @@ $products-btn-border-color: var(--products-btn-border-color);
 $product-card-bg: var(--product-card-bg);
 $product-card-link-bg: var(--product-card-link-bg);
 $product-card-link-color: var(--product-card-link-color);
+$product-card-svg-stroke-hover: var(--product-card-svg-stroke-hover);
 
 //---Banners-------
 $banners-bg: var(--banners-bg);

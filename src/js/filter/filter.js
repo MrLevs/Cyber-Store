@@ -10,7 +10,62 @@ import { createProductCard } from './module/create-product-card'; //Create Produ
 import { countSelectedProducts, createCountsFilters } from './module/create-counts-filters'; //Count Selected Products, Counts Filters
 
 export function filter(data) {
+  let like = JSON.parse(window.localStorage.getItem('like')); //Local Storage----Replacement DB
+  if (like === null) {
+    like = [];
+  }
   const categoryProduct = 'smartphones';
+  //----Index.html--------------------------
+  //-----Category Products----------------------------
+  const newBlock = document.querySelector('#new-products');
+  const bestsellerBlock = document.querySelector('#bestseller-products');
+  const featuredBlock = document.querySelector('#featured-products');
+  let newProducts = [];
+  let bestsellerProducts = [];
+  let featuredProducts = [];
+
+  if (newBlock || bestsellerBlock || featuredBlock) {
+    creationPCByCategory(
+      data,
+      newProducts,
+      bestsellerProducts,
+      featuredProducts,
+      newBlock,
+      bestsellerBlock,
+      featuredBlock,
+    );
+  }
+
+  //-----Create Product Card by Category------------------------------
+  function creationPCByCategory(
+    data,
+    arrayNewProducts,
+    arrayBestsellerProducts,
+    arrayFeaturedProducts,
+    newBlock,
+    bestsellerBlock,
+    featuredBlock,
+  ) {
+    data.forEach(item => {
+      switch (item.category) {
+        case 'new':
+          arrayNewProducts.push(item);
+          break;
+        case 'bestseller':
+          arrayBestsellerProducts.push(item);
+          break;
+        case 'featured':
+          arrayFeaturedProducts.push(item);
+          break;
+      }
+    });
+    createProductCard(newBlock, arrayNewProducts, like);
+    createProductCard(bestsellerBlock, arrayBestsellerProducts, like);
+    createProductCard(featuredBlock, arrayFeaturedProducts, like);
+  }
+  //---------------------------------------------------------------------------
+  //---The END Index.html----------------------------------------------------
+  //----Products.html-------------------------
   //----Filter Brand------------
   const filterBrand = document.querySelector('#filter-brand');
 
@@ -100,10 +155,6 @@ export function filter(data) {
   let filtersValue = [];
   let itemsBatteryAll = [];
   let itemsDiagonalAll = [];
-  let like = JSON.parse(window.localStorage.getItem('like')); //Local Storage----Replacement DB
-  if (like === null) {
-    like = [];
-  }
 
   //-------Create Product Card------------
   if (contentBlock) {
@@ -462,4 +513,6 @@ export function filter(data) {
       pressLike(event);
     }
   }
+  //---------------------------------------------------------------------------
+  //---The END Products.html----------------------------------------------------
 }

@@ -600,7 +600,7 @@ main {
     }
 
     &:hover .product-card__svg {
-      stroke: #424040;
+      stroke: var.$product-card-svg-stroke-hover;
     }
   }
 

@@ -38,7 +38,7 @@ export function productFiltersMap(array) {
     price: item.price,
     color: item.color.toLowerCase(),
     serial: item.serial.toUpperCase(),
-    filters: item.filters.toLowerCase(),
+    category: item.category.toLowerCase(),
     img: item.img,
     link: item.link,
     date: item.date,
