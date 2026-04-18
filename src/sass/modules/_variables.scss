@@ -133,6 +133,12 @@ $transition-transform: transform ease 0.5s;
   //---Content-----
   --content-numbers-color: #6c6c6c;
   --content-select-bg: #fff;
+  //---Page Products the End----
+
+  //---Page Product-Details----
+  //---Info---
+  --info-bg: #fff;
+  //---Page Product-Details the End----
 }
 
 .theme-dark {
@@ -256,6 +262,11 @@ $transition-transform: transform ease 0.5s;
   //---Content-----
   --content-numbers-color: #c5c5c5;
   --content-select-bg: #1f1d22;
+  //---Page Products the End----
+
+  //---Page Product-Details----
+  --info-bg: #1f2020;
+  //---Page Product-Details the End----
 }
 
 //---Page Products----
@@ -390,6 +401,11 @@ $range-thumb-bg: var(--range-thumb-bg);
 //---Content-----
 $content-numbers-color: var(--content-numbers-color);
 $content-select-bg: var(--content-select-bg);
+//---Page Products the End----
+
+//---Page Product-Details----
+$info-bg: var(--info-bg);
+//---Page Product-Details the End----
 
 //---breakepoints Media--------
 //---576px----

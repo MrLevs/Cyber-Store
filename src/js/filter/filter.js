@@ -1,16 +1,17 @@
 'use strict';
 
-import { createFilterBrand } from './module/search-filter/create-filter-brand'; //Create Filter Brand
-import { createFilterScreenType } from './module/search-filter/create-filter-screen-type'; //Create Filter Screen Type
+import { createFilterBrand } from './module/search-filter/create-filter-brand'; // Create Filter Brand
+import { createFilterScreenType } from './module/search-filter/create-filter-screen-type'; // Create Filter Screen Type
 import { searchFiltersItem } from './module/search-filter/search-filters-item'; // Search Filters Item
-import { selectItemFilters } from './module/select-item-filters'; //Select Item Filters
-import { selectPriceMin, selectPriceMax, handlePriceMin, handlePriceMax } from './module/filter-price'; //Filter Price
-import { filterResult } from './module/filter-result/filter-result'; //Filter Result
-import { createProductCard } from './module/create-product-card'; //Create Product Card
-import { countSelectedProducts, createCountsFilters } from './module/create-counts-filters'; //Count Selected Products, Counts Filters
+import { selectItemFilters } from './module/select-item-filters'; // Select Item Filters
+import { selectPriceMin, selectPriceMax, handlePriceMin, handlePriceMax } from './module/filter-price'; // Filter Price
+import { filterResult } from './module/filter-result/filter-result'; // Filter Result
+import { createProductCard } from './module/create-product-card'; // Create Product Card
+import { countSelectedProducts, createCountsFilters } from './module/create-counts-filters'; // Count Selected Products, Counts Filters
+import { createRelatedProducts } from './module/create-related-products'; // Create Related Products
 
 export function filter(data) {
-  let like = JSON.parse(window.localStorage.getItem('like')); //Local Storage----Replacement DB
+  let like = JSON.parse(window.localStorage.getItem('like')); // Local Storage----Replacement DB
   if (like === null) {
     like = [];
   }
@@ -85,6 +86,15 @@ export function filter(data) {
   }
   //-----------------------------------------------------------------
   //---The END Index.html----------------------------------------------------
+  //---Product-Details.html--------------------------------------------
+  const relatedBlock = document.querySelector('#related');
+  let relatedProducts = [];
+
+  if (relatedBlock) {
+    createRelatedProducts(data, relatedProducts, relatedBlock, like);
+    createProductCard(relatedBlock, relatedProducts, like);
+  }
+  //---The END Product-Details.html----------------------------------------------------
   //----Products.html-------------------------
   //----Filter Brand------------
   const filterBrand = document.querySelector('#filter-brand');

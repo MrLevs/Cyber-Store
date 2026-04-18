@@ -35,8 +35,52 @@
         </div>
       </div>
     </div>
-    <main class="main"> <!-- Создать фаил JS для данной страницы! Создать функцию Рекомендуемые товары(Related Products) смотри ниже, на данный момент работает как дисконт см в Filter.js-->
-      <section class="info"></section>
+    <main class="main">
+      <section class="info">
+        <div class="info__container container">
+          <div class="info__bg">
+            <div class="info__inner">
+            <h1 class="info__title">Apple iPhone 14 Pro Max</h1>
+            <div class="info__content"></div>
+            <div class="info__info">
+              <div class="info__info-box">
+                <div class="info__info-picture">
+                  <svg class="info__info-svg" width="24" height="24" viewBox="0 0 24 24">
+                    <use href="/images/sprite-icon.svg#truck" />
+                  </svg>
+                </div>
+                <div class="info__info-block">
+                  <h2 class="info__info-title">Free Delivery</h2>
+                  <p class="info__info-text">1-2 day</p>
+                </div>
+              </div>
+              <div class="info__info-box">
+                <div class="info__info-picture">
+                  <svg class="info__info-svg" width="24" height="24" viewBox="0 0 24 24">
+                    <use href="/images/sprite-icon.svg#stock" />
+                  </svg>
+                </div>
+                <div class="info__info-block">
+                  <h2 class="info__info-title">In Stock</h2>
+                  <p class="info__info-text">Today</p>
+                </div>
+              </div>
+              <div class="info__info-box">
+                <div class="info__info-picture">
+                  <svg class="info__info-svg" width="24" height="24" viewBox="0 0 24 24">
+                    <use href="/images/sprite-icon.svg#verify" />
+                  </svg>
+                </div>
+                <div class="info__info-block">
+                  <h2 class="info__info-title">Guaranteed</h2>
+                  <p class="info__info-text">1 year</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          </div>
+        </div>
+      </section>
       <section class="details"></section>
       <section class="reviews"></section>
       <section class="discount">
@@ -44,7 +88,7 @@
           <div class="discount__bg">
             <div class="discount__inner container-m">
               <h2 class="title">Related Products</h2>
-              <div id="discounts" class="discount__box"></div>
+              <div id="related" class="discount__box"></div>
             </div>
           </div>
       </section>

@@ -1,0 +1,16 @@
+@use '../variables' as var;
+
+.info {
+  &__bg {
+    background-color: var.$info-bg;
+    transition: var.$transition-bg;
+  }
+
+  &__info-picture {
+    background-color: #f6f6f6;
+  }
+
+  &__info-svg {
+    fill: #797979;
+  }
+}
