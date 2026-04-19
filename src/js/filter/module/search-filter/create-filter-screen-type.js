@@ -18,6 +18,7 @@ export function createFilterScreenType(elem, arrayProduct) {
 
     input.className = 'filters__input';
     input.setAttribute('id', `screen-${item}`);
+    input.setAttribute('name', `screen-${item}`);
     input.setAttribute('type', 'checkbox');
     input.setAttribute('value', `${item}`);
     input.setAttribute('tabindex', '-1');

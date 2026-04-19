@@ -18,6 +18,7 @@ export function createFilterBrand(elem, arrayProduct) {
 
     input.className = 'filters__input';
     input.setAttribute('id', `brand-${item}`);
+    input.setAttribute('name', `brand-${item}`);
     input.setAttribute('type', 'checkbox');
     input.setAttribute('value', `${item}`);
     input.setAttribute('tabindex', '-1');

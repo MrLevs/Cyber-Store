@@ -43,24 +43,24 @@
                 </details>
                 <div class="filters__content" id="price" role="definition">
                   <div class="filters__content-body">
-                    <form class="filters__form" id="form-price">
+                    <form class="filters__form" id="form-price" name="form-price">
                       <div class="filters__items">
                         <div class="filters__inner filters__inner-price">
                           <label for="price-from" class="filters__label-price"> From </label>
                           <label for="price-to" class="filters__label-price"> To </label>
                         </div>
                         <div class="filters__inner filters__inner-price">
-                          <input id="price-from" type="number" class="filters__input-price" />
+                          <input id="price-from" name="price-from" type="number" class="filters__input-price" />
                           <div class="filters__dash"></div>
-                          <input id="price-to" type="number" class="filters__input-price" />
+                          <input id="price-to" name="price-to" type="number" class="filters__input-price" />
                         </div>
                       </div>
                       <div id="price-range" class="range">
                         <div class="range__track"></div>
                         <div class="range__progress"></div>
                         <div class="range__inner">
-                          <input id="price-min" type="range" class="range__input" step="1" />
-                          <input id="price-max" type="range" class="range__input" step="1" />
+                          <input id="price-min" name="price-min" type="range" class="range__input" step="1" />
+                          <input id="price-max" name="price-max" type="range" class="range__input" step="1" />
                         </div>
                       </div>
                     </form>
@@ -112,7 +112,7 @@
                         </svg>
                       </button>
                     </form>
-                    <form id="form-brand" class="filters__form"></form>
+                    <form id="form-brand" name="form-brand" class="filters__form"></form>
                   </div>
                 </div>
               </div>
@@ -124,7 +124,7 @@
                 </details>
                 <div class="filters__content" id="battery" role="definition">
                   <div class="filters__content-body">
-                    <form class="filters__form" id="form-battery">
+                    <form class="filters__form" id="form-battery" name="form-battery">
                       <div class="filters__inner">
                         <label for="battery-all" class="filters__label button_all" tabindex="0">
                           <span class="filters__checkbox"></span>
@@ -137,6 +137,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="battery-all"
+                          name="battery-all"
                           value="battery-all"
                           tabindex="-1" />
                       </div>
@@ -148,7 +149,13 @@
                             <span class="filters__count" data-battery="2499"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="battery-2499" value="2499" tabindex="-1" />
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="battery-2499"
+                          name="battery-2499"
+                          value="2499"
+                          tabindex="-1" />
                       </div>
                       <div class="filters__inner">
                         <label for="battery-3999" class="filters__label" tabindex="0">
@@ -162,6 +169,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="battery-3999"
+                          name="battery-3999"
                           value="2500-3999"
                           tabindex="-1" />
                       </div>
@@ -177,6 +185,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="battery-4499"
+                          name="battery-4499"
                           value="4000-4499"
                           tabindex="-1" />
                       </div>
@@ -192,6 +201,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="battery-4999"
+                          name="battery-4999"
                           value="4500-4999"
                           tabindex="-1" />
                       </div>
@@ -207,6 +217,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="battery-5999"
+                          name="battery-5999"
                           value="5000-5999"
                           tabindex="-1" />
                       </div>
@@ -218,7 +229,13 @@
                             <span class="filters__count" data-battery="6000"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="battery-6000" value="6000" tabindex="-1" />
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="battery-6000"
+                          name="battery-6000"
+                          value="6000"
+                          tabindex="-1" />
                       </div>
                     </form>
                   </div>
@@ -272,7 +289,7 @@
                         </svg>
                       </button>
                     </form>
-                    <form class="filters__form" id="form-screen-type"></form>
+                    <form class="filters__form" id="form-screen-type" name="form-screen-type"></form>
                   </div>
                 </div>
               </div>
@@ -284,7 +301,7 @@
                 </details>
                 <div class="filters__content" id="screen-diagonal" role="definition">
                   <div class="filters__content-body">
-                    <form class="filters__form" id="form-screen-diagonal">
+                    <form class="filters__form" id="form-screen-diagonal" name="form-screen-diagonal">
                       <div class="filters__inner">
                         <label for="screen-diagonal-all" class="filters__label button_all" tabindex="0">
                           <span class="filters__checkbox"></span>
@@ -297,6 +314,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="screen-diagonal-all"
+                          name="screen-diagonal-all"
                           value="diagonal-all"
                           tabindex="-1" />
                       </div>
@@ -312,6 +330,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="screen-diagonal-6.09"
+                          name="screen-diagonal-6.09"
                           value="6.09"
                           tabindex="-1" />
                       </div>
@@ -327,6 +346,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="screen-diagonal-6.29"
+                          name="screen-diagonal-6.29"
                           value="6.1-6.29"
                           tabindex="-1" />
                       </div>
@@ -342,6 +362,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="screen-diagonal-6.49"
+                          name="screen-diagonal-6.49"
                           value="6.3-6.49"
                           tabindex="-1" />
                       </div>
@@ -357,6 +378,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="screen-diagonal-6.59"
+                          name="screen-diagonal-6.59"
                           value="6.5-6.59"
                           tabindex="-1" />
                       </div>
@@ -372,6 +394,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="screen-diagonal-6.79"
+                          name="screen-diagonal-6.79"
                           value="6.6-6.79"
                           tabindex="-1" />
                       </div>
@@ -387,6 +410,7 @@
                           type="checkbox"
                           class="filters__input"
                           id="screen-diagonal-6.8"
+                          name="screen-diagonal-6.8"
                           value="6.8"
                           tabindex="-1" />
                       </div>
@@ -402,7 +426,7 @@
                 </details>
                 <div class="filters__content" id="protection-class" role="definition">
                   <div class="filters__content-body">
-                    <form class="filters__form" id="form-protection-class">
+                    <form class="filters__form" id="form-protection-class" name="form-protection-class">
                       <div class="filters__inner">
                         <label for="ipx4" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
@@ -411,7 +435,13 @@
                             <span class="filters__count" data-protection="ipx4"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="ipx4" value="ipx4" tabindex="-1" />
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="ipx4"
+                          name="ipx4"
+                          value="ipx4"
+                          tabindex="-1" />
                       </div>
                       <div class="filters__inner">
                         <label for="ipx5" class="filters__label" tabindex="0">
@@ -421,7 +451,13 @@
                             <span class="filters__count" data-protection="ipx5"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="ipx5" value="ipx5" tabindex="-1" />
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="ipx5"
+                          name="ipx5"
+                          value="ipx5"
+                          tabindex="-1" />
                       </div>
                       <div class="filters__inner">
                         <label for="ipx6" class="filters__label" tabindex="0">
@@ -431,7 +467,13 @@
                             <span class="filters__count" data-protection="ipx6"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="ipx6" value="ipx6" tabindex="-1" />
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="ipx6"
+                          name="ipx6"
+                          value="ipx6"
+                          tabindex="-1" />
                       </div>
                       <div class="filters__inner">
                         <label for="ipx7" class="filters__label" tabindex="0">
@@ -441,7 +483,13 @@
                             <span class="filters__count" data-protection="ipx7"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="ipx7" value="ipx7" tabindex="-1" />
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="ipx7"
+                          name="ipx7"
+                          value="ipx7"
+                          tabindex="-1" />
                       </div>
                     </form>
                   </div>
@@ -455,7 +503,7 @@
                 </details>
                 <div class="filters__content" id="memory" role="definition">
                   <div class="filters__content-body">
-                    <form class="filters__form" id="form-memory">
+                    <form class="filters__form" id="form-memory" name="form-memory">
                       <div class="filters__inner">
                         <label for="32" class="filters__label" tabindex="0">
                           <span class="filters__checkbox"></span>
@@ -464,7 +512,7 @@
                             <span class="filters__count" data-memory="32"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="32" value="32" tabindex="-1" />
+                        <input type="checkbox" class="filters__input" id="32" name="32" value="32" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
                         <label for="64" class="filters__label" tabindex="0">
@@ -474,7 +522,7 @@
                             <span class="filters__count" data-memory="64"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="64" value="64" tabindex="-1" />
+                        <input type="checkbox" class="filters__input" id="64" name="64" value="64" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
                         <label for="128" class="filters__label" tabindex="0">
@@ -484,7 +532,7 @@
                             <span class="filters__count" data-memory="128"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="128" value="128" tabindex="-1" />
+                        <input type="checkbox" class="filters__input" id="128" name="128" value="128" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
                         <label for="256" class="filters__label" tabindex="0">
@@ -494,7 +542,7 @@
                             <span class="filters__count" data-memory="256"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="256" value="256" tabindex="-1" />
+                        <input type="checkbox" class="filters__input" id="256" name="256" value="256" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
                         <label for="512" class="filters__label" tabindex="0">
@@ -504,7 +552,7 @@
                             <span class="filters__count" data-memory="512"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="512" value="512" tabindex="-1" />
+                        <input type="checkbox" class="filters__input" id="512" name="512" value="512" tabindex="-1" />
                       </div>
                       <div class="filters__inner">
                         <label for="1024" class="filters__label" tabindex="0">
@@ -514,7 +562,13 @@
                             <span class="filters__count" data-memory="1024"></span>
                           </span>
                         </label>
-                        <input type="checkbox" class="filters__input" id="1024" value="1024" tabindex="-1" />
+                        <input
+                          type="checkbox"
+                          class="filters__input"
+                          id="1024"
+                          name="1024"
+                          value="1024"
+                          tabindex="-1" />
                       </div>
                     </form>
                   </div>
@@ -528,7 +582,7 @@
                   <h2 class="content__numbers">Selected Products: <span class="content__number"></span></h2>
                   <div class="content__filters">
                     <button class="content__button" id="filters-btn-open" aria-label="open filters">Filters</button>
-                    <form id="content-form" class="content__form">
+                    <form id="content-form" class="content__form" name="content-form">
                       <select name="content-select" id="content-select" class="content__select">
                         <option value="rating" class="content__option">By rating</option>
                         <option value="ascending-price" class="content__option">By ascending price</option>

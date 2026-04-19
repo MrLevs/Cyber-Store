@@ -138,6 +138,10 @@ $transition-transform: transform ease 0.5s;
   //---Page Product-Details----
   //---Info---
   --info-bg: #fff;
+  --info-detail-svg-fill: #4e4e4e;
+  --info-detail-svg-stroke: #4e4e4e;
+  --info-info-picture-bg: #f6f6f6;
+  --info-info-svg-fill: #797979;
   //---Page Product-Details the End----
 }
 
@@ -266,6 +270,10 @@ $transition-transform: transform ease 0.5s;
 
   //---Page Product-Details----
   --info-bg: #1f2020;
+  --info-detail-svg-fill: #d9d9d9;
+  --info-detail-svg-stroke: #d9d9d9;
+  --info-info-picture-bg: #484848;
+  --info-info-svg-fill: #d9d9d9;
   //---Page Product-Details the End----
 }
 
@@ -405,6 +413,10 @@ $content-select-bg: var(--content-select-bg);
 
 //---Page Product-Details----
 $info-bg: var(--info-bg);
+$info-detail-svg-fill: var(--info-detail-svg-fill);
+$info-detail-svg-stroke: var(--info-detail-svg-stroke);
+$info-info-picture-bg: var(--info-info-picture-bg);
+$info-info-svg-fill: var(--info-info-svg-fill);
 //---Page Product-Details the End----
 
 //---breakepoints Media--------

@@ -6,11 +6,23 @@
     transition: var.$transition-bg;
   }
 
+  &__detail-svg {
+    fill: var.$info-detail-svg-fill;
+    transition: var.$transition-fill;
+
+    &_stroke {
+      stroke: var.$info-detail-svg-stroke;
+      transition: var.$transition-stroke;
+    }
+  }
+
   &__info-picture {
-    background-color: #f6f6f6;
+    background-color: var.$info-info-picture-bg;
+    transition: var.$transition-bg;
   }
 
   &__info-svg {
-    fill: #797979;
+    fill: var.$info-info-svg-fill;
+    transition: var.$transition-fill;
   }
 }
