@@ -39,15 +39,23 @@
       <section class="info">
         <div class="info__container container">
           <div class="info__bg">
-            <div class="info__inner">
+            <div class="info__inner container-m">
               <h1 class="info__title">Apple iPhone 14 Pro Max</h1>
               <div class="info__content">
                 <div class="info__images">
                   <div class="info__images-min">
-                    <img src="/images/product-details/apple141.webp" alt="apple iphone 14" class="info__img" />
-                    <img src="/images/product-details/apple142.webp" alt="apple iphone 14" class="info__img" />
-                    <img src="/images/product-details/apple143.webp" alt="apple iphone 14" class="info__img" />
-                    <img src="/images/product-details/apple144.webp" alt="apple iphone 14" class="info__img" />
+                    <div class="info__images-box">
+                      <img src="/images/product-details/apple141.webp" alt="apple iphone 14" class="info__img" />
+                    </div>
+                    <div class="info__images-box">
+                      <img src="/images/product-details/apple142.webp" alt="apple iphone 14" class="info__img" />
+                    </div>
+                    <div class="info__images-box">
+                      <img src="/images/product-details/apple143.webp" alt="apple iphone 14" class="info__img" />
+                    </div>
+                    <div class="info__images-box">
+                      <img src="/images/product-details/apple144.webp" alt="apple iphone 14" class="info__img" />
+                    </div>
                   </div>
                   <div class="info__images-max">
                     <img src="/images/product-details/apple14m.webp" alt="apple iphone 14" class="info__img" />
@@ -62,59 +70,74 @@
                     <p class="info__colors-text">Select color:</p>
                     <form id="info-form-colors" name="info-form-colors" class="info__form-colors">
                       <div class="info__form-box">
-                        <label for="form-colors-black" class="info__form-colors-label info__form-colors-label_black">
-                          <input
-                            id="form-colors-black"
-                            name="form-colors"
-                            class="info__form-colors-input"
-                            type="radio"
-                            value="black"
-                            tabindex="-1" />
+                        <label
+                          for="form-colors-black"
+                          class="info__form-colors-label info__form-colors-label_black"
+                          tabindex="0">
                         </label>
+                        <input
+                          id="form-colors-black"
+                          name="form-colors"
+                          class="info__form-colors-input"
+                          type="radio"
+                          value="black"
+                          tabindex="-1" />
                       </div>
                       <div class="info__form-box">
-                        <label for="form-colors-purple" class="info__form-colors-label info__form-colors-label_purple">
-                          <input
-                            id="form-colors-purple"
-                            name="form-colors"
-                            class="info__form-colors-input"
-                            type="radio"
-                            value="purple"
-                            tabindex="-1" />
+                        <label
+                          for="form-colors-purple"
+                          class="info__form-colors-label info__form-colors-label_purple"
+                          tabindex="0">
                         </label>
+                        <input
+                          id="form-colors-purple"
+                          name="form-colors"
+                          class="info__form-colors-input"
+                          type="radio"
+                          value="purple"
+                          tabindex="-1" />
                       </div>
                       <div class="info__form-box">
-                        <label for="form-colors-red" class="info__form-colors-label info__form-colors-label_red">
-                          <input
-                            id="form-colors-red"
-                            name="form-colors"
-                            class="info__form-colors-input"
-                            type="radio"
-                            value="red"
-                            tabindex="-1" />
+                        <label
+                          for="form-colors-red"
+                          class="info__form-colors-label info__form-colors-label_red"
+                          tabindex="0">
                         </label>
+                        <input
+                          id="form-colors-red"
+                          name="form-colors"
+                          class="info__form-colors-input"
+                          type="radio"
+                          value="red"
+                          tabindex="-1" />
                       </div>
                       <div class="info__form-box">
-                        <label for="form-colors-yellow" class="info__form-colors-label info__form-colors-label_yellow">
-                          <input
-                            id="form-colors-yellow"
-                            name="form-colors"
-                            class="info__form-colors-input"
-                            type="radio"
-                            value="yellow"
-                            tabindex="-1" />
+                        <label
+                          for="form-colors-yellow"
+                          class="info__form-colors-label info__form-colors-label_yellow"
+                          tabindex="0">
                         </label>
+                        <input
+                          id="form-colors-yellow"
+                          name="form-colors"
+                          class="info__form-colors-input"
+                          type="radio"
+                          value="yellow"
+                          tabindex="-1" />
                       </div>
                       <div class="info__form-box">
-                        <label for="form-colors-grey" class="info__form-colors-label info__form-colors-label_grey">
-                          <input
-                            id="form-colors-grey"
-                            name="form-colors"
-                            class="info__form-colors-input"
-                            type="radio"
-                            value="grey"
-                            tabindex="-1" />
+                        <label
+                          for="form-colors-grey"
+                          class="info__form-colors-label info__form-colors-label_grey"
+                          tabindex="0">
                         </label>
+                        <input
+                          id="form-colors-grey"
+                          name="form-colors"
+                          class="info__form-colors-input"
+                          type="radio"
+                          value="grey"
+                          tabindex="-1" />
                       </div>
                     </form>
                   </div>
@@ -228,11 +251,13 @@
                     <p class="info__description-text">
                       Enhanced capabilities thanks toan enlarged display of 6.7 inchesand work without
                       rechargingthroughout the day. Incredible photosas in weak, yesand in bright lightusing the new
-                      systemwith two cameras <span class="info__description-span">more...</span>
+                      systemwith two cameras <button class="info__description-btn">more...</button>
                     </p>
                   </div>
-                  <div class="info__buttons"></div>
-                  <!-- Доделать кнопки(смю выше) и info__description-text (чтобы текст скрывался)-->
+                  <div class="info__buttons">
+                    <button class="info__buttons-btn">Add to Wishlist</button>
+                    <button class="info__buttons-btn">Add to Card</button>
+                  </div>
                 </div>
               </div>
               <div class="info__info">
