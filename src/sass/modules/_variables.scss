@@ -138,6 +138,14 @@ $transition-transform: transform ease 0.5s;
   //---Page Product-Details----
   //---Info---
   --info-bg: #fff;
+  --info-form-memory-label-border-color: #000;
+  --info-detail-bg: #f4f4f4;
+  --info-detail-text-color: #4e4e4e;
+  --info-description-text-color: #6c6c6c;
+  --info-buttons-btn-border-color: #000;
+  --info-buttons-btn-color: #fff;
+  --info-buttons-btn-bg: #000;
+  --info-info-title-color: #717171;
   --info-detail-svg-fill: #4e4e4e;
   --info-detail-svg-stroke: #4e4e4e;
   --info-info-picture-bg: #f6f6f6;
@@ -270,6 +278,14 @@ $transition-transform: transform ease 0.5s;
 
   //---Page Product-Details----
   --info-bg: #1f2020;
+  --info-form-memory-label-border-color: #fff;
+  --info-detail-bg: #5e5e5e;
+  --info-detail-text-color: #d9d9d9;
+  --info-description-text-color: #d1d1d1;
+  --info-buttons-btn-border-color: #fff;
+  --info-buttons-btn-color: #000;
+  --info-buttons-btn-bg: #fff;
+  --info-info-title-color: #717171;
   --info-detail-svg-fill: #d9d9d9;
   --info-detail-svg-stroke: #d9d9d9;
   --info-info-picture-bg: #484848;
@@ -413,6 +429,14 @@ $content-select-bg: var(--content-select-bg);
 
 //---Page Product-Details----
 $info-bg: var(--info-bg);
+$info-form-memory-label-border-color: var(--info-form-memory-label-border-color);
+$info-detail-bg: var(--info-detail-bg);
+$info-detail-text-color: var(--info-detail-text-color);
+$info-description-text-color: var(--info-description-text-color);
+$info-buttons-btn-border-color: var(--info-buttons-btn-border-color);
+$info-buttons-btn-color: var(--info-buttons-btn-color);
+$info-buttons-btn-bg: var(--info-buttons-btn-bg);
+$info-info-title-color: var(--info-info-title-color);
 $info-detail-svg-fill: var(--info-detail-svg-fill);
 $info-detail-svg-stroke: var(--info-detail-svg-stroke);
 $info-info-picture-bg: var(--info-info-picture-bg);

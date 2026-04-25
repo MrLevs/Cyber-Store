@@ -610,6 +610,10 @@ main {
     &:hover .product-card__svg {
       stroke: var.$product-card-svg-stroke-hover;
     }
+
+    &:focus .product-card__svg {
+      stroke: var.$product-card-svg-stroke-hover;
+    }
   }
 
   &__svg {
@@ -654,11 +658,11 @@ main {
     cursor: pointer;
 
     &:hover {
-      background-color: #304272;
+      background-color: var.$shop-link-bg-hover;
     }
 
     &:focus {
-      background-color: #304272;
+      background-color: var.$shop-link-bg-hover;
     }
   }
 }

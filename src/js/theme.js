@@ -1,5 +1,7 @@
 'use strict';
 
+import { toggleBorderColor, toggleBorderColorMemory } from './select-details-product/module/toggleBorderColor'; // Toggle Border Color
+
 export function theme() {
   const sliderTheme = document.querySelectorAll('.switch-theme');
   const checkboxs = document.querySelectorAll('.switch-theme__input');
@@ -27,6 +29,9 @@ export function theme() {
         item.checked = false;
       });
     }
+
+    toggleBorderColor();
+    toggleBorderColorMemory();
   }
 
   function toggleThemeEnter(e) {

@@ -250,6 +250,8 @@ export function filter(data) {
   //----Select element-------
   if (filtersLabel.length > 0) {
     filtersLabel.forEach(item => {
+      item.removeEventListener('click', selectAndCreate);
+      item.removeEventListener('keydown', pressEnter);
       item.addEventListener('click', selectAndCreate);
       item.addEventListener('keydown', pressEnter);
     });
@@ -392,11 +394,11 @@ export function filter(data) {
     btn.style.display = 'none';
     suggests.style.display = 'none';
 
-    input.addEventListener('input', searchFilterBrand);
+    input.addEventListener('input', searchFilter);
     input.addEventListener('keydown', cancel);
-    btn.addEventListener('click', btnResetSearchBrand);
+    btn.addEventListener('click', btnResetSearch);
 
-    function searchFilterBrand() {
+    function searchFilter() {
       let filter = filtersValue.filter(item => !arrayProduct.includes(item));
       filtersValue.length = 0;
       filtersValue.push(...filter);
@@ -429,6 +431,8 @@ export function filter(data) {
       filtersLabel = document.querySelectorAll('.filters__label');
       if (filtersLabel.length > 0) {
         filtersLabel.forEach(item => {
+          item.removeEventListener('click', selectAndCreate);
+          item.removeEventListener('keydown', pressEnter);
           item.addEventListener('click', selectAndCreate);
           item.addEventListener('keydown', pressEnter);
         });
@@ -438,7 +442,7 @@ export function filter(data) {
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
     }
 
-    function btnResetSearchBrand() {
+    function btnResetSearch() {
       let filter = filtersValue.filter(item => !arrayProduct.includes(item));
       filtersValue.length = 0;
       filtersValue.push(...filter);
@@ -468,6 +472,8 @@ export function filter(data) {
       filtersLabel = document.querySelectorAll('.filters__label');
       if (filtersLabel.length > 0) {
         filtersLabel.forEach(item => {
+          item.removeEventListener('click', selectAndCreate);
+          item.removeEventListener('keydown', pressEnter);
           item.addEventListener('click', selectAndCreate);
           item.addEventListener('keydown', pressEnter);
         });

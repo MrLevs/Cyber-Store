@@ -1,5 +1,6 @@
 @use '../variables' as var;
 
+//---info-------------------
 .info {
   width: 100%;
 
@@ -105,7 +106,7 @@
   &__form-colors {
     display: flex;
     align-items: center;
-    gap: 0 0.5rem;
+    gap: 0 0.4rem;
   }
 
   &__form-box {
@@ -116,7 +117,7 @@
     width: 2rem;
     height: 2rem;
     display: block;
-    border: 0.1875rem solid #fff;
+    border: 0.1875rem solid var.$info-bg;
     border-radius: 50%;
     cursor: pointer;
 
@@ -142,18 +143,75 @@
   }
 
   &__form-colors-input {
-    width: 1px;
+    width: 0px;
     height: 0px;
     position: absolute;
     top: 0;
     left: 0;
+    z-index: -1;
   }
 
-  &__info {
-    grid-column-start: 2;
-    grid-column-end: 3;
-
+  &__form-memory {
     display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 1rem;
+  }
+
+  &__form-inner {
+    flex: 1;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__form-memory-label {
+    width: 100%;
+    padding: 1rem 1.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var.$global-color;
+    border: 0.0625rem solid var.$info-form-memory-label-border-color;
+    border-radius: 0.5rem;
+    text-align: center;
+    cursor: pointer;
+    opacity: 0.6;
+
+    &:hover {
+      background-color: var.$shop-link-bg-hover;
+    }
+
+    &:focus {
+      background-color: var.$shop-link-bg-hover;
+    }
+  }
+
+  &__form-memory-input {
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+
+  &__details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: 1rem;
+  }
+
+  &__detail {
+    padding: 1rem 0.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 0.5rem;
+    border-radius: 0.5rem;
+    background-color: var.$info-detail-bg;
+    transition: var.$transition-bg;
   }
 
   &__detail-svg {
@@ -166,7 +224,121 @@
     }
   }
 
+  &__detail-title {
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: var.$info-detail-text-color;
+    transition: var.$transition-color;
+    opacity: 0.6;
+  }
+
+  &__detail-text {
+    font-weight: 500;
+    font-size: 0.875rem;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__description-text {
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: var.$info-description-text-color;
+    transition: var.$transition-color;
+  }
+
+  &__description-btn {
+    padding: 0;
+    position: relative;
+    background-color: transparent;
+    border: none;
+    font-weight: 400;
+    font-size: 0.875rem;
+    color: var.$global-color;
+    cursor: pointer;
+    transition: var.$transition-color;
+
+    &:hover {
+      color: var.$shop-link-bg-hover;
+
+      &::before {
+        background-color: var.$shop-link-bg-hover;
+      }
+    }
+
+    &:focus {
+      color: var.$shop-link-bg-hover;
+
+      &::before {
+        background-color: var.$shop-link-bg-hover;
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 0.0625rem;
+      position: absolute;
+      left: 0;
+      bottom: 0.125rem;
+      background-color: var.$global-color;
+      transition: var.$transition-bg;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 1rem;
+  }
+
+  &__buttons-btn {
+    flex: 1;
+    padding: 1rem 3.5rem;
+    background-color: var.$info-bg;
+    border: 0.0625rem solid var.$info-buttons-btn-border-color;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    font-size: 1rem;
+    color: var.$global-color;
+    transition: var.$transition-color, var.$transition-border-color, var.$transition-bg;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var.$shop-link-bg-hover;
+    }
+
+    &:focus {
+      background-color: var.$shop-link-bg-hover;
+    }
+
+    &_bg {
+      color: var.$info-buttons-btn-color;
+      background-color: var.$info-buttons-btn-bg;
+    }
+  }
+
+  &__info {
+    grid-column-start: 2;
+    grid-column-end: 3;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0 2rem;
+  }
+
+  &__info-box {
+    flex: 1;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 1rem;
+  }
+
   &__info-picture {
+    padding: 1rem;
+    border-radius: 0.7rem;
     background-color: var.$info-info-picture-bg;
     transition: var.$transition-bg;
   }
@@ -174,5 +346,19 @@
   &__info-svg {
     fill: var.$info-info-svg-fill;
     transition: var.$transition-fill;
+  }
+
+  &__info-title {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var.$info-info-title-color;
+    transition: var.$transition-color;
+  }
+
+  &__info-text {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
   }
 }
