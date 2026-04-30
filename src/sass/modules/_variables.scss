@@ -150,6 +150,11 @@ $transition-transform: transform ease 0.5s;
   --info-detail-svg-stroke: #4e4e4e;
   --info-info-picture-bg: #f6f6f6;
   --info-info-svg-fill: #797979;
+  //---Details---
+  --details-bg: #fafafa;
+  --details-content-text-color: #9d9d9d;
+  --details-li-border-color: #cdcdcd;
+  --details-btn-border-color: #545454;
   //---Page Product-Details the End----
 }
 
@@ -290,6 +295,11 @@ $transition-transform: transform ease 0.5s;
   --info-detail-svg-stroke: #d9d9d9;
   --info-info-picture-bg: #484848;
   --info-info-svg-fill: #d9d9d9;
+  //---Details---
+  --details-bg: #1e1e1e;
+  --details-content-text-color: #dbdbdb;
+  --details-li-border-color: #cdcdcd;
+  --details-btn-border-color: #cacaca;
   //---Page Product-Details the End----
 }
 
@@ -428,6 +438,7 @@ $content-select-bg: var(--content-select-bg);
 //---Page Products the End----
 
 //---Page Product-Details----
+//---Info---
 $info-bg: var(--info-bg);
 $info-form-memory-label-border-color: var(--info-form-memory-label-border-color);
 $info-detail-bg: var(--info-detail-bg);
@@ -441,6 +452,11 @@ $info-detail-svg-fill: var(--info-detail-svg-fill);
 $info-detail-svg-stroke: var(--info-detail-svg-stroke);
 $info-info-picture-bg: var(--info-info-picture-bg);
 $info-info-svg-fill: var(--info-info-svg-fill);
+//---Details---
+$details-bg: var(--details-bg);
+$details-content-text-color: var(--details-content-text-color);
+$details-li-border-color: var(--details-li-border-color);
+$details-btn-border-color: var(--details-btn-border-color);
 //---Page Product-Details the End----
 
 //---breakepoints Media--------

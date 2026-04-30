@@ -1,6 +1,6 @@
 @use '../variables' as var;
 
-//---info-------------------
+//---Info-------------------
 .info {
   width: 100%;
 
@@ -47,6 +47,16 @@
     flex-direction: column;
     align-items: center;
     gap: 1.5rem 0;
+  }
+
+  &__img {
+    &_min {
+      opacity: 0.4;
+    }
+
+    &_min-active {
+      opacity: 1;
+    }
   }
 
   &__content-info {
@@ -360,5 +370,135 @@
     font-weight: 500;
     color: var.$global-color;
     transition: var.$transition-color;
+  }
+}
+
+//---Details----------------------
+.details {
+  &__bg {
+    padding: 5rem 0;
+    background-color: var.$details-bg;
+    transition: var.$transition-bg;
+  }
+
+  &__content {
+    width: 100%;
+    padding: 3rem 2.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 2rem 0;
+    background-color: var.$info-bg;
+    transition: var.$transition-bg;
+  }
+
+  &__content-text {
+    font-size: 0.875;
+    font-weight: 500;
+    color: var.$details-content-text-color;
+    transition: var.$transition-color;
+  }
+
+  &__info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 2rem 0;
+  }
+
+  &__box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem 0;
+  }
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__list {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem 0;
+    list-style-type: none;
+  }
+
+  &__li {
+    padding: 0 0 0.5rem 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 0.0625rem solid var.$details-li-border-color;
+    transition: var.$transition-border-color;
+  }
+
+  &__text {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__list-min {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    list-style-type: none;
+  }
+
+  &__btn {
+    padding: 0.75rem 5.375rem 0.75rem 3.5rem;
+    position: relative;
+    background-color: var.$info-bg;
+    border: 0.0625rem solid var.$details-btn-border-color;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color, var.$transition-border-color, var.$transition-bg;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var.$shop-link-bg-hover;
+    }
+
+    &::before,
+    &::after {
+      content: '';
+      display: block;
+      width: 0.6rem;
+      height: 0.125rem;
+      position: absolute;
+      top: 50%;
+      background-color: var.$global-color;
+      transition: var.$transition-bg;
+    }
+
+    &::before {
+      right: 3.86rem;
+      transform: rotateZ(45deg);
+    }
+
+    &::after {
+      right: 3.5rem;
+      transform: rotateZ(315deg);
+    }
   }
 }
