@@ -42,6 +42,9 @@ $transition-transform: transform ease 0.5s;
   --breadcrumbs-bg: #fff;
   --breadcrumbs-border-color: #bebebe;
 
+  //---Rating-----
+  --rating-bg: #fafafa;
+
   //---Footer-----
   --footer-bg: #000;
   --footer-logo-fill: #fff;
@@ -187,6 +190,9 @@ $transition-transform: transform ease 0.5s;
   //---Breadcrumbs-------
   --breadcrumbs-bg: #141a2e;
   --breadcrumbs-border-color: #383838;
+
+  //---Rating-----
+  --rating-bg: #181818;
 
   //---Footer-----
   --footer-bg: #141a2e;
@@ -338,6 +344,9 @@ $btn-menu-bg: var(--btn-menu-bg);
 //---Breadcrumbs-------
 $breadcrumbs-bg: var(--breadcrumbs-bg);
 $breadcrumbs-border-color: var(--breadcrumbs-border-color);
+
+//---Rating-----
+$rating-bg: var(--rating-bg);
 
 //---Footer-----
 $footer-bg: var(--footer-bg);

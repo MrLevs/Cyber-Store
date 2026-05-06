@@ -1,6 +1,7 @@
 'use strict';
 
-import { toggleBorderColor, toggleBorderColorMemory } from './select-details-product/module/toggleBorderColor'; // Toggle Border Color
+import { toggleBorderColor, toggleBorderColorMemory } from './module/toggle-border-color'; // Toggle Border Color
+import { toggleRatingColor } from './module/toggle-rating-color'; // Toggle Rating Color
 
 export function theme() {
   const sliderTheme = document.querySelectorAll('.switch-theme');
@@ -32,6 +33,7 @@ export function theme() {
 
     toggleBorderColor();
     toggleBorderColorMemory();
+    toggleRatingColor();
   }
 
   function toggleThemeEnter(e) {

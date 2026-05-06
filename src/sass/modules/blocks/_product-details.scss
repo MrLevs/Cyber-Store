@@ -502,3 +502,20 @@
     }
   }
 }
+
+//---Reviews-------------
+.reviews {
+  &__bg {
+    padding: 5rem 0;
+    background-color: var.$info-bg;
+    transition: var.$transition-bg;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 3rem 0;
+  }
+}

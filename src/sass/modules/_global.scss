@@ -700,7 +700,7 @@ main {
   justify-content: flex-start;
   align-items: center;
   gap: 1rem 0;
-  background-color: #fafafa;
+  background-color: var.$rating-bg;
   border-radius: 1.5rem;
   transition: var.$transition-bg;
 
@@ -723,36 +723,9 @@ main {
 
   &__body {
     width: 100%;
-    position: relative;
     font-size: 1.5rem;
     line-height: 1;
   }
-
-  // &__active {
-  // position: absolute;
-  // width: 100%;
-  // height: 100%;
-  // top: 0;
-  // left: 0;
-  // overflow: hidden;
-
-  // &::before {
-  //   content: '☆☆☆☆☆';
-  //   position: absolute;
-  //   width: 100%;
-  //   height: 100%;
-  //   top: 0;
-  //   left: 0;
-  //   color: #ffb547;
-  // }
-  // -webkit-appearance: none;
-  // -moz-appearance: none;
-  // appearance: none;
-  // display: inline-block;
-  // border: none;
-  // width: 100%;
-  // color: #ffb547;
-  // }
 
   &__items {
     display: flex;
