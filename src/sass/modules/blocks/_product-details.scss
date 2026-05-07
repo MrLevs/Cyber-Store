@@ -463,43 +463,10 @@
     list-style-type: none;
   }
 
-  &__btn {
-    padding: 0.75rem 5.375rem 0.75rem 3.5rem;
-    position: relative;
-    background-color: var.$info-bg;
-    border: 0.0625rem solid var.$details-btn-border-color;
-    border-radius: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var.$global-color;
-    transition: var.$transition-color, var.$transition-border-color, var.$transition-bg;
-    cursor: pointer;
-
-    &:hover {
-      background-color: var.$shop-link-bg-hover;
-    }
-
-    &::before,
-    &::after {
-      content: '';
-      display: block;
-      width: 0.6rem;
-      height: 0.125rem;
-      position: absolute;
-      top: 50%;
-      background-color: var.$global-color;
-      transition: var.$transition-bg;
-    }
-
-    &::before {
-      right: 3.86rem;
-      transform: rotateZ(45deg);
-    }
-
-    &::after {
-      right: 3.5rem;
-      transform: rotateZ(315deg);
-    }
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -517,5 +484,84 @@
     justify-content: flex-start;
     align-items: flex-start;
     gap: 3rem 0;
+  }
+
+  &__info {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0 3.75rem;
+  }
+
+  &__stat {
+    margin: 0;
+    padding: 0;
+    max-width: 59.75rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem 0;
+    list-style: none;
+  }
+
+  &__stat-item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__stat-text {
+    max-width: 8rem;
+    width: 100%;
+    font-size: 1.125rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__stat-progress {
+    flex: 1;
+    max-width: 48rem;
+    width: 100%;
+
+    &::-webkit-meter-bar {
+      background-color: var.$reviews-meter-bg;
+      border: 0;
+      transition: var.$transition-bg;
+    }
+
+    &::-webkit-meter-optimum-value {
+      background-color: var.$reviews-meter-value-bg;
+      transition: var.$transition-bg;
+    }
+  }
+
+  &__stat-count {
+    max-width: 2rem;
+    width: 100%;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$reviews-stat-count-color;
+    transition: var.$transition-color;
+    text-align: end;
+  }
+
+  &__button {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem 0;
   }
 }

@@ -42,8 +42,15 @@ $transition-transform: transform ease 0.5s;
   --breadcrumbs-bg: #fff;
   --breadcrumbs-border-color: #bebebe;
 
+  //---Leave-commet-bg----
+  --leave-commet-bg: #ffb547;
+
   //---Rating-----
   --rating-bg: #fafafa;
+
+  //---Review-----
+  --review-bg: #fafafa;
+  --review-comment-color: #7e7e7e;
 
   //---Footer-----
   --footer-bg: #000;
@@ -158,6 +165,10 @@ $transition-transform: transform ease 0.5s;
   --details-content-text-color: #9d9d9d;
   --details-li-border-color: #cdcdcd;
   --details-btn-border-color: #545454;
+  //---Reviews---
+  --reviews-meter-bg: #d9d9d9;
+  --reviews-meter-value-bg: #ffb547;
+  --reviews-stat-count-color: #727373;
   //---Page Product-Details the End----
 }
 
@@ -191,8 +202,15 @@ $transition-transform: transform ease 0.5s;
   --breadcrumbs-bg: #141a2e;
   --breadcrumbs-border-color: #383838;
 
+  //---Leave-commet-bg----
+  --leave-commet-bg: #955e0d;
+
   //---Rating-----
   --rating-bg: #181818;
+
+  //---Review-----
+  --review-bg: #262525;
+  --review-comment-color: #bdbdbd;
 
   //---Footer-----
   --footer-bg: #141a2e;
@@ -306,6 +324,10 @@ $transition-transform: transform ease 0.5s;
   --details-content-text-color: #dbdbdb;
   --details-li-border-color: #cdcdcd;
   --details-btn-border-color: #cacaca;
+  //---Reviews---
+  --reviews-meter-bg: #5f5f5f;
+  --reviews-meter-value-bg: #ffb547;
+  --reviews-stat-count-color: #dbdbdb;
   //---Page Product-Details the End----
 }
 
@@ -345,8 +367,15 @@ $btn-menu-bg: var(--btn-menu-bg);
 $breadcrumbs-bg: var(--breadcrumbs-bg);
 $breadcrumbs-border-color: var(--breadcrumbs-border-color);
 
+//---Leave-commet-bg----
+$leave-commet-bg: var(--leave-commet-bg);
+
 //---Rating-----
 $rating-bg: var(--rating-bg);
+
+//---Review-----
+$review-bg: var(--review-bg);
+$review-comment-color: var(--review-comment-color);
 
 //---Footer-----
 $footer-bg: var(--footer-bg);
@@ -466,6 +495,10 @@ $details-bg: var(--details-bg);
 $details-content-text-color: var(--details-content-text-color);
 $details-li-border-color: var(--details-li-border-color);
 $details-btn-border-color: var(--details-btn-border-color);
+//---Reviews---
+$reviews-meter-bg: var(--reviews-meter-bg);
+$reviews-meter-value-bg: var(--reviews-meter-value-bg);
+$reviews-stat-count-color: var(--reviews-stat-count-color);
 //---Page Product-Details the End----
 
 //---breakepoints Media--------

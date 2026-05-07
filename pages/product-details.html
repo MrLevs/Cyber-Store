@@ -377,7 +377,9 @@
                       </li>
                     </ul>
                   </div>
-                  <button class="details__btn">View More</button>
+                </div>
+                <div class="details__button">
+                  <button class="view-more">View More</button>
                 </div>
               </div>
             </div>
@@ -448,6 +450,79 @@
                     </div>
                   </div>
                 </div>
+                <ul class="reviews__stat">
+                  <li class="reviews__stat-item">
+                    <label for="excellent" class="reviews__stat-text">Excellent</label>
+                    <meter id="excellent" class="reviews__stat-progress" min="1" max="125" value="100"></meter>
+                    <p class="reviews__stat-count">100</p>
+                  </li>
+                  <li class="reviews__stat-item">
+                    <label for="good" class="reviews__stat-text">Good</label>
+                    <meter id="good" class="reviews__stat-progress" min="1" max="125" value="11"></meter>
+                    <p class="reviews__stat-count">11</p>
+                  </li>
+                  <li class="reviews__stat-item">
+                    <label for="average" class="reviews__stat-text">Average</label>
+                    <meter id="average" class="reviews__stat-progress" min="1" max="125" value="3"></meter>
+                    <p class="reviews__stat-count">3</p>
+                  </li>
+                  <li class="reviews__stat-item">
+                    <label for="below" class="reviews__stat-text">Below Average</label>
+                    <meter id="below" class="reviews__stat-progress" min="1" max="125" value="8"></meter>
+                    <p class="reviews__stat-count">8</p>
+                  </li>
+                  <li class="reviews__stat-item">
+                    <label for="poor" class="reviews__stat-text">Poor</label>
+                    <meter id="poor" class="reviews__stat-progress" min="1" max="125" value="1"></meter>
+                    <p class="reviews__stat-count">1</p>
+                  </li>
+                </ul>
+              </div>
+              <div class="reviews__button">
+                <button class="leave-comment">Leave Comment</button>
+              </div>
+              <div class="reviews__box">
+                <article class="review">
+                  <img src="/images/user.webp" alt="Avatar" class="review__img" />
+                  <div class="review__inner">
+                    <div class="review__box">
+                      <h2 class="review__name">Grace Carey</h2>
+                      <time class="review__date" datetime="2021-01-24">24 January 2023</time>
+                    </div>
+                    <div class="review__stars">
+                      <svg class="review__svg review__svg_active" width="24" height="24" viewBox="0 0 24 24">
+                        <use href="/images/sprite-icon.svg#star"></use>
+                      </svg>
+                      <svg class="review__svg review__svg_active" width="24" height="24" viewBox="0 0 24 24">
+                        <use href="/images/sprite-icon.svg#star"></use>
+                      </svg>
+                      <svg class="review__svg" width="24" height="24" viewBox="0 0 24 24">
+                        <use href="/images/sprite-icon.svg#star"></use>
+                      </svg>
+                      <svg class="review__svg" width="24" height="24" viewBox="0 0 24 24">
+                        <use href="/images/sprite-icon.svg#star"></use>
+                      </svg>
+                      <svg class="review__svg" width="24" height="24" viewBox="0 0 24 24">
+                        <use href="/images/sprite-icon.svg#star"></use>
+                      </svg>
+                    </div>
+                    <p class="review__comment">
+                      I was a bit nervous to be buying a secondhand phone from Amazon, but I couldn’t be happier with my
+                      purchase!! I have a pre-paid data plan so I was worried that this phone wouldn’t connect with my
+                      data plan, since the new phones don’t have the physical Sim tray anymore, but couldn’t have been
+                      easier! I bought an Unlocked black iPhone 14 Pro Max in excellent condition and everything is
+                      PERFECT. It was super easy to set up and the phone works and looks great. It truly was in
+                      excellent condition. Highly recommend!!!🖤
+                    </p>
+                    <div class="review__images">
+                      <img class="review__image" src="/images/review.webp" alt="review" />
+                      <img class="review__image" src="/images/review2.webp" alt="review" />
+                    </div>
+                  </div>
+                </article>
+              </div>
+              <div class="reviews__button">
+                <button class="view-more">View More</button>
               </div>
             </div>
           </div>
