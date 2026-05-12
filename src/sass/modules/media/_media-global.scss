@@ -1,0 +1,45 @@
+@use '../variables' as var;
+@use '../mixin' as mix;
+
+//max-width: 992px
+@include mix.laptop {
+  //-------Discount---------
+  .discount {
+    &__box {
+      grid-template-rows: 1fr 1fr;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+  }
+}
+
+//max-width: 768px
+@include mix.tablet {
+  //---Breadcrumbs------
+  .breadcrumbs {
+    display: none;
+  }
+
+  //-------Discount---------
+  .discount {
+    &__bg {
+      padding: 2rem 0;
+    }
+  }
+}
+
+//max-width: 576px
+@include mix.mobile {
+  //-------Discount---------
+  .discount {
+    &__inner {
+      align-items: center;
+    }
+
+    &__box {
+      grid-template-rows: repeat(4, 1fr);
+      grid-template-columns: 1fr;
+      gap: 1rem 0;
+    }
+  }
+}

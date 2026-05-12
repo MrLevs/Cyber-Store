@@ -20,11 +20,6 @@
 
 //max-width: 768px
 @include mix.tablet {
-  //---Breadcrumbs------
-  .breadcrumbs {
-    display: none;
-  }
-
   //---Inner--------
   .inner {
     &__bg {

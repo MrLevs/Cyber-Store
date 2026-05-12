@@ -10,8 +10,9 @@ export function createProductCard(elem, array, arrayLike) {
     const innerProductCard = document.createElement('div');
     const imgProductCard = document.createElement('img');
     const titleProductCard = document.createElement('h3');
-    const priceProductCard = document.createElement('p');
     const linkProductCard = document.createElement('a');
+    const priceProductCard = document.createElement('p');
+    const btnShopProductCard = document.createElement('button');
 
     let productCardInfo = `${item.brand} ${item.name} ${item.memory}GB ${item.color} (${item.serial})`;
 
@@ -42,20 +43,22 @@ export function createProductCard(elem, array, arrayLike) {
     imgProductCard.setAttribute('loading', 'lazy');
 
     titleProductCard.className = 'product-card__title';
-    titleProductCard.textContent = productCardInfo;
+    linkProductCard.className = 'product-card__link';
+    linkProductCard.textContent = productCardInfo;
 
     priceProductCard.className = 'product-card__price';
     priceProductCard.textContent = `$${item.price}`;
 
-    linkProductCard.className = 'product-card__link';
-    linkProductCard.textContent = 'Buy Now';
-    linkProductCard.setAttribute('herf', '#');
-    linkProductCard.setAttribute('aria-label', `Buy Now ${productCardInfo})`);
+    btnShopProductCard.className = 'product-card__btn-shop';
+    btnShopProductCard.textContent = 'Buy Now';
+    btnShopProductCard.setAttribute('herf', '#');
+    btnShopProductCard.setAttribute('aria-label', `Buy Now ${productCardInfo})`);
 
+    titleProductCard.append(linkProductCard);
     innerProductCard.append(imgProductCard);
     innerProductCard.append(titleProductCard);
     innerProductCard.append(priceProductCard);
-    innerProductCard.append(linkProductCard);
+    innerProductCard.append(btnShopProductCard);
 
     svgProductCard.append(useProductCard);
     btnProductCard.append(svgProductCard);

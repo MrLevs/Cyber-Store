@@ -27,6 +27,7 @@ a {
   //max-width 1230px
   max-width: 75rem;
   margin: 0 auto;
+  padding: 0 0.9375rem;
 }
 
 //-------Header-------
@@ -638,6 +639,14 @@ main {
     transition: var.$transition-color;
   }
 
+  &__link {
+    cursor: pointer;
+    transition: var.$transition-color;
+    &:hover {
+      color: var.$shop-link-bg-hover;
+    }
+  }
+
   &__price {
     font-size: 1.5rem;
     font-weight: 600;
@@ -646,9 +655,10 @@ main {
     transition: var.$transition-color;
   }
 
-  &__link {
+  &__btn-shop {
     padding: 0.75rem 4rem;
     background-color: var.$product-card-link-bg;
+    border: none;
     border-radius: 0.5rem;
     font-size: 0.875rem;
     font-weight: 500;

@@ -91,15 +91,6 @@
       gap: 1rem;
     }
   }
-
-  //-------Discount---------
-  .discount {
-    &__box {
-      grid-template-rows: 1fr 1fr;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1rem;
-    }
-  }
 }
 
 //max-width: 768px
@@ -139,13 +130,6 @@
     &__card {
       align-items: center;
       text-align: center;
-    }
-  }
-
-  //-------Discount---------
-  .discount {
-    &__bg {
-      padding: 2rem 0;
     }
   }
 }
@@ -210,6 +194,10 @@
       grid-template-rows: repeat(3, 1fr);
       grid-template-columns: repeat(4, 1fr);
     }
+
+    &__name {
+      font-size: 0.875rem;
+    }
   }
 
   //---Products-------
@@ -238,19 +226,6 @@
       display: flex;
       justify-content: center;
       list-style: none;
-    }
-  }
-
-  //-------Discount---------
-  .discount {
-    &__inner {
-      align-items: center;
-    }
-
-    &__box {
-      grid-template-rows: repeat(4, 1fr);
-      grid-template-columns: 1fr;
-      gap: 1rem 0;
     }
   }
 
