@@ -575,5 +575,90 @@
     </main>
     <include src="chunk/footer.html"></include>
     <script type="module" src="/src/main.js"></script>
+    <dialog id="dialog-review" class="dialog-review" aria-label="Leave review">
+      <form id="form-review" class="form-review" name="form-review">
+        <div class="form-review__inner">
+          <label for="form-review-name" class="form-review__label">Name</label>
+          <input
+            id="form-review-name"
+            type="text"
+            class="form-review__input"
+            name="name"
+            autocomplete="given-name"
+            placeholder="Name" />
+        </div>
+        <div class="form-review__inner">
+          <label for="form-review-surname" class="form-review__label">Surname</label>
+          <input
+            id="form-review-surname"
+            type="text"
+            class="form-review__input"
+            name="surname"
+            autocomplete="family-name"
+            placeholder="Surname" />
+        </div>
+        <div class="form-review__rating">
+          <div class="form-review__box">
+            <label for="star-1" class="form-review__star">
+              <svg class="form-review__svg" width="50" height="50" viewBox="-5 -5 50 50">
+                <use href="/images/sprite-icon.svg#star"></use>
+              </svg>
+            </label>
+            <input id="star-1" class="form-review__radio" type="radio" value="1" name="stars" />
+          </div>
+          <div class="form-review__box">
+            <label for="star-2" class="form-review__star">
+              <svg class="form-review__svg" width="50" height="50" viewBox="-5 -5 50 50">
+                <use href="/images/sprite-icon.svg#star"></use>
+              </svg>
+            </label>
+            <input id="star-2" class="form-review__radio" type="radio" value="2" name="stars" />
+          </div>
+          <div class="form-review__box">
+            <label for="star-3" class="form-review__star">
+              <svg class="form-review__svg" width="50" height="50" viewBox="-5 -5 50 50">
+                <use href="/images/sprite-icon.svg#star"></use>
+              </svg>
+            </label>
+            <input id="star-3" class="form-review__radio" type="radio" value="3" name="stars" />
+          </div>
+          <div class="form-review__box">
+            <label for="star-4" class="form-review__star">
+              <svg class="form-review__svg" width="50" height="50" viewBox="-5 -5 50 50">
+                <use href="/images/sprite-icon.svg#star"></use>
+              </svg>
+            </label>
+            <input id="star-4" class="form-review__radio" type="radio" value="4" name="stars" />
+          </div>
+          <div class="form-review__box">
+            <label for="star-5" class="form-review__star">
+              <svg class="form-review__svg" width="50" height="50" viewBox="-5 -5 50 50">
+                <use href="/images/sprite-icon.svg#star"></use>
+              </svg>
+            </label>
+            <input id="star-5" class="form-review__radio" type="radio" value="5" name="stars" />
+          </div>
+        </div>
+        <div class="form-review__inner">
+          <label for="form-review-comment" class="form-review__label">Comment</label>
+          <textarea
+            id="form-review-comment"
+            type="text"
+            class="form-review__input form-review__input_resize"
+            name="comment"
+            placeholder="Comment"
+            rows="6"
+            cols="32"></textarea>
+        </div>
+        <div class="form-review__inner">
+          <label for="form-review-file" class="form-review__label">Add file</label>
+          <input id="form-review-file" class="form-review__file" type="file" name="file" accept=".png, .jpg" />
+        </div>
+        <div class="form-review__buttons">
+          <button class="form-review__btn">Send review</button>
+          <button id="close-dialog-review" class="form-review__btn" aria-label="Close Leave review">X</button>
+        </div>
+      </form>
+    </dialog>
   </body>
 </html>

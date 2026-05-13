@@ -3,6 +3,7 @@
 
 // max-width: 1200px
 @include mix.desktop {
+  //---Info------
   .info {
     &__bg {
       padding: 3rem 0;
@@ -36,6 +37,7 @@
 
 // max-width: 768px
 @include mix.tablet {
+  //---Info------
   .info {
     &__title {
       font-size: 1.5rem;
@@ -60,10 +62,30 @@
       gap: 1rem 0;
     }
   }
+
+  //---Details---------
+  .details {
+    &__content {
+      align-items: center;
+    }
+  }
+
+  //---Reviews---------
+  .reviews {
+    &__inner {
+      align-items: center;
+    }
+
+    &__info {
+      flex-direction: column;
+      gap: 3rem 0;
+    }
+  }
 }
 
 // max-width: 576px
 @include mix.mobile {
+  //---Info------
   .info {
     &__colors {
       flex-direction: column;
@@ -81,6 +103,10 @@
       align-items: center;
     }
 
+    &__detail-title {
+      text-align: center;
+    }
+
     &__detail-text {
       text-align: center;
     }
@@ -89,6 +115,17 @@
       flex-direction: column;
       align-items: stretch;
       gap: 1rem 0;
+    }
+  }
+
+  //---Details---
+  .details {
+    &__li {
+      flex-direction: column;
+    }
+
+    &__list-min {
+      align-items: flex-start;
     }
   }
 }

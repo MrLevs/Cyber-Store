@@ -762,6 +762,7 @@ main {
 
 //------Rating----------
 .rating {
+  min-width: 11.5rem;
   padding: 2rem;
   display: inline-flex;
   flex-direction: column;
@@ -881,5 +882,99 @@ main {
     max-width: 7.5rem;
     max-height: 7.5rem;
     border-radius: 0.5rem;
+  }
+}
+
+//---Dialog-Review-------
+.dialog-review {
+  background-color: var.$review-bg;
+  transition: var.$transition-bg;
+  border: 0;
+  border-radius: 1rem;
+
+  &::backdrop {
+    background-color: var.$dialog-review-backdrop-bg;
+    transition: var.$transition-bg;
+    opacity: 0.9;
+  }
+}
+
+//---Form-review------
+.form-review {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1rem 0;
+
+  &__inner {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+  }
+
+  &__label {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
+    cursor: pointer;
+  }
+
+  &__input {
+    padding: 0.5rem;
+    width: 100%;
+    background-color: var.$form-review-input-bg;
+    border: 0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var.$global-color;
+    transition: var.$transition-bg, var.$transition-color;
+
+    &::placeholder {
+      color: var.$global-color;
+      transition: var.$transition-bg, var.$transition-color;
+      opacity: 0.7;
+    }
+
+    &_resize {
+      resize: vertical;
+    }
+  }
+
+  &__rating {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  &__box {
+    position: relative;
+  }
+
+  &__star {
+    cursor: pointer;
+
+    &:hover {
+      .form-review__svg {
+        fill: #ffb547;
+      }
+    }
+  }
+
+  &__svg {
+    fill: none;
+  }
+
+  &__radio {
+    margin: 0;
+    width: 0;
+    height: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
   }
 }

@@ -72,4 +72,22 @@ export function selectDetailsProduct() {
     event.currentTarget.style.opacity = '1';
   }
   //---------------------------------------------
+  //---------Show modal----------
+  const modalReview = document.querySelector('#dialog-review');
+  const btnOpenModal = document.querySelector('.leave-comment');
+  const btnCloseModal = document.querySelector('#close-dialog-review');
+
+  btnOpenModal.addEventListener('click', openModal);
+  btnCloseModal.addEventListener('click', closeModal);
+
+  function openModal() {
+    document.body.classList.add('_lock');
+    modalReview.showModal();
+  }
+
+  function closeModal(e) {
+    e.preventDefault();
+    document.body.classList.remove('_lock');
+    modalReview.close();
+  }
 }
