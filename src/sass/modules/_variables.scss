@@ -52,9 +52,6 @@ $transition-transform: transform ease 0.5s;
   --review-bg: #fafafa;
   --review-comment-color: #7e7e7e;
 
-  //---Dialog-review------
-  --dialog-review-backdrop-bg: #000;
-
   //---Form-review--------
   --form-review-input-bg: #ddd;
 
@@ -217,9 +214,6 @@ $transition-transform: transform ease 0.5s;
   //---Review-----
   --review-bg: #262525;
   --review-comment-color: #bdbdbd;
-
-  //---Dialog-review------
-  --dialog-review-backdrop-bg: #343434;
 
   //---Form-review--------
   --form-review-input-bg: #545454;
@@ -388,9 +382,6 @@ $rating-bg: var(--rating-bg);
 //---Review-----
 $review-bg: var(--review-bg);
 $review-comment-color: var(--review-comment-color);
-
-//---Dialog-review------
-$dialog-review-backdrop-bg: var(--dialog-review-backdrop-bg);
 
 //---Form-review--------
 $form-review-input-bg: var(--form-review-input-bg);
