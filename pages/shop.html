@@ -8,7 +8,76 @@
   </head>
   <body>
     <include src="chunk/header.html"></include>
-    <main class="main">SHOP!!!</main>
+    <main class="main">
+      <section class="shop">
+        <div class="container">
+          <div class="shop__bg">
+            <div class="shop__inner container-m">
+              <div class="shop__info">
+                <h1 class="title">Shopping Cart</h1>
+                <div class="shop-carts">
+                  <div class="shop-carts__cart">
+                    <img src="/images/iphone-mini.webp" alt="apple" class="shop-carts__img" />
+                    <div class="shop-carts__info">
+                      <a href="" class="shop-carts__link">Apple iPhone 14 Pro Max 128Gb Deep Purple</a>
+                      <p class="shop-carts__id">#25139526913984</p>
+                    </div>
+                    <div class="counter">
+                      <button class="counter__btn">-</button>
+                      <p class="counter__count">1</p>
+                      <button class="counter__btn">+</button>
+                    </div>
+                    <p class="shop-carts__price">$1399</p>
+                    <button class="shop-carts__btn-delete">X</button>
+                  </div>
+                </div>
+              </div>
+              <form id="form__order" class="form-order" name="form-order">
+                <h2 class="form-order__title">Order Summary</h2>
+                <label for="promo-code" class="form-order__label">Discount code / Promo code</label>
+                <input
+                  id="promo-code"
+                  type="text"
+                  class="form-order__input"
+                  name="promo-code"
+                  placeholder="Code"
+                  autocomplete="off" />
+                <label for="bonus-card" class="form-order__label">Discount code / Promo code</label>
+                <div class="form__order__inner">
+                  <input
+                    id="bonus-card"
+                    type="text"
+                    class="form-order__input"
+                    name="bonus-card"
+                    placeholder="Enter Card number"
+                    autocomplete="off" />
+                  <button class="form-order__btn-apply">Apply</button>
+                </div>
+                <ul class="form-order__info">
+                  <li class="form-order__item">
+                    <h3 class="form-order__item-title">Subtotal</h3>
+                    <p class="form-order__prise">$2347</p>
+                  </li>
+                  <li class="form-order__item">
+                    <h3 class="form-order__item-title">Estimated Tax</h3>
+                    <p class="form-order__prise">$50</p>
+                  </li>
+                  <li class="form-order__item">
+                    <h3 class="form-order__item-title">Estimated shipping & Handling</h3>
+                    <p class="form-order__prise">$29</p>
+                  </li>
+                  <li class="form-order__item">
+                    <h3 class="form-order__item-title">Total</h3>
+                    <p class="form-order__prise">$2426</p>
+                  </li>
+                </ul>
+                <button class="form-order__btn">Checkout</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <include src="chunk/footer.html"></include>
     <script type="module" src="/src/main.js"></script>
   </body>

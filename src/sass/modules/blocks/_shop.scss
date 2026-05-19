@@ -1,0 +1,20 @@
+@use '../variables' as var;
+
+.shop {
+  &__bg {
+    padding: 7rem 0;
+    background-color: var.$shop-bg;
+    transition: var.$transition-bg;
+  }
+
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 3rem;
+  }
+
+  &__info {
+    flex: 1;
+  }
+}

@@ -173,6 +173,10 @@ $transition-transform: transform ease 0.5s;
   --reviews-meter-value-bg: #ffb547;
   --reviews-stat-count-color: #727373;
   //---Page Product-Details the End----
+
+  //---Page Shop----------------------
+  --shop-bg: #fff;
+  //---Page Shop the End----
 }
 
 .theme-dark {
@@ -335,6 +339,10 @@ $transition-transform: transform ease 0.5s;
   --reviews-meter-value-bg: #ffb547;
   --reviews-stat-count-color: #dbdbdb;
   //---Page Product-Details the End----
+
+  //---Page Shop----------------------
+  --shop-bg: #242e40;
+  //---Page Shop the End----
 }
 
 //---Page Products----
@@ -509,6 +517,10 @@ $reviews-meter-bg: var(--reviews-meter-bg);
 $reviews-meter-value-bg: var(--reviews-meter-value-bg);
 $reviews-stat-count-color: var(--reviews-stat-count-color);
 //---Page Product-Details the End----
+
+//---Page Shop----------------------
+$shop-bg: var(--shop-bg);
+//---Page Shop the End----
 
 //---breakepoints Media--------
 //---576px----

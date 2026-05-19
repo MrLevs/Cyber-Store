@@ -77,8 +77,10 @@ export function selectDetailsProduct() {
   const btnOpenModal = document.querySelector('.leave-comment');
   const btnCloseModal = document.querySelector('#close-dialog-review');
 
-  btnOpenModal.addEventListener('click', openModal);
-  btnCloseModal.addEventListener('click', closeModal);
+  if (btnOpenModal && btnCloseModal) {
+    btnOpenModal.addEventListener('click', openModal);
+    btnCloseModal.addEventListener('click', closeModal);
+  }
 
   function openModal() {
     document.body.classList.add('_lock');
