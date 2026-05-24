@@ -23,6 +23,7 @@ $transition-transform: transform ease 0.5s;
   --header-bg: #fff;
   --header-link-stroke: #000;
   --header-mobile-bg: #fff;
+  --header-border-color: #b5b5b5;
 
   //---Logo-----
   --logo-bg: black;
@@ -40,7 +41,6 @@ $transition-transform: transform ease 0.5s;
 
   //---Breadcrumbs-------
   --breadcrumbs-bg: #fff;
-  --breadcrumbs-border-color: #bebebe;
 
   //---Leave-commet-bg----
   --leave-commet-bg: #ffb547;
@@ -54,6 +54,18 @@ $transition-transform: transform ease 0.5s;
 
   //---Form-review--------
   --form-review-input-bg: #ddd;
+
+  //---Shop-carts-----------
+  --shop-carts-border-color: #d9d9d9;
+
+  //---Count-color---------
+  --count-color: #8b8b8b;
+
+  //---Form-order----------
+  --form-order-border-color: #ebebeb;
+  --form-order-label-color: #545454;
+  --form-order-input-border-color: #9f9f9f;
+  --form-order-placeholder-color: #979797;
 
   //---Footer-----
   --footer-bg: #000;
@@ -190,6 +202,7 @@ $transition-transform: transform ease 0.5s;
   --header-bg: #141a2e;
   --header-link-stroke: #fff;
   --header-mobile-bg: #141a2e;
+  --header-border-color: #383838;
 
   //---Logo-----
   --logo-bg: rgb(255, 255, 255);
@@ -207,7 +220,6 @@ $transition-transform: transform ease 0.5s;
 
   //---Breadcrumbs-------
   --breadcrumbs-bg: #141a2e;
-  --breadcrumbs-border-color: #383838;
 
   //---Leave-commet-bg----
   --leave-commet-bg: #955e0d;
@@ -221,6 +233,18 @@ $transition-transform: transform ease 0.5s;
 
   //---Form-review--------
   --form-review-input-bg: #545454;
+
+  //---Shop-carts-----------
+  --shop-carts-border-color: #484848;
+
+  //---Count-color---------
+  --count-color: #8b8b8b;
+
+  //---Form-order----------
+  --form-order-border-color: #5e5e5e;
+  --form-order-label-color: #c1c1c1;
+  --form-order-input-border-color: #939393;
+  --form-order-placeholder-color: #777777;
 
   //---Footer-----
   --footer-bg: #141a2e;
@@ -362,6 +386,7 @@ $body-bg: var(--body-bg);
 $header-bg: var(--header-bg);
 $header-link-stroke: var(--header-link-stroke);
 $header-mobile-bg: var(--header-mobile-bg);
+$header-border-color: var(--header-border-color);
 
 //---Logo-----
 $logo-bg: var(--logo-bg);
@@ -379,7 +404,6 @@ $btn-menu-bg: var(--btn-menu-bg);
 
 //---Breadcrumbs-------
 $breadcrumbs-bg: var(--breadcrumbs-bg);
-$breadcrumbs-border-color: var(--breadcrumbs-border-color);
 
 //---Leave-commet-bg----
 $leave-commet-bg: var(--leave-commet-bg);
@@ -393,6 +417,18 @@ $review-comment-color: var(--review-comment-color);
 
 //---Form-review--------
 $form-review-input-bg: var(--form-review-input-bg);
+
+//---Shop-carts-----------
+$shop-carts-border-color: var(--shop-carts-border-color);
+
+//---Count-color---------
+$count-color: var(--count-color);
+
+//---Form-order----------
+$form-order-border-color: var(--form-order-border-color);
+$form-order-label-color: var(--form-order-label-color);
+$form-order-input-border-color: var(--form-order-input-border-color);
+$form-order-placeholder-color: var(--form-order-placeholder-color);
 
 //---Footer-----
 $footer-bg: var(--footer-bg);

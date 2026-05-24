@@ -36,7 +36,8 @@ a {
 
   &__bg {
     background-color: var.$header-bg;
-    transition: var.$transition-bg;
+    border-bottom: 0.0625rem solid var.$header-border-color;
+    transition: var.$transition-bg, var.$transition-border-color;
   }
 
   &__inner {
@@ -417,7 +418,6 @@ a {
     padding: 2.75rem 0.9375rem;
     background-color: var.$breadcrumbs-bg;
     transition: var.$transition-bg, var.$transition-border-color;
-    border-top: 0.0625rem solid var.$breadcrumbs-border-color;
   }
 
   &__list {
@@ -1035,17 +1035,37 @@ main {
   }
 
   &__close {
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
     position: absolute;
     top: 0;
     right: 0;
     background-color: var.$review-bg;
     border: 0.0625rem solid var.$details-btn-border-color;
     border-radius: 0.5rem;
-    font-size: 0.875rem;
-    font-weight: 500;
-    color: var.$global-color;
-    transition: var.$transition-color, var.$transition-border-color, var.$transition-bg;
+    transition: var.$transition-border-color, var.$transition-bg;
     cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 1rem;
+      height: 0.0625rem;
+      position: absolute;
+      top: 0.90625;
+      left: 0.4375rem;
+      background-color: var.$global-color;
+      transition: var.$transition-bg;
+    }
+
+    &::before {
+      transform: rotateZ(45deg);
+    }
+
+    &::after {
+      transform: rotateZ(135deg);
+    }
 
     &:hover {
       background-color: var.$shop-link-bg-hover;
@@ -1053,6 +1073,238 @@ main {
   }
 }
 
+.shop-carts {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2.5rem;
+
+  &__cart {
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 1rem;
+    border-bottom: 0.0625rem solid var.$shop-carts-border-color;
+    transition: var.$transition-border-color;
+
+    &:last-child {
+      border-bottom: 0;
+    }
+  }
+
+  &__img {
+    max-width: 5.625rem;
+  }
+
+  &__info {
+    max-width: 12rem;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem 0;
+  }
+
+  &__link {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__id {
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__price {
+    font-size: 1.25rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__btn {
+    position: relative;
+    padding: 0;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 1rem;
+      height: 0.0625rem;
+      position: absolute;
+      top: 0.71875rem;
+      left: 0.25rem;
+      background-color: var.$global-color;
+      transition: var.$transition-bg;
+    }
+
+    &::before {
+      transform: rotateZ(45deg);
+    }
+
+    &::after {
+      transform: rotateZ(135deg);
+    }
+  }
+}
+
+.counter {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 0 0.5rem;
+
+  &__btn {
+    position: relative;
+    padding: 0;
+    border: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: transparent;
+    cursor: pointer;
+
+    &_minus {
+      &::before {
+        content: '';
+        width: 0.75rem;
+        height: 0.125rem;
+        position: absolute;
+        top: 0.6875rem;
+        left: 0.375rem;
+        background-color: var.$global-color;
+        transition: var.$transition-bg;
+      }
+    }
+
+    &_plus {
+      &::before,
+      &::after {
+        content: '';
+        width: 0.75rem;
+        height: 0.125rem;
+        position: absolute;
+        top: 0.6875rem;
+        left: 0.375rem;
+        background-color: var.$global-color;
+        transition: var.$transition-bg;
+      }
+
+      &::after {
+        transform: rotateZ(90deg);
+      }
+    }
+  }
+
+  &__input {
+    appearance: none;
+    padding: 0.5rem 1rem;
+    width: 2.5rem;
+    height: 2rem;
+    border: 0.0625rem solid var.$count-color;
+    border-radius: 0.25rem;
+    background-color: transparent;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+}
+
 .form-order {
+  padding: 3.5rem 4rem;
+  border: 0.0625rem solid var.$form-order-border-color;
+  border-radius: 0.625rem;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 2.5rem;
+  transition: var.$transition-border-color;
+
+  &__title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__block {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.5rem 0;
+  }
+
+  &__box {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem 0;
+  }
+
+  &__label {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var.$form-order-label-color;
+    transition: var.$transition-color;
+    cursor: pointer;
+  }
+
+  &__inner {
+    width: 100%;
+    position: relative;
+  }
+
+  &__input {
+    padding: 1rem;
+    width: 100%;
+    background-color: transparent;
+    border: 0.0625rem solid var.$form-order-input-border-color;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 400;
+    color: var.$global-color;
+    transition: var.$transition-color;
+
+    &::placeholder {
+      color: var.$form-order-placeholder-color;
+    }
+  }
+
+  &__btn-apply {
+    position: absolute;
+    top: 0.5rem;
+    right: 1rem;
+    padding: 0.5rem 1.5rem;
+    border: 0.0625rem solid var.$global-color;
+    border-radius: 0.375rem;
+    background-color: var.$shop-bg;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-border-color, var.$transition-bg, var.$transition-color;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var.$shop-link-bg-hover;
+    }
+  }
 }

@@ -23,54 +23,66 @@
                       <p class="shop-carts__id">#25139526913984</p>
                     </div>
                     <div class="counter">
-                      <button class="counter__btn">-</button>
-                      <p class="counter__count">1</p>
-                      <button class="counter__btn">+</button>
+                      <button class="counter__btn counter__btn_minus" aria-label="reduce the number"></button>
+                      <input
+                        class="counter__input"
+                        name="count"
+                        type="text"
+                        value="1"
+                        aria-label="Enter the quantity of the product"
+                        autocomplete="off" />
+                      <button class="counter__btn counter__btn_plus" aria-label="increase the number"></button>
                     </div>
                     <p class="shop-carts__price">$1399</p>
-                    <button class="shop-carts__btn-delete">X</button>
+                    <button class="shop-carts__btn" aria-label="delete"></button>
                   </div>
                 </div>
               </div>
               <form id="form__order" class="form-order" name="form-order">
                 <h2 class="form-order__title">Order Summary</h2>
-                <label for="promo-code" class="form-order__label">Discount code / Promo code</label>
-                <input
-                  id="promo-code"
-                  type="text"
-                  class="form-order__input"
-                  name="promo-code"
-                  placeholder="Code"
-                  autocomplete="off" />
-                <label for="bonus-card" class="form-order__label">Discount code / Promo code</label>
-                <div class="form__order__inner">
-                  <input
-                    id="bonus-card"
-                    type="text"
-                    class="form-order__input"
-                    name="bonus-card"
-                    placeholder="Enter Card number"
-                    autocomplete="off" />
-                  <button class="form-order__btn-apply">Apply</button>
+                <div class="form-order__block">
+                  <div class="form-order__box">
+                    <label for="promo-code" class="form-order__label">Discount code / Promo code</label>
+                    <input
+                      id="promo-code"
+                      type="text"
+                      class="form-order__input"
+                      name="promo-code"
+                      placeholder="Code"
+                      autocomplete="off" />
+                  </div>
+                  <div class="form-order__box">
+                    <label for="bonus-card" class="form-order__label">Your bonus card number</label>
+                    <div class="form-order__inner">
+                      <input
+                        id="bonus-card"
+                        type="number"
+                        class="form-order__input"
+                        name="bonus-card"
+                        placeholder="Enter Card number"
+                        autocomplete="off" />
+                      <button class="form-order__btn-apply">Apply</button>
+                    </div>
+                  </div>
+                  <ul class="form-order__info">
+                    <li class="form-order__item">
+                      <h3 class="form-order__item-title">Subtotal</h3>
+                      <p class="form-order__prise">$2347</p>
+                    </li>
+                    <li class="form-order__item">
+                      <h3 class="form-order__item-title">Estimated Tax</h3>
+                      <p class="form-order__prise">$50</p>
+                    </li>
+                    <li class="form-order__item">
+                      <h3 class="form-order__item-title">Estimated shipping & Handling</h3>
+                      <p class="form-order__prise">$29</p>
+                    </li>
+                    <li class="form-order__item">
+                      <h3 class="form-order__item-title">Total</h3>
+                      <p class="form-order__prise">$2426</p>
+                    </li>
+                  </ul>
                 </div>
-                <ul class="form-order__info">
-                  <li class="form-order__item">
-                    <h3 class="form-order__item-title">Subtotal</h3>
-                    <p class="form-order__prise">$2347</p>
-                  </li>
-                  <li class="form-order__item">
-                    <h3 class="form-order__item-title">Estimated Tax</h3>
-                    <p class="form-order__prise">$50</p>
-                  </li>
-                  <li class="form-order__item">
-                    <h3 class="form-order__item-title">Estimated shipping & Handling</h3>
-                    <p class="form-order__prise">$29</p>
-                  </li>
-                  <li class="form-order__item">
-                    <h3 class="form-order__item-title">Total</h3>
-                    <p class="form-order__prise">$2426</p>
-                  </li>
-                </ul>
                 <button class="form-order__btn">Checkout</button>
               </form>
             </div>
