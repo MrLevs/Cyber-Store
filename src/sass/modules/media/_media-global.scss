@@ -26,6 +26,13 @@
       padding: 2rem 0;
     }
   }
+
+  //---Shop-Carts------
+  .shop-carts {
+    &__cart {
+      gap: 0 0.5rem;
+    }
+  }
 }
 
 //max-width: 576px
