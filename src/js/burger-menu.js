@@ -8,7 +8,7 @@ export function burgerMenu() {
   btnMenu.addEventListener('click', menuMobile);
   function menuMobile() {
     if (document.body.classList.contains('_lock')) {
-      if (!filtersMenu.classList.contains('filters_active') || !filtersMenu) {
+      if (!filtersMenu || !filtersMenu.classList.contains('filters_active')) {
         document.body.classList.remove('_lock');
       }
     } else {

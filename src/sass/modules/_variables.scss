@@ -66,6 +66,8 @@ $transition-transform: transform ease 0.5s;
   --form-order-label-color: #545454;
   --form-order-input-border-color: #9f9f9f;
   --form-order-placeholder-color: #979797;
+  --form-order-mod-color: #545454;
+  --form-order-btn-color: #fff;
 
   //---Footer-----
   --footer-bg: #000;
@@ -245,6 +247,8 @@ $transition-transform: transform ease 0.5s;
   --form-order-label-color: #c1c1c1;
   --form-order-input-border-color: #939393;
   --form-order-placeholder-color: #777777;
+  --form-order-mod-color: #8b8b8b;
+  --form-order-btn-color: #000;
 
   //---Footer-----
   --footer-bg: #141a2e;
@@ -429,6 +433,8 @@ $form-order-border-color: var(--form-order-border-color);
 $form-order-label-color: var(--form-order-label-color);
 $form-order-input-border-color: var(--form-order-input-border-color);
 $form-order-placeholder-color: var(--form-order-placeholder-color);
+$form-order-mod-color: var(--form-order-mod-color);
+$form-order-btn-color: var(--form-order-btn-color);
 
 //---Footer-----
 $footer-bg: var(--footer-bg);

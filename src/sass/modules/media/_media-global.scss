@@ -66,4 +66,32 @@
       flex-direction: column;
     }
   }
+
+  //---Shop-Carts------
+  .shop-carts {
+    &__cart {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      justify-items: center;
+      align-items: center;
+      gap: 0;
+    }
+
+    &__info {
+      grid-row-start: 1;
+      grid-row-end: 2;
+      grid-column-start: 2;
+      grid-column-end: 4;
+    }
+  }
+
+  //---Form-Order-----
+  .form-order {
+    padding: 0.5rem;
+
+    &__btn-apply {
+      padding: 0.5rem;
+    }
+  }
 }

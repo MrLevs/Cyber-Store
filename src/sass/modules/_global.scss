@@ -1074,6 +1074,7 @@ main {
 }
 
 .shop-carts {
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -1081,6 +1082,7 @@ main {
   gap: 2.5rem;
 
   &__cart {
+    width: 100%;
     padding: 1rem 0;
     display: flex;
     justify-content: flex-start;
@@ -1224,6 +1226,8 @@ main {
 }
 
 .form-order {
+  max-width: 35.0625rem;
+  width: 100%;
   padding: 3.5rem 4rem;
   border: 0.0625rem solid var.$form-order-border-color;
   border-radius: 0.625rem;
@@ -1301,6 +1305,55 @@ main {
     font-weight: 500;
     color: var.$global-color;
     transition: var.$transition-border-color, var.$transition-bg, var.$transition-color;
+    cursor: pointer;
+
+    &:hover {
+      background-color: var.$shop-link-bg-hover;
+    }
+  }
+
+  &__info {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1.25rem 0;
+    list-style: none;
+  }
+
+  &__item {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__item-title {
+    font-weight: 500;
+
+    &_color {
+      color: var.$form-order-mod-color;
+      transition: var.$transition-color;
+    }
+  }
+
+  &__btn {
+    width: 100%;
+    padding: 1rem;
+    border: 0;
+    border-radius: 0.375rem;
+    background-color: var.$global-color;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$form-order-btn-color;
+    transition: var.$transition-bg, var.$transition-color;
     cursor: pointer;
 
     &:hover {

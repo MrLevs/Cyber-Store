@@ -1,2 +1,16 @@
 @use '../variables' as var;
 @use '../mixin' as mix;
+
+// max-width: 1200px
+@include mix.desktop {
+  .shop {
+    &__bg {
+      padding: 4rem 0;
+    }
+
+    &__inner {
+      flex-direction: column;
+      gap: 3rem 0;
+    }
+  }
+}
