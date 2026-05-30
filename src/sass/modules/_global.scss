@@ -673,6 +673,10 @@ main {
     &:focus {
       background-color: var.$shop-link-bg-hover;
     }
+
+    &:active {
+      @extend %btn-active;
+    }
   }
 }
 
@@ -715,8 +719,13 @@ main {
   transition: var.$transition-color, var.$transition-border-color, var.$transition-bg;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: var.$shop-link-bg-hover;
+  }
+
+  &:active {
+    @extend %btn-active;
   }
 
   &::before,
@@ -754,8 +763,13 @@ main {
   transition: var.$transition-color, var.$transition-border-color, var.$transition-bg;
   cursor: pointer;
 
-  &:hover {
+  &:hover,
+  &:focus {
     background-color: var.$shop-link-bg-hover;
+  }
+
+  &:active {
+    @extend %btn-active;
   }
 }
 
@@ -1140,6 +1154,10 @@ main {
     background: transparent;
     cursor: pointer;
 
+    &:active {
+      @extend %btn-active;
+    }
+
     &::before,
     &::after {
       content: '';
@@ -1176,6 +1194,10 @@ main {
     height: 1.5rem;
     background: transparent;
     cursor: pointer;
+
+    &:active {
+      @extend %btn-active;
+    }
 
     &_minus {
       &::before {
@@ -1307,8 +1329,13 @@ main {
     transition: var.$transition-border-color, var.$transition-bg, var.$transition-color;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: var.$shop-link-bg-hover;
+    }
+
+    &:active {
+      @extend %btn-active;
     }
   }
 
@@ -1356,8 +1383,13 @@ main {
     transition: var.$transition-bg, var.$transition-color;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: var.$shop-link-bg-hover;
+    }
+
+    &:active {
+      @extend %btn-active;
     }
   }
 }

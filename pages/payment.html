@@ -8,7 +8,206 @@
   </head>
   <body>
     <include src="chunk/header.html"></include>
-    <main class="main">PAYMENT</main>
+    <main class="main">
+      <section class="payment">
+        <div class="payment__container container">
+          <div class="payment__bg">
+            <div class="payment__inner container-m">
+              <div class="payment__steps">
+                <div class="payment__step">
+                  <svg class="payment__svg" width="24" height="24" viewBox="0 0 24 24">
+                    <use href="/images/sprite-icon.svg#location"></use>
+                  </svg>
+                  <div class="payment__box">
+                    <h3 class="payment__title">Step 1</h3>
+                    <p class="payment__text">Address</p>
+                  </div>
+                </div>
+                <div class="payment__step">
+                  <svg class="payment__svg" width="24" height="24" viewBox="0 0 24 24">
+                    <use href="/images/sprite-icon.svg#shipping"></use>
+                  </svg>
+                  <div class="payment__box">
+                    <h3 class="payment__title">Step 2</h3>
+                    <p class="payment__text">Shipping</p>
+                  </div>
+                </div>
+                <div class="payment__step">
+                  <svg class="payment__svg" width="24" height="24" viewBox="0 0 24 24">
+                    <use href="/images/sprite-icon.svg#payment"></use>
+                  </svg>
+                  <div class="payment__box">
+                    <h3 class="payment__title">Step 3</h3>
+                    <p class="payment__text">Payment</p>
+                  </div>
+                </div>
+              </div>
+              <div class="payment__content">
+                <div class="payment__order"></div>
+                <div class="payment__block">
+                  <div class="payment__info">
+                    <div class="payment__info-box address">
+                      <h1 class="payment__info-title">Select Address</h1>
+                      <form id="form-address" class="payment__form" name="form-address">
+                        <div class="payment__cards-address">
+                          <div class="payment__card-address">
+                            <div class="payment__checkbox">
+                              <label
+                                for="address-home"
+                                class="payment__label"
+                                tabindex="0"
+                                aria-labelledby="address-home"></label>
+                              <input
+                                id="address-home"
+                                type="radio"
+                                name="address"
+                                class="payment__input"
+                                tabindex="-1"
+                                aria-label="address home"
+                                value="2118 Thornridge Cir. Syracuse, Connecticut 35624" />
+                            </div>
+                            <div class="payment__form-info">
+                              <div class="payment__form-box">
+                                <p class="payment__form-index">2118 Thornridge</p>
+                                <p class="payment__form-mark">home</p>
+                              </div>
+                              <p class="payment__form-address">2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
+                              <p class="payment__form-phone">(209) 555-0104</p>
+                            </div>
+                            <div class="payment__form-btns">
+                              <button class="payment__form-btn" aria-label="edit"></button>
+                              <button class="payment__form-btn" aria-label="delete"></button>
+                            </div>
+                          </div>
+                          <div class="payment__card-address">
+                            <div class="payment__checkbox">
+                              <label
+                                for="address-office"
+                                class="payment__label"
+                                tabindex="0"
+                                aria-labelledby="address-office"></label>
+                              <input
+                                id="address-office"
+                                type="radio"
+                                name="address"
+                                class="payment__input"
+                                tabindex="-1"
+                                aria-label="address office"
+                                value="2715 Ash Dr. San Jose, South Dakota 83475" />
+                            </div>
+                            <div class="payment__form-info">
+                              <div class="payment__form-box">
+                                <p class="payment__form-index">Headoffice</p>
+                                <p class="payment__form-mark">office</p>
+                              </div>
+                              <p class="payment__form-address">2715 Ash Dr. San Jose, South Dakota 83475</p>
+                              <p class="payment__form-phone">(704) 555-0127</p>
+                            </div>
+                            <div class="payment__form-btns">
+                              <button class="payment__form-btn" aria-label="edit"></button>
+                              <button class="payment__form-btn" aria-label="delete"></button>
+                            </div>
+                          </div>
+                        </div>
+                        <button class="payment__form-btn-add">Add New Address</button>
+                      </form>
+                    </div>
+                    <div class="payment__info-box shipping">
+                      <h2 class="payment__info-title">Shipment Method</h2>
+                      <form id="form-shipping" class="payment__form" name="form-shipping">
+                        <div class="payment__cards-shipping">
+                          <div class="payment__card-shipping">
+                            <div class="payment__checkbox">
+                              <label
+                                for="shipping-free"
+                                class="payment__label"
+                                tabindex="0"
+                                aria-labelledby="shipping-free"></label>
+                              <input
+                                id="shipping-free"
+                                type="radio"
+                                name="shipping"
+                                class="payment__input"
+                                tabindex="-1"
+                                aria-label="shipping free"
+                                value="free" />
+                            </div>
+                            <div class="payment__form-content">
+                              <div class="payment__form-inner">
+                                <p class="payment__pay">Free</p>
+                                <p class="payment__form-shipment">Regulary shipment</p>
+                              </div>
+                              <time class="payment__form-time" datetime="2023-10-17">17 Oct. 2023</time>
+                            </div>
+                          </div>
+                          <div class="payment__card-shipping">
+                            <div class="payment__checkbox">
+                              <label
+                                for="shipping-fast"
+                                class="payment__label"
+                                tabindex="0"
+                                aria-labelledby="shipping-fast"></label>
+                              <input
+                                id="shipping-fast"
+                                type="radio"
+                                name="shipping"
+                                class="payment__input"
+                                tabindex="-1"
+                                aria-label="shipping fast"
+                                value="fast" />
+                            </div>
+                            <div class="payment__form-content">
+                              <div class="payment__form-inner">
+                                <p class="payment__pay">$8.50</p>
+                                <p class="payment__form-shipment">Get your delivery as soon as possible</p>
+                              </div>
+                              <time class="payment__form-time" datetime="2023-10-01">1 Oct. 2023</time>
+                            </div>
+                          </div>
+                          <div class="payment__card-shipping">
+                            <div class="payment__checkbox">
+                              <label
+                                for="shipping-date"
+                                class="payment__label"
+                                tabindex="0"
+                                aria-labelledby="shipping-date"></label>
+                              <input
+                                id="shipping-date"
+                                type="radio"
+                                name="shipping"
+                                class="payment__input"
+                                tabindex="-1"
+                                aria-label="shipping date"
+                                value="date" />
+                            </div>
+                            <div class="payment__form-content">
+                              <div class="payment__form-inner">
+                                <p class="payment__pay">Schedule</p>
+                                <p class="payment__form-shipment">Pick a date when you want to get your delivery</p>
+                              </div>
+                              <label for="select-date">Select Date</label>
+                              <input id="select-date" type="date" name="date" />
+                            </div>
+                          </div>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="payment__info-box payment">
+                      <h2 class="payment__info-title payment__info-title_fw">Payment</h2>
+                    </div>
+                  </div>
+                  <div class="payment__btns">
+                    <button class="payment__btn">Back</button>
+                    <button class="payment__btn">Next</button>
+                    <button class="payment__btn">Pay</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
     <include src="chunk/footer.html"></include>
     <script type="module" src="/src/main.js"></script>
   </body>

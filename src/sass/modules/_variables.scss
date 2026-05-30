@@ -576,3 +576,9 @@ $lg: 62rem;
 
 //---1200px----
 $xl: 75rem;
+
+//---Extend--------
+%btn-active {
+  scale: 0.9;
+  transition: all ease 0.3s;
+}

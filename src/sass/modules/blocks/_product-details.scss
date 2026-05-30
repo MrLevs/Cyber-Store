@@ -322,6 +322,10 @@
       background-color: var.$shop-link-bg-hover;
     }
 
+    &:active {
+      @extend %btn-active;
+    }
+
     &_bg {
       color: var.$info-buttons-btn-color;
       background-color: var.$info-buttons-btn-bg;
