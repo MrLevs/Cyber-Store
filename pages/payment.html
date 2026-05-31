@@ -52,18 +52,13 @@
                         <div class="payment__cards-address">
                           <div class="payment__card-address">
                             <div class="payment__checkbox">
-                              <label
-                                for="address-home"
-                                class="payment__label"
-                                tabindex="0"
-                                aria-labelledby="address-home"></label>
+                              <label for="address-home" class="payment__label" tabindex="0"></label>
                               <input
                                 id="address-home"
                                 type="radio"
                                 name="address"
                                 class="payment__input"
                                 tabindex="-1"
-                                aria-label="address home"
                                 value="2118 Thornridge Cir. Syracuse, Connecticut 35624" />
                             </div>
                             <div class="payment__form-info">
@@ -81,18 +76,13 @@
                           </div>
                           <div class="payment__card-address">
                             <div class="payment__checkbox">
-                              <label
-                                for="address-office"
-                                class="payment__label"
-                                tabindex="0"
-                                aria-labelledby="address-office"></label>
+                              <label for="address-office" class="payment__label" tabindex="0"></label>
                               <input
                                 id="address-office"
                                 type="radio"
                                 name="address"
                                 class="payment__input"
                                 tabindex="-1"
-                                aria-label="address office"
                                 value="2715 Ash Dr. San Jose, South Dakota 83475" />
                             </div>
                             <div class="payment__form-info">
@@ -118,18 +108,13 @@
                         <div class="payment__cards-shipping">
                           <div class="payment__card-shipping">
                             <div class="payment__checkbox">
-                              <label
-                                for="shipping-free"
-                                class="payment__label"
-                                tabindex="0"
-                                aria-labelledby="shipping-free"></label>
+                              <label for="shipping-free" class="payment__label" tabindex="0"></label>
                               <input
                                 id="shipping-free"
                                 type="radio"
                                 name="shipping"
                                 class="payment__input"
                                 tabindex="-1"
-                                aria-label="shipping free"
                                 value="free" />
                             </div>
                             <div class="payment__form-content">
@@ -142,18 +127,13 @@
                           </div>
                           <div class="payment__card-shipping">
                             <div class="payment__checkbox">
-                              <label
-                                for="shipping-fast"
-                                class="payment__label"
-                                tabindex="0"
-                                aria-labelledby="shipping-fast"></label>
+                              <label for="shipping-fast" class="payment__label" tabindex="0"></label>
                               <input
                                 id="shipping-fast"
                                 type="radio"
                                 name="shipping"
                                 class="payment__input"
                                 tabindex="-1"
-                                aria-label="shipping fast"
                                 value="fast" />
                             </div>
                             <div class="payment__form-content">
@@ -166,18 +146,13 @@
                           </div>
                           <div class="payment__card-shipping">
                             <div class="payment__checkbox">
-                              <label
-                                for="shipping-date"
-                                class="payment__label"
-                                tabindex="0"
-                                aria-labelledby="shipping-date"></label>
+                              <label for="shipping-date" class="payment__label" tabindex="0"></label>
                               <input
                                 id="shipping-date"
                                 type="radio"
                                 name="shipping"
                                 class="payment__input"
                                 tabindex="-1"
-                                aria-label="shipping date"
                                 value="date" />
                             </div>
                             <div class="payment__form-content">
@@ -194,6 +169,50 @@
                     </div>
                     <div class="payment__info-box payment">
                       <h2 class="payment__info-title payment__info-title_fw">Payment</h2>
+                      <form id="form-payment" class="payment__form" name="form-payment">
+                        <div class="payment__form-buttons">
+                          <button class="payment__form-button">Credit Card</button>
+                          <button class="payment__form-button">PayPal</button>
+                          <button class="payment__form-button">PayPal Credit</button>
+                        </div>
+                        <img class="payment__form-img" src="/images/credit-card.webp" alt="Credit Card" />
+                        <div class="payment__form-info-card">
+                          <input
+                            type="text"
+                            class="payment__form-payment-input"
+                            name="cardholder-name"
+                            autocomplete="cc-name"
+                            placeholder="Cardholder Name" />
+                          <input
+                            type="text"
+                            class="payment__form-payment-input"
+                            name="card-number"
+                            autocomplete="cc-number"
+                            placeholder="Card Number" />
+                          <div class="payment__form-card-inner">
+                            <input
+                              type="text"
+                              class="payment__form-payment-input"
+                              name="card-expdate"
+                              autocomplete="cc-exp"
+                              placeholder="Exp.Date" />
+                            <input
+                              type="text"
+                              class="payment__form-payment-input"
+                              name="card-cvv"
+                              autocomplete="cc-csc"
+                              placeholder="CVV" />
+                          </div>
+                          <div class="payment__form-card-box">
+                            <label for="check" class="payment__form-card-label"> Same as billing address </label>
+                            <input
+                              id="check"
+                              name="check"
+                              type="checkbox"
+                              class="payment__form-card-input checkbox-global" />
+                          </div>
+                        </div>
+                      </form>
                     </div>
                   </div>
                   <div class="payment__btns">

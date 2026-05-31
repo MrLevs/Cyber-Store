@@ -161,7 +161,7 @@ export function filter(data) {
   //----Open accordion--------
   const filtersDetails = document.querySelectorAll('.filters__details');
   //----Select element-------
-  let filtersLabel = document.querySelectorAll('.filters__label');
+  let filtersInput = document.querySelectorAll('.filters__input');
   //----filters-btn Open || Close-------
   const filtersBtnOpen = document.querySelector('#filters-btn-open');
   const filtersBtnClose = document.querySelector('#filters-btn-close');
@@ -248,8 +248,8 @@ export function filter(data) {
   }
   //------------------------
   //----Select element-------
-  if (filtersLabel.length > 0) {
-    filtersLabel.forEach(item => {
+  if (filtersInput.length > 0) {
+    filtersInput.forEach(item => {
       item.removeEventListener('click', selectAndCreate);
       item.removeEventListener('keydown', pressEnter);
       item.addEventListener('click', selectAndCreate);
@@ -282,13 +282,14 @@ export function filter(data) {
   function pressEnter(event) {
     if (event.code === 'Enter') {
       event.preventDefault();
-      selectAndCreate(event);
 
-      if (event.currentTarget.control.checked) {
-        event.currentTarget.control.checked = false;
+      if (event.currentTarget.checked) {
+        event.currentTarget.checked = false;
       } else {
-        event.currentTarget.control.checked = true;
+        event.currentTarget.checked = true;
       }
+
+      selectAndCreate(event);
     }
   }
   //---------------------------
@@ -428,9 +429,9 @@ export function filter(data) {
         itemsDiagonalAll,
       );
 
-      filtersLabel = document.querySelectorAll('.filters__label');
-      if (filtersLabel.length > 0) {
-        filtersLabel.forEach(item => {
+      filtersInput = document.querySelectorAll('.filters__input');
+      if (filtersInput.length > 0) {
+        filtersInput.forEach(item => {
           item.removeEventListener('click', selectAndCreate);
           item.removeEventListener('keydown', pressEnter);
           item.addEventListener('click', selectAndCreate);
@@ -469,9 +470,9 @@ export function filter(data) {
         itemsDiagonalAll,
       );
 
-      filtersLabel = document.querySelectorAll('.filters__label');
-      if (filtersLabel.length > 0) {
-        filtersLabel.forEach(item => {
+      filtersInput = document.querySelectorAll('.filters__input');
+      if (filtersInput.length > 0) {
+        filtersInput.forEach(item => {
           item.removeEventListener('click', selectAndCreate);
           item.removeEventListener('keydown', pressEnter);
           item.addEventListener('click', selectAndCreate);

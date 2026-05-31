@@ -16,9 +16,6 @@ export function createCountsFilters(
   let categoryProduct = 'smartphones';
   let productFilter = [];
 
-  let divAll = document.querySelectorAll('.filters__disabled');
-  divAll.forEach(elem => elem.remove());
-
   arrayData.forEach(item => {
     if (item.title === categoryProduct && item.brand) {
       productFilter.push(item);
@@ -347,26 +344,15 @@ export function createCountsFilters(
 //-----------------------------------------------------------------------
 //---------Filter Count InnerHtml----------------------------------------
 function filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll) {
-  let parentItem = item.parentNode.parentNode;
   let filtersItem = item.parentNode.parentNode.parentNode;
   let filtersLabel = item.parentNode.parentNode;
 
-  let div = document.createElement('div');
-  div.className = 'filters__disabled';
-  div.style.width = `${filtersItem.offsetWidth}px`;
-  div.style.height = `${filtersItem.offsetHeight}px`;
-  div.style.position = 'absolute';
-  div.style.top = '0';
-  div.style.left = '0';
-  div.style.zIndex = '30';
-
-  parentItem.classList.remove('filters__label_disabled');
+  filtersLabel.classList.remove('filters__label_disabled');
   if (arrayCount.length === 0) {
-    parentItem.classList.add('filters__label_disabled');
-    filtersItem.append(div);
+    filtersLabel.classList.add('filters__label_disabled');
     if (filtersLabel.control.checked) {
       filtersLabel.control.checked = false;
-      filtersLabel.classList.remove('filters__label_active');
+      filtersLabel.control.disabled = true;
       let filter = arrayFiltersValue.filter(elem => elem !== filtersLabel.control.value);
       arrayFiltersValue.length = 0;
       arrayFiltersValue.push(...filter);
@@ -380,9 +366,12 @@ function filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBat
         arrayItemsDiagonalAll.length = 0;
         arrayItemsDiagonalAll.push(...filterArray);
       }
+    } else {
+      filtersLabel.control.disabled = true;
     }
   } else {
     item.innerHTML = arrayCount.length;
+    filtersLabel.control.disabled = false;
   }
 }
 //--------------------------------------------------------------------------
@@ -411,30 +400,23 @@ function btnAllToggle(arrayItemsBatteryAll, arrayItemsDiagonalAll) {
   if (
     arrayItemsBatteryAll.length !== filterBatteryAll.length &&
     arrayItemsBatteryAll.length !== 0 &&
-    btnAllFilterBattery.classList.contains('filters__label_active')
+    btnAllFilterBattery.control.checked
   ) {
-    btnAllFilterBattery.classList.remove('filters__label_active');
     btnAllFilterBattery.control.checked = false;
-  } else if (
-    arrayItemsBatteryAll.length === filterBatteryAll.length &&
-    !btnAllFilterBattery.classList.contains('filters__label_active')
-  ) {
-    btnAllFilterBattery.classList.add('filters__label_active');
+  } else if (arrayItemsBatteryAll.length === filterBatteryAll.length && !btnAllFilterBattery.control.checked) {
     btnAllFilterBattery.control.checked = true;
   }
 
   if (
     arrayItemsDiagonalAll.length !== filterScreenDiagonalAll.length &&
     arrayItemsDiagonalAll.length !== 0 &&
-    btnAllFilterScreenDiagonal.classList.contains('filters__label_active')
+    btnAllFilterScreenDiagonal.control.checked
   ) {
-    btnAllFilterScreenDiagonal.classList.remove('filters__label_active');
     btnAllFilterScreenDiagonal.control.checked = false;
   } else if (
     arrayItemsDiagonalAll.length === filterScreenDiagonalAll.length &&
-    !btnAllFilterScreenDiagonal.classList.contains('filters__label_active')
+    !btnAllFilterScreenDiagonal.control.checked
   ) {
-    btnAllFilterScreenDiagonal.classList.add('filters__label_active');
     btnAllFilterScreenDiagonal.control.checked = true;
   }
 }

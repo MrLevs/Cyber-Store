@@ -22,35 +22,9 @@ export function selectItemFilters(event, arrayFiltersValue, arrayItemsBatteryAll
     }
   });
 
-  let targetValue = event.currentTarget.control.value;
+  let targetValue = event.currentTarget.value;
 
-  if (event.currentTarget.control.checked) {
-    event.currentTarget.classList.remove('filters__label_active');
-    if (targetValue === 'battery-all') {
-      selectAll(event.currentTarget, arrayItemsBatteryAll, arrayFiltersValue);
-    } else if (targetValue === 'diagonal-all') {
-      selectAll(event.currentTarget, arrayItemsDiagonalAll, arrayFiltersValue);
-    } else {
-      if (arrayItemsBatteryAll.includes(targetValue)) {
-        btnAllFilterBattery.classList.remove('filters__label_active');
-        btnAllFilterBattery.control.checked = false;
-        let filter = arrayItemsBatteryAll.filter(elem => elem !== targetValue);
-        arrayItemsBatteryAll.length = 0;
-        arrayItemsBatteryAll.push(...filter);
-      }
-      if (arrayItemsDiagonalAll.includes(targetValue)) {
-        btnAllFilterScreenDiagonal.classList.remove('filters__label_active');
-        btnAllFilterScreenDiagonal.control.checked = false;
-        let filter = arrayItemsDiagonalAll.filter(elem => elem !== targetValue);
-        arrayItemsDiagonalAll.length = 0;
-        arrayItemsDiagonalAll.push(...filter);
-      }
-      let filter = arrayFiltersValue.filter(elem => elem !== targetValue);
-      arrayFiltersValue.length = 0;
-      arrayFiltersValue.push(...filter);
-    }
-  } else {
-    event.currentTarget.classList.add('filters__label_active');
+  if (event.currentTarget.checked) {
     if (targetValue === 'battery-all') {
       selectAll(event.currentTarget, arrayItemsBatteryAll, arrayFiltersValue);
     } else if (targetValue === 'diagonal-all') {
@@ -79,21 +53,38 @@ export function selectItemFilters(event, arrayFiltersValue, arrayItemsBatteryAll
         arrayItemsDiagonalAll.push(targetValue);
       }
 
-      if (
-        arrayItemsBatteryAll.length === filterBatteryAll.length &&
-        !btnAllFilterBattery.classList.contains('filters__label_active')
-      ) {
-        btnAllFilterBattery.classList.add('filters__label_active');
+      if (arrayItemsBatteryAll.length === filterBatteryAll.length && !btnAllFilterBattery.control.checked) {
         btnAllFilterBattery.control.checked = true;
       }
 
       if (
         arrayItemsDiagonalAll.length === filterScreenDiagonalAll.length &&
-        !btnAllFilterScreenDiagonal.classList.contains('filters__label_active')
+        !btnAllFilterScreenDiagonal.control.checked
       ) {
-        btnAllFilterScreenDiagonal.classList.add('filters__label_active');
         btnAllFilterScreenDiagonal.control.checked = true;
       }
+    }
+  } else {
+    if (targetValue === 'battery-all') {
+      selectAll(event.currentTarget, arrayItemsBatteryAll, arrayFiltersValue);
+    } else if (targetValue === 'diagonal-all') {
+      selectAll(event.currentTarget, arrayItemsDiagonalAll, arrayFiltersValue);
+    } else {
+      if (arrayItemsBatteryAll.includes(targetValue)) {
+        btnAllFilterBattery.control.checked = false;
+        let filter = arrayItemsBatteryAll.filter(elem => elem !== targetValue);
+        arrayItemsBatteryAll.length = 0;
+        arrayItemsBatteryAll.push(...filter);
+      }
+      if (arrayItemsDiagonalAll.includes(targetValue)) {
+        btnAllFilterScreenDiagonal.control.checked = false;
+        let filter = arrayItemsDiagonalAll.filter(elem => elem !== targetValue);
+        arrayItemsDiagonalAll.length = 0;
+        arrayItemsDiagonalAll.push(...filter);
+      }
+      let filter = arrayFiltersValue.filter(elem => elem !== targetValue);
+      arrayFiltersValue.length = 0;
+      arrayFiltersValue.push(...filter);
     }
   }
 }
@@ -107,19 +98,9 @@ function selectAll(item, arrayAll, arrayFiltersValue) {
     }
   });
 
-  if (item.control.checked) {
-    elemAll.forEach(item => {
-      item.control.checked = false;
-      item.classList.remove('filters__label_active');
-      let filter = arrayFiltersValue.filter(val => val !== item.control.value);
-      arrayFiltersValue.length = 0;
-      arrayFiltersValue.push(...filter);
-      arrayAll.length = 0;
-    });
-  } else {
+  if (item.checked) {
     elemAll.forEach(item => {
       item.control.checked = true;
-      item.classList.add('filters__label_active');
       let filter = arrayFiltersValue.filter(val => val !== item.control.value);
       arrayFiltersValue.length = 0;
       arrayFiltersValue.push(...filter);
@@ -128,6 +109,14 @@ function selectAll(item, arrayAll, arrayFiltersValue) {
       arrayAll.length = 0;
       arrayAll.push(...filterArray);
       arrayAll.push(item.control.value);
+    });
+  } else {
+    elemAll.forEach(item => {
+      item.control.checked = false;
+      let filter = arrayFiltersValue.filter(val => val !== item.control.value);
+      arrayFiltersValue.length = 0;
+      arrayFiltersValue.push(...filter);
+      arrayAll.length = 0;
     });
   }
 }
