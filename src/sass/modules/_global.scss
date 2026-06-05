@@ -1139,6 +1139,7 @@ main {
   }
 }
 
+//---Shop-carts-----
 .shop-carts {
   width: 100%;
   display: flex;
@@ -1196,42 +1197,44 @@ main {
     color: var.$global-color;
     transition: var.$transition-color;
   }
+}
 
-  &__btn {
-    position: relative;
-    padding: 0;
-    border: none;
-    width: 1.5rem;
-    height: 1.5rem;
-    background: transparent;
-    cursor: pointer;
+//---Btn-Delete------
+.btn-delete {
+  position: relative;
+  padding: 0;
+  border: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  background: transparent;
+  cursor: pointer;
 
-    &:active {
-      @extend %btn-active;
-    }
+  &:active {
+    @extend %btn-active;
+  }
 
-    &::before,
-    &::after {
-      content: '';
-      width: 1rem;
-      height: 0.0625rem;
-      position: absolute;
-      top: 0.71875rem;
-      left: 0.25rem;
-      background-color: var.$global-color;
-      transition: var.$transition-bg;
-    }
+  &::before,
+  &::after {
+    content: '';
+    width: 1rem;
+    height: 0.0625rem;
+    position: absolute;
+    top: 0.71875rem;
+    left: 0.25rem;
+    background-color: var.$global-color;
+    transition: var.$transition-bg;
+  }
 
-    &::before {
-      transform: rotateZ(45deg);
-    }
+  &::before {
+    transform: rotateZ(45deg);
+  }
 
-    &::after {
-      transform: rotateZ(135deg);
-    }
+  &::after {
+    transform: rotateZ(135deg);
   }
 }
 
+//---Counter--------
 .counter {
   display: flex;
   justify-content: flex-start;
@@ -1299,6 +1302,7 @@ main {
   }
 }
 
+//---Form-order------
 .form-order {
   max-width: 35.0625rem;
   width: 100%;
@@ -1391,17 +1395,40 @@ main {
     }
   }
 
-  &__info {
+  &__btn {
     width: 100%;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    gap: 1.25rem 0;
-    list-style: none;
+    padding: 1rem;
+    border: 0;
+    border-radius: 0.375rem;
+    background-color: var.$global-color;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$form-order-btn-color;
+    transition: var.$transition-bg, var.$transition-color;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: var.$shop-link-bg-hover;
+    }
+
+    &:active {
+      @extend %btn-active;
+    }
   }
+}
+
+//---Price-Info-----
+.price-info {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 1.25rem 0;
+  list-style: none;
 
   &__item {
     width: 100%;
@@ -1423,25 +1450,9 @@ main {
     }
   }
 
-  &__btn {
-    width: 100%;
-    padding: 1rem;
-    border: 0;
-    border-radius: 0.375rem;
-    background-color: var.$global-color;
-    font-size: 1rem;
-    font-weight: 500;
-    color: var.$form-order-btn-color;
-    transition: var.$transition-bg, var.$transition-color;
-    cursor: pointer;
-
-    &:hover,
-    &:focus {
-      background-color: var.$shop-link-bg-hover;
-    }
-
-    &:active {
-      @extend %btn-active;
+  &__price {
+    &_fw {
+      font-weight: 700;
     }
   }
 }

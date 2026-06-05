@@ -43,7 +43,47 @@
                 </div>
               </div>
               <div class="payment__content">
-                <div class="payment__order"></div>
+                <div class="payment__order">
+                  <h2 class="payment__order-title">Summary</h2>
+                  <div class="payment__order-products">
+                    <div class="payment__order-product">
+                      <img src="/images/iphone-mini.webp" alt="iphone" class="payment__order-img" />
+                      <p class="payment__order-text">Apple iPhone 14 Pro Max 128Gb</p>
+                      <div class="payment__order-price">$1399</div>
+                    </div>
+                    <div class="payment__order-product">
+                      <img src="/images/iphone-mini.webp" alt="iphone" class="payment__order-img" />
+                      <p class="payment__order-text">Apple iPhone 14 Pro Max 128Gb</p>
+                      <div class="payment__order-price">$1399</div>
+                    </div>
+                  </div>
+                  <div class="payment__order-inner">
+                    <h3 class="payment__order-subtitle">Address</h3>
+                    <p class="payment__order-info">1131 Dusty Townline, Jacksonville, TX 40322</p>
+                  </div>
+                  <div class="payment__order-inner">
+                    <h3 class="payment__order-subtitle">Shipment method</h3>
+                    <p class="payment__order-info">Free</p>
+                  </div>
+                  <ul class="price-info">
+                    <li class="price-info__item">
+                      <h3 class="price-info__item-title">Subtotal</h3>
+                      <p class="price-info__price">$2347</p>
+                    </li>
+                    <li class="price-info__item">
+                      <h3 class="price-info__item-title price-info__item-title_color">Estimated Tax</h3>
+                      <p class="price-info__price">$50</p>
+                    </li>
+                    <li class="price-info__item">
+                      <h3 class="price-info__item-title price-info__item-title_color">Estimated shipping & Handling</h3>
+                      <p class="price-info__price">$29</p>
+                    </li>
+                    <li class="price-info__item">
+                      <h3 class="price-info__item-title">Total</h3>
+                      <p class="price-info__price price-info__price_fw">$2426</p>
+                    </li>
+                  </ul>
+                </div>
                 <div class="payment__block">
                   <div class="payment__info">
                     <div class="payment__info-box address">
@@ -52,50 +92,58 @@
                         <div class="payment__cards-address">
                           <div class="payment__card-address">
                             <div class="payment__checkbox">
-                              <label for="address-home" class="payment__label" tabindex="0"></label>
                               <input
                                 id="address-home"
                                 type="radio"
                                 name="address"
                                 class="payment__input"
-                                tabindex="-1"
                                 value="2118 Thornridge Cir. Syracuse, Connecticut 35624" />
                             </div>
-                            <div class="payment__form-info">
-                              <div class="payment__form-box">
-                                <p class="payment__form-index">2118 Thornridge</p>
-                                <p class="payment__form-mark">home</p>
+                            <div class="payment__form-block">
+                              <div class="payment__form-info">
+                                <div class="payment__form-box">
+                                  <p class="payment__form-index">2118 Thornridge</p>
+                                  <p class="payment__form-mark">home</p>
+                                </div>
+                                <p class="payment__form-address">2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
+                                <p class="payment__form-phone">(209) 555-0104</p>
                               </div>
-                              <p class="payment__form-address">2118 Thornridge Cir. Syracuse, Connecticut 35624</p>
-                              <p class="payment__form-phone">(209) 555-0104</p>
-                            </div>
-                            <div class="payment__form-btns">
-                              <button class="payment__form-btn" aria-label="edit"></button>
-                              <button class="payment__form-btn" aria-label="delete"></button>
+                              <div class="payment__form-btns">
+                                <button class="payment__form-btn" aria-label="edit">
+                                  <svg class="payment__form-svg" width="18" height="18" viewBox="0 0 18 18">
+                                    <use href="/images/sprite-icon.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button class="payment__form-btn btn-delete" aria-label="delete"></button>
+                              </div>
                             </div>
                           </div>
                           <div class="payment__card-address">
                             <div class="payment__checkbox">
-                              <label for="address-office" class="payment__label" tabindex="0"></label>
                               <input
                                 id="address-office"
                                 type="radio"
                                 name="address"
                                 class="payment__input"
-                                tabindex="-1"
                                 value="2715 Ash Dr. San Jose, South Dakota 83475" />
                             </div>
-                            <div class="payment__form-info">
-                              <div class="payment__form-box">
-                                <p class="payment__form-index">Headoffice</p>
-                                <p class="payment__form-mark">office</p>
+                            <div class="payment__form-block">
+                              <div class="payment__form-info">
+                                <div class="payment__form-box">
+                                  <p class="payment__form-index">Headoffice</p>
+                                  <p class="payment__form-mark">office</p>
+                                </div>
+                                <p class="payment__form-address">2715 Ash Dr. San Jose, South Dakota 83475</p>
+                                <p class="payment__form-phone">(704) 555-0127</p>
                               </div>
-                              <p class="payment__form-address">2715 Ash Dr. San Jose, South Dakota 83475</p>
-                              <p class="payment__form-phone">(704) 555-0127</p>
-                            </div>
-                            <div class="payment__form-btns">
-                              <button class="payment__form-btn" aria-label="edit"></button>
-                              <button class="payment__form-btn" aria-label="delete"></button>
+                              <div class="payment__form-btns">
+                                <button class="payment__form-btn" aria-label="edit">
+                                  <svg class="payment__form-svg" width="18" height="18" viewBox="0 0 18 18">
+                                    <use href="/images/sprite-icon.svg#edit"></use>
+                                  </svg>
+                                </button>
+                                <button class="payment__form-btn btn-delete" aria-label="delete"></button>
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -108,13 +156,11 @@
                         <div class="payment__cards-shipping">
                           <div class="payment__card-shipping">
                             <div class="payment__checkbox">
-                              <label for="shipping-free" class="payment__label" tabindex="0"></label>
                               <input
                                 id="shipping-free"
                                 type="radio"
                                 name="shipping"
                                 class="payment__input"
-                                tabindex="-1"
                                 value="free" />
                             </div>
                             <div class="payment__form-content">
@@ -127,13 +173,11 @@
                           </div>
                           <div class="payment__card-shipping">
                             <div class="payment__checkbox">
-                              <label for="shipping-fast" class="payment__label" tabindex="0"></label>
                               <input
                                 id="shipping-fast"
                                 type="radio"
                                 name="shipping"
                                 class="payment__input"
-                                tabindex="-1"
                                 value="fast" />
                             </div>
                             <div class="payment__form-content">
@@ -146,13 +190,11 @@
                           </div>
                           <div class="payment__card-shipping">
                             <div class="payment__checkbox">
-                              <label for="shipping-date" class="payment__label" tabindex="0"></label>
                               <input
                                 id="shipping-date"
                                 type="radio"
                                 name="shipping"
                                 class="payment__input"
-                                tabindex="-1"
                                 value="date" />
                             </div>
                             <div class="payment__form-content">

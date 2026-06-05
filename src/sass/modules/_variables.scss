@@ -15,6 +15,7 @@ $transition-transform: transform ease 0.5s;
 :root {
   //---Global vars-------
   --global-color: #000;
+  --global-color-revers: #fff;
 
   //---Body----
   --body-bg: #dfdfdf;
@@ -195,6 +196,7 @@ $transition-transform: transform ease 0.5s;
 .theme-dark {
   //---Global vars-------
   --global-color: #fff;
+  --global-color-revers: #000;
 
   //---Body----
   --body-bg: #1a1a1a;
@@ -380,6 +382,7 @@ $transition-transform: transform ease 0.5s;
 
 //---Global vars-------
 $global-color: var(--global-color);
+$global-color-revers: var(--global-color-revers);
 
 //---Body----
 $body-bg: var(--body-bg);
