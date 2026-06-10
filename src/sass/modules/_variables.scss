@@ -188,9 +188,10 @@ $transition-transform: transform ease 0.5s;
   --reviews-stat-count-color: #727373;
   //---Page Product-Details the End----
 
-  //---Page Shop----------------------
+  //---Page Shop and Payment----------------------
   --shop-bg: #fff;
-  //---Page Shop the End----
+  --payment-border-color: #d1d1d8;
+  //---Page Shop and Payment the End----
 }
 
 .theme-dark {
@@ -368,9 +369,10 @@ $transition-transform: transform ease 0.5s;
   --reviews-stat-count-color: #dbdbdb;
   //---Page Product-Details the End----
 
-  //---Page Shop----------------------
+  //---Page Shop and Payment----------------------
   --shop-bg: #242e40;
-  //---Page Shop the End----
+  --payment-border-color: #8f8f8f;
+  //---Page Shop and Payment the End----
 }
 
 //---Page Products----
@@ -560,9 +562,10 @@ $reviews-meter-value-bg: var(--reviews-meter-value-bg);
 $reviews-stat-count-color: var(--reviews-stat-count-color);
 //---Page Product-Details the End----
 
-//---Page Shop----------------------
+//---Page Shop and Payment----------------------
 $shop-bg: var(--shop-bg);
-//---Page Shop the End----
+$payment-border-color: var(--payment-border-color);
+//---Page Shop and Payment the End----
 
 //---breakepoints Media--------
 //---576px----

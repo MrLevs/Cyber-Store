@@ -339,4 +339,67 @@
     fill: var.$global-color;
     transition: var.$transition-fill;
   }
+
+  &__cards-shipping {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 1rem 0;
+  }
+
+  &__card-shipping {
+    width: 100%;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 1rem;
+    border: 0.0625rem solid var.$payment-border-color;
+    border-radius: 0.6875rem;
+    transition: var.$transition-border-color;
+  }
+
+  &__form-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    // opacity: 0.5;
+  }
+
+  &__form-inner {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0 1rem;
+  }
+
+  &__pay {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__form-shipment {
+    font-size: 1rem;
+    font-weight: 400;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__form-time {
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__date-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }
