@@ -344,9 +344,7 @@ export function createCountsFilters(
 //-----------------------------------------------------------------------
 //---------Filter Count InnerHtml----------------------------------------
 function filterCountInnerHtml(item, arrayCount, arrayFiltersValue, arrayItemsBatteryAll, arrayItemsDiagonalAll) {
-  let filtersItem = item.parentNode.parentNode.parentNode;
   let filtersLabel = item.parentNode.parentNode;
-
   filtersLabel.classList.remove('filters__label_disabled');
   if (arrayCount.length === 0) {
     filtersLabel.classList.add('filters__label_disabled');

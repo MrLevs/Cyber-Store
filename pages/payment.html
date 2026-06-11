@@ -208,8 +208,13 @@
                                 <p class="payment__form-shipment">Pick a date when you want to get your delivery</p>
                               </div>
                               <div class="payment__date-box">
-                                <label for="select-date">Select Date</label>
-                                <input id="select-date" type="date" name="date" />
+                                <label for="select-date" class="payment__label-date" tabindex="0">Select Date</label>
+                                <input
+                                  id="select-date"
+                                  class="payment__input-date"
+                                  type="date"
+                                  name="date"
+                                  tabindex="-1" />
                               </div>
                             </div>
                           </div>

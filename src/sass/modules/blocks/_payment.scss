@@ -370,6 +370,7 @@
   }
 
   &__form-inner {
+    width: 100%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -398,8 +399,82 @@
   }
 
   &__date-box {
+    width: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
+  }
+
+  &__label-date {
+    max-width: 6.875rem;
+    width: 100%;
+    position: relative;
+    padding: 0.3125rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 0.5rem;
+      height: 0.125rem;
+      position: absolute;
+      top: 45%;
+      background-color: var.$filters-before-bg;
+      transition: var.$transition-transform, var.$transition-bg;
+    }
+
+    &::before {
+      right: 0.25rem;
+      transform: rotateX(0) rotateZ(45deg);
+    }
+
+    &::after {
+      right: 0;
+      transform: rotateX(0) rotateZ(-45deg);
+    }
+
+    &_active {
+      &::before {
+        transform: rotateX(180deg) rotateZ(45deg);
+      }
+
+      &::after {
+        transform: rotateX(180deg) rotateZ(-45deg);
+      }
+    }
+
+    &_disabled {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
+  }
+
+  &__input-date {
+    appearance: none;
+    position: relative;
+    width: 0;
+    height: 0;
+    background-color: #fff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    opacity: 0;
+
+    &::-webkit-calendar-picker-indicator {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: auto;
+      height: auto;
+      cursor: pointer;
+    }
   }
 }
