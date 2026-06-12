@@ -92,48 +92,4 @@ export function selectDetailsProduct() {
     document.body.classList.remove('_lock');
     modalReview.close();
   }
-
-  //---Page Payment--------
-  const input = document.querySelector('#select-date');
-  const label = document.querySelector('.payment__label-date');
-  let calendarOpen = false;
-
-  input.addEventListener('change', selectDate);
-  label.addEventListener('click', showDate);
-  label.addEventListener('keydown', pressEnter);
-
-  function selectDate() {
-    let value = input.value;
-
-    if (calendarOpen === true) {
-      label.classList.remove('payment__label-date_active');
-      calendarOpen = false;
-    }
-    if (value) {
-      label.textContent = value;
-      label.classList.add('payment__label-date_disabled');
-    } else {
-      if (label.classList.contains('payment__label-date_disabled')) {
-        label.classList.remove('payment__label-date_disabled');
-      }
-
-      label.textContent = 'Select Date';
-    }
-    console.log(value);
-  }
-
-  function showDate() {
-    if (calendarOpen === false) {
-      label.classList.add('payment__label-date_active');
-      calendarOpen = true;
-    }
-    input.showPicker();
-  }
-
-  function pressEnter() {
-    if (event.code === 'Enter') {
-      event.preventDefault();
-      showDate();
-    }
-  }
 }

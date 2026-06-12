@@ -97,7 +97,8 @@
                                 type="radio"
                                 name="address"
                                 class="payment__input"
-                                value="2118 Thornridge Cir. Syracuse, Connecticut 35624" />
+                                value="2118 Thornridge Cir. Syracuse, Connecticut 35624"
+                                aria-label="2118 Thornridge Cir. Syracuse, Connecticut 35624 home" />
                             </div>
                             <div class="payment__form-block">
                               <div class="payment__form-info">
@@ -109,12 +110,12 @@
                                 <p class="payment__form-phone">(209) 555-0104</p>
                               </div>
                               <div class="payment__form-btns">
-                                <button class="payment__form-btn" aria-label="edit">
+                                <button type="button" class="payment__form-btn" aria-label="edit">
                                   <svg class="payment__form-svg" width="18" height="18" viewBox="0 0 18 18">
                                     <use href="/images/sprite-icon.svg#edit"></use>
                                   </svg>
                                 </button>
-                                <button class="payment__form-btn btn-delete" aria-label="delete"></button>
+                                <button type="button" class="payment__form-btn btn-delete" aria-label="delete"></button>
                               </div>
                             </div>
                           </div>
@@ -125,7 +126,8 @@
                                 type="radio"
                                 name="address"
                                 class="payment__input"
-                                value="2715 Ash Dr. San Jose, South Dakota 83475" />
+                                value="2715 Ash Dr. San Jose, South Dakota 83475"
+                                aria-label="2715 Ash Dr. San Jose, South Dakota 83475 office" />
                             </div>
                             <div class="payment__form-block">
                               <div class="payment__form-info">
@@ -137,18 +139,18 @@
                                 <p class="payment__form-phone">(704) 555-0127</p>
                               </div>
                               <div class="payment__form-btns">
-                                <button class="payment__form-btn" aria-label="edit">
+                                <button type="button" class="payment__form-btn" aria-label="edit">
                                   <svg class="payment__form-svg" width="18" height="18" viewBox="0 0 18 18">
                                     <use href="/images/sprite-icon.svg#edit"></use>
                                   </svg>
                                 </button>
-                                <button class="payment__form-btn btn-delete" aria-label="delete"></button>
+                                <button type="button" class="payment__form-btn btn-delete" aria-label="delete"></button>
                               </div>
                             </div>
                           </div>
                         </div>
                         <div class="payment__fading-line"></div>
-                        <button class="payment__form-btn-add" aria-label="Add New Address">
+                        <button type="button" class="payment__form-btn-add" aria-label="Add New Address">
                           <svg class="payment__svg-plus" width="24" height="24" viewBox="0 0 24 24">
                             <use href="/images/sprite-icon.svg#plus"></use>
                           </svg>
@@ -165,8 +167,9 @@
                                 id="shipping-free"
                                 type="radio"
                                 name="shipping"
-                                class="payment__input"
-                                value="free" />
+                                class="payment__input shipping__input"
+                                value="free"
+                                aria-label="Free Regulary shipment" />
                             </div>
                             <div class="payment__form-content">
                               <div class="payment__form-inner">
@@ -182,8 +185,9 @@
                                 id="shipping-fast"
                                 type="radio"
                                 name="shipping"
-                                class="payment__input"
-                                value="fast" />
+                                class="payment__input shipping__input"
+                                value="fast"
+                                aria-label="$8.50 Get your delivery as soon as possible" />
                             </div>
                             <div class="payment__form-content">
                               <div class="payment__form-inner">
@@ -199,8 +203,9 @@
                                 id="shipping-date"
                                 type="radio"
                                 name="shipping"
-                                class="payment__input"
-                                value="date" />
+                                class="payment__input shipping__input"
+                                value="date"
+                                aria-label="Schedule Pick a date when you want to get your delivery" />
                             </div>
                             <div class="payment__form-content">
                               <div class="payment__form-inner">
@@ -208,7 +213,7 @@
                                 <p class="payment__form-shipment">Pick a date when you want to get your delivery</p>
                               </div>
                               <div class="payment__date-box">
-                                <label for="select-date" class="payment__label-date" tabindex="0">Select Date</label>
+                                <label for="select-date" class="payment__label-date" tabindex="-1">Select Date</label>
                                 <input
                                   id="select-date"
                                   class="payment__input-date"
@@ -221,13 +226,13 @@
                         </div>
                       </form>
                     </div>
-                    <div class="payment__info-box payment">
+                    <div class="payment__info-box payment__info-box_w payment">
                       <h2 class="payment__info-title payment__info-title_fw">Payment</h2>
-                      <form id="form-payment" class="payment__form" name="form-payment">
+                      <form id="form-payment" class="payment__form payment__form_gap" name="form-payment">
                         <div class="payment__form-buttons">
-                          <button class="payment__form-button">Credit Card</button>
-                          <button class="payment__form-button">PayPal</button>
-                          <button class="payment__form-button">PayPal Credit</button>
+                          <button type="button" class="payment__form-button">Credit Card</button>
+                          <button type="button" class="payment__form-button">PayPal</button>
+                          <button type="button" class="payment__form-button">PayPal Credit</button>
                         </div>
                         <img class="payment__form-img" src="/images/credit-card.webp" alt="Credit Card" />
                         <div class="payment__form-info-card">
@@ -263,16 +268,16 @@
                               id="check"
                               name="check"
                               type="checkbox"
-                              class="payment__form-card-input checkbox-global" />
+                              class="payment__form-card-input checkbox-global checkbox-global_bg" />
                           </div>
                         </div>
                       </form>
                     </div>
                   </div>
                   <div class="payment__btns">
-                    <button class="payment__btn">Back</button>
-                    <button class="payment__btn">Next</button>
-                    <button class="payment__btn">Pay</button>
+                    <button type="button" class="payment__btn">Back</button>
+                    <button type="button" class="payment__btn payment__btn_bg">Next</button>
+                    <button type="button" class="payment__btn payment__btn_bg">Pay</button>
                   </div>
                 </div>
               </div>

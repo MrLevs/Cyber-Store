@@ -10,6 +10,7 @@ import { slider } from './js/slider/slider.js'; // Slider
 import { toggleProducts } from './js/toggle-products.js'; // Toggle Products
 import { selectDetailsProduct } from './js/select-details-product/select-details-product.js'; // Select Details Product
 import { rating } from './js/rating.js'; // Rating
+import { selectDateDelivery } from './js/select-date-delivery.js'; // Select Date Delivery
 
 // Data Base
 dataBase();
@@ -31,3 +32,6 @@ selectDetailsProduct();
 
 // Rating
 rating();
+
+// Select Date Delivery
+selectDateDelivery();

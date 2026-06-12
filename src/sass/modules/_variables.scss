@@ -191,6 +191,8 @@ $transition-transform: transform ease 0.5s;
   //---Page Shop and Payment----------------------
   --shop-bg: #fff;
   --payment-border-color: #d1d1d8;
+  --payment-card-border-color: #cecece;
+  --payment-placeholder-color: #979797;
   //---Page Shop and Payment the End----
 }
 
@@ -372,6 +374,8 @@ $transition-transform: transform ease 0.5s;
   //---Page Shop and Payment----------------------
   --shop-bg: #242e40;
   --payment-border-color: #8f8f8f;
+  --payment-card-border-color: #a8a8a8;
+  --payment-placeholder-color: #d4d4d4;
   //---Page Shop and Payment the End----
 }
 
@@ -565,6 +569,8 @@ $reviews-stat-count-color: var(--reviews-stat-count-color);
 //---Page Shop and Payment----------------------
 $shop-bg: var(--shop-bg);
 $payment-border-color: var(--payment-border-color);
+$payment-card-border-color: var(--payment-card-border-color);
+$payment-placeholder-color: var(--payment-placeholder-color);
 //---Page Shop and Payment the End----
 
 //---breakepoints Media--------

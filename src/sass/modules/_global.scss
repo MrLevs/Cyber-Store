@@ -756,6 +756,10 @@ main {
   &:disabled {
     opacity: 0.3;
   }
+
+  &_bg {
+    background-color: transparent;
+  }
 }
 
 //------View More--------
