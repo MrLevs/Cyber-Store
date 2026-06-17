@@ -14,7 +14,7 @@
           <div class="payment__bg">
             <div class="payment__inner container-m">
               <div class="payment__steps">
-                <div class="payment__step" data-step="address">
+                <div class="payment__step" data-step="0">
                   <svg class="payment__svg" width="24" height="24" viewBox="0 0 24 24">
                     <use href="/images/sprite-icon.svg#location"></use>
                   </svg>
@@ -23,7 +23,7 @@
                     <p class="payment__text">Address</p>
                   </div>
                 </div>
-                <div class="payment__step" data-step="shipping">
+                <div class="payment__step" data-step="1">
                   <svg class="payment__svg" width="24" height="24" viewBox="0 0 24 24">
                     <use href="/images/sprite-icon.svg#shipping"></use>
                   </svg>
@@ -32,7 +32,7 @@
                     <p class="payment__text">Shipping</p>
                   </div>
                 </div>
-                <div class="payment__step" data-step="pay">
+                <div class="payment__step" data-step="2">
                   <svg class="payment__svg" width="24" height="24" viewBox="0 0 24 24">
                     <use href="/images/sprite-icon.svg#payment"></use>
                   </svg>
@@ -86,7 +86,7 @@
                 </div>
                 <div class="payment__block">
                   <div class="payment__info">
-                    <div class="payment__info-box" data-payment="address">
+                    <div class="payment__info-box">
                       <h1 class="payment__info-title">Select Address</h1>
                       <form id="form-address" class="payment__form" name="form-address">
                         <div class="payment__cards-address">
@@ -157,7 +157,7 @@
                         </button>
                       </form>
                     </div>
-                    <div class="payment__info-box" data-payment="shipping">
+                    <div class="payment__info-box">
                       <h2 class="payment__info-title">Shipment Method</h2>
                       <form id="form-shipping" class="payment__form" name="form-shipping">
                         <div class="payment__cards-shipping">
@@ -226,7 +226,7 @@
                         </div>
                       </form>
                     </div>
-                    <div class="payment__info-box payment__info-box_w" data-payment="pay">
+                    <div class="payment__info-box payment__info-box_w">
                       <h2 class="payment__info-title payment__info-title_fw">Payment</h2>
                       <form id="form-payment" class="payment__form payment__form_gap" name="form-payment">
                         <div class="payment__form-buttons">
