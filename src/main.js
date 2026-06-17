@@ -11,6 +11,7 @@ import { toggleProducts } from './js/toggle-products.js'; // Toggle Products
 import { selectDetailsProduct } from './js/select-details-product/select-details-product.js'; // Select Details Product
 import { rating } from './js/rating.js'; // Rating
 import { selectDateDelivery } from './js/select-date-delivery.js'; // Select Date Delivery
+import { sliderPayment } from './js/slider-payment.js'; // Slider Payment
 
 // Data Base
 dataBase();
@@ -35,3 +36,6 @@ rating();
 
 // Select Date Delivery
 selectDateDelivery();
+
+// Slider Payment
+sliderPayment();

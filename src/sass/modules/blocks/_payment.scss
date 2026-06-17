@@ -44,6 +44,7 @@
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
+    gap: 2rem 6rem;
   }
 
   &__order {
@@ -58,7 +59,10 @@
     border: 0.0625rem solid var.$form-order-border-color;
     border-radius: 0.625rem;
     transition: var.$transition-border-color;
-    display: none;
+
+    &_disabled {
+      display: none;
+    }
   }
 
   &__order-title {
@@ -141,10 +145,16 @@
 
   &__info {
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    overflow: hidden;
   }
 
   &__info-box {
-    padding: 0 0 2rem 0;
+    width: 100%;
+    padding: 0 0 3rem 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -153,7 +163,10 @@
 
     &_w {
       max-width: 32rem;
-      width: 100%;
+    }
+
+    &_disabled {
+      display: none;
     }
   }
 
@@ -613,6 +626,10 @@
     &_bg {
       background-color: var.$global-color;
       color: var.$global-color-revers;
+    }
+
+    &_disabled {
+      display: none;
     }
   }
 }
