@@ -216,6 +216,13 @@
     transition: var.$transition-bg;
   }
 
+  &__checkbox {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   &__input {
     appearance: none;
     margin: 0;
@@ -243,6 +250,20 @@
     &:checked::before {
       transform: scale(1);
     }
+
+    &_require {
+      box-shadow: 0 0 0.625rem rgba(255, 0, 0, 1);
+    }
+  }
+
+  &__alert {
+    width: 10rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #e70000;
+    position: absolute;
+    top: -1.5rem;
+    left: 1.5rem;
   }
 
   &__form-block {
@@ -339,7 +360,7 @@
   &__form-btn-add {
     padding: 0;
     position: absolute;
-    left: 43.5%;
+    left: 49%;
     bottom: -3%;
     border: none;
     border-radius: 50%;
@@ -389,12 +410,6 @@
     border: 0.0625rem solid var.$payment-border-color;
     border-radius: 0.6875rem;
     transition: var.$transition-border-color;
-  }
-
-  &__checkbox {
-    display: flex;
-    justify-content: center;
-    align-items: center;
   }
 
   &__form-content {
