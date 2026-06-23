@@ -556,8 +556,19 @@
     }
 
     &_active {
+      opacity: 1;
       border-color: var.$global-color;
     }
+  }
+
+  &__box-info-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 2.5rem 0;
+    transform-origin: right;
+    transition: transform ease 0.5s;
   }
 
   &__form-info-card {
@@ -569,6 +580,7 @@
   }
 
   &__form-payment-input {
+    appearance: textfield;
     width: 100%;
     padding: 0.8rem;
     border: 0.0625rem solid var.$payment-card-border-color;
@@ -578,6 +590,12 @@
     font-weight: 400;
     color: var.$global-color;
     transition: var.$transition-color, var.$transition-border-color;
+
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      appearance: none;
+      margin: 0;
+    }
 
     &::placeholder {
       color: var.$payment-placeholder-color;

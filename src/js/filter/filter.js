@@ -160,8 +160,6 @@ export function filter(data) {
   //-------------------------------
   //----Open accordion--------
   const filtersDetails = document.querySelectorAll('.filters__details');
-  //----Select element-------
-  let filtersInput = document.querySelectorAll('.filters__input');
   //----filters-btn Open || Close-------
   const filtersBtnOpen = document.querySelector('#filters-btn-open');
   const filtersBtnClose = document.querySelector('#filters-btn-close');
@@ -248,14 +246,26 @@ export function filter(data) {
   }
   //------------------------
   //----Select element-------
-  if (filtersInput.length > 0) {
-    filtersInput.forEach(item => {
-      item.removeEventListener('click', selectAndCreate);
-      item.removeEventListener('keydown', pressEnter);
-      item.addEventListener('click', selectAndCreate);
-      item.addEventListener('keydown', pressEnter);
-    });
-  }
+  document.addEventListener('input', event => {
+    if (event.target.classList.contains('filters__input')) {
+      selectAndCreate(event);
+    }
+  });
+
+  document.addEventListener('keydown', event => {
+    if (event.code === 'Enter') {
+      if (event.target.classList.contains('filters__input')) {
+        event.preventDefault();
+
+        if (event.target.checked) {
+          event.target.checked = false;
+        } else {
+          event.target.checked = true;
+        }
+        selectAndCreate(event);
+      }
+    }
+  });
 
   function selectAndCreate(event) {
     selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
@@ -279,19 +289,6 @@ export function filter(data) {
     }
   }
 
-  function pressEnter(event) {
-    if (event.code === 'Enter') {
-      event.preventDefault();
-
-      if (event.currentTarget.checked) {
-        event.currentTarget.checked = false;
-      } else {
-        event.currentTarget.checked = true;
-      }
-
-      selectAndCreate(event);
-    }
-  }
   //---------------------------
   //-------Filter Price------------
   if (priceFrom || priceTo || range || priceMin || priceMax) {
@@ -429,16 +426,6 @@ export function filter(data) {
         itemsDiagonalAll,
       );
 
-      filtersInput = document.querySelectorAll('.filters__input');
-      if (filtersInput.length > 0) {
-        filtersInput.forEach(item => {
-          item.removeEventListener('click', selectAndCreate);
-          item.removeEventListener('keydown', pressEnter);
-          item.addEventListener('click', selectAndCreate);
-          item.addEventListener('keydown', pressEnter);
-        });
-      }
-
       createSortProductCard();
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));
     }
@@ -469,16 +456,6 @@ export function filter(data) {
         itemsBatteryAll,
         itemsDiagonalAll,
       );
-
-      filtersInput = document.querySelectorAll('.filters__input');
-      if (filtersInput.length > 0) {
-        filtersInput.forEach(item => {
-          item.removeEventListener('click', selectAndCreate);
-          item.removeEventListener('keydown', pressEnter);
-          item.addEventListener('click', selectAndCreate);
-          item.addEventListener('keydown', pressEnter);
-        });
-      }
 
       createSortProductCard();
       countSelectedProducts(selectedProducts, filterResult(data, filtersValue));

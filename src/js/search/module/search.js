@@ -76,6 +76,7 @@ export function search(input, btn, resultSuggests, data) {
   //--------------Show Warning--------------------
   function displayWarning() {
     const p = document.createElement('p');
+    p.setAttribute('role', 'alert');
     p.className = 'form-search__warning';
     p.textContent = 'Warning!!! The input field must not be empty and must contain only letters and numbers!';
 

@@ -12,6 +12,7 @@ import { selectDetailsProduct } from './js/select-details-product/select-details
 import { rating } from './js/rating.js'; // Rating
 import { selectDateDelivery } from './js/select-date-delivery.js'; // Select Date Delivery
 import { sliderPayment } from './js/slider-payment.js'; // Slider Payment
+import { toggleCards } from './js/toggle-cards/toggle-cards.js'; // Toggle Cards
 
 // Data Base
 dataBase();
@@ -39,3 +40,6 @@ selectDateDelivery();
 
 // Slider Payment
 sliderPayment();
+
+// Toggle Cards
+toggleCards();

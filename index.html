@@ -16,10 +16,10 @@
               <div class="banner__content">
                 <h2 class="banner__suptitle">Pro.Beyond.</h2>
                 <h1 class="banner__title">IPhone 14 <span class="text-bold">Pro</span></h1>
-                <h3 class="banner__subtitle">Created to change everything for the better. For everyone</h3>
+                <h2 class="banner__subtitle">Created to change everything for the better. For everyone</h2>
                 <a href="#" class="shop-link" aria-label="shop Iphone 14pro">Shop Now</a>
               </div>
-              <img src="/images/phone.webp" alt="Iphone 14 Pro" class="banner__img" />
+              <img src="/images/phone.webp" alt="Iphone 14 Pro" class="banner__img" fetchpriority="high" />
             </article>
           </div>
         </div>
@@ -236,20 +236,52 @@
         <div class="products__container container">
           <div class="products__bg">
             <div class="products__inner container-m">
-              <div class="products__buttons">
-                <button type="button" class="products__btn" data-filter="new">New Arrival</button>
-                <button type="button" class="products__btn" data-filter="bestseller">Bestseller</button>
-                <button type="button" class="products__btn" data-filter="featured">Featured Products</button>
+              <div class="products__buttons" role="tablist">
+                <button
+                  type="button"
+                  id="btn-new"
+                  role="tab"
+                  aria-controls="new-products"
+                  class="products__btn"
+                  data-filter="new">
+                  New Arrival
+                </button>
+                <button
+                  type="button"
+                  id="btn-bestseller"
+                  role="tab"
+                  aria-controls="bestseller-products"
+                  class="products__btn"
+                  data-filter="bestseller">
+                  Bestseller
+                </button>
+                <button
+                  type="button"
+                  id="btn-featured"
+                  role="tab"
+                  aria-controls="featured-products"
+                  class="products__btn"
+                  data-filter="featured">
+                  Featured Products
+                </button>
               </div>
               <div class="products__box">
                 <div class="products__items new">
-                  <div id="new-products" class="products__item"></div>
+                  <div id="new-products" role="tabpanel" class="products__item" aria-labelledby="btn-new"></div>
                 </div>
                 <div class="products__items bestseller">
-                  <div id="bestseller-products" class="products__item"></div>
+                  <div
+                    id="bestseller-products"
+                    role="tabpanel"
+                    class="products__item"
+                    aria-labelledby="btn-bestseller"></div>
                 </div>
                 <div class="products__items featured">
-                  <div id="featured-products" class="products__item"></div>
+                  <div
+                    id="featured-products"
+                    role="tabpanel"
+                    class="products__item"
+                    aria-labelledby="btn-featured"></div>
                 </div>
               </div>
             </div>

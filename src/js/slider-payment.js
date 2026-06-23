@@ -180,6 +180,7 @@ export function sliderPayment() {
   //-----Create Block Alert--------------------
   function createBlockAlert(elem) {
     const div = document.createElement('div');
+    div.setAttribute('role', 'alert');
     div.className = 'payment__alert';
     div.textContent = 'Сheck the box';
     elem.append(div);

@@ -22,13 +22,13 @@ export function selectItemFilters(event, arrayFiltersValue, arrayItemsBatteryAll
     }
   });
 
-  let targetValue = event.currentTarget.value;
+  let targetValue = event.target.value;
 
-  if (event.currentTarget.checked) {
+  if (event.target.checked) {
     if (targetValue === 'battery-all') {
-      selectAll(event.currentTarget, arrayItemsBatteryAll, arrayFiltersValue);
+      selectAll(event.target, arrayItemsBatteryAll, arrayFiltersValue);
     } else if (targetValue === 'diagonal-all') {
-      selectAll(event.currentTarget, arrayItemsDiagonalAll, arrayFiltersValue);
+      selectAll(event.target, arrayItemsDiagonalAll, arrayFiltersValue);
     } else {
       arrayFiltersValue.push(targetValue);
 
@@ -66,9 +66,9 @@ export function selectItemFilters(event, arrayFiltersValue, arrayItemsBatteryAll
     }
   } else {
     if (targetValue === 'battery-all') {
-      selectAll(event.currentTarget, arrayItemsBatteryAll, arrayFiltersValue);
+      selectAll(event.target, arrayItemsBatteryAll, arrayFiltersValue);
     } else if (targetValue === 'diagonal-all') {
-      selectAll(event.currentTarget, arrayItemsDiagonalAll, arrayFiltersValue);
+      selectAll(event.target, arrayItemsDiagonalAll, arrayFiltersValue);
     } else {
       if (arrayItemsBatteryAll.includes(targetValue)) {
         btnAllFilterBattery.control.checked = false;
