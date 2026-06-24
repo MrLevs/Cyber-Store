@@ -7,94 +7,46 @@ import { selectItemFilters } from './module/select-item-filters'; // Select Item
 import { selectPriceMin, selectPriceMax, handlePriceMin, handlePriceMax } from './module/filter-price'; // Filter Price
 import { filterResult } from './module/filter-result/filter-result'; // Filter Result
 import { createProductCard } from './module/create-product-card'; // Create Product Card
+import { sortProductCard } from './module/sort-product-card'; // Sort Product Card
 import { countSelectedProducts, createCountsFilters } from './module/create-counts-filters'; // Count Selected Products, Counts Filters
 import { createRelatedProducts } from './module/create-related-products'; // Create Related Products
 
 export function filter(data) {
+  const categoryProduct = 'smartphones';
+  //----Open accordion--------
+  const filtersDetails = document.querySelectorAll('.filters__details');
+  //----filters-btn Open || Close-------
+  const filtersBtnOpen = document.querySelector('#filters-btn-open');
+  const filtersBtnClose = document.querySelector('#filters-btn-close');
+  const filtersMenu = document.querySelector('#filters-menu');
+  //-------Filter Price------------
+  const priceFrom = document.querySelector('#price-from');
+  const priceTo = document.querySelector('#price-to');
+  const range = document.querySelector('#price-range');
+  const priceMin = document.querySelector('#price-min');
+  const priceMax = document.querySelector('#price-max');
+  //-------Create Product Card------------
+  const contentBlock = document.querySelector('.content__inner');
+  //-------Create Count Products------------
+  const selectedProducts = document.querySelector('.content__number');
+  //------Select Filter Content-----------------
+  const selectFilterContent = document.querySelector('#content-select');
+
+  let priceAll = [];
+  let filtersValue = [];
+  let itemsBatteryAll = [];
+  let itemsDiagonalAll = [];
   let like = JSON.parse(window.localStorage.getItem('like')); // Local Storage----Replacement DB
+
   if (like === null) {
     like = [];
   }
-  const categoryProduct = 'smartphones';
+
   //----Index.html--------------------------
   //-----Category Products----------------------------
-  const newBlock = document.querySelector('#new-products');
-  const bestsellerBlock = document.querySelector('#bestseller-products');
-  const featuredBlock = document.querySelector('#featured-products');
-  const discountsBlock = document.querySelector('#discounts');
-  let newProducts = [];
-  let bestsellerProducts = [];
-  let featuredProducts = [];
-  let discountsProducts = [];
-
-  if (newBlock || bestsellerBlock || featuredBlock) {
-    creationPCByCategory(
-      data,
-      newProducts,
-      bestsellerProducts,
-      featuredProducts,
-      newBlock,
-      bestsellerBlock,
-      featuredBlock,
-      like,
-    );
-  }
-
-  if (discountsBlock) {
-    discountsCreatePC(data, discountsProducts, discountsBlock, like);
-  }
-
-  //-----Create Product Card by Category------------------------------
-  function creationPCByCategory(
-    data,
-    arrayNewProducts,
-    arrayBestsellerProducts,
-    arrayFeaturedProducts,
-    newBlock,
-    bestsellerBlock,
-    featuredBlock,
-    like,
-  ) {
-    data.forEach(item => {
-      switch (item.category) {
-        case 'new':
-          arrayNewProducts.push(item);
-          break;
-        case 'bestseller':
-          arrayBestsellerProducts.push(item);
-          break;
-        case 'featured':
-          arrayFeaturedProducts.push(item);
-          break;
-      }
-    });
-    createProductCard(newBlock, arrayNewProducts, like);
-    createProductCard(bestsellerBlock, arrayBestsellerProducts, like);
-    createProductCard(featuredBlock, arrayFeaturedProducts, like);
-  }
-  //---------------------------------------------------------------------------
-  //-----Discounts Create Product Card----------------------------------------
-  function discountsCreatePC(data, arrayDiscountsProducts, discountsBlock, like) {
-    data.forEach(item => {
-      if (item.category === 'discounts') {
-        if (arrayDiscountsProducts.length < 4) {
-          arrayDiscountsProducts.push(item);
-        }
-      }
-    });
-    createProductCard(discountsBlock, arrayDiscountsProducts, like);
-  }
+  sortProductCard(data, like);
   //-----------------------------------------------------------------
-  //---The END Index.html----------------------------------------------------
-  //---Product-Details.html--------------------------------------------
-  const relatedBlock = document.querySelector('#related');
-  let relatedProducts = [];
 
-  if (relatedBlock) {
-    createRelatedProducts(data, relatedProducts, relatedBlock, like);
-    createProductCard(relatedBlock, relatedProducts, like);
-  }
-  //---The END Product-Details.html----------------------------------------------------
   //----Products.html-------------------------
   //----Filter Brand------------
   const filterBrand = document.querySelector('#filter-brand');
@@ -158,31 +110,6 @@ export function filter(data) {
     );
   }
   //-------------------------------
-  //----Open accordion--------
-  const filtersDetails = document.querySelectorAll('.filters__details');
-  //----filters-btn Open || Close-------
-  const filtersBtnOpen = document.querySelector('#filters-btn-open');
-  const filtersBtnClose = document.querySelector('#filters-btn-close');
-  const filtersMenu = document.querySelector('#filters-menu');
-  //-------Filter Price------------
-  const priceFrom = document.querySelector('#price-from');
-  const priceTo = document.querySelector('#price-to');
-  const range = document.querySelector('#price-range');
-  const priceMin = document.querySelector('#price-min');
-  const priceMax = document.querySelector('#price-max');
-  //-------Create Product Card------------
-  const contentBlock = document.querySelector('.content__inner');
-  //-------Create Count Products------------
-  const selectedProducts = document.querySelector('.content__number');
-  //------Create Counts Filters----------------
-  let countsFilters = document.querySelectorAll('.filters__count');
-  //------Select Filter Content-----------------
-  const selectFilterContent = document.querySelector('#content-select');
-
-  let priceAll = [];
-  let filtersValue = [];
-  let itemsBatteryAll = [];
-  let itemsDiagonalAll = [];
 
   //-------Create Product Card------------
   if (contentBlock) {
@@ -204,6 +131,7 @@ export function filter(data) {
   }
   //-------------------------------
   //------Create Counts Filters----------------
+  let countsFilters = document.querySelectorAll('.filters__count');
   if (countsFilters.length > 0) {
     createCountsFilters(
       countsFilters,
@@ -393,7 +321,6 @@ export function filter(data) {
     suggests.style.display = 'none';
 
     input.addEventListener('input', searchFilter);
-    input.addEventListener('keydown', cancel);
     btn.addEventListener('click', btnResetSearch);
 
     function searchFilter() {
@@ -462,13 +389,7 @@ export function filter(data) {
     }
   }
   //----------------------------------------------------------------
-  //--------Cancel---------------
-  function cancel(e) {
-    if (e.code === 'Enter') {
-      e.preventDefault();
-    }
-  }
-  //-------------------------------
+
   //------Select Filter Content-----------------
   if (selectFilterContent) {
     selectFilterContent.addEventListener('change', createSortProductCard);
@@ -529,4 +450,7 @@ export function filter(data) {
   }
   //---------------------------------------------------------------------------
   //---The END Products.html----------------------------------------------------
+  //---Product-Details.html--------------------------------------------
+  createRelatedProducts(data, like);
+  //---The END Product-Details.html----------------------------------------------------
 }
