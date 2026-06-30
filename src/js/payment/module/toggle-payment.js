@@ -1,6 +1,6 @@
 'use strict';
 
-export function sliderPayment() {
+export function togglePayment() {
   const paymentSteps = document.querySelectorAll('.payment__step');
   const paymentOrder = document.querySelector('.payment__order');
   const paymentSlides = document.querySelectorAll('.payment__info-box');
@@ -23,7 +23,9 @@ export function sliderPayment() {
     }
   });
 
-  btnPay.classList.add('payment__btn_disabled');
+  if (btnPay) {
+    btnPay.classList.add('payment__btn_disabled');
+  }
 
   if (inputAddressAll.length > 0) {
     let tagNameAddress = 'input[name="address"]';

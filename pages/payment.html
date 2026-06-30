@@ -103,7 +103,7 @@
                             <div class="payment__form-block">
                               <div class="payment__form-info">
                                 <div class="payment__form-box">
-                                  <span class="payment__form-index">2118 Thornridge</span>
+                                  <h2 class="payment__form-title">2118 Thornridge</h2>
                                   <span class="payment__form-mark">home</span>
                                 </div>
                                 <span class="payment__form-address"
@@ -134,7 +134,7 @@
                             <div class="payment__form-block">
                               <div class="payment__form-info">
                                 <div class="payment__form-box">
-                                  <span class="payment__form-index">Headoffice</span>
+                                  <h2 class="payment__form-title">Headoffice</h2>
                                   <span class="payment__form-mark">office</span>
                                 </div>
                                 <span class="payment__form-address">2715 Ash Dr. San Jose, South Dakota 83475</span>
@@ -152,7 +152,11 @@
                           </div>
                         </div>
                         <div class="payment__fading-line"></div>
-                        <button type="button" class="payment__form-btn-add" aria-label="Add New Address">
+                        <button
+                          type="button"
+                          id="btn-open-address"
+                          class="payment__form-btn-add"
+                          aria-label="Add New Address">
                           <svg class="payment__svg-plus" width="24" height="24" viewBox="0 0 24 24">
                             <use href="/images/sprite-icon.svg#plus"></use>
                           </svg>
@@ -237,6 +241,8 @@
                           <button
                             id="btn-credit-card"
                             type="button"
+                            name="type-of-card"
+                            value="credit-card"
                             role="tab"
                             aria-controls="box-credit-card"
                             data-pay="credit-card"
@@ -246,6 +252,8 @@
                           <button
                             id="btn-paypal"
                             type="button"
+                            name="type-of-card"
+                            value="paypal"
                             role="tab"
                             aria-controls="box-paypal"
                             data-pay="paypal"
@@ -255,6 +263,9 @@
                           <button
                             id="btn-paypal-credit"
                             type="button"
+                            name="type-of-card"
+                            value="paypal-credit"
+                            role="tab"
                             aria-controls="box-paypal-credit"
                             data-pay="paypal-credit"
                             class="payment__form-button">
@@ -419,6 +430,90 @@
       </section>
     </main>
     <include src="chunk/footer.html"></include>
+    <dialog id="dialog-address" class="dialog-address" aria-label="Add New Address">
+      <form id="form-add-address" class="payment__form-add-address" name="add-address">
+        <button
+          type="button"
+          id="close-dialog-address"
+          class="payment__form-add-address-close"
+          aria-label="Close Add New Address"></button>
+        <div class="payment__form-add-address-inner">
+          <label for="form-add-address-bange" class="payment__form-add-address-label">Enter bange</label>
+          <input
+            id="form-add-address-bange"
+            type="text"
+            class="payment__form-add-address-input"
+            name="bange"
+            autocomplete="off"
+            placeholder="Enter bange" />
+        </div>
+        <div class="payment__form-add-address-inner">
+          <label for="form-add-address-title" class="payment__form-add-address-label">Enter title</label>
+          <input
+            id="form-add-address-title"
+            type="text"
+            class="payment__form-add-address-input"
+            name="title"
+            autocomplete="off"
+            placeholder="Enter title" />
+        </div>
+        <div class="payment__form-add-address-inner">
+          <label for="form-add-address-postcode" class="payment__form-add-address-label">Enter postcode</label>
+          <input
+            id="form-add-address-postcode"
+            type="number"
+            class="payment__form-add-address-input"
+            name="postcode"
+            autocomplete="postal-code"
+            placeholder="Enter postcode" />
+        </div>
+        <div class="payment__form-add-address-inner">
+          <label for="form-add-address-city" class="payment__form-add-address-label">Enter city</label>
+          <input
+            id="form-add-address-city"
+            type="text"
+            class="payment__form-add-address-input"
+            name="city"
+            autocomplete="off"
+            placeholder="Enter city" />
+        </div>
+        <div class="payment__form-add-address-inner">
+          <label for="form-add-address-street" class="payment__form-add-address-label"
+            >Enter the street and house number</label
+          >
+          <input
+            id="form-add-address-street"
+            type="text"
+            class="payment__form-add-address-input"
+            name="street"
+            autocomplete="street-address"
+            placeholder="Enter the street and house number" />
+        </div>
+        <div class="payment__form-add-address-inner">
+          <label for="form-add-address-apartment" class="payment__form-add-address-label">Enter apartment number</label>
+          <input
+            id="form-add-address-apartment"
+            type="number"
+            class="payment__form-add-address-input"
+            name="apartment"
+            autocomplete="off"
+            placeholder="Enter apartment number" />
+        </div>
+        <div class="payment__form-add-address-inner">
+          <label for="form-add-address-telephone" class="payment__form-add-address-label">Enter telephone number</label>
+          <input
+            id="form-add-address-telephone"
+            type="number"
+            class="payment__form-add-address-input"
+            name="telephone"
+            autocomplete="tel"
+            placeholder="Enter telephone number" />
+        </div>
+        <div class="payment__form-add-address-buttons">
+          <button id="btn-add-address" type="button" class="payment__form-add-address-btn">Add Address</button>
+        </div>
+      </form>
+    </dialog>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

@@ -87,8 +87,8 @@ export function selectDetailsProduct() {
     modalReview.showModal();
   }
 
-  function closeModal(e) {
-    e.preventDefault();
+  function closeModal(event) {
+    event.preventDefault();
     document.body.classList.remove('_lock');
     modalReview.close();
   }

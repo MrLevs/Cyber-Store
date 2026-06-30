@@ -13,6 +13,7 @@ import { createRelatedProducts } from './module/create-related-products'; // Cre
 
 export function filter(data) {
   const categoryProduct = 'smartphones';
+  const menuFilters = document.querySelector('#filters-menu');
   //----Open accordion--------
   const filtersDetails = document.querySelectorAll('.filters__details');
   //----filters-btn Open || Close-------
@@ -174,26 +175,28 @@ export function filter(data) {
   }
   //------------------------
   //----Select element-------
-  document.addEventListener('input', event => {
-    if (event.target.classList.contains('filters__input')) {
-      selectAndCreate(event);
-    }
-  });
-
-  document.addEventListener('keydown', event => {
-    if (event.code === 'Enter') {
-      if (event.target.classList.contains('filters__input')) {
-        event.preventDefault();
-
-        if (event.target.checked) {
-          event.target.checked = false;
-        } else {
-          event.target.checked = true;
-        }
+  if (menuFilters) {
+    menuFilters.addEventListener('input', event => {
+      if (event.target.closest('.filters__input')) {
         selectAndCreate(event);
       }
-    }
-  });
+    });
+
+    menuFilters.addEventListener('keydown', event => {
+      if (event.code === 'Enter') {
+        if (event.target.closest('.filters__input')) {
+          event.preventDefault();
+
+          if (event.target.checked) {
+            event.target.checked = false;
+          } else {
+            event.target.checked = true;
+          }
+          selectAndCreate(event);
+        }
+      }
+    });
+  }
 
   function selectAndCreate(event) {
     selectItemFilters(event, filtersValue, itemsBatteryAll, itemsDiagonalAll);
