@@ -591,7 +591,6 @@
   }
 
   &__form-payment-input {
-    appearance: textfield;
     width: 100%;
     padding: 0.8rem;
     border: 0.0625rem solid var.$payment-card-border-color;
@@ -602,10 +601,13 @@
     color: var.$global-color;
     transition: var.$transition-color, var.$transition-border-color;
 
-    &::-webkit-outer-spin-button,
-    &::-webkit-inner-spin-button {
-      appearance: none;
-      margin: 0;
+    &[type='number'] {
+      appearance: textfield;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        appearance: none;
+        margin: 0;
+      }
     }
 
     &::placeholder {
@@ -674,6 +676,127 @@
 
     &_disabled {
       display: none;
+    }
+  }
+
+  &__form-add-address {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+  }
+
+  &__form-add-address-close {
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    background-color: var.$review-bg;
+    border: 0.0625rem solid var.$details-btn-border-color;
+    border-radius: 0.5rem;
+    transition: var.$transition-border-color, var.$transition-bg;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 1rem;
+      height: 0.0625rem;
+      position: absolute;
+      top: 0.90625;
+      left: 0.4375rem;
+      background-color: var.$global-color;
+      transition: var.$transition-bg;
+    }
+
+    &::before {
+      transform: rotateZ(45deg);
+    }
+
+    &::after {
+      transform: rotateZ(135deg);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var.$shop-link-bg-hover;
+    }
+
+    &:active {
+      @extend %btn-active;
+    }
+  }
+
+  &__form-add-address-inner {
+    margin: 0 0 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.25rem 0;
+  }
+
+  &__form-add-address-label {
+    margin-left: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
+    cursor: pointer;
+  }
+
+  &__form-add-address-input {
+    padding: 0.5rem;
+    width: 100%;
+    background-color: var.$form-review-input-bg;
+    border: 0;
+    border-radius: 0.5rem;
+    font-size: 1rem;
+    font-weight: 300;
+    color: var.$global-color;
+    transition: var.$transition-bg, var.$transition-color;
+
+    &[type='number'] {
+      appearance: textfield;
+      &::-webkit-outer-spin-button,
+      &::-webkit-inner-spin-button {
+        appearance: none;
+        margin: 0;
+      }
+    }
+
+    &::placeholder {
+      color: var.$global-color;
+      transition: var.$transition-bg, var.$transition-color;
+      opacity: 0.7;
+    }
+  }
+
+  &__form-add-address-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__form-add-address-btn {
+    padding: 0.75rem 3.5rem;
+    background-color: var.$review-bg;
+    border: 0.0625rem solid var.$details-btn-border-color;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color, var.$transition-border-color, var.$transition-bg;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      background-color: var.$shop-link-bg-hover;
+    }
+
+    &:active {
+      @extend %btn-active;
     }
   }
 }

@@ -955,7 +955,7 @@ main {
 }
 
 //---Dialog-Review-------
-.dialog-review {
+.dialog {
   border: 0;
   border-radius: 1rem;
   background-color: var.$review-bg;
@@ -1099,8 +1099,13 @@ main {
     transition: var.$transition-color, var.$transition-border-color, var.$transition-bg;
     cursor: pointer;
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: var.$shop-link-bg-hover;
+    }
+
+    &:active {
+      @extend %btn-active;
     }
   }
 
@@ -1137,8 +1142,13 @@ main {
       transform: rotateZ(135deg);
     }
 
-    &:hover {
+    &:hover,
+    &:focus {
       background-color: var.$shop-link-bg-hover;
+    }
+
+    &:active {
+      @extend %btn-active;
     }
   }
 }
