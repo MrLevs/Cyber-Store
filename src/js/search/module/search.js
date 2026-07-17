@@ -1,5 +1,6 @@
 'use strict';
 
+import { validationAll } from '../../validation-value'; // Input Validation
 import { createResultsSearch } from './create-results-search'; //Create Results Search
 
 export function search(input, btn, resultSuggests, data) {
@@ -29,7 +30,7 @@ export function search(input, btn, resultSuggests, data) {
     if (input.value !== '') {
       btn.style.display = 'block';
 
-      if (valid(valueSearch)) {
+      if (validationAll(valueSearch)) {
         for (let i = 0; i < data.length; i++) {
           let fullName = `${data[i].brand} ${data[i].name}`;
           if (fullName.toLowerCase().includes(valueSearch) || data[i].title.toLowerCase().includes(valueSearch)) {
@@ -75,22 +76,16 @@ export function search(input, btn, resultSuggests, data) {
 
   //--------------Show Warning--------------------
   function displayWarning() {
-    const p = document.createElement('p');
-    p.setAttribute('role', 'alert');
-    p.className = 'form-search__warning';
-    p.textContent = 'Warning!!! The input field must not be empty and must contain only letters and numbers!';
+    const span = document.createElement('span');
+    span.setAttribute('role', 'alert');
+    span.className = 'form-search__warning';
+    span.textContent = 'Warning!!! The input field must not be empty and must contain only letters and numbers!';
 
     resultSuggests.innerHTML = '';
     input.classList.add('form-search__input_warning');
-    resultSuggests.append(p);
+    resultSuggests.append(span);
     resultSuggests.classList.add('form-search__suggests_warning');
     resultSuggests.style.display = 'block';
-  }
-
-  //--------------------input Validation ------------------------
-  function valid(elem) {
-    const pattern = /^[a-zа-я\d\s-]+$/gi;
-    return pattern.test(elem);
   }
 
   //---------------Controls (ArrowUp, ArrowDown, Enter)-----------

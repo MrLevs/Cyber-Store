@@ -1,5 +1,6 @@
 'use strict';
 import { togglePayment } from './module/toggle-payment'; // Toggle Payment
+import { openCloseModalAddress } from './module/open-close-modal-address'; // Open Close Modal Address
 import { addNewAddress } from './module/add-new-address/add-new-address'; // Add New Address
 import { selectDateDelivery } from './module/select-date-delivery'; // Select Date Delivery
 import { toggleCards } from './module/toggle-cards'; // Toggle Cards
@@ -7,6 +8,9 @@ import { toggleCards } from './module/toggle-cards'; // Toggle Cards
 export function payment() {
   // Toggle Payment
   togglePayment();
+
+  // Open Close Modal Address
+  openCloseModalAddress();
 
   // Add New Address
   addNewAddress();

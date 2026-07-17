@@ -728,6 +728,8 @@
   }
 
   &__form-add-address-inner {
+    min-width: 19.2rem;
+    width: 100%;
     margin: 0 0 1rem 0;
     display: flex;
     flex-direction: column;
@@ -749,7 +751,7 @@
     padding: 0.5rem;
     width: 100%;
     background-color: var.$form-review-input-bg;
-    border: 0;
+    border: 0.125rem solid transparent;
     border-radius: 0.5rem;
     font-size: 1rem;
     font-weight: 300;
@@ -769,6 +771,10 @@
       color: var.$global-color;
       transition: var.$transition-bg, var.$transition-color;
       opacity: 0.7;
+    }
+
+    &_warning {
+      border-color: #e70000;
     }
   }
 
