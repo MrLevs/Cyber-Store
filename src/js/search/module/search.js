@@ -1,16 +1,18 @@
 'use strict';
 
 import { validationAll } from '../../validation-value'; // Input Validation
+import { displayWarningInputSearch } from '../../warning'; // Display Warning Input Search
 import { createResultsSearch } from './create-results-search'; //Create Results Search
 
 export function search(input, btn, resultSuggests, data) {
+  const message = 'Warning!!! The input field must not be empty and must contain only letters and numbers!';
   let valueSearch;
   let searchItems;
   let count = 0;
 
   let searchResults = [];
 
-  if (input.value == '') {
+  if (input.value === '') {
     input.addEventListener('keydown', cancel);
   }
 
@@ -48,7 +50,7 @@ export function search(input, btn, resultSuggests, data) {
         resultSuggests.innerHTML = '';
         resultSuggests.style.display = 'none';
         input.addEventListener('keydown', cancel);
-        displayWarning();
+        displayWarningInputSearch(message, resultSuggests, input);
       }
     } else {
       btn.style.display = 'none';
@@ -70,22 +72,8 @@ export function search(input, btn, resultSuggests, data) {
   function cancel(e) {
     if (e.code === 'Enter') {
       e.preventDefault();
-      displayWarning();
+      displayWarningInputSearch(message, resultSuggests, input);
     }
-  }
-
-  //--------------Show Warning--------------------
-  function displayWarning() {
-    const span = document.createElement('span');
-    span.setAttribute('role', 'alert');
-    span.className = 'form-search__warning';
-    span.textContent = 'Warning!!! The input field must not be empty and must contain only letters and numbers!';
-
-    resultSuggests.innerHTML = '';
-    input.classList.add('form-search__input_warning');
-    resultSuggests.append(span);
-    resultSuggests.classList.add('form-search__suggests_warning');
-    resultSuggests.style.display = 'block';
   }
 
   //---------------Controls (ArrowUp, ArrowDown, Enter)-----------

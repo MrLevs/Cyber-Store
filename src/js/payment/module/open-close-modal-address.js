@@ -33,6 +33,8 @@ export function openCloseModalAddress() {
     if (blockWarning.length > 0) {
       blockWarning.forEach(item => {
         item.innerHTML = '';
+        item.classList.remove('payment__warning_warning');
+        item.style.display = 'none';
       });
     }
   }

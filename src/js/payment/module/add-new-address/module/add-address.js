@@ -1,6 +1,9 @@
 'use strict';
 
+import { showWarningInputAddAddress } from '../../../../warning';
+
 export function addAddress() {
+  const message = 'Warning!!! The field must be filled in!';
   const bangeAddressInput = document.querySelector('#form-add-address-bange');
   const titleAddressInput = document.querySelector('#form-add-address-title');
   const postcodeAddressInput = document.querySelector('#form-add-address-postcode');
@@ -18,31 +21,31 @@ export function addAddress() {
   let userAddress = {};
 
   if (bangeAddress === '') {
-    showWarningInput(bangeAddressInput);
+    showWarningInputAddAddress(bangeAddressInput, message);
   } else {
     userAddress.bange = bangeAddress;
   }
 
   if (titleAddress === '') {
-    showWarningInput(titleAddressInput);
+    showWarningInputAddAddress(titleAddressInput, message);
   } else {
     userAddress.title = titleAddress;
   }
 
   if (postcodeAddress === '') {
-    showWarningInput(postcodeAddressInput);
+    showWarningInputAddAddress(postcodeAddressInput, message);
   } else {
     userAddress.postcode = postcodeAddress;
   }
 
   if (cityAddress === '') {
-    showWarningInput(cityAddressInput);
+    showWarningInputAddAddress(cityAddressInput, message);
   } else {
     userAddress.city = cityAddress;
   }
 
   if (streetAddress === '') {
-    showWarningInput(streetAddressInput);
+    showWarningInputAddAddress(streetAddressInput, message);
   } else {
     userAddress.street = streetAddress;
   }
@@ -54,7 +57,7 @@ export function addAddress() {
   }
 
   if (telephoneAddress === '') {
-    showWarningInput(telephoneAddressInput);
+    showWarningInputAddAddress(telephoneAddressInput, message);
   } else {
     userAddress.telephone = telephoneAddress;
   }
@@ -69,18 +72,4 @@ export function addAddress() {
   ) {
     return userAddress;
   }
-}
-
-function showWarningInput(input) {
-  const container = input.parentNode.querySelector('.payment__warning');
-  const span = document.createElement('span');
-  span.setAttribute('role', 'alert');
-  span.className = 'form-search__warning';
-  span.textContent = 'Warning!!! The field must be filled in!';
-
-  container.innerHTML = '';
-  input.classList.add('payment__form-add-address-input_warning');
-  container.append(span);
-  container.classList.add('payment__warning_warning');
-  container.style.display = 'block';
 }
