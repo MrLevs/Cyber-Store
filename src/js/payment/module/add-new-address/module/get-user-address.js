@@ -2,8 +2,8 @@
 
 import { showWarningInputAddAddress } from '../../../../warning';
 
-export function addAddress() {
-  const message = 'Warning!!! The field must be filled in!';
+export function getUserAddress() {
+  const message = 'Warning!!! The field must be filled in correctly and cannot be left blank!';
   const bangeAddressInput = document.querySelector('#form-add-address-bange');
   const titleAddressInput = document.querySelector('#form-add-address-title');
   const postcodeAddressInput = document.querySelector('#form-add-address-postcode');
@@ -20,31 +20,31 @@ export function addAddress() {
   let telephoneAddress = telephoneAddressInput.value.trim();
   let userAddress = {};
 
-  if (bangeAddress === '') {
+  if (bangeAddress === '' || bangeAddressInput.classList.contains('payment__form-add-address-input_warning')) {
     showWarningInputAddAddress(bangeAddressInput, message);
   } else {
     userAddress.bange = bangeAddress;
   }
 
-  if (titleAddress === '') {
+  if (titleAddress === '' || titleAddressInput.classList.contains('payment__form-add-address-input_warning')) {
     showWarningInputAddAddress(titleAddressInput, message);
   } else {
     userAddress.title = titleAddress;
   }
 
-  if (postcodeAddress === '') {
+  if (postcodeAddress === '' || postcodeAddressInput.classList.contains('payment__form-add-address-input_warning')) {
     showWarningInputAddAddress(postcodeAddressInput, message);
   } else {
     userAddress.postcode = postcodeAddress;
   }
 
-  if (cityAddress === '') {
+  if (cityAddress === '' || cityAddressInput.classList.contains('payment__form-add-address-input_warning')) {
     showWarningInputAddAddress(cityAddressInput, message);
   } else {
     userAddress.city = cityAddress;
   }
 
-  if (streetAddress === '') {
+  if (streetAddress === '' || streetAddressInput.classList.contains('payment__form-add-address-input_warning')) {
     showWarningInputAddAddress(streetAddressInput, message);
   } else {
     userAddress.street = streetAddress;
@@ -56,7 +56,7 @@ export function addAddress() {
     userAddress.apartmentAddress = apartmentAddress;
   }
 
-  if (telephoneAddress === '') {
+  if (telephoneAddress === '' || telephoneAddressInput.classList.contains('payment__form-add-address-input_warning')) {
     showWarningInputAddAddress(telephoneAddressInput, message);
   } else {
     userAddress.telephone = telephoneAddress;
