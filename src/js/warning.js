@@ -17,7 +17,7 @@ export function showWarningInputAddAddress(input, message) {
   const container = input.parentNode.querySelector('.payment__warning');
   const span = document.createElement('span');
   span.setAttribute('role', 'alert');
-  span.className = 'form-search__warning';
+  span.className = 'payment__alert-error';
   span.textContent = message;
 
   container.innerHTML = '';

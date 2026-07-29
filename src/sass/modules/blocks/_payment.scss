@@ -361,7 +361,7 @@
     padding: 0;
     position: absolute;
     left: 49%;
-    bottom: -3%;
+    bottom: -0.7rem;
     border: none;
     border-radius: 50%;
     background-color: var.$global-color-revers;
@@ -728,9 +728,7 @@
   }
 
   &__form-add-address-inner {
-    min-width: 19.2rem;
-    width: 100%;
-    position: relative;
+    width: 19.2rem;
     margin: 0 0 1rem 0;
     display: flex;
     flex-direction: column;
@@ -776,18 +774,22 @@
 
     &_warning {
       border-color: #e70000;
+      &:focus {
+        outline-color: #e70000;
+      }
     }
   }
 
-  &__warning {
-    position: absolute;
-    top: 4rem;
-    left: 0;
+  &__alert-error {
+    display: inline-block;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: red;
   }
 
   &__form-add-address-buttons {
     width: 100%;
-    margin: 0.5rem 0 0 0;
     display: flex;
     justify-content: center;
     align-items: center;

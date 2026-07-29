@@ -2,6 +2,7 @@
 
 import { validAndShow } from './module/valid-and-show'; // Validation and Show Warning
 import { getUserAddress } from './module/get-user-address'; // Get Usre Address
+import { createUserAddress } from './module/create-user-address'; // Create User Address Block
 
 export function addUserAddress() {
   const inputAddAddress = document.querySelectorAll('.payment__form-add-address-input_required');
@@ -31,6 +32,7 @@ export function addUserAddress() {
 
       if (userAddress) {
         console.log(userAddress);
+        createUserAddress(userAddress);
       }
       btnAddAddress.blur();
     });
