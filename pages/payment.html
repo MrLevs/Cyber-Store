@@ -89,68 +89,7 @@
                     <div class="payment__info-box">
                       <h2 class="payment__info-title">Select Address</h2>
                       <form id="form-address" class="payment__form" name="form-address">
-                        <div class="payment__cards-address">
-                          <div class="payment__card-address">
-                            <div class="payment__checkbox">
-                              <input
-                                id="address-home"
-                                type="radio"
-                                name="address"
-                                class="payment__input"
-                                value="2118 Thornridge Cir. Syracuse, Connecticut 35624"
-                                aria-label="2118 Thornridge Cir. Syracuse, Connecticut 35624 home" />
-                            </div>
-                            <div class="payment__form-block">
-                              <div class="payment__form-info">
-                                <div class="payment__form-box">
-                                  <h2 class="payment__form-title">2118 Thornridge</h2>
-                                  <span class="payment__form-mark">home</span>
-                                </div>
-                                <span class="payment__form-address"
-                                  >2118 Thornridge Cir. Syracuse, Connecticut 35624</span
-                                >
-                                <span class="payment__form-phone">(209) 555-0104</span>
-                              </div>
-                              <div class="payment__form-btns">
-                                <button type="button" class="payment__form-btn" aria-label="edit">
-                                  <svg class="payment__form-svg" width="18" height="18" viewBox="0 0 18 18">
-                                    <use href="/images/sprite-icon.svg#edit"></use>
-                                  </svg>
-                                </button>
-                                <button type="button" class="payment__form-btn btn-delete" aria-label="delete"></button>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="payment__card-address">
-                            <div class="payment__checkbox">
-                              <input
-                                id="address-office"
-                                type="radio"
-                                name="address"
-                                class="payment__input"
-                                value="2715 Ash Dr. San Jose, South Dakota 83475"
-                                aria-label="2715 Ash Dr. San Jose, South Dakota 83475 office" />
-                            </div>
-                            <div class="payment__form-block">
-                              <div class="payment__form-info">
-                                <div class="payment__form-box">
-                                  <h2 class="payment__form-title">Headoffice</h2>
-                                  <span class="payment__form-mark">office</span>
-                                </div>
-                                <span class="payment__form-address">2715 Ash Dr. San Jose, South Dakota 83475</span>
-                                <span class="payment__form-phone">(704) 555-0127</span>
-                              </div>
-                              <div class="payment__form-btns">
-                                <button type="button" class="payment__form-btn" aria-label="edit">
-                                  <svg class="payment__form-svg" width="18" height="18" viewBox="0 0 18 18">
-                                    <use href="/images/sprite-icon.svg#edit"></use>
-                                  </svg>
-                                </button>
-                                <button type="button" class="payment__form-btn btn-delete" aria-label="delete"></button>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
+                        <div class="payment__cards-address"></div>
                         <div class="payment__fading-line"></div>
                         <button
                           type="button"
@@ -438,14 +377,14 @@
           class="payment__form-add-address-close"
           aria-label="Close Add New Address"></button>
         <div class="payment__form-add-address-inner">
-          <label for="form-add-address-bange" class="payment__form-add-address-label">Bange</label>
+          <label for="form-add-address-badge" class="payment__form-add-address-label">Badge</label>
           <input
-            id="form-add-address-bange"
+            id="form-add-address-badge"
             type="text"
-            class="payment__form-add-address-input payment__form-add-address-input_required required_w"
-            name="bange"
+            class="payment__form-add-address-input required_w"
+            name="badge"
             autocomplete="off"
-            placeholder="Bange" />
+            placeholder="Badge" />
           <div class="payment__warning"></div>
         </div>
         <div class="payment__form-add-address-inner">
@@ -453,7 +392,7 @@
           <input
             id="form-add-address-title"
             type="text"
-            class="payment__form-add-address-input payment__form-add-address-input_required required_w"
+            class="payment__form-add-address-input required_w"
             name="title"
             autocomplete="off"
             placeholder="Title" />
@@ -464,7 +403,7 @@
           <input
             id="form-add-address-postcode"
             type="number"
-            class="payment__form-add-address-input payment__form-add-address-input_required required_postcode"
+            class="payment__form-add-address-input required_postcode"
             name="postcode"
             autocomplete="postal-code"
             placeholder="Postcode" />
@@ -475,7 +414,7 @@
           <input
             id="form-add-address-city"
             type="text"
-            class="payment__form-add-address-input payment__form-add-address-input_required required_w"
+            class="payment__form-add-address-input required_w"
             name="city"
             autocomplete="off"
             placeholder="City" />
@@ -486,7 +425,7 @@
           <input
             id="form-add-address-street"
             type="text"
-            class="payment__form-add-address-input payment__form-add-address-input_required required_wd"
+            class="payment__form-add-address-input required_wd"
             name="street"
             autocomplete="street-address"
             placeholder="Street and House number" />
@@ -497,7 +436,7 @@
           <input
             id="form-add-address-apartment"
             type="number"
-            class="payment__form-add-address-input payment__form-add-address-input_required required_apart"
+            class="payment__form-add-address-input required_apart"
             name="apartment"
             autocomplete="off"
             placeholder="Apartment number" />
@@ -507,7 +446,7 @@
           <input
             id="form-add-address-telephone"
             type="number"
-            class="payment__form-add-address-input payment__form-add-address-input_required required_tel"
+            class="payment__form-add-address-input required_tel"
             name="telephone"
             autocomplete="tel"
             placeholder="Telephone number" />

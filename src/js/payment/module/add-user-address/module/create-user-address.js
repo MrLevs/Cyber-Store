@@ -18,18 +18,26 @@ export function createUserAddress(obj) {
   const svgEdit = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
   const useEdit = document.createElementNS('http://www.w3.org/2000/svg', 'use');
 
+  let badge = obj.badge;
+  let title = obj.title;
+  let postcode = obj.postcode;
+  let city = obj.city;
+  let street = obj.street;
+  let apartment = obj?.apartment ? `Apartment ${obj.apartment}` : undefined;
+  let phone = obj.phone;
+
   cardAddress.className = 'payment__card-address';
   checkbox.className = 'payment__checkbox';
   formBlock.className = 'payment__form-block';
 
   inputAddress.type = 'radio';
-  inputAddress.id = `address-${obj.bange}`;
+  inputAddress.id = `address-${badge}`;
   inputAddress.className = 'payment__input';
   inputAddress.name = 'address';
-  inputAddress.value = `${obj.bange} ${obj.city} ${obj.street} ${obj?.apartment ?? ''} ${obj.postcode}`;
+  inputAddress.value = `${badge}, ${postcode}, ${city}, ${street}${apartment ? `, ${apartment}` : ''}`;
   inputAddress.setAttribute(
     'aria-label',
-    `${obj.bange} ${obj.city} ${obj.street} ${obj?.apartment ?? ''} ${obj.postcode}`,
+    `${badge}, ${postcode}, ${city}, ${street}${apartment ? `, ${apartment}` : ''}`,
   );
 
   formInfo.className = 'payment__form-info';
@@ -37,14 +45,14 @@ export function createUserAddress(obj) {
   formBox.className = 'payment__form-box';
 
   formAddress.className = 'payment__form-address';
-  formAddress.textContent = `${obj.bange} ${obj.city} ${obj.street} ${obj?.apartment ?? ''} ${obj.postcode}`;
+  formAddress.textContent = `${badge}, ${postcode}, ${city}, ${street}${apartment ? `, ${apartment}` : ''}.`;
   formPhone.className = 'payment__form-phone';
-  formPhone.textContent = `${obj.phone}`;
+  formPhone.textContent = `${phone}`;
 
   formTitle.className = 'payment__form-title';
-  formTitle.textContent = `${obj.title}`;
+  formTitle.textContent = `${title}`;
   formMark.className = 'payment__form-mark';
-  formMark.textContent = `${obj.bange}`;
+  formMark.textContent = `${badge}`;
 
   btnEdit.type = 'button';
   btnEdit.className = 'payment__form-btn';

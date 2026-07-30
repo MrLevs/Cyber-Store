@@ -6,7 +6,7 @@ export function validationAll(value) {
 }
 
 export function validationWS(value) {
-  const pattern = /^[a-zа-я\s]+$/gi;
+  const pattern = /^[a-zа-я\s-]+$/gi;
   return pattern.test(value);
 }
 
