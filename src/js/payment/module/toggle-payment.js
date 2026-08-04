@@ -51,7 +51,9 @@ export function togglePayment() {
 
   if (btnBack || btnNext || btnPay) {
     btnBack.addEventListener('click', stepBack);
+    btnBack.addEventListener('keydown', stepBackEnter);
     btnNext.addEventListener('click', stepNext);
+    btnNext.addEventListener('keydown', stepNextEnter);
   }
 
   //-----Step Back-------------
@@ -62,11 +64,25 @@ export function togglePayment() {
     event.target.blur();
   }
 
+  function stepBackEnter(event) {
+    if (event.code === 'Enter') {
+      event.preventDefault();
+      stepBack(event);
+    }
+  }
+
   //-----Step Next-------------
   function stepNext(event) {
     event.preventDefault();
     selectOrNot();
     event.target.blur();
+  }
+
+  function stepNextEnter(event) {
+    if (event.code === 'Enter') {
+      event.preventDefault();
+      stepNext(event);
+    }
   }
 
   //-----Select or Not---------

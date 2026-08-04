@@ -12,13 +12,26 @@ export function toggleCards() {
       loop(value);
     }
 
-    item.addEventListener('click', function () {
+    item.addEventListener('click', () => {
       button.forEach(item => {
         item.classList.remove('payment__form-button_active');
       });
 
       item.classList.add('payment__form-button_active');
       loop(value);
+    });
+
+    item.addEventListener('keydown', event => {
+      if (event.code === 'Enter') {
+        event.preventDefault();
+
+        button.forEach(item => {
+          item.classList.remove('payment__form-button_active');
+        });
+
+        item.classList.add('payment__form-button_active');
+        loop(value);
+      }
     });
   });
 

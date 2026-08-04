@@ -817,5 +817,9 @@
     &:active {
       @extend %btn-active;
     }
+
+    &_edit {
+      display: none;
+    }
   }
 }

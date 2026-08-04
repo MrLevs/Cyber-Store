@@ -55,11 +55,14 @@ export function createUserAddress(obj) {
   formMark.textContent = `${badge}`;
 
   btnEdit.type = 'button';
-  btnEdit.className = 'payment__form-btn';
+  btnEdit.className = 'payment__form-btn btn-edit';
+  btnEdit.dataset.address = `${badge}`;
   btnEdit.setAttribute('aria-label', 'edit');
+  btnEdit.setAttribute('title', 'edit');
   btnDelete.type = 'button';
   btnDelete.className = 'payment__form-btn btn-delete';
   btnDelete.setAttribute('aria-label', 'delete');
+  btnDelete.setAttribute('title', 'delete');
 
   svgEdit.classList.add('payment__form-svg');
   svgEdit.setAttribute('width', '18');

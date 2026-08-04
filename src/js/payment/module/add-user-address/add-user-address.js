@@ -3,11 +3,16 @@
 import { validAndShow } from './module/valid-and-show'; // Validation and Show Warning
 import { getUserAddress } from './module/get-user-address'; // Get Usre Address
 import { createUserAddress } from './module/create-user-address'; // Create User Address Block
+import { showWarningInputAddAddress } from '../../../warning'; // Show Warning Input Address
 
 export function addUserAddress() {
   const modalAddress = document.querySelector('#dialog-address');
   const inputModalAddress = document.querySelectorAll('.payment__form-add-address-input');
   const btnAddAddress = document.querySelector('#btn-add-address');
+  const btnEditAddress = document.querySelector('#btn-edit-address');
+
+  btnEditAddress.style.display = 'none';
+
   let userAddress;
 
   if (inputModalAddress.length > 0) {
@@ -27,36 +32,49 @@ export function addUserAddress() {
   }
 
   if (btnAddAddress) {
-    btnAddAddress.addEventListener('click', event => {
-      event.preventDefault();
-      userAddress = getUserAddress();
+    btnAddAddress.addEventListener('click', addAddress);
+    btnAddAddress.addEventListener('keydown', addAddressEnter);
+  }
 
-      if (userAddress) {
-        let doubleVal = addressMatching(userAddress);
-        if (doubleVal) {
-          alert('stop');
-          btnAddAddress.blur();
-        } else {
-          let userAddressCollection = JSON.parse(localStorage.getItem('address'));
+  function addAddress(event) {
+    event.preventDefault();
+    userAddress = getUserAddress();
 
-          if (userAddressCollection) {
-            userAddressCollection.push(userAddress);
-            localStorage.setItem('address', JSON.stringify(userAddressCollection));
-          } else {
-            localStorage.setItem('address', JSON.stringify([userAddress]));
-          }
-
-          createUserAddress(userAddress);
-          inputModalAddress.forEach(item => {
-            item.value = '';
-          });
-          document.body.classList.remove('_lock');
-          modalAddress.close();
-        }
-      } else {
+    if (userAddress) {
+      let doubleVal = addressMatching(userAddress);
+      if (doubleVal) {
+        const inputBadge = modalAddress.querySelector('#form-add-address-badge');
+        let message = 'It already exists!';
+        showWarningInputAddAddress(inputBadge, message);
         btnAddAddress.blur();
+      } else {
+        let userAddressCollection = JSON.parse(localStorage.getItem('address'));
+
+        if (userAddressCollection) {
+          userAddressCollection.push(userAddress);
+          localStorage.setItem('address', JSON.stringify(userAddressCollection));
+        } else {
+          localStorage.setItem('address', JSON.stringify([userAddress]));
+        }
+
+        createUserAddress(userAddress);
+        inputModalAddress.forEach(item => {
+          item.value = '';
+        });
+        document.body.classList.remove('_lock');
+        modalAddress.close();
       }
-    });
+    } else {
+      btnAddAddress.blur();
+    }
+  }
+
+  function addAddressEnter(event) {
+    if (event.code === 'Enter') {
+      event.preventDefault();
+
+      addAddress(event);
+    }
   }
 }
 

@@ -5,10 +5,14 @@ export function openCloseModalAddress() {
   const btnOpenAddress = document.querySelector('#btn-open-address');
   const btnCloseAddress = document.querySelector('#close-dialog-address');
   const blockWarning = document.querySelectorAll('.payment__warning');
+  const btnAddAddress = document.querySelector('#btn-add-address');
+  const btnEditAddress = document.querySelector('#btn-edit-address');
 
   if (btnOpenAddress && btnCloseAddress) {
     btnOpenAddress.addEventListener('click', openModal);
+    btnOpenAddress.addEventListener('keydown', openModalEnter);
     btnCloseAddress.addEventListener('click', closeModal);
+    btnCloseAddress.addEventListener('keydown', closeModalEnter);
   }
 
   if (blockWarning.length > 0) {
@@ -19,7 +23,16 @@ export function openCloseModalAddress() {
 
   function openModal() {
     document.body.classList.add('_lock');
+    btnAddAddress.style.display = 'block';
+    btnEditAddress.style.display = 'none';
     modalAddress.showModal();
+  }
+
+  function openModalEnter(event) {
+    if (event.code === 'Enter') {
+      event.preventDefault();
+      openModal();
+    }
   }
 
   function closeModal(event) {
@@ -44,6 +57,13 @@ export function openCloseModalAddress() {
         item.classList.remove('payment__warning_warning');
         item.style.display = 'none';
       });
+    }
+  }
+
+  function closeModalEnter(event) {
+    if (event.code === 'Enter') {
+      event.preventDefault();
+      closeModal(event);
     }
   }
 }

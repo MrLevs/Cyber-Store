@@ -12,13 +12,26 @@ export function toggleProducts() {
       loop(value);
     }
 
-    item.addEventListener('click', function () {
+    item.addEventListener('click', () => {
       button.forEach(item => {
         item.classList.remove('products__btn_active');
       });
 
       item.classList.add('products__btn_active');
       loop(value);
+    });
+
+    item.addEventListener('keydown', event => {
+      if (event.code === 'Enter') {
+        event.preventDefault();
+
+        button.forEach(item => {
+          item.classList.remove('products__btn_active');
+        });
+
+        item.classList.add('products__btn_active');
+        loop(value);
+      }
     });
   });
 

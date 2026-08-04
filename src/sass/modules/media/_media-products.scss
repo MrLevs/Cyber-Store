@@ -43,9 +43,11 @@
     z-index: 105;
     overflow: auto;
     transition: left ease 0.5s;
+    visibility: hidden;
 
     &_active {
       left: 0;
+      visibility: visible;
     }
 
     &__suptitle {

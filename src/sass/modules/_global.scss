@@ -107,6 +107,7 @@ a {
   //---Burger menu------
   &__mobile {
     display: none;
+    visibility: hidden;
   }
 
   &__menu-mobile {
@@ -173,8 +174,13 @@ a {
     &::after {
       transform: translateY(-0.6875rem) rotateZ(-45deg);
     }
+
     .btn-menu__span {
       transform: scale(0);
+    }
+
+    & + .header__mobile {
+      visibility: visible;
     }
   }
 
