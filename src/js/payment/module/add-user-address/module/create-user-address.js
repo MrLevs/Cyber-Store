@@ -61,6 +61,7 @@ export function createUserAddress(obj) {
   btnEdit.setAttribute('title', 'edit');
   btnDelete.type = 'button';
   btnDelete.className = 'payment__form-btn btn-delete';
+  btnDelete.dataset.address = `${badge}`;
   btnDelete.setAttribute('aria-label', 'delete');
   btnDelete.setAttribute('title', 'delete');
 

@@ -38,26 +38,34 @@ export function openCloseModalAddress() {
   function closeModal(event) {
     event.preventDefault();
 
-    const inputWarning = document.querySelectorAll('.payment__form-add-address-input_warning');
-    const blockWarning = document.querySelectorAll('.payment__warning_warning');
-
-    document.body.classList.remove('_lock');
-    modalAddress.close();
-
-    if (inputWarning.length > 0) {
-      inputWarning.forEach(item => {
-        item.classList.remove('payment__form-add-address-input_warning');
+    if (event.currentTarget.classList.contains('payment__form-add-address-close_edit')) {
+      const inputAddressAll = document.querySelectorAll('.payment__form-add-address-input');
+      inputAddressAll.forEach(item => {
         item.value = '';
       });
+    } else {
+      const inputWarning = document.querySelectorAll('.payment__form-add-address-input_warning');
+      const blockWarning = document.querySelectorAll('.payment__warning_warning');
+
+      if (inputWarning.length > 0) {
+        inputWarning.forEach(item => {
+          item.classList.remove('payment__form-add-address-input_warning');
+          item.value = '';
+        });
+      }
+
+      if (blockWarning.length > 0) {
+        blockWarning.forEach(item => {
+          item.innerHTML = '';
+          item.classList.remove('payment__warning_warning');
+          item.style.display = 'none';
+        });
+      }
     }
 
-    if (blockWarning.length > 0) {
-      blockWarning.forEach(item => {
-        item.innerHTML = '';
-        item.classList.remove('payment__warning_warning');
-        item.style.display = 'none';
-      });
-    }
+    event.currentTarget.classList.remove('payment__form-add-address-close_edit');
+    document.body.classList.remove('_lock');
+    modalAddress.close();
   }
 
   function closeModalEnter(event) {
