@@ -60,9 +60,7 @@ export function editAddress() {
     btnAddAddress.style.display = 'none';
     btnEditAddress.style.display = 'block';
 
-    if (!addressAll || addressAll.length === 0) {
-      addressAll = JSON.parse(localStorage.getItem('address'));
-    }
+    addressAll = JSON.parse(localStorage.getItem('address'));
 
     for (let i = 0; i < addressAll.length; i++) {
       if (addressAll[i].badge === badgeAddress) {
