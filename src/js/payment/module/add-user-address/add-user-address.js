@@ -82,15 +82,11 @@ export function addUserAddress() {
 function addressMatching(userAddress) {
   let userAddressCollection = JSON.parse(localStorage.getItem('address'));
 
-  if (userAddressCollection) {
-    if (userAddressCollection.length > 0) {
-      for (let i = 0; i < userAddressCollection.length; i++) {
-        if (userAddressCollection[i].badge === userAddress.badge) {
-          return true;
-        }
+  if (userAddressCollection && userAddressCollection.length > 0) {
+    for (let i = 0; i < userAddressCollection.length; i++) {
+      if (userAddressCollection[i].badge === userAddress.badge) {
+        return true;
       }
-    } else {
-      return undefined;
     }
   } else {
     return undefined;

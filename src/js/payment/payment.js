@@ -1,5 +1,5 @@
 'use strict';
-import { togglePayment } from './module/toggle-payment'; // Toggle Payment
+import { controlPayment } from './module/control-payment'; // Toggle Payment
 import { getAddress } from './module/get-address'; // get Address LocalStorage
 import { editAddress } from './module/edit-address'; // edit Address card
 import { openCloseModalAddress } from './module/open-close-modal-address'; // Open Close Modal Address
@@ -8,9 +8,6 @@ import { selectDateDelivery } from './module/select-date-delivery'; // Select Da
 import { toggleCards } from './module/toggle-cards'; // Toggle Cards
 
 export function payment() {
-  // Toggle Payment
-  togglePayment();
-
   // Get Address LocalStorage
   getAddress();
 
@@ -28,4 +25,7 @@ export function payment() {
 
   // Toggle Cards
   toggleCards();
+
+  // Toggle Payment
+  controlPayment();
 }

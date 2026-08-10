@@ -1,11 +1,14 @@
 'use strict';
 
-export function togglePayment() {
+import { getDataPay } from './get-data-pay'; // Get Data Pay
+
+export function controlPayment() {
   const paymentSteps = document.querySelectorAll('.payment__step');
   const paymentOrder = document.querySelector('.payment__order');
   const paymentSlides = document.querySelectorAll('.payment__info-box');
   const inputAddressAll = document.querySelectorAll('input[name="address"]');
   const inputShippingAll = document.querySelectorAll('input[name="shipping"]');
+  const inputDate = document.querySelector('#select-date');
   const btnBack = document.querySelector('#btn-back');
   const btnNext = document.querySelector('#btn-next');
   const btnPay = document.querySelector('#btn-pay');
@@ -22,10 +25,6 @@ export function togglePayment() {
       item.classList.add('payment__info-box_disabled');
     }
   });
-
-  if (btnPay) {
-    btnPay.classList.add('payment__btn_disabled');
-  }
 
   if (inputAddressAll.length > 0) {
     let tagNameAddress = 'input[name="address"]';
@@ -49,11 +48,23 @@ export function togglePayment() {
     }
   }
 
+  if (inputDate) {
+    let tagNameShipping = 'input[name="date"]';
+    inputDate.addEventListener('change', () => {
+      selectPaymentInput(tagNameShipping);
+    });
+  }
+
+  //--------Btn Back, Next, Pay------------------------
   if (btnBack || btnNext || btnPay) {
     btnBack.addEventListener('click', stepBack);
     btnBack.addEventListener('keydown', stepBackEnter);
     btnNext.addEventListener('click', stepNext);
     btnNext.addEventListener('keydown', stepNextEnter);
+
+    btnPay.classList.add('payment__btn_disabled');
+    btnPay.addEventListener('click', getDataPay);
+    btnPay.addEventListener('keydown', getDataPayEnter);
   }
 
   //-----Step Back-------------
@@ -85,6 +96,14 @@ export function togglePayment() {
     }
   }
 
+  //-----PayEnter-------------
+  function getDataPayEnter(event) {
+    if (event.code === 'Enter') {
+      event.preventDefault();
+      getDataPay();
+    }
+  }
+
   //-----Select or Not---------
   function selectOrNot() {
     switch (currentIndex) {
@@ -102,8 +121,18 @@ export function togglePayment() {
       case 1: {
         let selectShipment = document.querySelector('input[name="shipping"]:checked');
         if (selectShipment) {
-          slideNext();
-          toggleElement();
+          if (selectShipment.value === 'date') {
+            if (inputDate.value !== '') {
+              slideNext();
+              toggleElement();
+            } else {
+              let tagName = 'input[name="date"]';
+              inputRequire(tagName);
+            }
+          } else {
+            slideNext();
+            toggleElement();
+          }
         } else {
           let tagName = 'input[name="shipping"]';
           inputRequire(tagName);
@@ -182,6 +211,9 @@ export function togglePayment() {
   function inputRequire(tagName) {
     const inputAll = document.querySelectorAll(tagName);
     const blockAlertAll = document.querySelectorAll('.payment__alert');
+    const messageCheckbox = 'Select the Сheckbox!';
+    const messageDate = 'Select a Date!';
+
     inputAll.forEach(item => {
       let parentBlock = item.parentNode;
 
@@ -189,18 +221,24 @@ export function togglePayment() {
         item.classList.add('payment__input_require');
       }
 
-      if (blockAlertAll.length === 0) {
-        createBlockAlert(parentBlock);
+      if (item.name === 'date') {
+        if (blockAlertAll.length === 0) {
+          createBlockAlert(parentBlock, messageDate);
+        }
+      } else {
+        if (blockAlertAll.length === 0) {
+          createBlockAlert(parentBlock, messageCheckbox);
+        }
       }
     });
   }
 
   //-----Create Block Alert--------------------
-  function createBlockAlert(elem) {
+  function createBlockAlert(elem, message) {
     const div = document.createElement('div');
     div.setAttribute('role', 'alert');
     div.className = 'payment__alert';
-    div.textContent = 'Сheck the box';
+    div.textContent = message;
     elem.append(div);
   }
 

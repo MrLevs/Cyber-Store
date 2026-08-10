@@ -257,7 +257,7 @@
   }
 
   &__alert {
-    width: 10rem;
+    width: 12rem;
     font-size: 1rem;
     font-weight: 500;
     color: #e70000;
@@ -467,6 +467,7 @@
   }
 
   &__date-box {
+    position: relative;
     display: flex;
     justify-content: flex-end;
     align-items: center;
