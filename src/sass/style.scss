@@ -1,8 +1,10 @@
-@use 'modules/forward-style' as var;
+@use 'modules/forward-style';
 @use 'modules/blocks/index';
 @use 'modules/blocks/products';
 @use 'modules/blocks/product-details';
 @use 'modules/blocks/shop';
 @use 'modules/blocks/payment';
+
+@use 'modules/warning';
 
 @use 'modules/media/media';

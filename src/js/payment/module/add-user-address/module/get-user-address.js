@@ -1,6 +1,6 @@
 'use strict';
 
-import { showWarningInputAddAddress } from '../../../../warning'; // Show Warning Input
+import { showWarningInput } from '../../../../warning'; // Show Warning Input
 import { strUpCase } from '../../../../string-up-case'; // String UpperCase
 
 export function getUserAddress() {
@@ -21,48 +21,32 @@ export function getUserAddress() {
   let phoneAddress = phoneAddressInput.value.trim();
   let userAddress = {};
 
-  if (
-    badgeAddress === '' ||
-    badgeAddress === '-' ||
-    badgeAddressInput.classList.contains('payment__form-add-address-input_warning')
-  ) {
-    showWarningInputAddAddress(badgeAddressInput, message);
+  if (badgeAddress === '' || badgeAddress === '-' || badgeAddressInput.classList.contains('warning__input')) {
+    showWarningInput(badgeAddressInput, message);
   } else {
     userAddress.badge = strUpCase(badgeAddress);
   }
 
-  if (
-    titleAddress === '' ||
-    titleAddress === '-' ||
-    titleAddressInput.classList.contains('payment__form-add-address-input_warning')
-  ) {
-    showWarningInputAddAddress(titleAddressInput, message);
+  if (titleAddress === '' || titleAddress === '-' || titleAddressInput.classList.contains('warning__input')) {
+    showWarningInput(titleAddressInput, message);
   } else {
     userAddress.title = strUpCase(titleAddress);
   }
 
-  if (postcodeAddress === '' || postcodeAddressInput.classList.contains('payment__form-add-address-input_warning')) {
-    showWarningInputAddAddress(postcodeAddressInput, message);
+  if (postcodeAddress === '' || postcodeAddressInput.classList.contains('warning__input')) {
+    showWarningInput(postcodeAddressInput, message);
   } else {
     userAddress.postcode = postcodeAddress;
   }
 
-  if (
-    cityAddress === '' ||
-    cityAddress === '-' ||
-    cityAddressInput.classList.contains('payment__form-add-address-input_warning')
-  ) {
-    showWarningInputAddAddress(cityAddressInput, message);
+  if (cityAddress === '' || cityAddress === '-' || cityAddressInput.classList.contains('warning__input')) {
+    showWarningInput(cityAddressInput, message);
   } else {
     userAddress.city = strUpCase(cityAddress);
   }
 
-  if (
-    streetAddress === '' ||
-    streetAddress === '-' ||
-    streetAddressInput.classList.contains('payment__form-add-address-input_warning')
-  ) {
-    showWarningInputAddAddress(streetAddressInput, message);
+  if (streetAddress === '' || streetAddress === '-' || streetAddressInput.classList.contains('warning__input')) {
+    showWarningInput(streetAddressInput, message);
   } else {
     userAddress.street = strUpCase(streetAddress);
   }
@@ -71,8 +55,8 @@ export function getUserAddress() {
     userAddress.apartment = apartmentAddress;
   }
 
-  if (phoneAddress === '' || phoneAddressInput.classList.contains('payment__form-add-address-input_warning')) {
-    showWarningInputAddAddress(phoneAddressInput, message);
+  if (phoneAddress === '' || phoneAddressInput.classList.contains('warning__input')) {
+    showWarningInput(phoneAddressInput, message);
   } else {
     userAddress.phone = phoneAddress;
   }

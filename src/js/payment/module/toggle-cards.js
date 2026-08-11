@@ -41,6 +41,7 @@ export function toggleCards() {
   function loop(value) {
     input.forEach(item => {
       item.disabled = true;
+      item.value = '';
     });
 
     container.forEach(item => {

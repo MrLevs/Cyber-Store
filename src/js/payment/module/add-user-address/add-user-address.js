@@ -3,7 +3,7 @@
 import { validAndShow } from './module/valid-and-show'; // Validation and Show Warning
 import { getUserAddress } from './module/get-user-address'; // Get Usre Address
 import { createUserAddress } from './module/create-user-address'; // Create User Address Block
-import { showWarningInputAddAddress } from '../../../warning'; // Show Warning Input Address
+import { showWarningInput } from '../../../warning'; // Show Warning Input Address
 
 export function addUserAddress() {
   const modalAddress = document.querySelector('#dialog-address');
@@ -23,9 +23,23 @@ export function addUserAddress() {
 
       if (item.type === 'number') {
         item.addEventListener('keydown', event => {
-          if (event.code === 'KeyE' || event.code === 'Minus') {
+          if (
+            event.code === 'KeyE' ||
+            event.code === 'Minus' ||
+            event.key === '+' ||
+            event.code === 'ArrowUp' ||
+            event.code === 'ArrowDown'
+          ) {
             event.preventDefault();
           }
+        });
+
+        item.addEventListener('focus', () => {
+          item.addEventListener('wheel', cancelWheel);
+        });
+
+        item.addEventListener('blur', () => {
+          item.removeEventListener('wheel', cancelWheel);
         });
       }
     });
@@ -45,7 +59,7 @@ export function addUserAddress() {
       if (doubleVal) {
         const inputBadge = modalAddress.querySelector('#form-add-address-badge');
         let message = 'It already exists!';
-        showWarningInputAddAddress(inputBadge, message);
+        showWarningInput(inputBadge, message);
         btnAddAddress.blur();
       } else {
         let userAddressCollection = JSON.parse(localStorage.getItem('address'));
@@ -91,4 +105,9 @@ function addressMatching(userAddress) {
   } else {
     return undefined;
   }
+}
+
+// Cancel Wheel Mouse
+function cancelWheel(event) {
+  event.preventDefault();
 }

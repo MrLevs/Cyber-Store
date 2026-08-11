@@ -1,0 +1,17 @@
+//---Warning-----
+.warning {
+  &__input {
+    border-color: #e70000;
+    &:focus {
+      outline-color: #e70000;
+    }
+  }
+
+  &__alert-error {
+    display: inline-block;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: red;
+  }
+}

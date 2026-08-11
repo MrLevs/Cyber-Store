@@ -13,16 +13,30 @@ export function displayWarningInputSearch(message, resultSuggests, input) {
   resultSuggests.style.display = 'block';
 }
 
-export function showWarningInputAddAddress(input, message) {
-  const container = input.parentNode.querySelector('.payment__warning');
+export function showWarningInput(input, message) {
+  const container = input.parentNode.querySelector('.warning');
   const span = document.createElement('span');
   span.setAttribute('role', 'alert');
-  span.className = 'payment__alert-error';
+  span.className = 'warning__alert-error';
   span.textContent = message;
 
   container.innerHTML = '';
-  input.classList.add('payment__form-add-address-input_warning');
+  input.classList.add('warning__input');
   container.append(span);
-  container.classList.add('payment__warning_warning');
+  container.classList.add('warning_alert');
   container.style.display = 'block';
+}
+
+export function removeWarning(item) {
+  const blockWarning = item.parentElement.querySelector('.warning');
+
+  if (item.classList.contains('warning__input')) {
+    item.classList.remove('warning__input');
+  }
+
+  if (blockWarning && blockWarning.classList.contains('warning_alert')) {
+    blockWarning.innerHTML = '';
+    blockWarning.classList.remove('warning_alert');
+    blockWarning.style.display = 'none';
+  }
 }

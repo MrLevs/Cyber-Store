@@ -2,7 +2,7 @@
 
 import { createUserAddress } from './add-user-address/module/create-user-address'; // Create User Address card
 import { getUserAddress } from './add-user-address/module/get-user-address'; // Get User Address;
-import { showWarningInputAddAddress } from '../../warning'; // Show Warning Input Address
+import { showWarningInput } from '../../warning'; // Show Warning Input Address
 
 export function editAddress() {
   const blockAddressCard = document.querySelector('.payment__cards-address');
@@ -142,7 +142,7 @@ export function editAddress() {
       if (doubleVal) {
         const inputBadge = modalAddress.querySelector('#form-add-address-badge');
         let message = 'It already exists!';
-        showWarningInputAddAddress(inputBadge, message);
+        showWarningInput(inputBadge, message);
         btnEditAddress.blur();
       } else {
         address.item.badge = newAddress.badge;

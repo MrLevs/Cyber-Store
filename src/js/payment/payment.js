@@ -5,6 +5,7 @@ import { editAddress } from './module/edit-address'; // edit Address card
 import { openCloseModalAddress } from './module/open-close-modal-address'; // Open Close Modal Address
 import { addUserAddress } from './module/add-user-address/add-user-address'; // Add User Address
 import { selectDateDelivery } from './module/select-date-delivery'; // Select Date Delivery
+import { inputPaymentCards } from './module/input-payment-cards/input-payment-cards'; // Input Payment Cards
 import { toggleCards } from './module/toggle-cards'; // Toggle Cards
 
 export function payment() {
@@ -25,6 +26,9 @@ export function payment() {
 
   // Toggle Cards
   toggleCards();
+
+  // Input Payment Cards
+  inputPaymentCards();
 
   // Toggle Payment
   controlPayment();

@@ -3,6 +3,7 @@
 import { getDataPay } from './get-data-pay'; // Get Data Pay
 
 export function controlPayment() {
+  const blockWarning = document.querySelectorAll('.warning');
   const paymentSteps = document.querySelectorAll('.payment__step');
   const paymentOrder = document.querySelector('.payment__order');
   const paymentSlides = document.querySelectorAll('.payment__info-box');
@@ -13,6 +14,12 @@ export function controlPayment() {
   const btnNext = document.querySelector('#btn-next');
   const btnPay = document.querySelector('#btn-pay');
   let currentIndex = 0;
+
+  if (blockWarning.length > 0) {
+    blockWarning.forEach(item => {
+      item.style.display = 'none';
+    });
+  }
 
   paymentSteps.forEach(item => {
     if (item.dataset.step === currentIndex.toString()) {

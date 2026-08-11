@@ -4,7 +4,6 @@ export function openCloseModalAddress() {
   const modalAddress = document.querySelector('#dialog-address');
   const btnOpenAddress = document.querySelector('#btn-open-address');
   const btnCloseAddress = document.querySelector('#close-dialog-address');
-  const blockWarning = document.querySelectorAll('.payment__warning');
   const btnAddAddress = document.querySelector('#btn-add-address');
   const btnEditAddress = document.querySelector('#btn-edit-address');
 
@@ -13,12 +12,6 @@ export function openCloseModalAddress() {
     btnOpenAddress.addEventListener('keydown', openModalEnter);
     btnCloseAddress.addEventListener('click', closeModal);
     btnCloseAddress.addEventListener('keydown', closeModalEnter);
-  }
-
-  if (blockWarning.length > 0) {
-    blockWarning.forEach(item => {
-      item.style.display = 'none';
-    });
   }
 
   function openModal() {
@@ -44,12 +37,12 @@ export function openCloseModalAddress() {
         item.value = '';
       });
     } else {
-      const inputWarning = document.querySelectorAll('.payment__form-add-address-input_warning');
-      const blockWarning = document.querySelectorAll('.payment__warning_warning');
+      const inputWarning = document.querySelectorAll('.warning__input');
+      const blockWarning = document.querySelectorAll('.warning_alert');
 
       if (inputWarning.length > 0) {
         inputWarning.forEach(item => {
-          item.classList.remove('payment__form-add-address-input_warning');
+          item.classList.remove('warning__input');
           item.value = '';
         });
       }
@@ -57,7 +50,7 @@ export function openCloseModalAddress() {
       if (blockWarning.length > 0) {
         blockWarning.forEach(item => {
           item.innerHTML = '';
-          item.classList.remove('payment__warning_warning');
+          item.classList.remove('warning_alert');
           item.style.display = 'none';
         });
       }
