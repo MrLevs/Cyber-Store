@@ -18,30 +18,13 @@ export function addUserAddress() {
   if (inputModalAddress.length > 0) {
     inputModalAddress.forEach(item => {
       item.addEventListener('input', () => {
+        if (item.name === 'postcode' || item.name === 'apartment') {
+          item.value = item.value.replace(/\D/g, '');
+        } else if (item.type === 'tel') {
+          item.value = item.value.replace(/^(?!\+)\D+|(?!^)\D+/g, '');
+        }
         validAndShow(item);
       });
-
-      if (item.type === 'number') {
-        item.addEventListener('keydown', event => {
-          if (
-            event.code === 'KeyE' ||
-            event.code === 'Minus' ||
-            event.key === '+' ||
-            event.code === 'ArrowUp' ||
-            event.code === 'ArrowDown'
-          ) {
-            event.preventDefault();
-          }
-        });
-
-        item.addEventListener('focus', () => {
-          item.addEventListener('wheel', cancelWheel);
-        });
-
-        item.addEventListener('blur', () => {
-          item.removeEventListener('wheel', cancelWheel);
-        });
-      }
     });
   }
 
@@ -105,9 +88,4 @@ function addressMatching(userAddress) {
   } else {
     return undefined;
   }
-}
-
-// Cancel Wheel Mouse
-function cancelWheel(event) {
-  event.preventDefault();
 }

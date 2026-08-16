@@ -38,7 +38,12 @@ export function validAndShow(item) {
       if (item.classList.contains('warning__input')) {
         removeWarning(item);
       }
-      item.value = validationNumber(item.value, 11);
+
+      if (item.value.includes('+')) {
+        item.value = validationNumber(item.value, 12);
+      } else {
+        item.value = validationNumber(item.value, 11);
+      }
     }
   } else {
     if (item.classList.contains('warning__input')) {
