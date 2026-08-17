@@ -70,8 +70,12 @@ export function controlPayment() {
     btnNext.addEventListener('keydown', stepNextEnter);
 
     btnPay.classList.add('payment__btn_disabled');
-    btnPay.addEventListener('click', getDataPay);
-    btnPay.addEventListener('keydown', getDataPayEnter);
+    btnPay.addEventListener('click', event => {
+      event.preventDefault();
+      let userPaymentData = getDataPay();
+      console.log(userPaymentData);
+    });
+    btnPay.addEventListener('keydown', payEnter);
   }
 
   //-----Step Back-------------
@@ -104,10 +108,11 @@ export function controlPayment() {
   }
 
   //-----PayEnter-------------
-  function getDataPayEnter(event) {
+  function payEnter(event) {
     if (event.code === 'Enter') {
       event.preventDefault();
-      getDataPay();
+      let userPaymentData = getDataPay();
+      console.log(userPaymentData);
     }
   }
 
@@ -128,7 +133,7 @@ export function controlPayment() {
       case 1: {
         let selectShipment = document.querySelector('input[name="shipping"]:checked');
         if (selectShipment) {
-          if (selectShipment.value === 'date') {
+          if (selectShipment.value === 'select date') {
             if (inputDate.value !== '') {
               slideNext();
               toggleElement();

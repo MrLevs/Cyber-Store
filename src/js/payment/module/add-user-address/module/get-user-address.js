@@ -12,11 +12,11 @@ export function getUserAddress() {
   const streetAddressInput = document.querySelector('#form-add-address-street');
   const apartmentAddressInput = document.querySelector('#form-add-address-apartment');
   const phoneAddressInput = document.querySelector('#form-add-address-telephone');
-  let badgeAddress = badgeAddressInput.value.trim();
-  let titleAddress = titleAddressInput.value.trim();
+  let badgeAddress = badgeAddressInput.value.replace(/\s+/g, ' ').trim();
+  let titleAddress = titleAddressInput.value.replace(/\s+/g, ' ').trim();
   let postcodeAddress = postcodeAddressInput.value.trim();
-  let cityAddress = cityAddressInput.value.trim();
-  let streetAddress = streetAddressInput.value.trim();
+  let cityAddress = cityAddressInput.value.replace(/\s+/g, ' ').trim();
+  let streetAddress = streetAddressInput.value.replace(/\s+/g, ' ').trim();
   let apartmentAddress = apartmentAddressInput.value.trim();
   let phoneAddress = phoneAddressInput.value.trim();
   let userAddress = {};

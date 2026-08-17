@@ -34,7 +34,7 @@ export function createUserAddress(obj) {
   inputAddress.id = `address-${badge}`;
   inputAddress.className = 'payment__input';
   inputAddress.name = 'address';
-  inputAddress.value = `${badge}, ${postcode}, ${city}, ${street}${apartment ? `, ${apartment}` : ''}`;
+  inputAddress.value = badge;
   inputAddress.setAttribute(
     'aria-label',
     `${badge}, ${postcode}, ${city}, ${street}${apartment ? `, ${apartment}` : ''}`,
