@@ -75,5 +75,14 @@
     &__form-buttons {
       gap: 0 1.5rem;
     }
+
+    &__form-add-address-inner {
+      width: 100%;
+    }
+
+    &__alert {
+      top: 1.5rem;
+      left: -0.5rem;
+    }
   }
 }
