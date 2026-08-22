@@ -7,8 +7,8 @@ import { showWarningInput } from '../../warning'; // Show Warning Input Address
 export function editAddress() {
   const blockAddressCard = document.querySelector('.payment__cards-address');
   const modalAddress = document.querySelector('#dialog-address');
-  const inputsAddress = modalAddress.querySelectorAll('.payment__form-add-address-input');
-  const btnCloseModalAddress = modalAddress.querySelector('#close-dialog-address'); // Btn Close Modal Address
+  const inputsAddress = document.querySelectorAll('.payment__form-add-address-input');
+  const btnCloseModalAddress = document.querySelector('#close-dialog-address'); // Btn Close Modal Address
   const btnAddAddress = document.querySelector('#btn-add-address'); // BtnAddAddress from dialogAddress
   const btnEditAddress = document.querySelector('#btn-edit-address'); // BtnEditAddress from dialogAddress
   // let addressAll = JSON.parse(localStorage.getItem('address'));

@@ -11,7 +11,9 @@ export function addUserAddress() {
   const btnAddAddress = document.querySelector('#btn-add-address');
   const btnEditAddress = document.querySelector('#btn-edit-address');
 
-  btnEditAddress.style.display = 'none';
+  if (btnEditAddress) {
+    btnEditAddress.style.display = 'none';
+  }
 
   let userAddress;
 

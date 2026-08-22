@@ -52,9 +52,10 @@
   &__img {
     &_min {
       opacity: 0.4;
+      cursor: pointer;
     }
 
-    &_min-active {
+    &_active {
       opacity: 1;
     }
   }
@@ -117,6 +118,7 @@
     display: block;
     border: 0.1875rem solid var.$info-bg;
     border-radius: 50%;
+    font-size: 0px;
     cursor: pointer;
 
     &_black {

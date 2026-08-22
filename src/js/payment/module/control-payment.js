@@ -72,8 +72,12 @@ export function controlPayment() {
     btnPay.classList.add('payment__btn_disabled');
     btnPay.addEventListener('click', event => {
       event.preventDefault();
-      let userPaymentData = getDataPay();
-      console.log(userPaymentData);
+      let userDataPayment = getDataPay();
+      if (userDataPayment) {
+        localStorage.setItem('order', JSON.stringify(userDataPayment));
+        alert('Success');
+        location.reload();
+      }
     });
     btnPay.addEventListener('keydown', payEnter);
   }

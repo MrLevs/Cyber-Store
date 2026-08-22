@@ -48,29 +48,41 @@
                       <img
                         src="/images/product-details/apple141.webp"
                         alt="apple iphone 14"
-                        class="info__img info__img_min" />
+                        class="info__img info__img_min info__img_active"
+                        data-large="/images/product-details/apple141m.webp"
+                        tabindex="0" />
                     </div>
                     <div class="info__images-box">
                       <img
                         src="/images/product-details/apple142.webp"
                         alt="apple iphone 14"
-                        class="info__img info__img_min" />
+                        class="info__img info__img_min"
+                        data-large="/images/product-details/apple142m.webp"
+                        tabindex="0" />
                     </div>
                     <div class="info__images-box">
                       <img
                         src="/images/product-details/apple143.webp"
                         alt="apple iphone 14"
-                        class="info__img info__img_min" />
+                        class="info__img info__img_min"
+                        data-large="/images/product-details/apple143m.webp"
+                        tabindex="0" />
                     </div>
                     <div class="info__images-box">
                       <img
                         src="/images/product-details/apple144.webp"
                         alt="apple iphone 14"
-                        class="info__img info__img_min" />
+                        class="info__img info__img_min"
+                        data-large="/images/product-details/apple144m.webp"
+                        tabindex="0" />
                     </div>
                   </div>
                   <div class="info__images-max">
-                    <img src="/images/product-details/apple14m.webp" alt="apple iphone 14" class="info__img" />
+                    <img
+                      id="img-product-max"
+                      src="/images/product-details/apple141m.webp"
+                      alt="apple iphone 14"
+                      class="info__img" />
                   </div>
                 </div>
                 <div class="info__content-info">
@@ -79,14 +91,18 @@
                     <span class="info__price-sale"><s>$1499</s></span>
                   </div>
                   <div class="info__colors">
-                    <span class="info__colors-text">Select color:</span>
-                    <form id="info-form-colors" name="info-form-colors" class="info__form-colors">
+                    <span id="span-select-color" class="info__colors-text">Select color:</span>
+                    <form
+                      id="info-form-colors"
+                      name="info-form-colors"
+                      class="info__form-colors"
+                      aria-labelledby="span-select-color">
                       <div class="info__form-box">
                         <label
                           for="form-colors-black"
                           class="info__form-colors-label info__form-colors-label_black"
-                          tabindex="0"
-                          aria-labelledby="form-colors-black">
+                          tabindex="0">
+                          colore black
                         </label>
                         <input
                           id="form-colors-black"
@@ -94,15 +110,14 @@
                           class="info__form-colors-input"
                           type="radio"
                           value="black"
-                          tabindex="-1"
-                          aria-label="color black" />
+                          tabindex="-1" />
                       </div>
                       <div class="info__form-box">
                         <label
                           for="form-colors-purple"
                           class="info__form-colors-label info__form-colors-label_purple"
-                          tabindex="0"
-                          aria-labelledby="form-colors-purple">
+                          tabindex="0">
+                          colore purple
                         </label>
                         <input
                           id="form-colors-purple"
@@ -110,15 +125,14 @@
                           class="info__form-colors-input"
                           type="radio"
                           value="purple"
-                          tabindex="-1"
-                          aria-label="color purple" />
+                          tabindex="-1" />
                       </div>
                       <div class="info__form-box">
                         <label
                           for="form-colors-red"
                           class="info__form-colors-label info__form-colors-label_red"
-                          tabindex="0"
-                          aria-labelledby="form-colors-red">
+                          tabindex="0">
+                          colore red
                         </label>
                         <input
                           id="form-colors-red"
@@ -126,15 +140,14 @@
                           class="info__form-colors-input"
                           type="radio"
                           value="red"
-                          tabindex="-1"
-                          aria-label="color red" />
+                          tabindex="-1" />
                       </div>
                       <div class="info__form-box">
                         <label
                           for="form-colors-yellow"
                           class="info__form-colors-label info__form-colors-label_yellow"
-                          tabindex="0"
-                          aria-labelledby="form-colors-yellow">
+                          tabindex="0">
+                          colore yellow
                         </label>
                         <input
                           id="form-colors-yellow"
@@ -142,15 +155,14 @@
                           class="info__form-colors-input"
                           type="radio"
                           value="yellow"
-                          tabindex="-1"
-                          aria-label="color yellow" />
+                          tabindex="-1" />
                       </div>
                       <div class="info__form-box">
                         <label
                           for="form-colors-grey"
                           class="info__form-colors-label info__form-colors-label_grey"
-                          tabindex="0"
-                          aria-labelledby="form-colors-grey">
+                          tabindex="0">
+                          color grey
                         </label>
                         <input
                           id="form-colors-grey"
@@ -158,20 +170,17 @@
                           class="info__form-colors-input"
                           type="radio"
                           value="grey"
-                          tabindex="-1"
-                          aria-label="color grey" />
+                          tabindex="-1" />
                       </div>
                     </form>
                   </div>
-                  <form id="info-form-memory" name="info-form-memory" class="info__form-memory">
+                  <form
+                    id="info-form-memory"
+                    name="info-form-memory"
+                    class="info__form-memory"
+                    aria-label="select memory">
                     <div class="info__form-inner">
-                      <label
-                        for="info-form-memory-128"
-                        class="info__form-memory-label"
-                        tabindex="0"
-                        aria-label="memory 128gb">
-                        128GB
-                      </label>
+                      <label for="info-form-memory-128" class="info__form-memory-label" tabindex="0"> 128GB </label>
                       <input
                         id="info-form-memory-128"
                         name="info-form-memory"
@@ -181,13 +190,7 @@
                         tabindex="-1" />
                     </div>
                     <div class="info__form-inner">
-                      <label
-                        for="info-form-memory-256"
-                        class="info__form-memory-label"
-                        tabindex="0"
-                        aria-label="memory 256gb">
-                        256GB
-                      </label>
+                      <label for="info-form-memory-256" class="info__form-memory-label" tabindex="0"> 256GB </label>
                       <input
                         id="info-form-memory-256"
                         name="info-form-memory"
@@ -197,13 +200,7 @@
                         tabindex="-1" />
                     </div>
                     <div class="info__form-inner">
-                      <label
-                        for="info-form-memory-512"
-                        class="info__form-memory-label"
-                        tabindex="0"
-                        aria-label="memory 512gb">
-                        512GB
-                      </label>
+                      <label for="info-form-memory-512" class="info__form-memory-label" tabindex="0"> 512GB </label>
                       <input
                         id="info-form-memory-512"
                         name="info-form-memory"
@@ -213,13 +210,7 @@
                         tabindex="-1" />
                     </div>
                     <div class="info__form-inner">
-                      <label
-                        for="info-form-memory-1tb"
-                        class="info__form-memory-label"
-                        tabindex="0"
-                        aria-label="memory 1tb">
-                        1TB
-                      </label>
+                      <label for="info-form-memory-1tb" class="info__form-memory-label" tabindex="0"> 1TB </label>
                       <input
                         id="info-form-memory-1tb"
                         name="info-form-memory"
@@ -427,7 +418,7 @@
               <h2 class="title">Reviews</h2>
               <div class="reviews__info">
                 <div id="rating" class="rating">
-                  <h3 class="rating__value"></h3>
+                  <span class="rating__value"></span>
                   <span class="rating__qt"></span>
                   <div class="rating__body">
                     <div class="rating__items">
@@ -632,7 +623,6 @@
           <label for="form-review-comment" class="form-review__label">Comment</label>
           <textarea
             id="form-review-comment"
-            type="text"
             class="form-review__input form-review__input_resize"
             name="comment"
             placeholder="Comment"

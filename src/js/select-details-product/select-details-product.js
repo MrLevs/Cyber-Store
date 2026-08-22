@@ -1,5 +1,7 @@
 'use strict';
 
+import { selectBigImg } from './module/select-big-img'; // Select Big Img
+
 export function selectDetailsProduct() {
   const labelFormColors = document.querySelectorAll('.info__form-colors-label');
   const labelFormMemory = document.querySelectorAll('.info__form-memory-label');
@@ -92,4 +94,7 @@ export function selectDetailsProduct() {
     document.body.classList.remove('_lock');
     modalReview.close();
   }
+
+  // Select Big Img
+  selectBigImg();
 }
