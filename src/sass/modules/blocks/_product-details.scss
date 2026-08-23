@@ -243,6 +243,7 @@
     width: 100%;
     max-height: 4rem;
     overflow: hidden;
+    transition: max-height ease 0.5s;
   }
 
   &__description-text {
@@ -416,6 +417,7 @@
     align-items: center;
     gap: 2rem 0;
     overflow: hidden;
+    transition: max-height ease 0.5s;
   }
 
   &__box {
@@ -573,9 +575,4 @@
     align-items: flex-start;
     gap: 1.5rem 0;
   }
-}
-
-//---Container More Info---------
-.container-more-info {
-  transition: max-height ease 0.5s;
 }

@@ -1,48 +1,85 @@
 'use strict';
 
 export function viewMoreInfo() {
-  const containerProductInfo = document.querySelector('#main-product-details');
+  const btnMoreInfo = document.querySelector('#btn-more-info');
+  const containerMoreInfo = document.querySelector('#container-more-info');
   const btnCollapseInfo = document.querySelector('#collapse-info');
+  const btnViewMoreInfo = document.querySelector('#view-more-info');
+  const containerViewMoreInfo = document.querySelector('#container-view-more-info');
 
-  if (containerProductInfo) {
-    containerProductInfo.addEventListener('click', event => {
-      let btn = event.target.closest('.btn-more-info');
-      if (btn) {
-        openMoreInfo(btn);
+  if (btnMoreInfo) {
+    btnMoreInfo.addEventListener('click', event => {
+      event.preventDefault();
+      stepsMoreInfo();
+    });
 
-        if (btn.classList.contains('info__description-btn')) {
-          btn.classList.add('info__description-btn_hidden');
-        } else if (btn.classList.contains('view-more')) {
-          if (btn.classList.contains('view-more_active')) {
-            btn.classList.remove('view-more_active');
-            btn.textContent = 'View More';
-          } else {
-            btn.classList.add('view-more_active');
-            btn.textContent = 'Collapse';
-          }
-        }
-        btn.blur();
+    btnMoreInfo.addEventListener('keydown', event => {
+      if (event.code === 'Enter') {
+        event.preventDefault();
+        stepsMoreInfo();
       }
     });
+
+    function stepsMoreInfo() {
+      openMoreInfo(containerMoreInfo);
+      btnMoreInfo.classList.add('info__description-btn_hidden');
+      btnCollapseInfo.disabled = false;
+      btnMoreInfo.blur();
+    }
   }
 
   if (btnCollapseInfo) {
+    btnCollapseInfo.disabled = true;
     btnCollapseInfo.addEventListener('click', event => {
       event.preventDefault();
+      collapseInfo();
+    });
 
-      const container = event.target.parentNode.parentNode.parentNode.querySelector('.container-more-info');
-      const btn = container.querySelector('.info__description-btn');
-      if (container.classList.contains('container-more-info_active')) {
-        container.classList.remove('container-more-info_active');
-        container.style.maxHeight = null;
-        btn.classList.remove('info__description-btn_hidden');
+    btnCollapseInfo.addEventListener('keydown', event => {
+      if (event.code === 'Enter') {
+        event.preventDefault();
+        collapseInfo();
       }
     });
+
+    function collapseInfo() {
+      if (containerMoreInfo.classList.contains('container-more-info_active')) {
+        containerMoreInfo.classList.remove('container-more-info_active');
+        containerMoreInfo.style.maxHeight = null;
+        btnMoreInfo.classList.remove('info__description-btn_hidden');
+      }
+      btnCollapseInfo.blur();
+      btnCollapseInfo.disabled = true;
+    }
   }
 
-  function openMoreInfo(btn) {
-    const container = btn.parentNode.parentNode.parentNode.querySelector('.container-more-info');
+  if (btnViewMoreInfo) {
+    btnViewMoreInfo.addEventListener('click', event => {
+      event.preventDefault();
+      stepsViewMoreInfo();
+    });
 
+    btnViewMoreInfo.addEventListener('keydown', event => {
+      if (event.code === 'Enter') {
+        event.preventDefault();
+        stepsViewMoreInfo();
+      }
+    });
+
+    function stepsViewMoreInfo() {
+      openMoreInfo(containerViewMoreInfo);
+      if (btnViewMoreInfo.classList.contains('view-more_active')) {
+        btnViewMoreInfo.classList.remove('view-more_active');
+        btnViewMoreInfo.textContent = 'View More';
+      } else {
+        btnViewMoreInfo.classList.add('view-more_active');
+        btnViewMoreInfo.textContent = 'Collapse';
+      }
+      btnViewMoreInfo.blur();
+    }
+  }
+
+  function openMoreInfo(container) {
     if (container.classList.contains('container-more-info_active')) {
       container.classList.remove('container-more-info_active');
       container.style.maxHeight = null;
