@@ -239,6 +239,12 @@
     transition: var.$transition-color;
   }
 
+  &__description {
+    width: 100%;
+    max-height: 4rem;
+    overflow: hidden;
+  }
+
   &__description-text {
     font-weight: 400;
     font-size: 0.875rem;
@@ -255,7 +261,10 @@
     font-size: 0.875rem;
     color: var.$global-color;
     cursor: pointer;
-    transition: var.$transition-color;
+    transition:
+      var.$transition-color,
+      visibility ease 0.5s,
+      opacity ease 0.5s;
 
     &:hover {
       color: var.$shop-link-bg-hover;
@@ -282,6 +291,11 @@
       bottom: 0.125rem;
       background-color: var.$global-color;
       transition: var.$transition-bg;
+    }
+
+    &_hidden {
+      visibility: hidden;
+      opacity: 0;
     }
   }
 
@@ -395,11 +409,13 @@
 
   &__info {
     width: 100%;
+    max-height: 41rem;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
     gap: 2rem 0;
+    overflow: hidden;
   }
 
   &__box {
@@ -557,4 +573,9 @@
     align-items: flex-start;
     gap: 1.5rem 0;
   }
+}
+
+//---Container More Info---------
+.container-more-info {
+  transition: max-height ease 0.5s;
 }

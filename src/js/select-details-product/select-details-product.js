@@ -1,6 +1,7 @@
 'use strict';
 
 import { selectBigImg } from './module/select-big-img'; // Select Big Img
+import { viewMoreInfo } from './module/view-more-info'; // View More Info
 
 export function selectDetailsProduct() {
   const labelFormColors = document.querySelectorAll('.info__form-colors-label');
@@ -97,4 +98,7 @@ export function selectDetailsProduct() {
 
   // Select Big Img
   selectBigImg();
+
+  // View More Info
+  viewMoreInfo();
 }

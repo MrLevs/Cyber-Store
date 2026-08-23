@@ -800,17 +800,27 @@ main {
     position: absolute;
     top: 50%;
     background-color: var.$global-color;
-    transition: var.$transition-bg;
+    transition: var.$transition-bg, var.$transition-transform;
   }
 
   &::before {
     right: 3.86rem;
-    transform: rotateZ(45deg);
+    transform: rotateX(0deg) rotateZ(45deg);
   }
 
   &::after {
     right: 3.5rem;
-    transform: rotateZ(315deg);
+    transform: rotateX(0deg) rotateZ(315deg);
+  }
+
+  &_active {
+    &::before {
+      transform: rotateX(180deg) rotateZ(45deg);
+    }
+
+    &::after {
+      transform: rotateX(-180deg) rotateZ(315deg);
+    }
   }
 }
 
