@@ -973,6 +973,8 @@ main {
 
 //---Dialog-Review-------
 .dialog {
+  max-width: 20rem;
+  width: 100%;
   border: 0;
   border-radius: 1rem;
   background-color: var.$review-bg;
@@ -1096,6 +1098,19 @@ main {
     opacity: 0;
     visibility: hidden;
     z-index: -1;
+  }
+
+  &__preview {
+    padding: 1rem 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 0.5rem 0;
+  }
+
+  &__preview-img {
+    max-width: 10rem;
   }
 
   &__buttons {

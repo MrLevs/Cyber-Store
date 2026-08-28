@@ -10,6 +10,11 @@ export function validationWS(value) {
   return pattern.test(value);
 }
 
+export function validationSms(value) {
+  const pattern = /^[a-zа-я\d\s\p{P}]+$/giu;
+  return pattern.test(value);
+}
+
 export function validationNumber(value, number) {
   let val;
   if (value.length > number) {

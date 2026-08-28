@@ -700,20 +700,22 @@
           <input
             id="form-review-name"
             type="text"
-            class="form-review__input"
+            class="form-review__input required_w"
             name="name"
             autocomplete="name"
             placeholder="Name" />
+          <div class="warning"></div>
         </div>
         <div class="form-review__inner">
           <label for="form-review-surname" class="form-review__label">Surname</label>
           <input
             id="form-review-surname"
             type="text"
-            class="form-review__input"
+            class="form-review__input required_w"
             name="surname"
             autocomplete="family-name"
             placeholder="Surname" />
+          <div class="warning"></div>
         </div>
         <div class="form-review__rating">
           <input id="star-1" class="form-review__radio" type="radio" value="5" name="stars" />
@@ -751,11 +753,12 @@
           <label for="form-review-comment" class="form-review__label">Comment</label>
           <textarea
             id="form-review-comment"
-            class="form-review__input form-review__input_resize"
+            class="form-review__input form-review__input_resize required_sms"
             name="comment"
             placeholder="Comment"
             rows="6"
             cols="32"></textarea>
+          <div class="warning"></div>
         </div>
         <div class="form-review__inner">
           <label for="form-review-file" class="form-review__label form-review__label_file" tabindex="0">Add file</label>
@@ -767,6 +770,7 @@
             accept=".png, .jpg"
             tabindex="-1"
             multiple />
+          <div class="form-review__preview"></div>
         </div>
         <div class="form-review__buttons">
           <button type="button" class="form-review__btn">Send review</button>

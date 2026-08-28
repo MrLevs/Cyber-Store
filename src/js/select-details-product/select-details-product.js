@@ -2,6 +2,7 @@
 
 import { selectBigImg } from './module/select-big-img'; // Select Big Img
 import { viewMoreInfo } from './module/view-more-info'; // View More Info
+import { sendComment } from './module/send-comment/send-comment'; // Validation Comment
 
 export function selectDetailsProduct() {
   const labelFormColors = document.querySelectorAll('.info__form-colors-label');
@@ -75,30 +76,13 @@ export function selectDetailsProduct() {
     event.currentTarget.style.opacity = '1';
   }
   //---------------------------------------------
-  //---------Show modal----------
-  const modalReview = document.querySelector('#dialog-review');
-  const btnOpenModal = document.querySelector('.leave-comment');
-  const btnCloseModal = document.querySelector('#close-dialog-review');
-
-  if (btnOpenModal && btnCloseModal) {
-    btnOpenModal.addEventListener('click', openModal);
-    btnCloseModal.addEventListener('click', closeModal);
-  }
-
-  function openModal() {
-    document.body.classList.add('_lock');
-    modalReview.showModal();
-  }
-
-  function closeModal(event) {
-    event.preventDefault();
-    document.body.classList.remove('_lock');
-    modalReview.close();
-  }
 
   // Select Big Img
   selectBigImg();
 
   // View More Info
   viewMoreInfo();
+
+  // Validation Comment
+  sendComment();
 }
