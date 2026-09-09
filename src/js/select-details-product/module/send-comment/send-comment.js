@@ -8,6 +8,7 @@ export function sendComment() {
   const btnCloseModal = document.querySelector('#close-dialog-review');
   const inputComment = Array.from(document.querySelectorAll('.form-review__input'));
   const inputFile = document.querySelector('#form-review-file');
+  const container = document.querySelector('.form-review__preview');
   const btnSendComment = document.querySelector('.form-review__btn');
   let urlFilePreview = [];
 
@@ -25,14 +26,20 @@ export function sendComment() {
   }
 
   if (inputFile) {
-    const container = document.querySelector('.form-review__preview');
     inputFile.addEventListener('change', event => {
-      let file = Array.from(event.target.files);
-      file.forEach((item, index) => {
-        let url = URL.createObjectURL(item);
-        urlFilePreview.push(url);
-        createPreview(url, container, index);
-      });
+      container.innerHTML = '';
+
+      if (inputFile.files.length > 10) {
+        inputFile.value = '';
+        container.textContent = 'You can only upload a maximum of 10 files!';
+      } else {
+        let file = Array.from(event.target.files);
+        file.forEach((item, index) => {
+          let url = URL.createObjectURL(item);
+          urlFilePreview.push(url);
+          createPreview(url, container, index, item.name);
+        });
+      }
     });
   }
 
@@ -54,10 +61,13 @@ export function sendComment() {
     event.preventDefault();
     document.body.classList.remove('_lock');
     modalReview.close();
+    inputComment.forEach(item => {
+      item.value = '';
+    });
+    container.innerHTML = '';
     if (urlFilePreview.length > 0) {
       clearUrl();
     }
-    //очистить инпуты!!!!
   }
 
   //----- Clear URl.revokeObjectURL()--------
@@ -69,27 +79,29 @@ export function sendComment() {
   }
 }
 
-function createPreview(url, container, index) {
+function createPreview(url, container, index, fileName) {
   const div = document.createElement('div');
   const img = document.createElement('img');
-  const btnDelet = document.createElement('button');
+  const btnDelete = document.createElement('button');
 
   div.className = 'form-review__preview-inner';
   div.id = `preview-inner-${index}`;
   img.className = 'form-review__preview-img';
   img.src = url;
-  console.log(img.src);
-  btnDelet.type = 'button';
-  btnDelet.className = 'form-review__preview-img';
+  img.setAttribute('alt', `${fileName}`);
 
-  div.append(img, btnDelet);
+  btnDelete.type = 'button';
+  btnDelete.className = 'form-review__preview-delete';
+  btnDelete.setAttribute('aria-label', 'Delete');
+
+  div.append(img, btnDelete);
   container.append(div);
 
-  btnDelet.addEventListener('click', () => {
+  btnDelete.addEventListener('click', () => {
     removeContainer();
   });
 
-  btnDelet.addEventListener('keydown', event => {
+  btnDelete.addEventListener('keydown', event => {
     if (event.code === 'Enter') {
       event.preventDefault();
       removeContainer();

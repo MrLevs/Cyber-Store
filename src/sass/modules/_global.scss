@@ -1101,16 +1101,69 @@ main {
   }
 
   &__preview {
+    width: 100%;
     padding: 1rem 0;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 0.5rem 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var.$global-color;
+    transition: var.$transition-color;
+  }
+
+  &__preview-inner {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
   }
 
   &__preview-img {
     max-width: 10rem;
+  }
+
+  &__preview-delete {
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
+    position: relative;
+    background-color: var.$review-bg;
+    border: 0.0625rem solid var.$details-btn-border-color;
+    border-radius: 0.5rem;
+    transition: var.$transition-border-color, var.$transition-bg;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 1rem;
+      height: 0.0625rem;
+      position: absolute;
+      top: 0.90625;
+      left: 0.4375rem;
+      background-color: var.$global-color;
+      transition: var.$transition-bg;
+    }
+
+    &::before {
+      transform: rotateZ(45deg);
+    }
+
+    &::after {
+      transform: rotateZ(135deg);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var.$shop-link-bg-hover;
+    }
+
+    &:active {
+      @extend %btn-active;
+    }
   }
 
   &__buttons {
