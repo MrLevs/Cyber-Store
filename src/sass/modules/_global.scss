@@ -973,7 +973,7 @@ main {
 
 //---Dialog-Review-------
 .dialog {
-  max-width: 20rem;
+  max-width: 22rem;
   width: 100%;
   border: 0;
   border-radius: 1rem;
@@ -1029,7 +1029,7 @@ main {
     padding: 0.5rem;
     width: 100%;
     background-color: var.$form-review-input-bg;
-    border: 0;
+    border: 0.125rem solid transparent;
     border-radius: 0.5rem;
     font-size: 1rem;
     font-weight: 300;
@@ -1056,7 +1056,13 @@ main {
   }
 
   &__svg {
+    stroke: #ffb547;
     fill: none;
+
+    &_warning {
+      stroke: red;
+      animation: fillChange 2s infinite alternate;
+    }
   }
 
   &__radio {
@@ -1079,6 +1085,7 @@ main {
 
   &__star {
     cursor: pointer;
+    font-size: 0px;
 
     &:hover,
     &:hover ~ .form-review__star,
@@ -1087,6 +1094,14 @@ main {
         fill: #ffd18d;
       }
     }
+  }
+
+  &__rating-warning {
+    width: 100%;
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: red;
   }
 
   &__file {
@@ -1554,5 +1569,16 @@ main {
     &_fw {
       font-weight: 700;
     }
+  }
+}
+
+//----Animation-------
+//----Stars Review------
+@keyframes fillChange {
+  0% {
+    fill: var.$review-bg;
+  }
+  100% {
+    fill: red;
   }
 }
