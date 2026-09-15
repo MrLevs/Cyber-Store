@@ -10,6 +10,14 @@ export function getComment() {
   const inputComment = document.querySelector('#form-review-comment');
   const ratingWarning = document.querySelector('.form-review__rating-warning');
   const file = document.querySelector('#form-review-file');
+  const date = new Date();
+  const day = date.getDay();
+  const month = date.toLocaleString('en-GB', { month: 'long' });
+  const year = date.getFullYear();
+  const hours = date.getHours();
+  const minutes = date.getMinutes();
+  const fullDate = `${day} ${month} ${year}`;
+  const fullHours = `${hours}:${minutes}`;
   let rating = document.querySelector('input[name="stars"]:checked');
   let name = inputName.value.trim();
   let surname = inputSurname.value.trim();
@@ -48,6 +56,9 @@ export function getComment() {
   if (file.files.length > 0) {
     userReview.file = file.files;
   }
+
+  userReview.date = fullDate;
+  userReview.hours = fullHours;
 
   if (
     userReview.name !== undefined &&

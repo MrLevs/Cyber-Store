@@ -3,6 +3,7 @@
 import { selectBigImg } from './module/select-big-img'; // Select Big Img
 import { viewMoreInfo } from './module/view-more-info'; // View More Info
 import { sendComment } from './module/send-comment/send-comment'; // Validation Comment
+import { showMoreReviews } from './module/show-more-reviews'; // Show More Reviews
 
 export function selectDetailsProduct() {
   const labelFormColors = document.querySelectorAll('.info__form-colors-label');
@@ -85,4 +86,7 @@ export function selectDetailsProduct() {
 
   // Validation Comment
   sendComment();
+
+  // Show More Reviews
+  showMoreReviews();
 }
