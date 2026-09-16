@@ -57,8 +57,10 @@ export function getComment() {
     userReview.file = file.files;
   }
 
-  userReview.date = fullDate;
-  userReview.hours = fullHours;
+  userReview.date = {
+    fullDate: fullDate,
+    time: fullHours,
+  };
 
   if (
     userReview.name !== undefined &&

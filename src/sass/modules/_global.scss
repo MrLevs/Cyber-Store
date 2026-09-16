@@ -891,6 +891,7 @@ main {
 
 //------Review-----
 .review {
+  width: 100%;
   padding: 1.5rem 1rem;
   border-radius: 0.625rem;
   display: flex;
@@ -907,6 +908,7 @@ main {
   }
 
   &__inner {
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
