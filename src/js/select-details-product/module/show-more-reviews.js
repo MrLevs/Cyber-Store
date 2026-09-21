@@ -1,6 +1,7 @@
 'use strict';
 
 import { createReview } from './create-review'; // Create Review
+import { createIndexedDB } from '../../indexed-db'; // IndexedDB
 
 export function showMoreReviews() {
   const btnShowReviews = document.querySelector('#reviews-more');
@@ -9,7 +10,7 @@ export function showMoreReviews() {
 
   if (btnShowReviews) {
     btnShowReviews.addEventListener('click', () => {
-      console.log('click');
+      createIndexedDB();
       allReviews.forEach(item => {
         createReview(item, containerReviews);
       });
