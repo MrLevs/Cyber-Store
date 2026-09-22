@@ -11,7 +11,7 @@ export function getComment() {
   const ratingWarning = document.querySelector('.form-review__rating-warning');
   const file = document.querySelector('#form-review-file');
   const date = new Date();
-  const day = date.getDay();
+  const day = date.getDate();
   const month = date.toLocaleString('en-GB', { month: 'long' });
   const year = date.getFullYear();
   const hours = date.getHours();

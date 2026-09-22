@@ -2,6 +2,7 @@
 
 import { getComment } from './module/get-comment'; // Get User Review
 import { validCommentInput } from './module/valid-comment-input'; // Validation Input
+import { initIndexedDB, addReviewsBD } from '../../../indexed-db'; // indexedDB
 
 export function sendComment() {
   const modalReview = document.querySelector('#dialog-review');
@@ -35,14 +36,13 @@ export function sendComment() {
   if (labelRating.length > 0) {
     labelRating.forEach(item => {
       item.addEventListener('click', () => {
-        let stars = document.querySelectorAll('.form-review__svg');
-        stars.forEach(item => {
-          item.classList.remove('form-review__svg_warning');
-        });
-
-        if (ratingWarning.textContent.trim() !== '') {
-          ratingWarning.innerHTML = '';
-          ratingWarning.style.display = 'none';
+        controlRating();
+      });
+      item.addEventListener('keydown', event => {
+        if (event.code === 'Enter') {
+          event.preventDefault();
+          event.target.control.checked = true;
+          controlRating();
         }
       });
     });
@@ -108,17 +108,26 @@ export function sendComment() {
     clearModalReview();
   }
 
+  //----- controlRaiting----------
+  function controlRating() {
+    let stars = document.querySelectorAll('.form-review__svg_warning');
+    if (stars.length > 0) {
+      stars.forEach(item => {
+        item.classList.remove('form-review__svg_warning');
+      });
+
+      if (ratingWarning.textContent.trim() !== '') {
+        ratingWarning.innerHTML = '';
+        ratingWarning.style.display = 'none';
+      }
+    }
+  }
+
   //------Review Set Database------------
   function reviewSetDatabase() {
     userReview = getComment();
     if (userReview) {
-      let reviewsCollection = JSON.parse(localStorage.getItem('reviews'));
-      if (reviewsCollection) {
-        reviewsCollection.push(userReview);
-        localStorage.setItem('reviews', JSON.stringify(reviewsCollection));
-      } else {
-        localStorage.setItem('reviews', JSON.stringify([userReview]));
-      }
+      mainReviewSetDB(userReview);
       clearModalReview();
     } else {
       btnSendComment.blur();
@@ -150,6 +159,7 @@ export function sendComment() {
   }
 }
 
+//----- Create Preview----------------
 function createPreview(url, container, index, fileName) {
   const div = document.createElement('div');
   const img = document.createElement('img');
@@ -182,5 +192,14 @@ function createPreview(url, container, index, fileName) {
   function removeContainer() {
     const container = document.querySelector(`#preview-inner-${index}`);
     container.remove();
+  }
+}
+
+async function mainReviewSetDB(objREview) {
+  try {
+    const db = await initIndexedDB();
+    await addReviewsBD(db, objREview);
+  } catch (error) {
+    console.error('Error set Review indexedDB:', error);
   }
 }

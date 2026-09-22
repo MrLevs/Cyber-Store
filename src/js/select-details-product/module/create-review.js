@@ -32,18 +32,19 @@ export function createReview(objReview, container) {
     divStars.append(svg);
   }
 
-  // if (objReview.file) {
-  //   console.log(objReview.file);
-  //   for (let i = 0; i < 2; i++) {
-  //     const img = document.createElement('img');
-  //     img.className = 'review__image';
-  //     img.src = objReview.file;
-  //     img.alt = 'review image';
-
-  //     divImages.append(img);
-  //   }
-  // }
-  // Send-comment.js заменить localStorage на IndexedDB и проверить как сохраняются файлы userReview.file(objReview.file) доработать create-review.js!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+  if (objReview.file && objReview.file.length > 0) {
+    for (let i = 0; i < objReview.file.length; i++) {
+      const img = document.createElement('img');
+      const imgUrl = URL.createObjectURL(objReview.file[i]);
+      img.className = 'review__image';
+      img.src = imgUrl;
+      img.alt = 'review image';
+      img.onload = () => {
+        URL.revokeObjectURL(imgUrl); // Решить вопрос по удалению URL после закрытия страницы
+      };
+      divImages.append(img);
+    }
+  }
 
   article.className = 'review';
 
@@ -61,8 +62,8 @@ export function createReview(objReview, container) {
   name.className = 'review__name';
   name.textContent = fullName;
   date.className = 'review__date';
-  date.setAttribute('datetime', objReview.date.fullDate);
-  date.textContent = objReview.date.fullDate;
+  date.setAttribute('datetime', objReview.date?.fullDate);
+  date.textContent = objReview.date?.fullDate;
 
   divBox.append(name, date);
   divInner.append(divBox, divStars, comment, divImages);

@@ -1,25 +1,35 @@
 'use strict';
 
 import { createReview } from './create-review'; // Create Review
-import { createIndexedDB } from '../../indexed-db'; // IndexedDB
+import { initIndexedDB, getReviewsBD } from '../../indexed-db'; // IndexedDB
 
 export function showMoreReviews() {
   const btnShowReviews = document.querySelector('#reviews-more');
   const containerReviews = document.querySelector('.reviews__box');
-  let allReviews = JSON.parse(localStorage.getItem('reviews'));
 
   if (btnShowReviews) {
     btnShowReviews.addEventListener('click', () => {
-      createIndexedDB();
-      allReviews.forEach(item => {
-        createReview(item, containerReviews);
-      });
+      mainShowReviews(containerReviews);
     });
     btnShowReviews.addEventListener('keydown', event => {
       if (event.code === 'Enter') {
         event.preventDefault();
-        console.log('Enter');
+        mainShowReviews(containerReviews);
       }
     });
+  }
+}
+
+async function mainShowReviews(container) {
+  try {
+    const db = await initIndexedDB();
+    const allReviews = await getReviewsBD(db);
+    if (allReviews.length > 0) {
+      allReviews.forEach(item => {
+        createReview(item, container);
+      });
+    }
+  } catch (error) {
+    console.error('Error indexedBD:', error);
   }
 }

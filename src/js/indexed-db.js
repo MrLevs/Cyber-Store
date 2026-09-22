@@ -1,58 +1,42 @@
 'use strict';
 
-export function createIndexedDB() {
-  let openIndexedDB = indexedDB.open('cyberStore', 1);
+export function initIndexedDB() {
+  return new Promise((resolve, reject) => {
+    const openIndexedDB = indexedDB.open('cyberStore', 1);
 
-  openIndexedDB.onupgradeneeded = function (event) {
-    let db = openIndexedDB.result;
-    if (!db.objectStoreNames.contains('reviews')) {
-      db.createObjectStore('reviews', { keyPath: 'id' });
-    }
+    openIndexedDB.onupgradeneeded = event => {
+      const db = event.target.result;
 
-    let transaction = event.target.transaction;
-    let review = transaction.objectStore('reviews');
-    let comment = {
-      id: 'js',
-      price: 10,
-      created: new Date(),
+      if (!db.objectStoreNames.contains('reviews')) {
+        const storage = db.createObjectStore('reviews', { keyPath: 'id', autoIncrement: true });
+
+        storage.createIndex('ratingIdx', 'rating', { unique: false });
+      }
     };
 
-    let requst = review.add(comment);
+    openIndexedDB.onsuccess = event => resolve(event.target.result);
+    openIndexedDB.onerror = event => reject('Error open IndexedBD: ' + event.target.error);
+  });
+}
 
-    requst.onsuccess = function () {
-      console.log('comment add review', requst.result);
-      console.log(requst);
-    };
+export function addReviewsBD(db, objReview) {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction('reviews', 'readwrite');
+    const storage = transaction.objectStore('reviews');
+    const requst = storage.add(objReview);
 
-    requst.onerror = function () {
-      console.log('Error', requst.error);
-    };
-    console.log('Upgrade IndexedDB');
-  };
+    requst.onsuccess = () => resolve(requst.result);
+    requst.onerror = () => reject('Error add Review: ' + requst.error);
+  });
+}
 
-  openIndexedDB.onerror = function () {
-    console.error('Error', openIndexedDB.error);
-  };
+export function getReviewsBD(db) {
+  return new Promise((resolve, reject) => {
+    const transaction = db.transaction('reviews', 'readonly');
+    const reviews = transaction.objectStore('reviews');
+    const getRequest = reviews.getAll();
 
-  openIndexedDB.onsuccess = function () {
-    let db = openIndexedDB.result;
-    console.log(db);
-    console.log(db.objectStoreNames);
-    db.onversionchange = function () {
-      db.close();
-      alert('The database is outdated; please reload the page.');
-    };
-  };
-
-  openIndexedDB.onblocked = function () {
-    console.log('blocked DB');
-  };
-
-  // let deleteIndexedDB = indexedDB.deleteDatabase('cyberStore');
-  // deleteIndexedDB.onsuccess = function () {
-  //   console.log('delete success', deleteIndexedDB.result);
-  // };
-  // deleteIndexedDB.onerror = function () {
-  //   console.log('delete error', deleteIndexedDB.error);
-  // };
+    getRequest.onsuccess = () => resolve(getRequest.result);
+    getRequest.onerror = () => reject('Error get All Reviews: ' + getRequest.error);
+  });
 }
