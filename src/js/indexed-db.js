@@ -14,8 +14,20 @@ export function initIndexedDB() {
       }
     };
 
-    openIndexedDB.onsuccess = event => resolve(event.target.result);
-    openIndexedDB.onerror = event => reject('Error open IndexedBD: ' + event.target.error);
+    openIndexedDB.onsuccess = event => {
+      const db = event.target.result;
+
+      db.onversionchange = () => {
+        db.close();
+        alert('The database is outdated; please reload the page.');
+        window.location.reload();
+      };
+      resolve(db);
+    };
+
+    openIndexedDB.onerror = event => reject(new Error('Error open IndexedDB: ' + event.target.error));
+    openIndexedDB.onblocked = () =>
+      console.warn('The IndexedDB update is blocked by another tab. Close the other application tabs.');
   });
 }
 
@@ -23,20 +35,46 @@ export function addReviewsBD(db, objReview) {
   return new Promise((resolve, reject) => {
     const transaction = db.transaction('reviews', 'readwrite');
     const storage = transaction.objectStore('reviews');
-    const requst = storage.add(objReview);
+    const request = storage.add(objReview);
+    let result;
 
-    requst.onsuccess = () => resolve(requst.result);
-    requst.onerror = () => reject('Error add Review: ' + requst.error);
+    request.onsuccess = () => {
+      result = request.result;
+    };
+
+    transaction.oncomplete = () => resolve(result);
+    transaction.onerror = () => reject(new Error(`Transaction error: ${transaction.error}`));
   });
 }
 
 export function getReviewsBD(db) {
   return new Promise((resolve, reject) => {
-    const transaction = db.transaction('reviews', 'readonly');
-    const reviews = transaction.objectStore('reviews');
-    const getRequest = reviews.getAll();
+    if (!db.objectStoreNames.contains('reviews')) {
+      return reject(new Error("Object store 'reviews' does not exist."));
+    }
 
-    getRequest.onsuccess = () => resolve(getRequest.result);
-    getRequest.onerror = () => reject('Error get All Reviews: ' + getRequest.error);
+    try {
+      const transaction = db.transaction('reviews', 'readonly');
+      const reviews = transaction.objectStore('reviews');
+      const getRequest = reviews.openCursor(null, 'prev');
+      const result = [];
+
+      getRequest.onsuccess = event => {
+        const cursor = event.target.result;
+        if (cursor) {
+          result.push(cursor.value);
+          cursor.continue();
+        } else {
+          resolve(result);
+        }
+      };
+      getRequest.onerror = () =>
+        reject(new Error(`Error getting all reviews: ${getRequest.error?.message || getRequest.error}`));
+
+      transaction.onerror = () =>
+        reject(new Error(`Transaction error: ${transaction.error?.message || transaction.error}`));
+    } catch (error) {
+      reject(error);
+    }
   });
 }
