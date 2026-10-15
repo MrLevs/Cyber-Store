@@ -16,12 +16,11 @@ export function mainShowReviews(container, elemSize = 3) {
         const db = await initIndexedDB();
         const data = await getReviewsBD(db);
         allReviews = Array.isArray(data) ? data : [];
-        isLoading = false;
       }
 
       if (currentIndex >= allReviews.length) {
         console.log('Reviews complete!');
-        return;
+        return true;
       }
 
       const nextChunk = allReviews.slice(currentIndex, currentIndex + elemSize);
@@ -31,9 +30,11 @@ export function mainShowReviews(container, elemSize = 3) {
       currentIndex += elemSize;
       return currentIndex >= allReviews.length;
     } catch (error) {
-      isLoading = false;
       console.error('Error indexedDB:', error);
+      if (allReviews === null) allReviews = [];
       return false;
+    } finally {
+      isLoading = false;
     }
   };
 }

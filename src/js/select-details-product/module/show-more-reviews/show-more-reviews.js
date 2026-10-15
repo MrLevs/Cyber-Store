@@ -17,7 +17,10 @@ export function showMoreReviews() {
     btnShowReviews.addEventListener('keydown', async event => {
       if (event.code === 'Enter') {
         event.preventDefault();
-        mainShowReviews(containerReviews);
+        const isComplete = await showNextReviews();
+        if (isComplete) {
+          btnShowReviews.textContent = 'Collapse Reviews';
+        }
       }
     }); // Create-review.js URL img, УВЕЛИЧИТЬ КАРТИНКИ ПО КЛИКУ!
   }
