@@ -1,9 +1,9 @@
 'use strict';
 
-import { initIndexedDB } from '../indexed-db'; // IndexedDB
+import { loadReviews, dataReviews } from '../get-reviews'; // Get Reviews from IndexedDB
 import { selectBigImg } from './module/select-big-img'; // Select Big Img
 import { viewMoreInfo } from './module/view-more-info'; // View More Info
-import { sendComment } from './module/send-comment/send-comment'; // Validation Comment
+import { sendComment } from './module/send-comment/send-comment'; // Send and Validation Comment
 import { showMoreReviews } from './module/show-more-reviews/show-more-reviews'; // Show More Reviews
 
 export function selectDetailsProduct() {
@@ -79,8 +79,18 @@ export function selectDetailsProduct() {
   }
   //---------------------------------------------
 
-  // IndexedDB
-  initIndexedDB();
+  // Get dataReviews from IndexedDB
+  async function initDataReviews() {
+    try {
+      await loadReviews();
+      console.log(dataReviews); // Продолжить работу с dataReviews
+    } catch (error) {
+      console.error('Ошибка при загрузке отзывов:', error);
+    }
+  }
+
+  initDataReviews();
+  console.log(555);
 
   // Select Big Img
   selectBigImg();
@@ -88,7 +98,7 @@ export function selectDetailsProduct() {
   // View More Info
   viewMoreInfo();
 
-  // Validation Comment
+  // Send and Validation Comment
   sendComment();
 
   // Show More Reviews
