@@ -1,40 +1,35 @@
 'use strict';
 
-import { initIndexedDB, getReviewsBD } from '../../../../indexed-db'; // IndexedDB
 import { createReview } from './create-review'; // Create Review
 
-export function mainShowReviews(container, elemSize = 3) {
-  let allReviews = null;
+export function mainShowReviews(arrayDataReviews, container, elemSize = 3) {
   let currentIndex = 0;
-  let isLoading = false;
+  let createdImgUrls = [];
 
-  return async function loadReviews() {
-    if (isLoading) return false;
-    try {
-      if (allReviews === null) {
-        isLoading = true;
-        const db = await initIndexedDB();
-        const data = await getReviewsBD(db);
-        allReviews = Array.isArray(data) ? data : [];
+  function loadReviews() {
+    const nextChunk = arrayDataReviews.slice(currentIndex, currentIndex + elemSize);
+
+    nextChunk.forEach(item => {
+      const urls = createReview(item, container);
+      if (Array.isArray(urls)) {
+        createdImgUrls.push(...urls);
       }
+    });
 
-      if (currentIndex >= allReviews.length) {
-        console.log('Reviews complete!');
-        return true;
-      }
+    currentIndex += elemSize;
+    return currentIndex >= arrayDataReviews.length;
+  }
 
-      const nextChunk = allReviews.slice(currentIndex, currentIndex + elemSize);
-      nextChunk.forEach(item => {
-        createReview(item, container);
-      });
-      currentIndex += elemSize;
-      return currentIndex >= allReviews.length;
-    } catch (error) {
-      console.error('Error indexedDB:', error);
-      if (allReviews === null) allReviews = [];
-      return false;
-    } finally {
-      isLoading = false;
+  function collapseReviews(initialCount = 0) {
+    createdImgUrls.forEach(item => URL.revokeObjectURL(item));
+    createdImgUrls.length = 0;
+
+    while (container.children.length > initialCount) {
+      container.lastElementChild.remove();
     }
-  };
+
+    currentIndex = 0;
+  }
+
+  return { loadReviews, collapseReviews };
 }

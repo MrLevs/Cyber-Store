@@ -970,6 +970,7 @@ main {
     max-width: 7.5rem;
     max-height: 7.5rem;
     border-radius: 0.5rem;
+    cursor: pointer;
   }
 }
 
@@ -1253,6 +1254,47 @@ main {
     &:active {
       @extend %btn-active;
     }
+  }
+}
+
+//---Dialog-lightbox-------
+.lightbox {
+  padding: 0;
+  border: none;
+  background: transparent;
+  max-width: 90vw;
+  max-height: 90vh;
+  overflow: visible;
+
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  &__img {
+    display: block;
+    max-width: 90vw;
+    max-height: 85vh;
+    object-fit: contain;
+    border-radius: 8px;
+  }
+
+  &__close {
+    position: absolute;
+    top: -36px;
+    right: 0;
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
   }
 }
 

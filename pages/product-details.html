@@ -634,46 +634,7 @@
               <div class="reviews__button">
                 <button type="button" class="leave-comment">Leave Comment</button>
               </div>
-              <div class="reviews__box">
-                <article class="review">
-                  <img src="/images/user.webp" alt="Avatar" class="review__img" />
-                  <div class="review__inner">
-                    <div class="review__box">
-                      <h3 class="review__name">Grace Carey</h3>
-                      <time class="review__date" datetime="2021-01-24">24 January 2023</time>
-                    </div>
-                    <div class="review__stars">
-                      <svg class="review__svg review__svg_active" width="24" height="24" viewBox="0 0 24 24">
-                        <use href="/images/sprite-icon.svg#star"></use>
-                      </svg>
-                      <svg class="review__svg review__svg_active" width="24" height="24" viewBox="0 0 24 24">
-                        <use href="/images/sprite-icon.svg#star"></use>
-                      </svg>
-                      <svg class="review__svg" width="24" height="24" viewBox="0 0 24 24">
-                        <use href="/images/sprite-icon.svg#star"></use>
-                      </svg>
-                      <svg class="review__svg" width="24" height="24" viewBox="0 0 24 24">
-                        <use href="/images/sprite-icon.svg#star"></use>
-                      </svg>
-                      <svg class="review__svg" width="24" height="24" viewBox="0 0 24 24">
-                        <use href="/images/sprite-icon.svg#star"></use>
-                      </svg>
-                    </div>
-                    <p class="review__comment">
-                      I was a bit nervous to be buying a secondhand phone from Amazon, but I couldn’t be happier with my
-                      purchase!! I have a pre-paid data plan so I was worried that this phone wouldn’t connect with my
-                      data plan, since the new phones don’t have the physical Sim tray anymore, but couldn’t have been
-                      easier! I bought an Unlocked black iPhone 14 Pro Max in excellent condition and everything is
-                      PERFECT. It was super easy to set up and the phone works and looks great. It truly was in
-                      excellent condition. Highly recommend!!!🖤
-                    </p>
-                    <div class="review__images">
-                      <img class="review__image" src="/images/review.webp" alt="review" />
-                      <img class="review__image" src="/images/review2.webp" alt="review" />
-                    </div>
-                  </div>
-                </article>
-              </div>
+              <div class="reviews__box"></div>
               <div class="reviews__button">
                 <button id="reviews-more" type="button" class="view-more">View More</button>
               </div>
@@ -789,6 +750,14 @@
             aria-label="Close Leave review"></button>
         </div>
       </form>
+    </dialog>
+    <dialog class="lightbox" id="dialog-lightbox" aria-label="Full size review image">
+      <div class="lightbox__inner">
+        <button class="lightbox__close" id="close-dialog-lightbox" type="button" aria-label="Close image">
+          &times;
+        </button>
+        <img class="lightbox__img" src="" alt="Full size review photo" />
+      </div>
     </dialog>
     <script type="module" src="/src/main.js"></script>
   </body>

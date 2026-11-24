@@ -4,7 +4,7 @@ export function createReview(objReview, container) {
   const article = document.createElement('article');
   const avatar = document.createElement('img');
   const divInner = document.createElement('div');
-  const fullName = `${objReview.name} ${objReview.surname}`;
+  const fullName = `${objReview.name} ${objReview.surname}`.trim();
 
   const divBox = document.createElement('div');
   const divStars = document.createElement('div');
@@ -13,6 +13,8 @@ export function createReview(objReview, container) {
 
   const name = document.createElement('h3');
   const date = document.createElement('time');
+
+  let urlsImgs = [];
 
   for (let i = 0; i < 5; i++) {
     const svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -33,15 +35,16 @@ export function createReview(objReview, container) {
   }
 
   if (objReview.file && objReview.file.length > 0) {
+    divImages.className = 'review__images';
     for (let i = 0; i < objReview.file.length; i++) {
       const img = document.createElement('img');
       const imgUrl = URL.createObjectURL(objReview.file[i]);
+      urlsImgs.push(imgUrl);
+
       img.className = 'review__image';
       img.src = imgUrl;
-      img.alt = 'review image';
-      img.onload = () => {
-        URL.revokeObjectURL(imgUrl); // Решить вопрос по удалению URL после закрытия страницы
-      };
+      img.alt = `review photo ${i + 1}`;
+      img.loading = 'lazy';
       divImages.append(img);
     }
   }
@@ -57,16 +60,25 @@ export function createReview(objReview, container) {
   divStars.className = 'review__stars';
   comment.className = 'review__comment';
   comment.textContent = objReview.comment;
-  divImages.className = 'review__images';
 
   name.className = 'review__name';
   name.textContent = fullName;
   date.className = 'review__date';
-  date.setAttribute('datetime', objReview.date?.fullDate);
-  date.textContent = objReview.date?.fullDate;
+
+  if (objReview.date?.fullDate) {
+    date.setAttribute('datetime', objReview.date.fullDate);
+    date.textContent = objReview.date.fullDate;
+  }
 
   divBox.append(name, date);
-  divInner.append(divBox, divStars, comment, divImages);
+  divInner.append(divBox, divStars, comment);
+
+  if (divImages.children.length > 0) {
+    divInner.append(divImages);
+  }
+
   article.append(avatar, divInner);
   container.append(article);
+
+  return urlsImgs;
 }

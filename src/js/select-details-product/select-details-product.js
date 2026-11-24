@@ -3,7 +3,6 @@
 import { selectBigImg } from './module/select-big-img'; // Select Big Img
 import { viewMoreInfo } from './module/view-more-info'; // View More Info
 import { sendComment } from './module/send-comment/send-comment'; // Send and Validation Comment
-import { showMoreReviews } from './module/show-more-reviews/show-more-reviews'; // Show More Reviews
 import { initDataReviews } from './module/init-data-reviews'; // Get dataReviews from IndexedDB
 
 export function selectDetailsProduct() {
@@ -90,7 +89,4 @@ export function selectDetailsProduct() {
 
   // Send and Validation Comment
   sendComment();
-
-  // Show More Reviews
-  showMoreReviews();
 }
