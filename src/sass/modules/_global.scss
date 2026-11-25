@@ -985,7 +985,6 @@ main {
 
   &::backdrop {
     backdrop-filter: blur(15px);
-    transition: var.$transition-bg;
   }
 }
 
@@ -1001,7 +1000,6 @@ main {
 
   &__inner {
     width: 100%;
-    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -1266,9 +1264,15 @@ main {
   max-height: 90vh;
   overflow: visible;
 
+  &::backdrop {
+    background-color: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(15px);
+  }
+
   &__inner {
     position: relative;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
   }
@@ -1278,23 +1282,108 @@ main {
     max-width: 90vw;
     max-height: 85vh;
     object-fit: contain;
-    border-radius: 8px;
+    border-radius: 0.5rem;
   }
 
   &__close {
+    padding: 0;
+    width: 2rem;
+    height: 2rem;
     position: absolute;
-    top: -36px;
+    top: -2.5rem;
     right: 0;
-    background: none;
-    border: none;
-    color: #ffffff;
-    font-size: 32px;
-    line-height: 1;
+    background-color: var.$review-bg;
+    border: 0.0625rem solid var.$details-btn-border-color;
+    border-radius: 0.5rem;
+    transition: var.$transition-border-color, var.$transition-bg;
     cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 1rem;
+      height: 0.125rem;
+      position: absolute;
+      left: 0.4375rem;
+      background-color: var.$global-color;
+      transition: var.$transition-bg;
+    }
+
+    &::before {
+      transform: rotateZ(45deg);
+    }
+
+    &::after {
+      transform: rotateZ(135deg);
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var.$shop-link-bg-hover;
+    }
+
+    &:active {
+      @extend %btn-active;
+    }
   }
 
-  &::backdrop {
-    background-color: rgba(0, 0, 0, 0.8);
+  &__btn {
+    width: 2rem;
+    height: 3rem;
+    padding: 0;
+    position: absolute;
+    bottom: -3.5rem;
+    background-color: var.$review-bg;
+    border: 0.0625rem solid var.$details-btn-border-color;
+    border-radius: 0.5rem;
+    transition: var.$transition-border-color, var.$transition-bg;
+    cursor: pointer;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 1rem;
+      height: 0.125rem;
+      position: absolute;
+      left: 0.4375rem;
+      background-color: var.$global-color;
+      transition: var.$transition-bg;
+    }
+
+    &:hover,
+    &:focus {
+      background-color: var.$shop-link-bg-hover;
+    }
+
+    &:active {
+      @extend %btn-active;
+    }
+  }
+
+  &__btn_prev {
+    left: calc(50% - 3rem);
+    &::before {
+      top: 1.0625rem;
+      transform: rotateZ(135deg);
+    }
+
+    &::after {
+      bottom: 1.0625rem;
+      transform: rotateZ(45deg);
+    }
+  }
+
+  &__btn_next {
+    right: calc(50% - 3rem);
+    &::before {
+      top: 1.0625rem;
+      transform: rotateZ(45deg);
+    }
+
+    &::after {
+      bottom: 1.0625rem;
+      transform: rotateZ(135deg);
+    }
   }
 }
 

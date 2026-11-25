@@ -4,6 +4,7 @@ import { selectBigImg } from './module/select-big-img'; // Select Big Img
 import { viewMoreInfo } from './module/view-more-info'; // View More Info
 import { sendComment } from './module/send-comment/send-comment'; // Send and Validation Comment
 import { initDataReviews } from './module/init-data-reviews'; // Get dataReviews from IndexedDB
+import { initLightbox } from './module/init-lightbox'; // init Lightbox
 
 export function selectDetailsProduct() {
   const labelFormColors = document.querySelectorAll('.info__form-colors-label');
@@ -89,4 +90,7 @@ export function selectDetailsProduct() {
 
   // Send and Validation Comment
   sendComment();
+
+  // init Lightbox
+  initLightbox(); // collapse кнопка развернуть стрелку
 }

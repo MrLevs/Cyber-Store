@@ -14,8 +14,8 @@ export function getComment() {
   const day = date.getDate();
   const month = date.toLocaleString('en-GB', { month: 'long' });
   const year = date.getFullYear();
-  const hours = date.getHours();
-  const minutes = date.getMinutes();
+  const hours = String(date.getHours()).padStart(2, '0');
+  const minutes = String(date.getMinutes()).padStart(2, '0');
   const fullDate = `${day} ${month} ${year}`;
   const fullHours = `${hours}:${minutes}`;
   let rating = document.querySelector('input[name="stars"]:checked');
@@ -53,7 +53,7 @@ export function getComment() {
     userReview.comment = comment;
   }
 
-  if (file.files.length > 0) {
+  if (file?.files?.length > 0) {
     userReview.file = file.files;
   }
 

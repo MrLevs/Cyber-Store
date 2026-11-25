@@ -19,7 +19,7 @@ export function showMoreReviews(arrayDataReviews) {
   const remainingReviews = arrayDataReviews.slice(INITIAL_COUNT);
 
   if (remainingReviews.length === 0) {
-    btnShowReviews.computedStyleMap.display = 'none';
+    btnShowReviews.style.display = 'none';
     return;
   }
 
@@ -41,45 +41,4 @@ export function showMoreReviews(arrayDataReviews) {
       }
     }
   });
-
-  function xxxx() {
-    const lightboxModal = document.querySelector('#dialog-lightbox');
-    const lightboxImg = lightboxModal?.querySelector('.lightbox__img');
-    const btnCloseLightbox = document.querySelector('#close-dialog-lightbox');
-
-    if (lightboxModal && lightboxImg && containerReviews) {
-      // Открытие фото по клику на любую миниатюру в отзывах
-      containerReviews.addEventListener('click', event => {
-        const clickedImg = event.target.closest('.review__image');
-        if (!clickedImg) return;
-
-        lightboxImg.src = clickedImg.src;
-        lightboxImg.alt = clickedImg.alt || 'Full size review photo';
-        document.body.classList.add('_lock');
-        lightboxModal.showModal();
-      });
-
-      // Закрытие по кнопке крестика
-      if (btnCloseLightbox) {
-        btnCloseLightbox.addEventListener('click', () => {
-          lightboxModal.close();
-        });
-      }
-
-      // Закрытие по клику на тёмный фон (backdrop) вокруг картинки
-      lightboxModal.addEventListener('click', event => {
-        if (event.target === lightboxModal) {
-          lightboxModal.close();
-        }
-      });
-
-      // Возврат скролла и очистка src при любом способе закрытия (включая Esc)
-      lightboxModal.addEventListener('close', () => {
-        document.body.classList.remove('_lock');
-        lightboxImg.src = '';
-      });
-    }
-  }
-
-  xxxx(); // отредактировать HTML SCSS JS DIALOG;
 }
